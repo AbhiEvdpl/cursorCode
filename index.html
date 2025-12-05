@@ -1,1 +1,311 @@
-Test
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Mega Menu</title>
+  <style>
+    :root {
+      --brand: #0e9f6e;
+      --text: #1f2933;
+      --muted: #6b7280;
+      --bg: #ffffff;
+      --shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
+      --border: #e5e7eb;
+      --font: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      color: var(--text);
+      background: #f8fafc;
+    }
+    a { color: inherit; text-decoration: none; }
+    .site-header {
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      z-index: 1000;
+      box-shadow: 0 1px 0 var(--border);
+    }
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      height: 72px;
+    }
+    .logo {
+      font-weight: 600;
+      font-size: 1.25rem;
+      letter-spacing: 0.03em;
+    }
+    .nav-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: transparent;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .nav-toggle span {
+      width: 20px;
+      height: 2px;
+      background: var(--text);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .nav-item > a {
+      position: relative;
+      padding: 0.75rem 0;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+    .nav-item > a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 12px;
+      height: 2px;
+      background: var(--brand);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s ease;
+    }
+    .nav-item:hover > a { color: var(--brand); }
+    .nav-item:hover > a::after { transform: scaleX(1); }
+
+    .has-mega { position: relative; }
+    .mega-menu {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: calc(100% + 12px);
+      background: var(--bg);
+      border-radius: 16px;
+      padding: 2.5rem;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(180px, 1fr));
+      gap: 2rem;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+    }
+    .has-mega:hover .mega-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .mega-column h4 {
+      margin: 0 0 0.75rem;
+      font-size: 1rem;
+      color: var(--brand);
+    }
+    .mega-links {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 0.35rem;
+    }
+    .mega-links a {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      padding: 0.35rem 0;
+      border-bottom: 1px solid rgba(229, 231, 235, 0.7);
+      transition: color 0.2s ease;
+    }
+    .mega-links li:last-child a { border-bottom: none; }
+    .icon-circle {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(14, 159, 110, 0.08);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      color: var(--brand);
+    }
+    .mega-links a:hover { color: var(--brand); }
+
+    @media (max-width: 900px) {
+      .navbar {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 1rem 1.25rem;
+        gap: 1rem;
+      }
+      .nav-toggle { display: inline-flex; }
+      .nav-links {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease;
+      }
+      .nav-links.open { max-height: 1000px; }
+      .nav-item { width: 100%; border-top: 1px solid var(--border); }
+      .nav-item > a { display: block; width: 100%; padding: 1rem 0; }
+      .has-mega > .mega-menu {
+        position: static;
+        grid-template-columns: 1fr;
+        border-radius: 8px;
+        margin: 0 0 1rem;
+        padding: 1.25rem;
+        box-shadow: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        display: none;
+      }
+      .has-mega.open .mega-menu { display: block; }
+    }
+
+    .nav-toggle.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="navbar">
+      <a class="logo" href="#">RecycleTroop</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links">
+        <li class="nav-item has-mega">
+          <a href="#">Shop Parts</a>
+          <div class="mega-menu">
+            <div class="mega-column">
+              <h4>iPhone</h4>
+              <ul class="mega-links">
+                <li><a href="#"><span class="icon-circle">S</span>Screens</a></li>
+                <li><a href="#"><span class="icon-circle">B</span>Batteries</a></li>
+                <li><a href="#"><span class="icon-circle">C</span>Charge Ports</a></li>
+                <li><a href="#"><span class="icon-circle">L</span>Camera Lens</a></li>
+                <li><a href="#"><span class="icon-circle">H</span>Housing</a></li>
+              </ul>
+            </div>
+            <div class="mega-column">
+              <h4>Samsung</h4>
+              <ul class="mega-links">
+                <li><a href="#"><span class="icon-circle">S</span>Screens</a></li>
+                <li><a href="#"><span class="icon-circle">G</span>Back Glass</a></li>
+                <li><a href="#"><span class="icon-circle">P</span>Small Parts</a></li>
+                <li><a href="#"><span class="icon-circle">F</span>Flex Cables</a></li>
+              </ul>
+            </div>
+            <div class="mega-column">
+              <h4>Google Pixel</h4>
+              <ul class="mega-links">
+                <li><a href="#"><span class="icon-circle">S</span>Screens</a></li>
+                <li><a href="#"><span class="icon-circle">B</span>Batteries</a></li>
+                <li><a href="#"><span class="icon-circle">I</span>Charging IC</a></li>
+                <li><a href="#"><span class="icon-circle">P</span>Speakers</a></li>
+              </ul>
+            </div>
+            <div class="mega-column">
+              <h4>Featured</h4>
+              <ul class="mega-links">
+                <li><a href="#"><span class="icon-circle">D</span>Diagnostic Tools</a></li>
+                <li><a href="#"><span class="icon-circle">K</span>Starter Kits</a></li>
+                <li><a href="#"><span class="icon-circle">E</span>Eco Refurbs</a></li>
+                <li><a href="#"><span class="icon-circle">N</span>New Arrivals</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item has-mega">
+          <a href="#">Shop Tools</a>
+          <div class="mega-menu">
+            <div class="mega-column">
+              <h4>Repair Tools</h4>
+              <ul class="mega-links">
+                <li><a href="#"><span class="icon-circle">A</span>Adhesives</a></li>
+                <li><a href="#"><span class="icon-circle">H</span>Heat Guns</a></li>
+                <li><a href="#"><span class="icon-circle">S</span>Screwdrivers</a></li>
+                <li><a href="#"><span class="icon-circle">T</span>Tool Kits</a></li>
+              </ul>
+            </div>
+            <div class="mega-column">
+              <h4>Precision</h4>
+              <ul class="mega-links">
+                <li><a href="#"><span class="icon-circle">M</span>Microscopes</a></li>
+                <li><a href="#"><span class="icon-circle">F</span>Fine Tweezers</a></li>
+                <li><a href="#"><span class="icon-circle">L</span>Logic Probes</a></li>
+                <li><a href="#"><span class="icon-circle">J</span>Jigs &amp; Clamps</a></li>
+              </ul>
+            </div>
+            <div class="mega-column">
+              <h4>Consumables</h4>
+              <ul class="mega-links">
+                <li><a href="#"><span class="icon-circle">C</span>Cleaning Materials</a></li>
+                <li><a href="#"><span class="icon-circle">P</span>Polishing Pads</a></li>
+                <li><a href="#"><span class="icon-circle">S</span>Solder Wire</a></li>
+                <li><a href="#"><span class="icon-circle">F</span>Flux &amp; Paste</a></li>
+              </ul>
+            </div>
+            <div class="mega-column">
+              <h4>Training</h4>
+              <ul class="mega-links">
+                <li><a href="#"><span class="icon-circle">V</span>Video Courses</a></li>
+                <li><a href="#"><span class="icon-circle">W</span>Workshops</a></li>
+                <li><a href="#"><span class="icon-circle">G</span>Guides</a></li>
+                <li><a href="#"><span class="icon-circle">C</span>Certifications</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item"><a href="#">Sell To Us</a></li>
+        <li class="nav-item"><a href="#">About Us</a></li>
+        <li class="nav-item"><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    const megaParents = document.querySelectorAll('.has-mega');
+
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+
+    megaParents.forEach((item) => {
+      item.querySelector('a').addEventListener('click', (event) => {
+        if (window.innerWidth <= 900) {
+          event.preventDefault();
+          item.classList.toggle('open');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
