@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EvinceDev Blog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="#" class="logo" aria-label="EvinceDev home">
+        <span>EvinceDev</span>
+      </a>
+      <nav class="primary-nav" aria-label="Primary">
+        <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-nav">
+          <span class="sr-only">Toggle navigation</span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-list desktop">
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#categories">Categories</a></li>
+          <li class="has-dropdown">
+            <button class="dropdown-toggle" aria-expanded="false">Resources</button>
+            <ul class="dropdown" aria-label="Resources submenu">
+              <li><a href="#guides">Guides</a></li>
+              <li><a href="#case-studies">Case Studies</a></li>
+              <li><a href="#newsletter">Newsletter</a></li>
+            </ul>
+          </li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact" class="btn-link">Contact</a></li>
+        </ul>
+        <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile">
+          <ul>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#categories">Categories</a></li>
+            <li class="has-dropdown">
+              <button class="dropdown-toggle" aria-expanded="false">Resources</button>
+              <ul class="dropdown" aria-label="Resources submenu">
+                <li><a href="#guides">Guides</a></li>
+                <li><a href="#case-studies">Case Studies</a></li>
+                <li><a href="#newsletter">Newsletter</a></li>
+              </ul>
+            </li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="container grid">
+        <div class="hero-content">
+          <p class="eyebrow">Insights • Strategy • Growth</p>
+          <h1>Future-ready digital product leadership</h1>
+          <p class="lede">EvinceDev shares deep dives on experience design, engineering, and product strategy to help ambitious teams build standout digital journeys.</p>
+          <div class="hero-cta">
+            <button class="btn primary">Subscribe</button>
+            <button class="btn ghost">Latest stories</button>
+          </div>
+        </div>
+        <figure class="hero-media">
+          <picture>
+            <source srcset="assets/images/hero.webp 1x" type="image/webp" />
+            <img src="assets/images/hero.png" alt="" loading="lazy" />
+          </picture>
+        </figure>
+      </div>
+    </section>
+
+    <section class="featured" id="blog">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Trending now</p>
+            <h2>Latest from the studio</h2>
+          </div>
+          <a href="#" class="link">View all articles</a>
+        </div>
+
+        <div class="content-layout">
+          <section class="articles-grid" aria-label="Blog articles">
+            <article class="blog-card">
+              <picture>
+                <source srcset="assets/images/blog-01.webp 1x" type="image/webp" />
+                <img src="assets/images/blog-01.png" alt="" loading="lazy" />
+              </picture>
+              <div class="card-body">
+                <span class="pill">Experience Strategy</span>
+                <h3>Designing trustworthy AI assistants for regulated industries</h3>
+                <p>Frameworks for aligning AI copilots with compliance teams without compromising velocity.</p>
+                <a class="arrow-link" href="#">Read more</a>
+              </div>
+            </article>
+
+            <article class="blog-card">
+              <picture>
+                <source srcset="assets/images/blog-02.webp 1x" type="image/webp" />
+                <img src="assets/images/blog-02.png" alt="" loading="lazy" />
+              </picture>
+              <div class="card-body">
+                <span class="pill">Product Delivery</span>
+                <h3>Composing modular design systems that teams actually adopt</h3>
+                <p>Playbooks for rolling out patterns gradually while maintaining velocity across squads.</p>
+                <a class="arrow-link" href="#">Read more</a>
+              </div>
+            </article>
+
+            <article class="blog-card">
+              <picture>
+                <source srcset="assets/images/blog-03.webp 1x" type="image/webp" />
+                <img src="assets/images/blog-03.png" alt="" loading="lazy" />
+              </picture>
+              <div class="card-body">
+                <span class="pill">Growth Research</span>
+                <h3>Quant + qual rituals to unlock confident roadmap bets</h3>
+                <p>How we combine voice-of-customer loops with experimentation to steer product funding.</p>
+                <a class="arrow-link" href="#">Read more</a>
+              </div>
+            </article>
+
+            <article class="blog-card">
+              <picture>
+                <source srcset="assets/images/blog-04.webp 1x" type="image/webp" />
+                <img src="assets/images/blog-04.png" alt="" loading="lazy" />
+              </picture>
+              <div class="card-body">
+                <span class="pill">Culture</span>
+                <h3>Operating models that help distributed teams stay in sync</h3>
+                <p>The rituals, tooling, and cadences our hybrid studio uses to remove communication drag.</p>
+                <a class="arrow-link" href="#">Read more</a>
+              </div>
+            </article>
+          </section>
+
+          <aside class="sidebar" aria-label="Sidebar widgets">
+            <section class="widget" id="categories">
+              <h4>Categories</h4>
+              <ul>
+                <li><a href="#">Product Strategy</a></li>
+                <li><a href="#">Experience Design</a></li>
+                <li><a href="#">Engineering</a></li>
+                <li><a href="#">Research Ops</a></li>
+                <li><a href="#">Culture</a></li>
+              </ul>
+            </section>
+
+            <section class="widget" aria-labelledby="recent">
+              <div class="widget-heading">
+                <h4 id="recent">Recent articles</h4>
+                <a href="#" class="link">See all</a>
+              </div>
+              <ul class="recent-list">
+                <li>
+                  <p>Customer playbacks that inspire executive action</p>
+                  <span>12 Nov 2025</span>
+                </li>
+                <li>
+                  <p>Balancing experimentation and performance budgets</p>
+                  <span>2 Nov 2025</span>
+                </li>
+                <li>
+                  <p>Onboarding service blueprints for fintech</p>
+                  <span>22 Oct 2025</span>
+                </li>
+              </ul>
+            </section>
+
+            <section class="widget search" aria-label="Search articles">
+              <h4>Search</h4>
+              <form>
+                <label for="search" class="sr-only">Search articles</label>
+                <input type="search" id="search" placeholder="Search articles" />
+                <button class="btn primary" type="submit">Go</button>
+              </form>
+            </section>
+
+            <section class="widget tags" aria-labelledby="tags">
+              <h4 id="tags">Tags</h4>
+              <div class="tag-group">
+                <a href="#">Product Ops</a>
+                <a href="#">CX</a>
+                <a href="#">AI</a>
+                <a href="#">Roadmaps</a>
+                <a href="#">Hybrid Work</a>
+                <a href="#">Metrics</a>
+              </div>
+            </section>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="#" class="logo">EvinceDev</a>
+          <p>Partnering with bold teams to ship experience-led products faster.</p>
+          <div class="socials">
+            <a href="#" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.15 1.45-2.15 2.94v5.67H9.33V9.5h3.42v1.49h.05c.48-.9 1.66-1.85 3.42-1.85 3.65 0 4.33 2.4 4.33 5.52v5.79zM5.34 8.01a2.07 2.07 0 110-4.15 2.07 2.07 0 010 4.15zm1.79 12.44H3.55V9.5h3.58v10.95zM22.22 0H1.78A1.78 1.78 0 000 1.78v20.44A1.78 1.78 0 001.78 24h20.44A1.78 1.78 0 0024 22.22V1.78A1.78 1.78 0 0022.22 0z"/></svg>
+            </a>
+            <a href="#" aria-label="Twitter">
+              <svg viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M23.43 4.83a9.18 9.18 0 01-2.6.71 4.55 4.55 0 002-2.51 9.1 9.1 0 01-2.88 1.1 4.55 4.55 0 00-7.77 4.14A12.92 12.92 0 011.56 3.1a4.55 4.55 0 001.41 6.07 4.54 4.54 0 01-2.06-.57v.06a4.55 4.55 0 003.65 4.46 4.54 4.54 0 01-2.05.08 4.55 4.55 0 004.25 3.16 9.11 9.11 0 01-6.72 1.88 12.85 12.85 0 006.94 2.03c8.33 0 12.89-6.9 12.89-12.89 0-.2 0-.39-.01-.58a9.2 9.2 0 002.27-2.35z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="#about">About us</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#careers">Careers</a></li>
+            <li><a href="#press">Press</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Resources</h5>
+          <ul>
+            <li><a href="#guides">Guides</a></li>
+            <li><a href="#case-studies">Case studies</a></li>
+            <li><a href="#newsletter">Newsletter</a></li>
+            <li><a href="#events">Events</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Subscribe</h5>
+          <form class="footer-form">
+            <label for="footer-email" class="sr-only">Email address</label>
+            <input type="email" id="footer-email" placeholder="Email address" required />
+            <button class="btn primary" type="submit">Join</button>
+          </form>
+        </div>
+      </div>
+      <p class="footer-meta">© 2025 EvinceDev Studio. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
