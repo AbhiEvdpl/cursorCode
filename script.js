@@ -12,6 +12,31 @@ const modalCloseBtn = modal?.querySelector('.modal__close');
 const yearEl = document.getElementById('year');
 const contactForm = document.querySelector('.contact-form');
 
+const animateOnScroll = (entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+      observer.unobserve(entry.target);
+    }
+  });
+};
+
+const observerOptions = {
+  root: null,
+  threshold: 0.1,
+  rootMargin: '0px 0px -100px 0px'
+};
+
+const observer = new IntersectionObserver(animateOnScroll, observerOptions);
+
+document.querySelectorAll('section, .service-card, .expert-card, .badge-card, .hero__content, .hero__visual').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(30px)';
+  el.style.transition = 'opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+  observer.observe(el);
+});
+
 if (yearEl) {
   yearEl.textContent = new Date().getFullYear();
 }
@@ -133,4 +158,38 @@ modalForm?.addEventListener('submit', async (event) => {
     setTimeout(closeModal, 400);
   }
 });
-*** End of File
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    const href = this.getAttribute('href');
+    if (href === '#' || !href) return;
+    
+    e.preventDefault();
+    const target = document.querySelector(href);
+    if (target) {
+      const headerHeight = header?.offsetHeight || 80;
+      const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+      
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      });
+    }
+  });
+});
+
+const staggerDelay = (element, index) => {
+  element.style.transitionDelay = `${index * 0.1}s`;
+};
+
+document.querySelectorAll('.card-grid .service-card').forEach((card, index) => {
+  staggerDelay(card, index);
+});
+
+document.querySelectorAll('.experts__cards .expert-card').forEach((card, index) => {
+  staggerDelay(card, index);
+});
+
+document.querySelectorAll('.facility-chips span').forEach((chip, index) => {
+  staggerDelay(chip, index);
+});
