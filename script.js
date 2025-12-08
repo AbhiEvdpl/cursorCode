@@ -38,6 +38,43 @@ primaryNav?.querySelectorAll('a').forEach((link) => {
 window.addEventListener('scroll', () => {
   const offset = window.scrollY;
   header?.classList.toggle('is-scrolled', offset > 10);
+  
+  const cards = document.querySelectorAll('.service-card, .expert-card, .badge-card');
+  cards.forEach((card, index) => {
+    const rect = card.getBoundingClientRect();
+    const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+    if (isVisible) {
+      card.style.opacity = '1';
+      card.style.transform = 'translateY(0)';
+    }
+  });
+});
+
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, index) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }, index * 100);
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+document.addEventListener('DOMContentLoaded', () => {
+  const animatedElements = document.querySelectorAll('.service-card, .expert-card, .badge-card, .intro__grid > div');
+  animatedElements.forEach((el) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+    observer.observe(el);
+  });
 });
 
 mapPins.forEach((pin) => {

@@ -24,26 +24,87 @@ Create named styles for every token:
 
 Gradients: `hero/sky` (linear 135°, rgba(136,192,230,0.45) → rgba(30,70,55,0.12)) and `serving/vertical` (180°, rgba(136,192,230,0.3) → #F4F4F2). Add a subtle Idaho mountain silhouette overlay (vector) anchored to the hero’s lower edge.
 
-## Typography Styles (Inter Family)
-- Display / 54 px / 64 px / Bold — hero headline.
-- H2 / 40 px / 52 px / SemiBold — section headers.
-- H3 / 28 px / 36 px / Medium — service + expert cards.
-- Body L / 20 px / 32 px / Regular — hero subtext.
-- Body / 18 px / 28 px / Regular — paragraph content.
-- Caption / 14 px / 22 px / Medium — eyebrow labels, badges, card meta.
-Document line heights, letter spacing (eyebrows at 80 tracking), and include responsive overrides (Display drops to 40/48 on mobile). Publish these as `text/*` tokens inside the Component Library page so engineering can map each style to CSS variables.
+## Typography Styles (DM Sans / Lato / Source Sans Pro)
+**Primary Font Stack**: DM Sans (headings, buttons), Lato (body), Source Sans Pro (fallback)
 
-## Component Library (Auto Layout Required)
-1. **Navigation / Header**: Desktop + sticky variant plus mobile drawer. Auto-layout row (Logo locked at 164 px, menu links distribute, CTA pinned right). Sticky version tightens padding and amplifies drop shadow token `effect/header-sticky`.
-2. **Buttons**: Primary, Secondary, Ghost, Light, Ghost-Light. Include hover/focus/disabled variants with optional leading/trailing icon slots and width resizing behavior (hug contents vs fill).
-3. **Icon Chips**: 48 px circular chips with accent background for facility icons and 64 px rounded-square chips for service cards. Provide color overrides (primary, secondary, light accent).
-4. **Service Cards**: 320 × 360 px white cards, 24 px radius, icon + title + body copy. Hover variant lifts 4 px, accent border appears, and drop shadow increases to `effect/card-hover`.
-5. **Expert Cards**: 280 × auto cards sharing the service card style but with slimmer padding (24 px). Include boolean property for CTA arrow when reused in case studies.
-6. **Map Module**: Idaho outline, gradient background, detachable pin component with tooltip variant (default, hover, active). Document pin placement percentages for Boise (55%/42%) and Rural (30%/62%).
-7. **Form Inputs**: Text, select, textarea, helper text, validation states. Include Start Service modal form as a component with nested input instances.
-8. **Modal**: Container + overlay, close icon, body copy stack, button row. Provide success state variant that swaps helper text for confirmation.
-9. **Footer Columns**: Stackable column with heading + link list, plus smaller variant for legal copy.
-10. **Color, Typography, and Effect Styles**: Publish `color/*`, `text/*`, and `effect/*` tokens plus spacing tokens (8, 12, 16, 24, 32, 48, 64, 96, 120).
+- **Display** / 54 px / 64 px / Bold (DM Sans) — hero headline. Responsive: 40/48 on mobile.
+- **H2** / 40 px / 52 px / SemiBold (DM Sans) — section headers. Responsive: 32/40 on tablet, 28/36 on mobile.
+- **H3** / 28 px / 36 px / Medium (DM Sans) — service + expert cards. Responsive: 24/32 on mobile.
+- **Body L** / 20 px / 32 px / Regular (Lato) — hero subtext, lead paragraphs. Responsive: 18/28 on mobile.
+- **Body** / 18 px / 28 px / Regular (Lato) — paragraph content. Responsive: 16/24 on mobile.
+- **Caption** / 14 px / 22 px / Medium (DM Sans) — eyebrow labels, badges, card meta. Letter spacing: 0.08em (80 tracking).
+
+Document line heights, letter spacing (eyebrows at 80 tracking), and include responsive overrides. Publish these as `text/*` tokens inside the Component Library page so engineering can map each style to CSS variables.
+
+**Font Loading**: Preconnect to Google Fonts, load DM Sans (400,500,600,700), Lato (400,600), Source Sans Pro (400,600) with `display=swap`.
+
+## Component Library (Auto Layout Required - Clenia-Inspired)
+1. **Navigation / Header**: 
+   - Desktop + sticky variant plus mobile drawer
+   - Auto-layout row (Logo locked at 164px, menu links distribute with 24px gap, CTA pinned right)
+   - Sticky version: padding reduces to 16px, shadow amplifies to `effect/header-sticky`
+   - Mobile: Hamburger menu (24px × 18px), drawer slides from right (35% width)
+   
+2. **Buttons** (DM Sans, 600 weight):
+   - Primary: #1E4637 background, white text, 14px/32px padding, 999px radius
+   - Secondary: #224E7A background, white text
+   - Ghost: transparent, #224E7A text, 1px border
+   - Light: white background, #1E4637 text
+   - Ghost-Light: transparent, white text, 1px white border
+   - Hover: translateY(-2px), enhanced shadow, ripple effect
+   - Focus: 3px light-accent outline, 2px offset
+   - Include optional leading/trailing icon slots (8px gap)
+   
+3. **Icon Chips**: 
+   - Facility icons: 48px circular chips with accent background (#C89F4A)
+   - Service cards: 56px icons with hover scale/rotate animation
+   - Provide color overrides (primary, secondary, light accent)
+   
+4. **Service Cards** (Clenia-style):
+   - 280px min-width, auto height white cards
+   - 24px radius, 40px/32px padding
+   - Top accent border (4px gradient) animates on hover
+   - Icon (56px) + title (DM Sans, 600) + body copy (Lato, 400)
+   - Hover: translateY(-8px), shadow 0 25px 50px rgba(14,24,42,0.15)
+   - Border color changes to rgba(200,159,74,0.4) on hover
+   
+5. **Expert Cards**: 
+   - 240px min-width, auto height
+   - Sharing service card style with 28px/24px padding
+   - Include boolean property for CTA arrow when reused
+   
+6. **Map Module**: 
+   - Idaho outline SVG, gradient background
+   - Detachable pin component (36px) with tooltip variant
+   - Pin placement: Boise (55%/42%), Rural (30%/62%)
+   - Pulse animation on pins, tooltip fades in on hover
+   
+7. **Form Inputs**: 
+   - Text, select, textarea: 12px padding, 12px radius
+   - Border: 1px rgba(34,78,122,0.3)
+   - Focus: 2px light-accent outline, border transparent
+   - Helper text: 0.85rem, dark color
+   - Validation states: error (red border), success (green border)
+   - Include Start Service modal form as nested component
+   
+8. **Modal**: 
+   - Container: 600px max-width, 90vw mobile, 24px radius
+   - Overlay: rgba(4,16,16,0.6) backdrop
+   - Close icon: top-right, 1.5rem size
+   - Body: 32px padding, vertical stack with 16px gap
+   - Success state: swaps helper text for confirmation message
+   - Auto-closes after 400ms on success
+   
+9. **Footer Columns**: 
+   - Four-column grid (desktop), two-column (tablet), stacked (mobile)
+   - Heading: DM Sans, 600, white
+   - Links: Lato, 400, white with hover underline
+   - Legal: caption style, centered
+   
+10. **Color, Typography, and Effect Styles**: 
+    - Publish `color/*`, `text/*`, and `effect/*` tokens
+    - Spacing tokens: 8, 12, 16, 24, 32, 40, 48, 64, 96, 120
+    - Shadow tokens: `shadow-soft` (0 10px 30px), `shadow-card` (0 20px 40px), `shadow-hover` (0 25px 50px)
 
 ## Auto Layout & Constraints
 - All sections sit inside vertical auto-layout frames with 32 px gap between headings and content groups; outer frames use 120 px top/bottom padding on desktop, 96 px tablet, 72 px mobile.
@@ -62,14 +123,38 @@ Document line heights, letter spacing (eyebrows at 80 tracking), and include res
 7. **CTA Banner**: Full-width, primary green (#1E4637). Headline “Ready to Partner with a Dedicated Idaho LTC Pharmacy?” Buttons: Start Service (light) + Contact Us (ghost light). Add subtle diagonal texture or gradient overlay to emulate Ampul.
 8. **Footer**: Dark green background, four columns (Logo/mission, Quick Links, Facility Onboarding, Contact/Address). Footer legal line uses caption style; optionally include social icons as muted outlines.
 
-## Micro-Interactions & Prototype
-- Sticky header: On-scroll trigger swaps to sticky variant with stronger shadow and reduced padding. Document effect token `effect/header-sticky`.
-- Buttons: Hover lightens fill by 5% and adds elevation; focus ring is 2 px `color/light-accent`. Provide Smart Animate transitions between states.
-- Cards: While-hover lifts to 0 20 40 rgba(0,0,0,0.08) and reveals accent border; note reduced-motion fallback (no motion, color-only change).
-- Hero illustration: Float animation (translateY ±8 px) loops every 8s. Mention CSS `@keyframes floatCard` implementation.
-- Map pins: Hover/focus triggers tooltip fade + slide (-8 px). Document `aria-live` behavior.
-- Mobile nav: Slide-in drawer from right with overlay fade; ESC/overlay tap closes.
-- CTA modal: Start Service buttons open modal with scale + fade; success state auto-closes after 400 ms.
+## Micro-Interactions & Prototype (Ampul-Inspired)
+- **Sticky header**: On-scroll trigger swaps to sticky variant with stronger shadow (0 15px 25px rgba(4,16,16,0.12)) and backdrop blur. Document effect token `effect/header-sticky`.
+- **Buttons**: 
+  - Hover: translateY(-2px), enhanced shadow (0 12px 24px rgba(14,24,42,0.15)), ripple effect via pseudo-element
+  - Focus ring: 3px `color/light-accent` outline with 2px offset
+  - Active: translateY(0) for tactile feedback
+  - Smart Animate transitions: cubic-bezier(0.4, 0, 0.2, 1) for smooth motion
+- **Cards**: 
+  - While-hover: translateY(-8px), shadow increases to 0 25px 50px rgba(14,24,42,0.15)
+  - Top accent border animates from scaleX(0) to scaleX(1) on hover
+  - Icons scale(1.1) and rotate(5deg) on card hover
+  - Reduced-motion fallback: no transform, color-only change
+- **Hero illustration**: 
+  - Float animation (translateY ±10px with subtle rotation) loops every 8s
+  - Hover: scale(1.02) for interactivity
+  - CSS `@keyframes floatCard` with multi-keyframe easing
+- **Scroll-triggered animations**: 
+  - Cards fade in with translateY(30px) → translateY(0) on scroll
+  - Staggered delays (100ms per card) for cascading effect
+  - Intersection Observer API implementation
+- **Map pins**: 
+  - Hover/focus triggers tooltip fade + slide (-8px)
+  - Pulse animation (scale 1 → 1.05) loops every 3s
+  - Document `aria-live` behavior for screen readers
+- **Mobile nav**: 
+  - Slide-in drawer from right (35% width) with overlay fade
+  - ESC/overlay tap closes
+  - Body scroll locked when open
+- **CTA modal**: 
+  - Start Service buttons open modal with scale + fade
+  - Success state auto-closes after 400ms
+  - Form inputs have focus states with light-accent outline
 
 ## Responsive Notes
 - Breakpoints: 1440 (desktop), 1200 (large), 1024 (tablet), 768 (small tablet), 600 (phablet), 375 (mobile). Document constraints inside layout grid annotations.
