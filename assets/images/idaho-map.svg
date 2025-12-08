@@ -1,0 +1,11 @@
+<svg width="320" height="520" viewBox="0 0 320 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Stylized Idaho map">
+  <defs>
+    <linearGradient id="mapGradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#88C0E6"/>
+      <stop offset="100%" stop-color="#224E7A"/>
+    </linearGradient>
+  </defs>
+  <path d="M110 5 L140 80 L130 140 L150 210 L140 260 L170 330 L150 400 L190 470 L180 510 L60 510 L40 450 L60 390 L40 320 L50 190 L30 160 L40 100 L20 40 Z" fill="url(#mapGradient)" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round"/>
+  <circle cx="145" cy="210" r="16" fill="#C89F4A"/>
+  <circle cx="120" cy="320" r="12" fill="#F4F4F2" stroke="#C89F4A" stroke-width="4"/>
+</svg>

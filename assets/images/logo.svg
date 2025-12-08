@@ -1,0 +1,5 @@
+<svg width="180" height="48" viewBox="0 0 180 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Idaho Pharmacy logo">
+  <rect width="180" height="48" fill="none"/>
+  <path d="M12 36 L28 12 L32 20 L42 8" stroke="#1E4637" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <text x="60" y="30" font-family="'Inter', 'Source Sans Pro', sans-serif" font-size="20" fill="#1E4637" font-weight="700">Idaho Pharmacy</text>
+</svg>
