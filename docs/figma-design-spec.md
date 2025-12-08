@@ -1,91 +1,111 @@
 # Idaho Pharmacy, LLC — Figma Design Specification
 
-Modern, soft medical art direction inspired by Ampul (hero/structure) and Clenia (card/grid treatment). Use the exact Idaho Pharmacy copy from the brief and mirror the semantic sections implemented in code.
+Comprehensive homepage blueprint mirroring Ampul’s airy hero structure and Clenia’s card spacing while applying Idaho Pharmacy’s exact messaging, palette, and typography tokens. Pair this spec with the exported assets in `/assets/images` so dev handoff stays 1:1 with the production HTML.
 
 ## Frames & Layout
-- **Desktop** (primary): 1440 × ~5200 px, 12-column grid (80 px columns / 24 px gutter / 120 px margins). Vertical spacing 120 px. Lock each section inside auto-layout stacks to keep breathing room consistent.
-- **Tablet**: 1024 px, 8-column grid (72 px margins / 16 px gutter). Collapse cards to 2 columns, hero image under copy.
-- **Mobile**: 375 px, single column with 16 px padding and 24 px vertical gutters. CTA buttons expand full-width.
-- Include a dedicated **Component Library** page with 1440 + 375 device frames plus reusable components.
-- Desktop stacking order (annotate section heights): Header 80 px → Hero 840 px → About 640 px → Services grid 920 px → Serving Idaho 780 px → Experts 760 px → CTA banner 360 px → Footer 420 px.
-- Mobile stacking order mirrors desktop but collapses every grid to single column with 16 px lateral padding. Note where CTA buttons become full-width and hero image sits below copy.
+
+- **Desktop frame (1440 × ~5200 px)** — 12-column grid (80 px columns / 24 px gutters / 120 px margins). Vertical rhythm: 120 px section padding, 32 px intra-section gaps. Hero height locked at 840 px to accommodate the courier illustration plus gradient wash.
+- **Tablet (1024 px)** — 8-column grid, 72 px outer margins, 16 px gutters. Wrap cards to two columns, move hero imagery beneath copy, and switch CTA buttons to `hug contents` with 16 px vertical spacing.
+- **Mobile (375 px)** — Single column, 16 px padding. All cards full-width, CTA buttons `fill container`. Hero, Serving Idaho, and CTA banner maintain 72 px vertical padding.
+- **Component Library page** — Dedicated file page housing Desktop + Tablet + Mobile devices plus reusable components. Include annotated layer names and usage notes per component.
+- **Stacking order (Desktop)**: Header (80 px) → Hero (840 px) → About / Specialization (640 px) → Why Choose Us grid (920 px) → Serving Idaho (780 px) → Experts (760 px) → CTA Banner (360 px) → Footer (420 px).
 
 ## Color & Gradient Styles
-Create named styles for every token:
-| Style | Hex | Notes |
-| --- | --- | --- |
-| `color/primary` | #1E4637 | Header, CTA banner, buttons |
-| `color/secondary` | #224E7A | Section titles, secondary CTA |
-| `color/accent` | #C89F4A | Icon chips, list bullets |
-| `color/light-accent` | #88C0E6 | Hero background wash, map glow |
-| `color/dark-neutral` | #4A545E | Body copy |
-| `color/light-neutral` | #F4F4F2 | Page background |
-| `color/white` | #FFFFFF | Cards, surfaces |
 
-Gradients: `hero/sky` (linear 135°, rgba(136,192,230,0.45) → rgba(30,70,55,0.12)) and `serving/vertical` (180°, rgba(136,192,230,0.3) → #F4F4F2). Add a subtle Idaho mountain silhouette overlay (vector) anchored to the hero’s lower edge.
+Define named color styles to mirror the strict brand palette:
 
-## Typography Styles (Inter Family)
-- Display / 54 px / 64 px / Bold — hero headline.
-- H2 / 40 px / 52 px / SemiBold — section headers.
-- H3 / 28 px / 36 px / Medium — service + expert cards.
-- Body L / 20 px / 32 px / Regular — hero subtext.
-- Body / 18 px / 28 px / Regular — paragraph content.
-- Caption / 14 px / 22 px / Medium — eyebrow labels, badges, card meta.
-Document line heights, letter spacing (eyebrows at 80 tracking), and include responsive overrides (Display drops to 40/48 on mobile). Publish these as `text/*` tokens inside the Component Library page so engineering can map each style to CSS variables.
+| Style Token           | Hex       | Usage                                                     |
+| --------------------- | --------- | --------------------------------------------------------- |
+| `color/primary`       | `#1E4637` | Header, CTA banner, primary buttons                       |
+| `color/secondary`     | `#224E7A` | Section headings, secondary CTAs, hero headline           |
+| `color/accent`        | `#C89F4A` | Bullet chips, icon backgrounds, hover borders             |
+| `color/light-accent`  | `#88C0E6` | Hero background wash, Serving Idaho gradient, focus rings |
+| `color/dark-neutral`  | `#4A545E` | Body copy                                                 |
+| `color/light-neutral` | `#F4F4F2` | Page background, alternating rows                         |
+| `color/white`         | `#FFFFFF` | Cards, navigation, form surfaces                          |
+
+Gradients:
+
+- `hero/sky` — linear 135°, rgba(136,192,230,0.45) → rgba(30,70,55,0.12); overlays Idaho mountain silhouette vector anchored to hero baseline.
+- `serving/vertical` — linear 180°, rgba(136,192,230,0.3) → #F4F4F2; Idaho map tile floats above with soft shadow token `effect/map`.
+
+## Typography Styles (DM Sans Family)
+
+- `text/display` — DM Sans Bold, 54/64 px for hero headline “Your Idaho Long-Term Care Pharmacy Partner”. Mobile override 40/48 px.
+- `text/h2` — DM Sans SemiBold, 40/52 px for section headers like “Why Idaho LTC Facilities Choose Us”.
+- `text/h3` — DM Sans Medium, 28/36 px for service/expert cards.
+- `text/body-large` — DM Sans Regular, 20/32 px for hero lead “Welcome to Idaho Pharmacy, LLC. — Idaho’s Trusted Long-Term Care Pharmacy”.
+- `text/body` — DM Sans Regular, 18/28 px for paragraphs (“Idaho Pharmacy is a dedicated…” and “We specialize exclusively…”).
+- `text/caption` — DM Sans Medium, 14/22 px with 80 tracking for eyebrows and badges.
+  Publish typography tokens within the Component Library as `text/*` styles mapped to CSS custom properties.
 
 ## Component Library (Auto Layout Required)
-1. **Navigation / Header**: Desktop + sticky variant plus mobile drawer. Auto-layout row (Logo locked at 164 px, menu links distribute, CTA pinned right). Sticky version tightens padding and amplifies drop shadow token `effect/header-sticky`.
-2. **Buttons**: Primary, Secondary, Ghost, Light, Ghost-Light. Include hover/focus/disabled variants with optional leading/trailing icon slots and width resizing behavior (hug contents vs fill).
-3. **Icon Chips**: 48 px circular chips with accent background for facility icons and 64 px rounded-square chips for service cards. Provide color overrides (primary, secondary, light accent).
-4. **Service Cards**: 320 × 360 px white cards, 24 px radius, icon + title + body copy. Hover variant lifts 4 px, accent border appears, and drop shadow increases to `effect/card-hover`.
-5. **Expert Cards**: 280 × auto cards sharing the service card style but with slimmer padding (24 px). Include boolean property for CTA arrow when reused in case studies.
-6. **Map Module**: Idaho outline, gradient background, detachable pin component with tooltip variant (default, hover, active). Document pin placement percentages for Boise (55%/42%) and Rural (30%/62%).
-7. **Form Inputs**: Text, select, textarea, helper text, validation states. Include Start Service modal form as a component with nested input instances.
-8. **Modal**: Container + overlay, close icon, body copy stack, button row. Provide success state variant that swaps helper text for confirmation.
-9. **Footer Columns**: Stackable column with heading + link list, plus smaller variant for legal copy.
-10. **Color, Typography, and Effect Styles**: Publish `color/*`, `text/*`, and `effect/*` tokens plus spacing tokens (8, 12, 16, 24, 32, 48, 64, 96, 120).
+
+1. **Navigation/Header** — Desktop + sticky variant + mobile drawer. Auto-layout row with logo locked at 164 px, menu links distributed, CTA pinned right. Sticky variant reduces vertical padding to 12 px and applies `effect/header-sticky` (0 15 25 rgba(4,16,16,0.12) + blur).
+2. **Buttons** — Primary, Secondary, Ghost, Light, Ghost-Light; each includes hover, focus, active, and disabled states. Optional trailing icon slot sized 16 px.
+3. **Eyebrow Tag** — Reusable component for “Idaho’s Trusted Long-Term Care Pharmacy Partner”, “Serving Idaho”, etc., controlling uppercase style and tracking.
+4. **Icon Chips** — 48 px circular chips + 64 px rounded-square variant. Include facility icons (SNF, ALF, Memory Care, Group Homes, Hospice) and service icons mapped to `/assets/images/*.svg`.
+5. **Service Cards** — 320 × 360 px, 24 px radius, icon/title/body stack. Hover variant lifts 4 px, toggles accent border, and increases shadow to `effect/card-hover`.
+6. **Expert Cards** — Shares service card foundation; add boolean property for CTA arrow, used in “Your LTC Pharmacy Experts”.
+7. **Map Module** — Idaho outline plus detachable pin components with tooltip states (default, hover, selected). Document pin coordinates: Boise & Treasure Valley (top 42%, left 55%), Rural & frontier (top 62%, left 30%).
+8. **Form Inputs & Modal** — Text, select, textarea, helper text, validation states, success state. Include Start Service modal with nested inputs and success variant confirming “We make starting service simple…”.
+9. **Footer Columns** — Stackable column component (heading + link list) plus legal/tiny variant.
+10. **Texture Overlays** — Diagonal noise texture for CTA banner + hero sky blur stored as effects.
 
 ## Auto Layout & Constraints
-- All sections sit inside vertical auto-layout frames with 32 px gap between headings and content groups; outer frames use 120 px top/bottom padding on desktop, 96 px tablet, 72 px mobile.
-- Use `Wrap` auto-layout for card grids so they break cleanly to 2 columns (≥600 px) and 1 column (<600 px). Constrain cards left/right with 32 px gutters.
-- Hero grid: text column min-width 560 px, image column min-width 460 px. Apply `Resize to Fit` so columns wrap vertically below 1024 px.
-- Map module pins use Constraints (Top/Left percentages) to maintain placement when resizing the tile.
-- Footer columns switch from four-up to two-up to single column using component variants + auto-layout `Wrap`.
 
-## Section Breakdown (Use provided copy verbatim)
-1. **Header**: 80 px tall, white background, sticky. Links: Home, Services, Service Areas, eMAR Integration, Onboarding, Contact. CTA button reads “Start Service” and uses primary fill. Include mobile nav toggle + overlay variant.
-2. **Hero**: Ampul-style two-column layout. Left column stack = eyebrow “Idaho's Trusted Long-Term Care Pharmacy Partner”, headline “Your Idaho Long-Term Care Pharmacy Partner”, short lead (Body L), CTA buttons (Start Service primary, Facility Onboarding ghost), and bullet list (PointClickCare, QuickMAR, Yardi integrations + onboarding specialists + daily routes). Right column hosts courier illustration with sky-blue gradient, testimonial chip, and Idaho mountain silhouette overlay anchored bottom.
-3. **About**: Two columns. Left column locks the paragraph “Idaho Pharmacy is a dedicated, independent, locally owned and operated, Idaho long-term care (LTC) pharmacy focused entirely on supporting skilled nursing, assisted living, memory care, group homes, and hospice providers across our state.” Facility chips (SNF, ALF, Memory Care, Group Homes, Hospice) appear below as icon chip components. Right column = Idaho map tile in rounded card with subtle drop shadow.
-4. **Why Idaho LTC Facilities Choose Us**: Secondary-blue background with 7 white cards labeled exactly: “After hours pharmacist support”, “Daily delivery routes”, “Advanced packaging”, “eMAR / EHR integration”, “Consultant pharmacist services”, “STAT medications”, “Onboarding specialists”. Each card uses matching icon from `/assets/images` set and 1–2 sentence supporting copy.
-5. **Serving Idaho**: Gradient wash with Idaho map, two pin components, tooltip label, and description copy. Badge cards highlight “Boise & Treasure Valley” and “Rural & frontier Idaho communities”.
-6. **Your LTC Pharmacy Experts**: Grid pairs team photo with four expert cards (Team expertise, Certifications, LTC regulatory training, Resident-focused care). CTA buttons: Start Service (secondary) + Contact Us (ghost). Ensure cards reuse same component as services for consistency.
-7. **CTA Banner**: Full-width, primary green (#1E4637). Headline “Ready to Partner with a Dedicated Idaho LTC Pharmacy?” Buttons: Start Service (light) + Contact Us (ghost light). Add subtle diagonal texture or gradient overlay to emulate Ampul.
-8. **Footer**: Dark green background, four columns (Logo/mission, Quick Links, Facility Onboarding, Contact/Address). Footer legal line uses caption style; optionally include social icons as muted outlines.
+- Wrap each major section in vertical auto-layout frames with 32 px gaps between heading stack and content groups. Outer frames: 120/96/72 px top-bottom padding (Desktop/Tablet/Mobile).
+- Card grids use auto-layout with `Wrap` to shift from 3 columns (≥1200 px) → 2 columns (960–600 px) → single column (<600 px).
+- Hero layout uses two-column auto-layout; left column min-width 560 px, right column min-width 460 px. Apply `Resize to Fit` and set imagery to “bottom” constraint so gradient + mountains stay anchored.
+- Serving Idaho pins use percentage constraints; map tile remains centered with 32 px padding.
+- Footer column component toggles between four-up, two-up, and stacked via component variant properties.
+
+## Section Breakdown (Exact Copy Blocks)
+
+1. **Header** — Sticky 80 px bar, white background. Links: Home, Services, Service Areas, eMAR Integration, Onboarding, Contact. CTA button: “Start Service”.
+2. **Hero** — Eyebrow: “Idaho’s Trusted Long-Term Care Pharmacy Partner”. Headline: “Your Idaho Long-Term Care Pharmacy Partner”. Lead paragraph: “Welcome to Idaho Pharmacy, LLC. — Idaho’s Trusted Long-Term Care Pharmacy”. Body copy: “Idaho Pharmacy is a dedicated…” + “We specialize exclusively in LTC pharmacy services—no retail distractions, no walk-ins—so your residents and staff receive fast, accurate, and dependable medication support backed by Idaho-based expertise.” CTAs: Primary “Start Service”, Ghost “Facility Onboarding”. Bullet list (caption style) repeating hero benefits from the user brief.
+3. **About + Facility Focus** — Keep original paragraph plus facility chips. Include supporting copy block describing facility types served exactly as provided.
+4. **Why Idaho LTC Facilities Choose Us** — Secondary-blue background (#224E7A) with seven cards titled exactly as the brief lists:
+   - “After hours pharmacist support for urgent orders & clinical questions”
+   - “Daily delivery routes across Idaho”
+   - “Advanced medication packaging for safety and accuracy”
+   - “Seamless eMAR/EHR integration (PointClickCare, QuickMAR, Yardi, etc.)”
+   - “Consultant pharmacist services to support compliance”
+   - “STAT & emergency medication availability”
+   - “Dedicated onboarding specialists to support facilities”
+     Each card includes concise supporting body text referencing Idaho context.
+5. **Serving Idaho** — Gradient module with map tile, tooltip, and supporting copy “Our LTC pharmacy supports facilities in: Boise & Treasure Valley; Rural & frontier Idaho communities.”
+6. **Your LTC Pharmacy Experts** — Team image plus cards describing expertise: “Every member of our pharmacy team is trained in Idaho long-term care regulations, medication management protocols, MAR documentation, and best practices for resident-focused care.” Add four expert cards (Team expertise, Certifications, LTC regulatory training, Resident-focused care) and CTA buttons (Start Service secondary + Contact Us ghost).
+7. **CTA Banner** — Headline “Ready to Partner with a Dedicated Idaho LTC Pharmacy?” Subtext: “We make starting service simple. Visit our Facility Onboarding page or contact us for a consultation.” Buttons: Start Service (light) + Contact Us (ghost-light). Include diagonal texture overlay referencing Ampul.
+8. **Footer** — Primary green background, four columns, with legal line and optional social icons.
 
 ## Micro-Interactions & Prototype
-- Sticky header: On-scroll trigger swaps to sticky variant with stronger shadow and reduced padding. Document effect token `effect/header-sticky`.
-- Buttons: Hover lightens fill by 5% and adds elevation; focus ring is 2 px `color/light-accent`. Provide Smart Animate transitions between states.
-- Cards: While-hover lifts to 0 20 40 rgba(0,0,0,0.08) and reveals accent border; note reduced-motion fallback (no motion, color-only change).
-- Hero illustration: Float animation (translateY ±8 px) loops every 8s. Mention CSS `@keyframes floatCard` implementation.
-- Map pins: Hover/focus triggers tooltip fade + slide (-8 px). Document `aria-live` behavior.
-- Mobile nav: Slide-in drawer from right with overlay fade; ESC/overlay tap closes.
-- CTA modal: Start Service buttons open modal with scale + fade; success state auto-closes after 400 ms.
+
+- Sticky header transitions to compact variant after 10 px scroll; document Smart Animate between states.
+- Buttons: Hover lifts 2 px, focus ring uses `color/light-accent` 2 px offset.
+- Cards: Hover lifts, accent border animates, w/reduced motion fallback.
+- Hero illustration floats using `@keyframes floatCard`; mention 8 s duration and translation ±8 px.
+- Map pins: Tooltip fade + slide (-8 px) plus `aria-live` announcement.
+- Mobile nav drawer slides from right, overlay fades; ESC closes.
+- Start Service modal: scale + fade entrance, success state auto-closes after 400 ms.
 
 ## Responsive Notes
-- Breakpoints: 1440 (desktop), 1200 (large), 1024 (tablet), 768 (small tablet), 600 (phablet), 375 (mobile). Document constraints inside layout grid annotations.
-- Hero image stacks below copy <1024 px, CTA buttons stack vertically <600 px.
-- Service + expert cards drop to 2 columns at 960 px and 1 column at 600 px.
-- Footer converts to 2 columns on tablet and stacked list on mobile (accordion optional).
+
+- Breakpoints: 1440, 1200, 1024, 960, 768, 600, 375 px. Document how grids collapse and how CTA buttons become full-width <600 px.
+- Hero imagery stacks below copy below 1024 px; hero CTA buttons stack vertically <600 px.
+- Service/expert cards drop to 2 columns at 960 px, single column at 600 px.
+- Footer shifts four → two columns at 960 px, stacked at 600 px.
 
 ## Assets & Export Prep
-- Export hero + experts imagery in WebP (1x/2x) plus PNG fallbacks (already provided).
-- Maintain SVG icon artboards at 24 px (stroke width 1.5 px). Include Idaho mountain silhouette and new expert icons.
-- Provide component thumbnails and cover image for the Figma file.
-- Reference `/assets/images` naming when assigning components (e.g., `hero-courier.webp`, `icon-after-hours.svg`, `idaho-map.svg`) so dev handoff maps 1:1.
-- Note export settings in-file (SVG @1x, WebP @1× & @2×) and include instructions for compressing via Squoosh (quality 80) to match repo assets.
+
+- Export hero + expert images as WebP (1× & 2×) with PNG fallbacks. Maintain existing file names for dev parity.
+- SVG icons locked at 24 px artboards, stroke 1.5 px. Include Idaho mountain silhouette vector.
+- Provide cover image + component thumbnails for Figma file.
+- Document export settings (SVG @1×, WebP @1×/@2×, compression via Squoosh at quality 80).
 
 ## Accessibility & Content
-- Ensure color contrast meets WCAG AA (≥4.5:1). Use accent color only on large text or icons.
-- All imagery references Idaho or LTC context in alt text.
-- Document anchor IDs for CMS usage (matching `data-cms-key` attributes in HTML).
-- Include annotations showing how eMAR integration partners (PointClickCare, QuickMAR, Yardi) appear within hero bullet list and CTA copy.
+
+- Maintain WCAG AA contrast; accent amber reserved for bullets and icons on light surfaces.
+- Provide descriptive alt text referencing Idaho LTC context.
+- Annotate anchor IDs to match `data-cms-key` attributes (e.g., `data-cms-key="hero-tag"`).
+- Note that hero bullets call out eMAR partners (PointClickCare, QuickMAR, Yardi) and onboarding support to align with marketing copy.
