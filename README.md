@@ -20,6 +20,7 @@ This repository contains the Idaho Pharmacy marketing homepage deliverables: a F
 - No build tooling is required; however, the CSS is Tailwind-ready via utility-like naming and CSS variables if you prefer to port it.
 - `script.js` currently simulates network submission (`fakeSubmit`). Replace with a real `fetch` call inside `handleFormSubmit` and update the `data-endpoint` attribute on `.contact-form`.
 - eMAR integration CTAs are grouped under the Services section; wire up actual URLs or API docs as needed.
+- Hero illustration + map pins use lightweight CSS animations (`floatCard`, `pulsePin`). A `prefers-reduced-motion` query is in place so motion-sensitive users only see static states.
 
 ### Assets & Export
 - Icons are exported as accessible SVG (24–64px artboards) in `assets/images/`.
@@ -31,6 +32,7 @@ This repository contains the Idaho Pharmacy marketing homepage deliverables: a F
 - Set up auto-layout for navigation, cards, buttons, hero grid, and footer stacks.
 - Include frames for Desktop 1440, Tablet 1024, and Mobile 375.
 - Build a shared component library (Buttons, Cards, Form Fields, Map, Icon Set) with color and text styles matching the provided tokens.
+- Mirror the prototype cues described under “Micro-Interactions & Prototype” inside the spec so engineering handoff can map to CSS animations already implemented.
 
 ### Accessibility Checklist
 - Skip link jumps to `#main-content`.

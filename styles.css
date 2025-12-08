@@ -12,6 +12,30 @@
   --grid-gap: 32px;
 }
 
+@keyframes floatCard {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulsePin {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -244,6 +268,7 @@ img {
   border-radius: 32px;
   overflow: hidden;
   box-shadow: var(--shadow-card);
+  animation: floatCard 8s ease-in-out infinite;
 }
 
 .hero__quote {
@@ -365,10 +390,17 @@ section {
   border: none;
   padding: 0;
   cursor: pointer;
+  animation: pulsePin 3s ease-in-out infinite;
+  transition: transform 0.2s ease;
 }
 
 .map-pin img {
   width: 36px;
+}
+
+.map-pin:focus-visible {
+  outline: 3px solid var(--color-light-accent);
+  border-radius: 50%;
 }
 
 .map-tooltip {
@@ -614,6 +646,15 @@ textarea:focus {
 
 .modal__content .form-status {
   margin-top: -4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 @media (max-width: 960px) {
