@@ -1,0 +1,200 @@
+{
+  "colors": {
+    "primary": {
+      "default": "#1E4637",
+      "dark": "#163328",
+      "light": "#2A5A47"
+    },
+    "secondary": {
+      "default": "#224E7A",
+      "dark": "#1A3D5F",
+      "light": "#2D6494"
+    },
+    "accent": {
+      "default": "#C89F4A",
+      "light": "#D4B06A",
+      "muted": "rgba(200, 159, 74, 0.15)"
+    },
+    "sky": {
+      "default": "#88C0E6",
+      "light": "#A8D4F0",
+      "muted": "rgba(136, 192, 230, 0.15)"
+    },
+    "neutral": {
+      "black": "#1A1F25",
+      "dark": "#4A545E",
+      "gray": "#6B7280",
+      "light": "#F4F4F2",
+      "lighter": "#FAFAFA",
+      "white": "#FFFFFF"
+    }
+  },
+  "typography": {
+    "fontFamily": "DM Sans",
+    "weights": {
+      "regular": 400,
+      "medium": 500,
+      "semibold": 600,
+      "bold": 700
+    },
+    "styles": {
+      "heroTitle": {
+        "fontSize": 64,
+        "lineHeight": 70,
+        "fontWeight": 700,
+        "letterSpacing": -0.02
+      },
+      "sectionTitle": {
+        "fontSize": 48,
+        "lineHeight": 58,
+        "fontWeight": 700,
+        "letterSpacing": -0.01
+      },
+      "cardTitle": {
+        "fontSize": 20,
+        "lineHeight": 28,
+        "fontWeight": 600,
+        "letterSpacing": 0
+      },
+      "bodyLarge": {
+        "fontSize": 19,
+        "lineHeight": 34,
+        "fontWeight": 400,
+        "letterSpacing": 0
+      },
+      "body": {
+        "fontSize": 18,
+        "lineHeight": 31,
+        "fontWeight": 400,
+        "letterSpacing": 0
+      },
+      "bodySmall": {
+        "fontSize": 15,
+        "lineHeight": 26,
+        "fontWeight": 400,
+        "letterSpacing": 0
+      },
+      "eyebrow": {
+        "fontSize": 14,
+        "lineHeight": 20,
+        "fontWeight": 600,
+        "letterSpacing": 0.1,
+        "textTransform": "uppercase"
+      },
+      "caption": {
+        "fontSize": 13,
+        "lineHeight": 18,
+        "fontWeight": 500,
+        "letterSpacing": 0
+      },
+      "navLink": {
+        "fontSize": 15,
+        "lineHeight": 20,
+        "fontWeight": 500,
+        "letterSpacing": 0
+      },
+      "button": {
+        "fontSize": 16,
+        "lineHeight": 20,
+        "fontWeight": 600,
+        "letterSpacing": 0
+      },
+      "buttonLarge": {
+        "fontSize": 17,
+        "lineHeight": 22,
+        "fontWeight": 600,
+        "letterSpacing": 0
+      }
+    }
+  },
+  "spacing": {
+    "base": 8,
+    "scale": {
+      "xs": 4,
+      "sm": 8,
+      "md": 16,
+      "lg": 24,
+      "xl": 32,
+      "2xl": 48,
+      "3xl": 64,
+      "4xl": 80,
+      "5xl": 120
+    }
+  },
+  "borderRadius": {
+    "sm": 8,
+    "md": 12,
+    "lg": 16,
+    "xl": 24,
+    "2xl": 32,
+    "full": 9999
+  },
+  "shadows": {
+    "sm": {
+      "x": 0,
+      "y": 1,
+      "blur": 2,
+      "spread": 0,
+      "color": "rgba(0, 0, 0, 0.05)"
+    },
+    "md": {
+      "x": 0,
+      "y": 4,
+      "blur": 6,
+      "spread": -1,
+      "color": "rgba(0, 0, 0, 0.1)"
+    },
+    "lg": {
+      "x": 0,
+      "y": 10,
+      "blur": 15,
+      "spread": -3,
+      "color": "rgba(0, 0, 0, 0.1)"
+    },
+    "xl": {
+      "x": 0,
+      "y": 20,
+      "blur": 25,
+      "spread": -5,
+      "color": "rgba(0, 0, 0, 0.1)"
+    },
+    "card": {
+      "x": 0,
+      "y": 4,
+      "blur": 20,
+      "spread": 0,
+      "color": "rgba(0, 0, 0, 0.06)"
+    },
+    "cardHover": {
+      "x": 0,
+      "y": 20,
+      "blur": 40,
+      "spread": 0,
+      "color": "rgba(0, 0, 0, 0.12)"
+    }
+  },
+  "breakpoints": {
+    "mobile": 375,
+    "tablet": 768,
+    "desktop": 1024,
+    "large": 1440
+  },
+  "grid": {
+    "desktop": {
+      "columns": 12,
+      "gutter": 24,
+      "margin": 60,
+      "maxWidth": 1320
+    },
+    "tablet": {
+      "columns": 8,
+      "gutter": 20,
+      "margin": 40
+    },
+    "mobile": {
+      "columns": 4,
+      "gutter": 16,
+      "margin": 24
+    }
+  }
+}

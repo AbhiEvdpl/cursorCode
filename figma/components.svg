@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1600" height="2400" viewBox="0 0 1600 2400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>Idaho Pharmacy - Figma Components</title>
+  <desc>Import this SVG into Figma to get pre-built components</desc>
+  
+  <!-- Background -->
+  <rect width="1600" height="2400" fill="#FAFAFA"/>
+  
+  <!-- Title -->
+  <text x="80" y="60" font-family="DM Sans, sans-serif" font-size="24" font-weight="700" fill="#1A1F25">Idaho Pharmacy  Component Library</text>
+  <text x="80" y="90" font-family="DM Sans, sans-serif" font-size="14" fill="#6B7280">Import into Figma and convert shapes to components</text>
+  
+  <!-- COLOR SWATCHES -->
+  <text x="80" y="150" font-family="DM Sans, sans-serif" font-size="18" font-weight="600" fill="#1A1F25">Color Palette</text>
+  
+  <!-- Primary Colors -->
+  <rect x="80" y="170" width="120" height="80" rx="12" fill="#1E4637"/>
+  <text x="140" y="270" font-family="DM Sans, sans-serif" font-size="12" font-weight="500" fill="#4A545E" text-anchor="middle">Primary</text>
+  <text x="140" y="286" font-family="DM Sans, sans-serif" font-size="10" fill="#6B7280" text-anchor="middle">#1E4637</text>
+  
+  <rect x="220" y="170" width="120" height="80" rx="12" fill="#224E7A"/>
+  <text x="280" y="270" font-family="DM Sans, sans-serif" font-size="12" font-weight="500" fill="#4A545E" text-anchor="middle">Secondary</text>
+  <text x="280" y="286" font-family="DM Sans, sans-serif" font-size="10" fill="#6B7280" text-anchor="middle">#224E7A</text>
+  
+  <rect x="360" y="170" width="120" height="80" rx="12" fill="#C89F4A"/>
+  <text x="420" y="270" font-family="DM Sans, sans-serif" font-size="12" font-weight="500" fill="#4A545E" text-anchor="middle">Accent</text>
+  <text x="420" y="286" font-family="DM Sans, sans-serif" font-size="10" fill="#6B7280" text-anchor="middle">#C89F4A</text>
+  
+  <rect x="500" y="170" width="120" height="80" rx="12" fill="#88C0E6"/>
+  <text x="560" y="270" font-family="DM Sans, sans-serif" font-size="12" font-weight="500" fill="#4A545E" text-anchor="middle">Sky Blue</text>
+  <text x="560" y="286" font-family="DM Sans, sans-serif" font-size="10" fill="#6B7280" text-anchor="middle">#88C0E6</text>
+  
+  <!-- Neutral Colors -->
+  <rect x="680" y="170" width="80" height="80" rx="12" fill="#1A1F25"/>
+  <text x="720" y="270" font-family="DM Sans, sans-serif" font-size="10" fill="#6B7280" text-anchor="middle">#1A1F25</text>
+  
+  <rect x="770" y="170" width="80" height="80" rx="12" fill="#4A545E"/>
+  <text x="810" y="270" font-family="DM Sans, sans-serif" font-size="10" fill="#6B7280" text-anchor="middle">#4A545E</text>
+  
+  <rect x="860" y="170" width="80" height="80" rx="12" fill="#6B7280"/>
+  <text x="900" y="270" font-family="DM Sans, sans-serif" font-size="10" fill="#6B7280" text-anchor="middle">#6B7280</text>
+  
+  <rect x="950" y="170" width="80" height="80" rx="12" fill="#F4F4F2" stroke="#E5E5E5"/>
+  <text x="990" y="270" font-family="DM Sans, sans-serif" font-size="10" fill="#6B7280" text-anchor="middle">#F4F4F2</text>
+  
+  <rect x="1040" y="170" width="80" height="80" rx="12" fill="#FFFFFF" stroke="#E5E5E5"/>
+  <text x="1080" y="270" font-family="DM Sans, sans-serif" font-size="10" fill="#6B7280" text-anchor="middle">#FFFFFF</text>
+
+  <!-- BUTTONS -->
+  <text x="80" y="340" font-family="DM Sans, sans-serif" font-size="18" font-weight="600" fill="#1A1F25">Buttons</text>
+  
+  <!-- Primary Button -->
+  <g id="btn-primary">
+    <rect x="80" y="360" width="160" height="48" rx="24" fill="#1E4637"/>
+    <text x="160" y="390" font-family="DM Sans, sans-serif" font-size="16" font-weight="600" fill="white" text-anchor="middle">Get Started</text>
+  </g>
+  
+  <!-- Primary Button with Arrow -->
+  <g id="btn-primary-arrow">
+    <rect x="260" y="360" width="180" height="48" rx="24" fill="#1E4637"/>
+    <text x="330" y="390" font-family="DM Sans, sans-serif" font-size="16" font-weight="600" fill="white" text-anchor="middle">Get Started</text>
+    <path d="M380 384 L392 384 M386 378 L392 384 L386 390" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  
+  <!-- Secondary Button -->
+  <g id="btn-secondary">
+    <rect x="460" y="360" width="160" height="48" rx="24" fill="#224E7A"/>
+    <text x="540" y="390" font-family="DM Sans, sans-serif" font-size="16" font-weight="600" fill="white" text-anchor="middle">Learn More</text>
+  </g>
+  
+  <!-- Outline Button -->
+  <g id="btn-outline">
+    <rect x="640" y="360" width="160" height="48" rx="24" fill="none" stroke="#224E7A" stroke-width="2"/>
+    <text x="720" y="390" font-family="DM Sans, sans-serif" font-size="16" font-weight="600" fill="#224E7A" text-anchor="middle">Learn More</text>
+  </g>
+  
+  <!-- Light Button -->
+  <g id="btn-light">
+    <rect x="820" y="360" width="160" height="48" rx="24" fill="white"/>
+    <text x="900" y="390" font-family="DM Sans, sans-serif" font-size="16" font-weight="600" fill="#1E4637" text-anchor="middle">Start Service</text>
+  </g>
+  
+  <!-- Large Buttons -->
+  <text x="80" y="450" font-family="DM Sans, sans-serif" font-size="14" fill="#6B7280">Large Variants</text>
+  
+  <g id="btn-primary-large">
+    <rect x="80" y="470" width="200" height="56" rx="28" fill="#1E4637"/>
+    <text x="180" y="504" font-family="DM Sans, sans-serif" font-size="17" font-weight="600" fill="white" text-anchor="middle">Get Started</text>
+  </g>
+  
+  <g id="btn-outline-large">
+    <rect x="300" y="470" width="200" height="56" rx="28" fill="none" stroke="#224E7A" stroke-width="2"/>
+    <text x="400" y="504" font-family="DM Sans, sans-serif" font-size="17" font-weight="600" fill="#224E7A" text-anchor="middle">Learn More</text>
+  </g>
+
+  <!-- CARDS -->
+  <text x="80" y="580" font-family="DM Sans, sans-serif" font-size="18" font-weight="600" fill="#1A1F25">Cards</text>
+  
+  <!-- Service Card -->
+  <g id="service-card">
+    <rect x="80" y="600" width="340" height="260" rx="24" fill="white" stroke="#4A545E" stroke-opacity="0.08"/>
+    <!-- Icon container -->
+    <rect x="116" y="636" width="64" height="64" rx="16" fill="#88C0E6" fill-opacity="0.15"/>
+    <circle cx="148" cy="668" r="16" fill="#88C0E6"/>
+    <!-- Title -->
+    <text x="116" y="740" font-family="DM Sans, sans-serif" font-size="20" font-weight="600" fill="#1A1F25">After-Hours Support</text>
+    <!-- Description -->
+    <text x="116" y="770" font-family="DM Sans, sans-serif" font-size="15" fill="#6B7280">24/7 live pharmacist access for</text>
+    <text x="116" y="792" font-family="DM Sans, sans-serif" font-size="15" fill="#6B7280">urgent orders and clinical questions.</text>
+  </g>
+  
+  <!-- Service Card Featured -->
+  <g id="service-card-featured">
+    <defs>
+      <linearGradient id="cardGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#88C0E6;stop-opacity:0.08"/>
+        <stop offset="100%" style="stop-color:#C89F4A;stop-opacity:0.05"/>
+      </linearGradient>
+    </defs>
+    <rect x="440" y="600" width="340" height="260" rx="24" fill="url(#cardGradient)" stroke="#88C0E6"/>
+    <!-- Badge -->
+    <rect x="696" y="620" width="64" height="28" rx="14" fill="#C89F4A"/>
+    <text x="728" y="639" font-family="DM Sans, sans-serif" font-size="12" font-weight="600" fill="white" text-anchor="middle">Popular</text>
+    <!-- Icon container -->
+    <rect x="476" y="636" width="64" height="64" rx="16" fill="#88C0E6" fill-opacity="0.15"/>
+    <circle cx="508" cy="668" r="16" fill="#88C0E6"/>
+    <!-- Title -->
+    <text x="476" y="740" font-family="DM Sans, sans-serif" font-size="20" font-weight="600" fill="#1A1F25">eMAR/EHR Integration</text>
+    <!-- Description -->
+    <text x="476" y="770" font-family="DM Sans, sans-serif" font-size="15" fill="#6B7280">Seamless integration with</text>
+    <text x="476" y="792" font-family="DM Sans, sans-serif" font-size="15" fill="#6B7280">PointClickCare, QuickMAR, Yardi.</text>
+  </g>
+
+  <!-- Expert Card -->
+  <g id="expert-card">
+    <rect x="80" y="900" width="340" height="120" rx="16" fill="#FAFAFA"/>
+    <!-- Icon -->
+    <rect x="104" y="924" width="52" height="52" rx="12" fill="white"/>
+    <circle cx="130" cy="950" r="14" fill="#88C0E6"/>
+    <!-- Content -->
+    <text x="172" y="946" font-family="DM Sans, sans-serif" font-size="16" font-weight="600" fill="#1A1F25">Team Expertise</text>
+    <text x="172" y="970" font-family="DM Sans, sans-serif" font-size="14" fill="#6B7280">Dedicated Idaho pharmacists</text>
+    <text x="172" y="988" font-family="DM Sans, sans-serif" font-size="14" fill="#6B7280">focused 100% on LTC.</text>
+  </g>
+  
+  <!-- Region Card -->
+  <g id="region-card">
+    <rect x="440" y="900" width="340" height="140" rx="24" fill="white" stroke="#4A545E" stroke-opacity="0.1"/>
+    <!-- Header -->
+    <rect x="468" y="928" width="48" height="48" rx="12" fill="#88C0E6" fill-opacity="0.15"/>
+    <circle cx="492" cy="952" r="12" fill="#224E7A"/>
+    <text x="532" y="958" font-family="DM Sans, sans-serif" font-size="18" font-weight="600" fill="#1A1F25">Boise & Treasure Valley</text>
+    <!-- Description -->
+    <text x="468" y="1000" font-family="DM Sans, sans-serif" font-size="15" fill="#6B7280">Daily delivery routes and STAT</text>
+    <text x="468" y="1022" font-family="DM Sans, sans-serif" font-size="15" fill="#6B7280">coverage in the Treasure Valley.</text>
+  </g>
+
+  <!-- CHIPS -->
+  <text x="80" y="1100" font-family="DM Sans, sans-serif" font-size="18" font-weight="600" fill="#1A1F25">Facility Chips</text>
+  
+  <g id="facility-chip">
+    <rect x="80" y="1120" width="180" height="52" rx="26" fill="#FAFAFA" stroke="#4A545E" stroke-opacity="0.1"/>
+    <rect x="94" y="1128" width="36" height="36" rx="10" fill="white"/>
+    <circle cx="112" cy="1146" r="10" fill="#88C0E6"/>
+    <text x="144" y="1152" font-family="DM Sans, sans-serif" font-size="15" font-weight="500" fill="#4A545E">Skilled Nursing</text>
+  </g>
+  
+  <g id="facility-chip-2">
+    <rect x="280" y="1120" width="170" height="52" rx="26" fill="#FAFAFA" stroke="#4A545E" stroke-opacity="0.1"/>
+    <rect x="294" y="1128" width="36" height="36" rx="10" fill="white"/>
+    <circle cx="312" cy="1146" r="10" fill="#C89F4A"/>
+    <text x="344" y="1152" font-family="DM Sans, sans-serif" font-size="15" font-weight="500" fill="#4A545E">Memory Care</text>
+  </g>
+  
+  <g id="facility-chip-3">
+    <rect x="470" y="1120" width="140" height="52" rx="26" fill="#FAFAFA" stroke="#4A545E" stroke-opacity="0.1"/>
+    <rect x="484" y="1128" width="36" height="36" rx="10" fill="white"/>
+    <circle cx="502" cy="1146" r="10" fill="#1E4637"/>
+    <text x="534" y="1152" font-family="DM Sans, sans-serif" font-size="15" font-weight="500" fill="#4A545E">Hospice</text>
+  </g>
+
+  <!-- FORM ELEMENTS -->
+  <text x="80" y="1230" font-family="DM Sans, sans-serif" font-size="18" font-weight="600" fill="#1A1F25">Form Elements</text>
+  
+  <!-- Text Input -->
+  <g id="form-input">
+    <text x="80" y="1270" font-family="DM Sans, sans-serif" font-size="14" font-weight="600" fill="#4A545E">Contact Name</text>
+    <rect x="80" y="1282" width="300" height="48" rx="12" fill="#FAFAFA"/>
+    <text x="98" y="1312" font-family="DM Sans, sans-serif" font-size="16" fill="#6B7280">Your full name</text>
+  </g>
+  
+  <!-- Text Input Focused -->
+  <g id="form-input-focus">
+    <text x="400" y="1270" font-family="DM Sans, sans-serif" font-size="14" font-weight="600" fill="#4A545E">Email Address</text>
+    <rect x="400" y="1282" width="300" height="48" rx="12" fill="white" stroke="#88C0E6" stroke-width="2"/>
+    <text x="418" y="1312" font-family="DM Sans, sans-serif" font-size="16" fill="#1A1F25">john@facility.com</text>
+  </g>
+  
+  <!-- Select -->
+  <g id="form-select">
+    <text x="80" y="1370" font-family="DM Sans, sans-serif" font-size="14" font-weight="600" fill="#4A545E">Facility Type</text>
+    <rect x="80" y="1382" width="300" height="48" rx="12" fill="#FAFAFA"/>
+    <text x="98" y="1412" font-family="DM Sans, sans-serif" font-size="16" fill="#6B7280">Select facility type</text>
+    <path d="M352 1400 L360 1412 L368 1400" stroke="#4A545E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+
+  <!-- NAVIGATION -->
+  <text x="80" y="1490" font-family="DM Sans, sans-serif" font-size="18" font-weight="600" fill="#1A1F25">Navigation</text>
+  
+  <!-- Nav Bar -->
+  <g id="navbar">
+    <rect x="80" y="1510" width="1000" height="80" rx="0" fill="white"/>
+    <!-- Logo placeholder -->
+    <rect x="120" y="1530" width="120" height="40" rx="4" fill="#1E4637"/>
+    <text x="180" y="1556" font-family="DM Sans, sans-serif" font-size="14" font-weight="700" fill="white" text-anchor="middle">LOGO</text>
+    <!-- Nav Links -->
+    <text x="380" y="1556" font-family="DM Sans, sans-serif" font-size="15" font-weight="500" fill="#4A545E">About</text>
+    <text x="460" y="1556" font-family="DM Sans, sans-serif" font-size="15" font-weight="500" fill="#4A545E">Services</text>
+    <text x="550" y="1556" font-family="DM Sans, sans-serif" font-size="15" font-weight="500" fill="#4A545E">Coverage</text>
+    <text x="650" y="1556" font-family="DM Sans, sans-serif" font-size="15" font-weight="500" fill="#4A545E">Our Team</text>
+    <text x="750" y="1556" font-family="DM Sans, sans-serif" font-size="15" font-weight="500" fill="#4A545E">Contact</text>
+    <!-- CTA Button -->
+    <rect x="920" y="1526" width="140" height="44" rx="22" fill="#1E4637"/>
+    <text x="990" y="1554" font-family="DM Sans, sans-serif" font-size="15" font-weight="600" fill="white" text-anchor="middle">Start Service</text>
+  </g>
+  
+  <!-- Mobile Nav Toggle -->
+  <g id="nav-toggle">
+    <rect x="80" y="1620" width="48" height="48" rx="8" fill="#FAFAFA"/>
+    <line x1="92" y1="1636" x2="116" y2="1636" stroke="#4A545E" stroke-width="2" stroke-linecap="round"/>
+    <line x1="92" y1="1644" x2="116" y2="1644" stroke="#4A545E" stroke-width="2" stroke-linecap="round"/>
+    <line x1="92" y1="1652" x2="116" y2="1652" stroke="#4A545E" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Mobile Nav Toggle Open -->
+  <g id="nav-toggle-open">
+    <rect x="150" y="1620" width="48" height="48" rx="8" fill="#FAFAFA"/>
+    <line x1="162" y1="1632" x2="186" y2="1656" stroke="#4A545E" stroke-width="2" stroke-linecap="round"/>
+    <line x1="186" y1="1632" x2="162" y2="1656" stroke="#4A545E" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <!-- SECTION ELEMENTS -->
+  <text x="80" y="1720" font-family="DM Sans, sans-serif" font-size="18" font-weight="600" fill="#1A1F25">Section Elements</text>
+  
+  <!-- Eyebrow -->
+  <g id="eyebrow">
+    <line x1="80" y1="1756" x2="104" y2="1756" stroke="#C89F4A" stroke-width="2" stroke-linecap="round"/>
+    <text x="116" y="1762" font-family="DM Sans, sans-serif" font-size="14" font-weight="600" fill="#C89F4A" letter-spacing="1.4">OUR SERVICES</text>
+  </g>
+  
+  <!-- Hero Stat -->
+  <g id="hero-stat">
+    <text x="80" y="1830" font-family="DM Sans, sans-serif" font-size="32" font-weight="700" fill="#224E7A">24</text>
+    <text x="118" y="1830" font-family="DM Sans, sans-serif" font-size="24" font-weight="700" fill="#C89F4A">/7</text>
+    <text x="80" y="1852" font-family="DM Sans, sans-serif" font-size="14" fill="#6B7280">Pharmacist Support</text>
+  </g>
+  
+  <g id="hero-stat-2">
+    <text x="220" y="1830" font-family="DM Sans, sans-serif" font-size="32" font-weight="700" fill="#224E7A">100</text>
+    <text x="282" y="1830" font-family="DM Sans, sans-serif" font-size="24" font-weight="700" fill="#C89F4A">%</text>
+    <text x="220" y="1852" font-family="DM Sans, sans-serif" font-size="14" fill="#6B7280">LTC Focused</text>
+  </g>
+  
+  <!-- Float Card -->
+  <g id="float-card">
+    <rect x="80" y="1890" width="200" height="72" rx="16" fill="white"/>
+    <rect x="96" y="1906" width="48" height="48" rx="12" fill="#88C0E6" fill-opacity="0.15"/>
+    <circle cx="120" cy="1930" r="12" fill="#88C0E6"/>
+    <text x="160" y="1924" font-family="DM Sans, sans-serif" font-size="14" font-weight="600" fill="#1A1F25">Daily Deliveries</text>
+    <text x="160" y="1944" font-family="DM Sans, sans-serif" font-size="12" fill="#6B7280">Across Idaho</text>
+  </g>
+  
+  <!-- Map Pin -->
+  <g id="map-pin">
+    <circle cx="400" cy="1926" r="28" fill="#C89F4A" fill-opacity="0.3"/>
+    <circle cx="400" cy="1926" r="20" fill="#C89F4A"/>
+    <circle cx="400" cy="1920" r="6" fill="white"/>
+    <path d="M400 1930 L400 1946" stroke="#C89F4A" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- FOOTER ELEMENTS -->
+  <text x="80" y="2020" font-family="DM Sans, sans-serif" font-size="18" font-weight="600" fill="#1A1F25">Footer Elements</text>
+  
+  <!-- Social Link -->
+  <g id="social-link">
+    <rect x="80" y="2040" width="44" height="44" rx="12" fill="white" fill-opacity="0.1"/>
+    <circle cx="102" cy="2062" r="10" stroke="white" stroke-width="2" fill="none"/>
+  </g>
+  
+  <!-- Footer Link -->
+  <text x="150" y="2068" font-family="DM Sans, sans-serif" font-size="15" fill="white" fill-opacity="0.7">After-Hours Support</text>
+  
+  <!-- Contact Detail -->
+  <g id="contact-detail">
+    <rect x="80" y="2100" width="340" height="80" rx="16" fill="white"/>
+    <rect x="100" y="2116" width="52" height="52" rx="12" fill="#88C0E6" fill-opacity="0.15"/>
+    <circle cx="126" cy="2142" r="12" fill="#224E7A"/>
+    <text x="168" y="2134" font-family="DM Sans, sans-serif" font-size="13" font-weight="500" fill="#6B7280">Phone</text>
+    <text x="168" y="2156" font-family="DM Sans, sans-serif" font-size="16" font-weight="600" fill="#1A1F25">(208) 555-1234</text>
+  </g>
+
+  <!-- GRADIENTS PREVIEW -->
+  <text x="80" y="2230" font-family="DM Sans, sans-serif" font-size="18" font-weight="600" fill="#1A1F25">Gradients</text>
+  
+  <defs>
+    <linearGradient id="primaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1E4637"/>
+      <stop offset="100%" style="stop-color:#224E7A"/>
+    </linearGradient>
+    <linearGradient id="heroGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#88C0E6;stop-opacity:0.15"/>
+      <stop offset="50%" style="stop-color:#1E4637;stop-opacity:0.08"/>
+      <stop offset="100%" style="stop-color:#C89F4A;stop-opacity:0.1"/>
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#C89F4A"/>
+      <stop offset="100%" style="stop-color:#D4B06A"/>
+    </linearGradient>
+  </defs>
+  
+  <rect x="80" y="2250" width="200" height="100" rx="16" fill="url(#primaryGradient)"/>
+  <text x="180" y="2306" font-family="DM Sans, sans-serif" font-size="12" font-weight="500" fill="white" text-anchor="middle">Primary Gradient</text>
+  
+  <rect x="300" y="2250" width="200" height="100" rx="16" fill="url(#heroGradient)"/>
+  <text x="400" y="2306" font-family="DM Sans, sans-serif" font-size="12" font-weight="500" fill="#4A545E" text-anchor="middle">Hero Gradient</text>
+  
+  <rect x="520" y="2250" width="200" height="100" rx="16" fill="url(#accentGradient)"/>
+  <text x="620" y="2306" font-family="DM Sans, sans-serif" font-size="12" font-weight="500" fill="white" text-anchor="middle">Accent Gradient</text>
+  
+</svg>
