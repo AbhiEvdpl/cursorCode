@@ -1,0 +1,10 @@
+<svg width="1440" height="320" viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <linearGradient id="mountainGradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#88C0E6" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#1E4637" stop-opacity="0.05"/>
+    </linearGradient>
+  </defs>
+  <path d="M0 220L200 140L340 200L520 80L720 210L900 120L1120 210L1280 150L1440 220V320H0V220Z" fill="url(#mountainGradient)"/>
+  <path d="M0 250L160 200L300 230L460 150L640 240L820 180L1020 250L1200 200L1440 260V320H0V250Z" fill="#FFFFFF" fill-opacity="0.15"/>
+</svg>
