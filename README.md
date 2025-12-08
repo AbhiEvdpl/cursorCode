@@ -1,48 +1,160 @@
-# Idaho Pharmacy, LLC — Long-Term Care Pharmacy
+# Idaho Pharmacy, LLC — Long-Term Care Pharmacy Website
 
-This repository contains the Idaho Pharmacy marketing homepage deliverables: a Figma-ready specification plus a production-ready responsive HTML/CSS/JS implementation with exportable assets.
+A modern, responsive website for Idaho Pharmacy, LLC — Idaho's trusted long-term care pharmacy partner. This design is inspired by premium Webflow templates (Ampul & Clenia) featuring smooth animations, clean medical aesthetics, and professional card-based layouts.
 
-## Contents
-- `index.html` — semantic one-page layout with sticky header, hero, services, map, experts, onboarding CTA, footer, and onboarding modal.
-- `styles.css` — custom CSS using CSS variables, responsive grid rules, expert/service card styling, and interaction states.
-- `script.js` — minimal enhancements (mobile nav, sticky header, tooltip, modal, form validation).
-- `assets/` — SVG icon system, Idaho mountain background, Idaho map, logo, and optimized hero/team imagery (WebP + PNG).
-- `docs/figma-design-spec.md` — detailed layout + component directions for recreating the file in Figma (desktop + mobile frames, component library requirements).
-- `docs/style-guide.md` + `docs/style-guide.pdf` — developer handoff and accessibility checklist.
-- `figma/README.md` — step-by-step instructions for translating the spec into a .fig file with auto-layout components.
+## 🎨 Design Features
 
-## Getting Started
-1. Open `index.html` in any modern browser.
-2. Update asset paths or text via `data-cms-key` attributes if integrating with a CMS.
-3. For production, minify `styles.css` / `script.js` or integrate into your pipeline.
+### Visual Style
+- **Clean Medical Aesthetic** — Professional healthcare branding with trust-building green and blue palette
+- **Modern Hero Section** — Animated floating orbs, gradient backgrounds, and stat counters
+- **Card-Based Layout** — Clenia-inspired service cards with hover animations and accent borders
+- **Smooth Animations** — Scroll-triggered reveals, floating elements, and micro-interactions
 
-### Development Notes
-- No build tooling is required; however, the CSS is Tailwind-ready via utility-like naming and CSS variables if you prefer to port it.
-- `script.js` currently simulates network submission (`fakeSubmit`). Replace with a real `fetch` call inside `handleFormSubmit` and update the `data-endpoint` attribute on `.contact-form`.
-- eMAR integration CTAs are grouped under the Services section; wire up actual URLs or API docs as needed.
-- Hero illustration + map pins use lightweight CSS animations (`floatCard`, `pulsePin`). A `prefers-reduced-motion` query is in place so motion-sensitive users only see static states.
+### Brand Colors
+| Color | Hex | Usage |
+|-------|-----|-------|
+| Primary Green | `#1E4637` | CTAs, headers, footer |
+| Secondary Blue | `#224E7A` | Section backgrounds, headings |
+| Accent Amber | `#C89F4A` | Highlights, icons, badges |
+| Sky Blue | `#88C0E6` | Backgrounds, focus states |
 
-### Assets & Export
-- Icons are exported as accessible SVG (24–64px artboards) in `assets/images/`.
-- Bitmap placeholders exist in both `.webp` and `.png` for browsers without WebP support.
-- Additional asset exports (map, logo, hero artwork) are organized for quick download.
+### Typography
+- **Font:** DM Sans (Google Fonts)
+- **Hero:** clamp(2.5rem, 6vw, 4rem)
+- **Section Titles:** clamp(2rem, 5vw, 3rem)
+- **Body:** 18px with 1.7 line-height
 
-### Figma Guidance
-- Recreate the provided spec in Figma using the measurements and components defined in `docs/figma-design-spec.md`.
-- Set up auto-layout for navigation, cards, buttons, hero grid, and footer stacks.
-- Include frames for Desktop 1440, Tablet 1024, and Mobile 375.
-- Build a shared component library (Buttons, Cards, Form Fields, Map, Icon Set) with color and text styles matching the provided tokens.
-- Mirror the prototype cues described under “Micro-Interactions & Prototype” inside the spec so engineering handoff can map to CSS animations already implemented.
+## 📁 Project Structure
 
-### Accessibility Checklist
-- Skip link jumps to `#main-content`.
-- Sticky header focus order preserved on mobile via nav toggle `aria-expanded`.
-- Map pins, modal, and form status messages use `aria-live` updates.
-- Color palette meets WCAG AA (see `docs/style-guide.md`).
+```
+├── index.html           # Semantic HTML5 with modern structure
+├── styles.css           # CSS with custom properties & animations
+├── script.js            # Vanilla JS for interactions
+├── assets/
+│   └── images/          # SVG icons, WebP/PNG images
+├── docs/
+│   ├── figma-design-spec.md   # Comprehensive Figma recreation guide
+│   └── style-guide.md         # Developer style reference
+└── README.md
+```
 
-## Packaging
-- Run `zip -r code.zip index.html styles.css script.js assets docs README.md` to ship the code bundle.
-- Run `zip -r assets.zip assets` for a standalone asset archive.
+## 🚀 Quick Start
 
-## License
-All branding copy is provided by Idaho Pharmacy, LLC. Artwork is bespoke to this mockup and free to modify for Idaho Pharmacy initiatives.
+1. **Open in Browser**
+   ```bash
+   # Simply open index.html in any modern browser
+   open index.html
+   ```
+
+2. **Local Development**
+   ```bash
+   # Use any local server
+   npx serve .
+   # or
+   python -m http.server 8000
+   ```
+
+## 📱 Responsive Breakpoints
+
+| Breakpoint | Width | Layout |
+|------------|-------|--------|
+| Mobile | < 768px | Single column, stacked sections |
+| Tablet | 768-1023px | 2-column grids, mobile nav |
+| Desktop | 1024-1439px | Full layout with animations |
+| Large | ≥ 1440px | Wider container (1320px) |
+
+## ✨ Key Features
+
+### Sections
+1. **Hero** — Animated background orbs, floating info cards, stat counters
+2. **About** — Company intro with animated Idaho map
+3. **Services** — 7 service cards with hover effects and featured badge
+4. **Coverage** — Interactive map with tooltips, region cards
+5. **Team** — Expert credentials with compact info cards
+6. **CTA Banner** — Full-width call-to-action with gradient background
+7. **Contact** — Form with validation and contact details
+8. **Footer** — Links, social icons, legal information
+
+### Interactive Elements
+- Sticky header with backdrop blur on scroll
+- Mobile navigation with slide-in panel
+- Scroll-triggered animations (Intersection Observer)
+- Map pin tooltips on hover/focus
+- Form validation with status messages
+- Smooth scroll navigation
+
+### Accessibility
+- Skip link for keyboard navigation
+- ARIA labels on interactive elements
+- Focus-visible states
+- `prefers-reduced-motion` support
+- Semantic HTML structure
+- WCAG AA color contrast compliance
+
+## 🎯 Figma Recreation
+
+See `docs/figma-design-spec.md` for detailed specifications including:
+- Complete color token system
+- Typography scale
+- Spacing system (8px base)
+- Component specifications
+- Animation timing
+- Wireframe layouts
+- Layer organization
+
+## 📦 Production
+
+### Minification
+```bash
+# CSS
+npx csso styles.css -o styles.min.css
+
+# JavaScript
+npx terser script.js -o script.min.js -c -m
+```
+
+### Deployment
+The site is static and can be deployed to:
+- GitHub Pages
+- Netlify
+- Vercel
+- Any static hosting
+
+### Form Integration
+The contact form currently simulates submission. To connect to a real backend:
+
+```javascript
+// In script.js, replace the setTimeout simulation with:
+const response = await fetch('/api/contact', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify(Object.fromEntries(new FormData(form)))
+});
+```
+
+## 🔧 Customization
+
+### Colors
+Edit CSS custom properties in `:root`:
+```css
+:root {
+  --color-primary: #1E4637;
+  --color-secondary: #224E7A;
+  --color-accent: #C89F4A;
+  /* ... */
+}
+```
+
+### Content
+Update text directly in `index.html`. All content is structured in semantic sections.
+
+### Images
+Replace files in `assets/images/` maintaining the same filenames, or update `src` attributes in HTML.
+
+## 📄 License
+
+All branding and content is provided by Idaho Pharmacy, LLC. The design implementation is available for use in Idaho Pharmacy initiatives.
+
+---
+
+*Built with modern HTML5, CSS3, and vanilla JavaScript. No build tools required.*
