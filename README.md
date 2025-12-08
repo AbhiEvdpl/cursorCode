@@ -4,11 +4,12 @@ This repository contains the Idaho Pharmacy marketing homepage deliverables: a F
 
 ## Contents
 - `index.html` — semantic one-page layout with sticky header, hero, services, map, experts, onboarding CTA, footer, and onboarding modal.
-- `styles.css` — custom CSS using CSS variables, responsive grid rules, and interaction states.
+- `styles.css` — custom CSS using CSS variables, responsive grid rules, expert/service card styling, and interaction states.
 - `script.js` — minimal enhancements (mobile nav, sticky header, tooltip, modal, form validation).
-- `assets/` — SVG icon system, Idaho map, logo, and optimized hero/team imagery (WebP + PNG).
-- `docs/figma-design-spec.md` — layout + component directions for recreating the file in Figma.
+- `assets/` — SVG icon system, Idaho mountain background, Idaho map, logo, and optimized hero/team imagery (WebP + PNG).
+- `docs/figma-design-spec.md` — detailed layout + component directions for recreating the file in Figma (desktop + mobile frames, component library requirements).
 - `docs/style-guide.md` + `docs/style-guide.pdf` — developer handoff and accessibility checklist.
+- `figma/README.md` — step-by-step instructions for translating the spec into a .fig file with auto-layout components.
 
 ## Getting Started
 1. Open `index.html` in any modern browser.
