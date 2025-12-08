@@ -1,6 +1,6 @@
 # Idaho Pharmacy, LLC — Figma Design Specification
 
-Modern, soft medical art direction inspired by Ampul (hero/structure) and Clenia (card/grid treatment). Use the exact Idaho Pharmacy copy from the brief and mirror the semantic sections implemented in code.
+Modern, soft medical art direction inspired by [Ampul](https://ampul.webflow.io/) for airy hero layouts, motion, and medical polish plus [Clenia](https://clenia.webflow.io/) for generous card spacing and grid structure. Use the exact Idaho Pharmacy copy from the brief and mirror the semantic sections implemented in code. Highlight micro-interactions (hero float, cards lift, drawer nav) that feel at home in those references.
 
 ## Frames & Layout
 - **Desktop** (primary): 1440 × ~5200 px, 12-column grid (80 px columns / 24 px gutter / 120 px margins). Vertical spacing 120 px. Lock each section inside auto-layout stacks to keep breathing room consistent.
@@ -24,14 +24,15 @@ Create named styles for every token:
 
 Gradients: `hero/sky` (linear 135°, rgba(136,192,230,0.45) → rgba(30,70,55,0.12)) and `serving/vertical` (180°, rgba(136,192,230,0.3) → #F4F4F2). Add a subtle Idaho mountain silhouette overlay (vector) anchored to the hero’s lower edge.
 
-## Typography Styles (Inter Family)
-- Display / 54 px / 64 px / Bold — hero headline.
-- H2 / 40 px / 52 px / SemiBold — section headers.
-- H3 / 28 px / 36 px / Medium — service + expert cards.
-- Body L / 20 px / 32 px / Regular — hero subtext.
-- Body / 18 px / 28 px / Regular — paragraph content.
-- Caption / 14 px / 22 px / Medium — eyebrow labels, badges, card meta.
-Document line heights, letter spacing (eyebrows at 80 tracking), and include responsive overrides (Display drops to 40/48 on mobile). Publish these as `text/*` tokens inside the Component Library page so engineering can map each style to CSS variables.
+## Typography Styles (DM Sans Family)
+- Display / 56 px / 68 px / Bold — hero headline “Your Idaho Long-Term Care Pharmacy Partner”.
+- Hero Subhead / 28 px / 40 px / Regular — “Welcome to Idaho Pharmacy, LLC. — Idaho’s Trusted Long-Term Care Pharmacy Partner.”
+- H2 / 40 px / 52 px / SemiBold — section headers like “Why Idaho LTC Facilities Choose Us”.
+- H3 / 26 px / 34 px / Medium — service + expert cards.
+- Body L / 20 px / 32 px / Regular — supporting paragraphs (“Idaho Pharmacy is a dedicated…” and “We specialize exclusively…”).
+- Body / 18 px / 28 px / Regular — general copy, list content, contact info.
+- Caption / 14 px / 22 px / Medium — eyebrow labels, map tooltip, footer legal.
+Include fallback styles for Lato and Source Sans Pro. Document line heights, letter spacing (eyebrow at +80 tracking), and responsive overrides (Display drops to 42/52 on mobile, subhead to 22/32). Publish all styles as `text/*` tokens inside the Component Library page for dev handoff.
 
 ## Component Library (Auto Layout Required)
 1. **Navigation / Header**: Desktop + sticky variant plus mobile drawer. Auto-layout row (Logo locked at 164 px, menu links distribute, CTA pinned right). Sticky version tightens padding and amplifies drop shadow token `effect/header-sticky`.
@@ -54,12 +55,12 @@ Document line heights, letter spacing (eyebrows at 80 tracking), and include res
 
 ## Section Breakdown (Use provided copy verbatim)
 1. **Header**: 80 px tall, white background, sticky. Links: Home, Services, Service Areas, eMAR Integration, Onboarding, Contact. CTA button reads “Start Service” and uses primary fill. Include mobile nav toggle + overlay variant.
-2. **Hero**: Ampul-style two-column layout. Left column stack = eyebrow “Idaho's Trusted Long-Term Care Pharmacy Partner”, headline “Your Idaho Long-Term Care Pharmacy Partner”, short lead (Body L), CTA buttons (Start Service primary, Facility Onboarding ghost), and bullet list (PointClickCare, QuickMAR, Yardi integrations + onboarding specialists + daily routes). Right column hosts courier illustration with sky-blue gradient, testimonial chip, and Idaho mountain silhouette overlay anchored bottom.
-3. **About**: Two columns. Left column locks the paragraph “Idaho Pharmacy is a dedicated, independent, locally owned and operated, Idaho long-term care (LTC) pharmacy focused entirely on supporting skilled nursing, assisted living, memory care, group homes, and hospice providers across our state.” Facility chips (SNF, ALF, Memory Care, Group Homes, Hospice) appear below as icon chip components. Right column = Idaho map tile in rounded card with subtle drop shadow.
-4. **Why Idaho LTC Facilities Choose Us**: Secondary-blue background with 7 white cards labeled exactly: “After hours pharmacist support”, “Daily delivery routes”, “Advanced packaging”, “eMAR / EHR integration”, “Consultant pharmacist services”, “STAT medications”, “Onboarding specialists”. Each card uses matching icon from `/assets/images` set and 1–2 sentence supporting copy.
-5. **Serving Idaho**: Gradient wash with Idaho map, two pin components, tooltip label, and description copy. Badge cards highlight “Boise & Treasure Valley” and “Rural & frontier Idaho communities”.
-6. **Your LTC Pharmacy Experts**: Grid pairs team photo with four expert cards (Team expertise, Certifications, LTC regulatory training, Resident-focused care). CTA buttons: Start Service (secondary) + Contact Us (ghost). Ensure cards reuse same component as services for consistency.
-7. **CTA Banner**: Full-width, primary green (#1E4637). Headline “Ready to Partner with a Dedicated Idaho LTC Pharmacy?” Buttons: Start Service (light) + Contact Us (ghost light). Add subtle diagonal texture or gradient overlay to emulate Ampul.
+2. **Hero**: Ampul-style two-column layout. Left column stack = eyebrow “Idaho’s Trusted Long-Term Care Pharmacy Partner”, headline “Your Idaho Long-Term Care Pharmacy Partner”, hero subhead “Welcome to Idaho Pharmacy, LLC. — Idaho’s Trusted Long-Term Care Pharmacy Partner.” Follow with two body paragraphs (“Idaho Pharmacy is a dedicated… across the state.” and “We specialize exclusively in LTC pharmacy services… backed by Idaho-based expertise.”). CTA buttons (Start Service primary, Facility Onboarding ghost) sit above a bullet list: eMAR/EHR integrations (PointClickCare, QuickMAR, Yardi), dedicated onboarding specialists, daily route coverage. Right column hosts courier illustration with light-accent gradient, testimonial chip, and Idaho mountain silhouette overlay anchored bottom.
+3. **About**: Two columns. Left column keeps hero body copy reinforced plus facility chips (SNF, ALF, Memory Care, Group Homes, Hospice). Right column = Idaho map tile in rounded card with subtle drop shadow and annotation label “Serving Idaho”.
+4. **Why Idaho LTC Facilities Choose Us**: Secondary-blue background with 7 white cards labeled exactly: “After hours pharmacist support for urgent orders & clinical questions”, “Daily delivery routes across Idaho”, “Advanced medication packaging for safety and accuracy”, “Seamless eMAR/EHR integration (PointClickCare, QuickMAR, Yardi, etc.)”, “Consultant pharmacist services to support compliance”, “STAT & emergency medication availability”, “Dedicated onboarding specialists to support facilities”. Each card uses matching icon from `/assets/images`.
+5. **Serving Idaho**: Gradient wash with Idaho map, two pin components, tooltip label, and description copy “Our LTC pharmacy supports facilities in: Boise & Treasure Valley / Rural & frontier Idaho communities.” Badge cards highlight “Boise & Treasure Valley” and “Rural & frontier Idaho communities” with expanded blurbs from the brief.
+6. **Your LTC Pharmacy Experts**: Grid pairs team photo with four expert cards (Team expertise, Certifications, LTC regulatory training, Resident-focused care) plus body copy “Every member of our pharmacy team is trained in Idaho long-term care regulations…”. CTA buttons: Start Service (secondary) + Contact Us (ghost). Ensure cards reuse same component as services for consistency.
+7. **CTA Banner**: Full-width, primary green (#1E4637). Headline “Ready to Partner with a Dedicated Idaho LTC Pharmacy?” Supporting text “We make starting service simple. Visit our Facility Onboarding page or contact us for a consultation.” Buttons: Start Service (light) + Contact Us (ghost light). Add subtle diagonal texture or gradient overlay to emulate Ampul.
 8. **Footer**: Dark green background, four columns (Logo/mission, Quick Links, Facility Onboarding, Contact/Address). Footer legal line uses caption style; optionally include social icons as muted outlines.
 
 ## Micro-Interactions & Prototype
