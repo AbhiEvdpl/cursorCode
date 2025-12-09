@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pelion VP Style Loader</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="loader.css">
+</head>
+<body>
+  <div class="loader" id="loader">
+    <div class="loader__backdrop"></div>
+    <div class="loader__content">
+      <div class="loader__logo">
+        <svg class="loader__icon" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path class="loader__icon-path" d="M30 5L55 17.5V42.5L30 55L5 42.5V17.5L30 5Z" stroke="currentColor" stroke-width="2"/>
+          <path class="loader__icon-inner" d="M30 15L45 22.5V37.5L30 45L15 37.5V22.5L30 15Z" stroke="currentColor" stroke-width="2"/>
+          <circle class="loader__icon-dot" cx="30" cy="30" r="4" fill="currentColor"/>
+        </svg>
+        <span class="loader__brand">PELION</span>
+      </div>
+      <div class="loader__progress">
+        <div class="loader__progress-track">
+          <div class="loader__progress-bar" id="progress-bar"></div>
+        </div>
+        <span class="loader__progress-text" id="progress-text">0%</span>
+      </div>
+      <div class="loader__tagline">
+        <span class="loader__tagline-word">Building</span>
+        <span class="loader__tagline-word">the</span>
+        <span class="loader__tagline-word">future</span>
+      </div>
+    </div>
+    <div class="loader__corners">
+      <span class="loader__corner loader__corner--tl"></span>
+      <span class="loader__corner loader__corner--tr"></span>
+      <span class="loader__corner loader__corner--bl"></span>
+      <span class="loader__corner loader__corner--br"></span>
+    </div>
+  </div>
+
+  <main class="page-content" id="page-content">
+    <section class="hero">
+      <nav class="nav">
+        <div class="nav__brand">PELION</div>
+        <ul class="nav__links">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">Team</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="hero__content">
+        <h1 class="hero__title">Investing in<br><span>Visionary Founders</span></h1>
+        <p class="hero__text">We partner with exceptional entrepreneurs building transformative companies across technology sectors.</p>
+        <a href="#" class="hero__cta">Explore Portfolio</a>
+      </div>
+      <div class="hero__scroll">
+        <span>Scroll to explore</span>
+        <div class="hero__scroll-line"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="loader.js"></script>
+</body>
+</html>
