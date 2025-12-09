@@ -79,8 +79,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 24px;
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  gap: 32px;
+  background: var(--color-white);
 }
 
 .vp-loader.is-hidden {
@@ -88,9 +88,14 @@
   pointer-events: none;
 }
 
+.vp-loader__logo {
+  height: 48px;
+  width: auto;
+}
+
 .vp-loader__spinner {
-  width: 64px;
-  height: 64px;
+  width: 40px;
+  height: 40px;
 }
 
 .vp-loader__spinner svg {
@@ -101,17 +106,10 @@
 
 .vp-loader__spinner circle {
   fill: none;
-  stroke: var(--color-white);
+  stroke: var(--color-primary);
   stroke-width: 4;
   stroke-linecap: round;
   animation: vpLoaderDash 1.5s ease-in-out infinite;
-}
-
-.vp-loader__text {
-  color: var(--color-white);
-  font-size: 1.25rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
 }
 
 * {
