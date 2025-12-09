@@ -3,567 +3,1781 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>American Hose & Gasket | Industrial Hoses & Rubber — Wholesale Supply</title>
-    <meta name="description" content="Your source for wholesale hose & rubber! American Hose & Gasket proudly ships top-quality industrial hose and sheet rubber products from our dual locations.">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#1e3a5f',
-                        secondary: '#f59e0b',
-                        neutral: {
-                            50: '#fafafa',
-                            100: '#f5f5f5',
-                            200: '#e5e5e5',
-                            300: '#d4d4d4',
-                            400: '#a3a3a3',
-                            500: '#737373',
-                            600: '#525252',
-                            700: '#404040',
-                            800: '#262626',
-                            900: '#171717',
-                        }
-                    }
-                }
+    <title>American Hose & Gasket | Industrial Excellence</title>
+    <meta name="description" content="Premium industrial hoses, gaskets & rubber solutions. Dual warehouse locations for nationwide wholesale supply.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <style>
+        :root {
+            --primary: #0a0a0a;
+            --secondary: #1a1a1a;
+            --accent: #ff6b35;
+            --accent-light: #ff8c5a;
+            --text: #ffffff;
+            --text-muted: #888888;
+            --gradient-1: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            --gradient-2: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--primary);
+            color: var(--text);
+            overflow-x: hidden;
+            cursor: none;
+        }
+
+        .cursor {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--accent);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease;
+            mix-blend-mode: difference;
+        }
+
+        .cursor-follower {
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        .cursor.hover {
+            transform: scale(2);
+            background: rgba(255, 107, 53, 0.1);
+        }
+
+        .loader {
+            position: fixed;
+            inset: 0;
+            background: var(--primary);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .loader-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2rem, 5vw, 4rem);
+            font-weight: 700;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .loader-bar {
+            width: 200px;
+            height: 3px;
+            background: var(--secondary);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .loader-progress {
+            height: 100%;
+            width: 0;
+            background: var(--gradient-1);
+            border-radius: 10px;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 20px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            mix-blend-mode: difference;
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        nav {
+            display: flex;
+            gap: 40px;
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .header-cta {
+            padding: 12px 28px;
+            background: transparent;
+            border: 1px solid var(--text);
+            color: var(--text);
+            font-size: 0.9rem;
+            font-weight: 500;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .header-cta:hover {
+            background: var(--text);
+            color: var(--primary);
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 2px;
+            background: var(--text);
+            transition: all 0.3s ease;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 0 60px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 70% 30%, rgba(255, 107, 53, 0.15) 0%, transparent 50%);
+        }
+
+        .grid-lines {
+            position: absolute;
+            inset: 0;
+            background-image: 
+                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 80px 80px;
+        }
+
+        .floating-shapes {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+        }
+
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.5;
+        }
+
+        .shape-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--accent);
+            top: -100px;
+            right: -100px;
+            opacity: 0.2;
+        }
+
+        .shape-2 {
+            width: 300px;
+            height: 300px;
+            background: #f7931e;
+            bottom: -50px;
+            left: 20%;
+            opacity: 0.15;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 20px;
+            background: rgba(255, 107, 53, 0.1);
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            border-radius: 30px;
+            font-size: 0.85rem;
+            color: var(--accent);
+            margin-bottom: 30px;
+        }
+
+        .hero-tag::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 30px;
+        }
+
+        .hero h1 .line {
+            display: block;
+            overflow: hidden;
+        }
+
+        .hero h1 .word {
+            display: inline-block;
+        }
+
+        .highlight {
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-desc {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            line-height: 1.8;
+            margin-bottom: 50px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            padding: 18px 40px;
+            background: var(--gradient-1);
+            border: none;
+            color: var(--text);
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(255, 107, 53, 0.3);
+        }
+
+        .btn-primary svg {
+            transition: transform 0.3s ease;
+        }
+
+        .btn-primary:hover svg {
+            transform: translateX(5px);
+        }
+
+        .btn-secondary {
+            padding: 18px 40px;
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.2);
+            color: var(--text);
+            font-size: 1rem;
+            font-weight: 500;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.05);
+            border-color: rgba(255,255,255,0.4);
+        }
+
+        .hero-visual {
+            position: absolute;
+            right: 60px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 500px;
+            height: 500px;
+            z-index: 1;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 30px;
+            filter: grayscale(20%);
+        }
+
+        .hero-image-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.2) 0%, transparent 50%);
+            border-radius: 30px;
+        }
+
+        .floating-card {
+            position: absolute;
+            background: rgba(26, 26, 26, 0.9);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 20px 25px;
+        }
+
+        .floating-card-1 {
+            bottom: -30px;
+            left: -50px;
+        }
+
+        .floating-card-2 {
+            top: 50px;
+            right: -40px;
+        }
+
+        .card-stat {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .card-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 5px;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 60px;
+            background: linear-gradient(to bottom, var(--accent), transparent);
+            animation: scrollLine 2s infinite;
+        }
+
+        @keyframes scrollLine {
+            0% { transform: scaleY(0); transform-origin: top; }
+            50% { transform: scaleY(1); transform-origin: top; }
+            50.1% { transform: scaleY(1); transform-origin: bottom; }
+            100% { transform: scaleY(0); transform-origin: bottom; }
+        }
+
+        section {
+            padding: 150px 60px;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 80px;
+        }
+
+        .section-tag {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(255, 107, 53, 0.1);
+            border-radius: 30px;
+            font-size: 0.85rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .section-header h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        .products {
+            background: var(--secondary);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .product-card {
+            background: var(--primary);
+            border-radius: 24px;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 107, 53, 0.3);
+        }
+
+        .product-image {
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+
+        .product-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, var(--primary) 0%, transparent 50%);
+        }
+
+        .product-content {
+            padding: 30px;
+            position: relative;
+            z-index: 1;
+            margin-top: -50px;
+        }
+
+        .product-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .product-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: white;
+        }
+
+        .product-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .product-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .product-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent);
+            font-weight: 500;
+            text-decoration: none;
+            transition: gap 0.3s ease;
+        }
+
+        .product-link:hover {
+            gap: 12px;
+        }
+
+        .features {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 60px;
+            align-items: center;
+        }
+
+        .features-content h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .features-content p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        .feature-list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 107, 53, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .feature-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--accent);
+        }
+
+        .feature-text h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .feature-text p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .features-visual {
+            position: relative;
+        }
+
+        .features-image {
+            width: 100%;
+            border-radius: 30px;
+            filter: grayscale(30%);
+        }
+
+        .stats-overlay {
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 30px 50px;
+            display: flex;
+            gap: 50px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .locations {
+            background: var(--secondary);
+        }
+
+        .locations-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .location-card {
+            background: var(--primary);
+            border-radius: 30px;
+            padding: 50px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.4s ease;
+        }
+
+        .location-card:hover {
+            border-color: rgba(255, 107, 53, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .location-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255, 107, 53, 0.1) 0%, transparent 70%);
+        }
+
+        .location-badge {
+            display: inline-block;
+            padding: 8px 16px;
+            background: var(--gradient-1);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        .location-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .location-address {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .location-phone {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--accent);
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .location-phone:hover {
+            text-decoration: underline;
+        }
+
+        .testimonials {
+            position: relative;
+        }
+
+        .testimonials-track {
+            display: flex;
+            gap: 30px;
+            overflow: hidden;
+        }
+
+        .testimonial-card {
+            flex: 0 0 400px;
+            background: var(--secondary);
+            border-radius: 24px;
+            padding: 40px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .testimonial-stars {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-stars svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--accent);
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            color: var(--text);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .author-info h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .author-info span {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .cta {
+            background: var(--secondary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        .cta p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+        }
+
+        .cta-form {
+            display: flex;
+            gap: 15px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .cta-input {
+            flex: 1;
+            padding: 18px 25px;
+            background: var(--primary);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 50px;
+            color: var(--text);
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .cta-input:focus {
+            border-color: var(--accent);
+        }
+
+        .cta-input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 107, 53, 0.1) 0%, transparent 70%);
+            top: -200px;
+            left: -200px;
+        }
+
+        .cta::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(247, 147, 30, 0.1) 0%, transparent 70%);
+            bottom: -150px;
+            right: -100px;
+        }
+
+        footer {
+            background: var(--primary);
+            padding: 80px 60px 40px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand {
+            max-width: 300px;
+        }
+
+        .footer-brand .logo {
+            margin-bottom: 20px;
+        }
+
+        .footer-brand p {
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        .footer-links h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .footer-bottom p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .marquee {
+            padding: 30px 0;
+            background: var(--accent);
+            overflow: hidden;
+        }
+
+        .marquee-track {
+            display: flex;
+            animation: marquee 20s linear infinite;
+        }
+
+        .marquee-item {
+            flex-shrink: 0;
+            padding: 0 50px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            white-space: nowrap;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        @media (max-width: 1200px) {
+            .hero-visual {
+                display: none;
+            }
+            .hero-content {
+                max-width: 100%;
+            }
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
-    </script>
-    <style>
-        .hero-bg {
-            background: linear-gradient(135deg, rgba(30, 58, 95, 0.95) 0%, rgba(30, 58, 95, 0.85) 100%),
-                        url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1920&q=80') center/cover no-repeat;
+
+        @media (max-width: 968px) {
+            header {
+                padding: 15px 30px;
+            }
+            nav {
+                display: none;
+            }
+            .menu-toggle {
+                display: flex;
+            }
+            .header-cta {
+                display: none;
+            }
+            section {
+                padding: 100px 30px;
+            }
+            .hero {
+                padding: 0 30px;
+            }
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .locations-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            .stats-overlay {
+                flex-direction: column;
+                gap: 20px;
+                padding: 25px 35px;
+            }
+            .cta-form {
+                flex-direction: column;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+            .cursor, .cursor-follower {
+                display: none;
+            }
         }
     </style>
 </head>
-<body class="font-sans antialiased text-neutral-800 bg-white">
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary text-white px-4 py-2 rounded z-50">Skip to main content</a>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
 
-    <!-- Header -->
-    <header class="bg-white shadow-sm sticky top-0 z-40">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center py-4">
-                <div class="flex items-center space-x-2">
-                    <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
-                        <span class="text-white font-bold text-lg">AH</span>
-                    </div>
-                    <div>
-                        <h1 class="text-xl font-bold text-primary">American Hose & Gasket</h1>
-                        <p class="text-xs text-neutral-500">Your source for wholesale hose & rubber!</p>
-                    </div>
-                </div>
-                <nav class="hidden md:flex items-center space-x-8">
-                    <a href="#" class="text-neutral-700 hover:text-primary font-medium transition">Home</a>
-                    <a href="#categories" class="text-neutral-700 hover:text-primary font-medium transition">Products</a>
-                    <a href="#why-us" class="text-neutral-700 hover:text-primary font-medium transition">About</a>
-                    <a href="#contact" class="text-neutral-700 hover:text-primary font-medium transition">Contact</a>
-                    <a href="#quote" class="bg-secondary text-white px-5 py-2 rounded-lg font-semibold hover:bg-amber-600 transition">Get a Quote</a>
-                </nav>
-                <button id="mobile-menu-btn" class="md:hidden p-2 text-neutral-700" aria-label="Toggle menu">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                    </svg>
-                </button>
-            </div>
-            <div id="mobile-menu" class="md:hidden hidden pb-4">
-                <nav class="flex flex-col space-y-3">
-                    <a href="#" class="text-neutral-700 hover:text-primary font-medium">Home</a>
-                    <a href="#categories" class="text-neutral-700 hover:text-primary font-medium">Products</a>
-                    <a href="#why-us" class="text-neutral-700 hover:text-primary font-medium">About</a>
-                    <a href="#contact" class="text-neutral-700 hover:text-primary font-medium">Contact</a>
-                    <a href="#quote" class="bg-secondary text-white px-5 py-2 rounded-lg font-semibold text-center">Get a Quote</a>
-                </nav>
-            </div>
+    <div class="loader">
+        <span class="loader-text">AH&G</span>
+        <div class="loader-bar">
+            <div class="loader-progress"></div>
         </div>
+    </div>
+
+    <header>
+        <a href="#" class="logo">
+            <span class="logo-icon">AH</span>
+            American Hose & Gasket
+        </a>
+        <nav>
+            <a href="#products">Products</a>
+            <a href="#features">About</a>
+            <a href="#locations">Locations</a>
+            <a href="#testimonials">Reviews</a>
+        </nav>
+        <a href="#cta" class="header-cta">Get Quote</a>
+        <button class="menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </header>
 
-    <main id="main-content">
-        <!-- Hero Section -->
-        <section class="hero-bg text-white py-24 md:py-32 lg:py-40">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="max-w-3xl">
-                    <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                        Industrial Hoses & Rubber — Wholesale Supply
-                    </h2>
-                    <p class="text-lg md:text-xl text-neutral-200 mb-8 leading-relaxed">
-                        American Hose & Gasket proudly ships top-quality industrial hose and sheet rubber products from our dual locations in Decatur, AL and Louisville, KY. Serving businesses nationwide with reliable bulk supply.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#categories" class="bg-secondary hover:bg-amber-600 text-white px-8 py-4 rounded-lg font-semibold text-lg text-center transition shadow-lg">
-                            Shop Products
-                        </a>
-                        <a href="#quote" class="bg-white/10 hover:bg-white/20 backdrop-blur text-white border border-white/30 px-8 py-4 rounded-lg font-semibold text-lg text-center transition">
-                            Request a Quote
-                        </a>
-                    </div>
+    <main>
+        <section class="hero">
+            <div class="hero-bg">
+                <div class="grid-lines"></div>
+                <div class="floating-shapes">
+                    <div class="shape shape-1"></div>
+                    <div class="shape shape-2"></div>
                 </div>
             </div>
-        </section>
-
-        <!-- Featured Categories -->
-        <section id="categories" class="py-16 md:py-24 bg-neutral-50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Product Categories</h2>
-                    <p class="text-lg text-neutral-600 max-w-2xl mx-auto">Explore our comprehensive range of industrial hose and rubber products for every application.</p>
+            <div class="hero-content">
+                <div class="hero-tag">
+                    Wholesale Industrial Supply
                 </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <a href="#" class="group bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300">
-                        <div class="aspect-square bg-neutral-200 relative overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" alt="Industrial Hose" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                            <div class="absolute inset-0 bg-primary/10 group-hover:bg-primary/20 transition"></div>
-                        </div>
-                        <div class="p-5">
-                            <h3 class="text-xl font-bold text-neutral-800 group-hover:text-primary transition">Industrial Hose</h3>
-                            <p class="text-neutral-600 mt-2">Air, water, chemical, and specialty hoses for all industrial applications.</p>
-                        </div>
-                    </a>
-                    <a href="#" class="group bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300">
-                        <div class="aspect-square bg-neutral-200 relative overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1615811361523-6bd03d7748e7?w=400&q=80" alt="Sheet Rubber" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                            <div class="absolute inset-0 bg-primary/10 group-hover:bg-primary/20 transition"></div>
-                        </div>
-                        <div class="p-5">
-                            <h3 class="text-xl font-bold text-neutral-800 group-hover:text-primary transition">Sheet Rubber</h3>
-                            <p class="text-neutral-600 mt-2">Premium rubber sheeting in various grades, thicknesses, and compounds.</p>
-                        </div>
-                    </a>
-                    <a href="#" class="group bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300">
-                        <div class="aspect-square bg-neutral-200 relative overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&q=80" alt="Gaskets & Seals" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                            <div class="absolute inset-0 bg-primary/10 group-hover:bg-primary/20 transition"></div>
-                        </div>
-                        <div class="p-5">
-                            <h3 class="text-xl font-bold text-neutral-800 group-hover:text-primary transition">Gaskets & Seals</h3>
-                            <p class="text-neutral-600 mt-2">Custom and standard gaskets for sealing solutions across industries.</p>
-                        </div>
-                    </a>
-                    <a href="#" class="group bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300">
-                        <div class="aspect-square bg-neutral-200 relative overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1590959651373-a3db0f38a961?w=400&q=80" alt="Fittings" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                            <div class="absolute inset-0 bg-primary/10 group-hover:bg-primary/20 transition"></div>
-                        </div>
-                        <div class="p-5">
-                            <h3 class="text-xl font-bold text-neutral-800 group-hover:text-primary transition">Fittings & Couplings</h3>
-                            <p class="text-neutral-600 mt-2">Brass, steel, and cam-lock fittings for secure hose connections.</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Product Highlights -->
-        <section class="py-16 md:py-24">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Featured Products</h2>
-                    <p class="text-lg text-neutral-600 max-w-2xl mx-auto">Our most popular industrial hose and rubber products trusted by businesses nationwide.</p>
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <article class="bg-white rounded-xl shadow-md overflow-hidden border border-neutral-100 hover:shadow-lg transition">
-                        <div class="aspect-[4/3] bg-neutral-100 flex items-center justify-center">
-                            <svg class="w-24 h-24 text-neutral-300" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                            </svg>
-                        </div>
-                        <div class="p-5">
-                            <span class="text-xs font-semibold text-secondary uppercase tracking-wide">Industrial Hose</span>
-                            <h3 class="text-lg font-bold text-neutral-800 mt-1">Air & Water Hose 300 PSI</h3>
-                            <p class="text-neutral-600 mt-2 text-sm">Heavy-duty general purpose hose for air and water applications.</p>
-                            <a href="#quote" class="inline-block mt-4 text-primary font-semibold hover:text-secondary transition">Request Quote →</a>
-                        </div>
-                    </article>
-                    <article class="bg-white rounded-xl shadow-md overflow-hidden border border-neutral-100 hover:shadow-lg transition">
-                        <div class="aspect-[4/3] bg-neutral-100 flex items-center justify-center">
-                            <svg class="w-24 h-24 text-neutral-300" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                            </svg>
-                        </div>
-                        <div class="p-5">
-                            <span class="text-xs font-semibold text-secondary uppercase tracking-wide">Sheet Rubber</span>
-                            <h3 class="text-lg font-bold text-neutral-800 mt-1">Neoprene Sheet 1/8" - 1"</h3>
-                            <p class="text-neutral-600 mt-2 text-sm">Oil and weather resistant rubber sheeting for sealing and gaskets.</p>
-                            <a href="#quote" class="inline-block mt-4 text-primary font-semibold hover:text-secondary transition">Request Quote →</a>
-                        </div>
-                    </article>
-                    <article class="bg-white rounded-xl shadow-md overflow-hidden border border-neutral-100 hover:shadow-lg transition">
-                        <div class="aspect-[4/3] bg-neutral-100 flex items-center justify-center">
-                            <svg class="w-24 h-24 text-neutral-300" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                            </svg>
-                        </div>
-                        <div class="p-5">
-                            <span class="text-xs font-semibold text-secondary uppercase tracking-wide">Fittings</span>
-                            <h3 class="text-lg font-bold text-neutral-800 mt-1">Cam Lock Couplings</h3>
-                            <p class="text-neutral-600 mt-2 text-sm">Aluminum and stainless steel quick-connect fittings.</p>
-                            <a href="#quote" class="inline-block mt-4 text-primary font-semibold hover:text-secondary transition">Request Quote →</a>
-                        </div>
-                    </article>
-                    <article class="bg-white rounded-xl shadow-md overflow-hidden border border-neutral-100 hover:shadow-lg transition">
-                        <div class="aspect-[4/3] bg-neutral-100 flex items-center justify-center">
-                            <svg class="w-24 h-24 text-neutral-300" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                            </svg>
-                        </div>
-                        <div class="p-5">
-                            <span class="text-xs font-semibold text-secondary uppercase tracking-wide">Industrial Hose</span>
-                            <h3 class="text-lg font-bold text-neutral-800 mt-1">Chemical Transfer Hose</h3>
-                            <p class="text-neutral-600 mt-2 text-sm">UHMWPE lined hose for acids, solvents, and chemicals.</p>
-                            <a href="#quote" class="inline-block mt-4 text-primary font-semibold hover:text-secondary transition">Request Quote →</a>
-                        </div>
-                    </article>
-                    <article class="bg-white rounded-xl shadow-md overflow-hidden border border-neutral-100 hover:shadow-lg transition">
-                        <div class="aspect-[4/3] bg-neutral-100 flex items-center justify-center">
-                            <svg class="w-24 h-24 text-neutral-300" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                            </svg>
-                        </div>
-                        <div class="p-5">
-                            <span class="text-xs font-semibold text-secondary uppercase tracking-wide">Gaskets</span>
-                            <h3 class="text-lg font-bold text-neutral-800 mt-1">Flange Gasket Sets</h3>
-                            <p class="text-neutral-600 mt-2 text-sm">Complete gasket sets for pipe flanges in all standard sizes.</p>
-                            <a href="#quote" class="inline-block mt-4 text-primary font-semibold hover:text-secondary transition">Request Quote →</a>
-                        </div>
-                    </article>
-                    <article class="bg-white rounded-xl shadow-md overflow-hidden border border-neutral-100 hover:shadow-lg transition">
-                        <div class="aspect-[4/3] bg-neutral-100 flex items-center justify-center">
-                            <svg class="w-24 h-24 text-neutral-300" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                            </svg>
-                        </div>
-                        <div class="p-5">
-                            <span class="text-xs font-semibold text-secondary uppercase tracking-wide">Sheet Rubber</span>
-                            <h3 class="text-lg font-bold text-neutral-800 mt-1">Silicone Sheet FDA</h3>
-                            <p class="text-neutral-600 mt-2 text-sm">FDA compliant silicone for food processing applications.</p>
-                            <a href="#quote" class="inline-block mt-4 text-primary font-semibold hover:text-secondary transition">Request Quote →</a>
-                        </div>
-                    </article>
-                </div>
-                <div class="text-center mt-12">
-                    <a href="#" class="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-lg font-semibold transition">
-                        View All Products
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                <h1>
+                    <span class="line"><span class="word">Industrial</span> <span class="word highlight">Hoses</span></span>
+                    <span class="line"><span class="word">&</span> <span class="word">Rubber</span></span>
+                    <span class="line"><span class="word">Solutions</span></span>
+                </h1>
+                <p class="hero-desc">
+                    Premium quality industrial hose and sheet rubber products shipped nationwide from our dual warehouse locations. Your trusted partner for bulk supply excellence.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#products" class="btn-primary">
+                        Explore Products
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
                         </svg>
                     </a>
+                    <a href="#cta" class="btn-secondary">Request Quote</a>
                 </div>
             </div>
-        </section>
-
-        <!-- Why Choose Us -->
-        <section id="why-us" class="py-16 md:py-24 bg-primary text-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Why Choose American Hose & Gasket?</h2>
-                    <p class="text-lg text-neutral-200 max-w-2xl mx-auto">Trusted by businesses nationwide for quality products and reliable service.</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Dual Warehouse Locations</h3>
-                        <p class="text-neutral-200">Fast shipping from our Decatur, AL and Louisville, KY facilities for reduced transit times.</p>
+            <div class="hero-visual">
+                <div class="hero-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80" alt="Industrial facility" class="hero-image">
+                    <div class="hero-image-overlay"></div>
+                    <div class="floating-card floating-card-1">
+                        <span class="card-stat">2</span>
+                        <p class="card-label">Warehouse Locations</p>
                     </div>
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Quality Commitment</h3>
-                        <p class="text-neutral-200">Only top-quality industrial hose and rubber products from trusted manufacturers.</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Bulk Supply Ready</h3>
-                        <p class="text-neutral-200">Large inventory and competitive wholesale pricing for bulk orders of any size.</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Reliable Shipping</h3>
-                        <p class="text-neutral-200">Fast, dependable nationwide shipping with order tracking and timely delivery.</p>
+                    <div class="floating-card floating-card-2">
+                        <span class="card-stat">24/7</span>
+                        <p class="card-label">Customer Support</p>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Trust & Certifications -->
-        <section class="py-16 md:py-20 bg-neutral-50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Trusted Quality & Standards</h2>
-                    <p class="text-lg text-neutral-600 max-w-2xl mx-auto">We partner with ISO-certified manufacturers to ensure consistent quality across all products.</p>
-                </div>
-                <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-                    <div class="flex flex-col items-center">
-                        <div class="w-24 h-24 bg-white rounded-full shadow-md flex items-center justify-center mb-3">
-                            <span class="text-primary font-bold text-sm text-center leading-tight">ISO<br>9001</span>
-                        </div>
-                        <span class="text-sm text-neutral-600 font-medium">Quality Certified</span>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <div class="w-24 h-24 bg-white rounded-full shadow-md flex items-center justify-center mb-3">
-                            <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-                            </svg>
-                        </div>
-                        <span class="text-sm text-neutral-600 font-medium">Quality Assured</span>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <div class="w-24 h-24 bg-white rounded-full shadow-md flex items-center justify-center mb-3">
-                            <span class="text-primary font-bold text-sm text-center leading-tight">FDA<br>Compliant</span>
-                        </div>
-                        <span class="text-sm text-neutral-600 font-medium">Food Grade Options</span>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <div class="w-24 h-24 bg-white rounded-full shadow-md flex items-center justify-center mb-3">
-                            <span class="text-primary font-bold text-sm text-center leading-tight">RoHS</span>
-                        </div>
-                        <span class="text-sm text-neutral-600 font-medium">Environmental</span>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <div class="w-24 h-24 bg-white rounded-full shadow-md flex items-center justify-center mb-3">
-                            <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
-                            </svg>
-                        </div>
-                        <span class="text-sm text-neutral-600 font-medium">Premium Materials</span>
-                    </div>
-                </div>
+            <div class="scroll-indicator">
+                <span>Scroll</span>
+                <div class="scroll-line"></div>
             </div>
         </section>
 
-        <!-- Testimonials -->
-        <section class="py-16 md:py-24">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">What Our Customers Say</h2>
-                    <p class="text-lg text-neutral-600 max-w-2xl mx-auto">Trusted by industrial businesses across the nation.</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <blockquote class="bg-white p-8 rounded-xl shadow-md border border-neutral-100">
-                        <div class="flex gap-1 mb-4">
-                            <svg class="w-5 h-5 text-secondary" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                            <svg class="w-5 h-5 text-secondary" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                            <svg class="w-5 h-5 text-secondary" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                            <svg class="w-5 h-5 text-secondary" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                            <svg class="w-5 h-5 text-secondary" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+        <div class="marquee">
+            <div class="marquee-track">
+                <span class="marquee-item">Industrial Hose</span>
+                <span class="marquee-item">•</span>
+                <span class="marquee-item">Sheet Rubber</span>
+                <span class="marquee-item">•</span>
+                <span class="marquee-item">Gaskets & Seals</span>
+                <span class="marquee-item">•</span>
+                <span class="marquee-item">Fittings</span>
+                <span class="marquee-item">•</span>
+                <span class="marquee-item">Industrial Hose</span>
+                <span class="marquee-item">•</span>
+                <span class="marquee-item">Sheet Rubber</span>
+                <span class="marquee-item">•</span>
+                <span class="marquee-item">Gaskets & Seals</span>
+                <span class="marquee-item">•</span>
+                <span class="marquee-item">Fittings</span>
+                <span class="marquee-item">•</span>
+            </div>
+        </div>
+
+        <section class="products" id="products">
+            <div class="section-header">
+                <span class="section-tag">Our Products</span>
+                <h2>Premium Industrial <span class="highlight">Solutions</span></h2>
+                <p>Comprehensive range of industrial hose and rubber products for every application. Quality materials, competitive pricing.</p>
+            </div>
+            <div class="products-grid">
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Industrial Hose">
+                    </div>
+                    <div class="product-content">
+                        <div class="product-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 6v6l4 2"/>
+                            </svg>
                         </div>
-                        <p class="text-neutral-700 italic mb-4">"Great prices on bulk rubber sheeting. Fast shipping from their Alabama warehouse got our order to us in 2 days."</p>
-                        <footer class="text-sm">
-                            <cite class="not-italic font-semibold text-neutral-800">— Mike T.</cite>
-                            <span class="text-neutral-500 block">Manufacturing Plant Manager</span>
-                        </footer>
-                    </blockquote>
-                    <blockquote class="bg-white p-8 rounded-xl shadow-md border border-neutral-100">
-                        <div class="flex gap-1 mb-4">
-                            <svg class="w-5 h-5 text-secondary" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                            <svg class="w-5 h-5 text-secondary" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                            <svg class="w-5 h-5 text-secondary" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                            <svg class="w-5 h-5 text-secondary" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                            <svg class="w-5 h-5 text-secondary" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <h3>Industrial Hose</h3>
+                        <p>Air, water, chemical, and specialty hoses for demanding industrial applications.</p>
+                        <a href="#cta" class="product-link">
+                            Learn More
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1615811361523-6bd03d7748e7?w=600&q=80" alt="Sheet Rubber">
+                    </div>
+                    <div class="product-content">
+                        <div class="product-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                <path d="M3 9h18M9 21V9"/>
+                            </svg>
                         </div>
-                        <p class="text-neutral-700 italic mb-4">"We've been ordering industrial hoses from AHG for years. Consistent quality and they always have what we need in stock."</p>
-                        <footer class="text-sm">
-                            <cite class="not-italic font-semibold text-neutral-800">— Sarah K.</cite>
-                            <span class="text-neutral-500 block">Procurement Director</span>
-                        </footer>
-                    </blockquote>
-                    <blockquote class="bg-white p-8 rounded-xl shadow-md border border-neutral-100">
-                        <div class="flex gap-1 mb-4">
-                            <svg class="w-5 h-5 text-secondary" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                            <svg class="w-5 h-5 text-secondary" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                            <svg class="w-5 h-5 text-secondary" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                            <svg class="w-5 h-5 text-secondary" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                            <svg class="w-5 h-5 text-secondary" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <h3>Sheet Rubber</h3>
+                        <p>Premium rubber sheeting in various grades, thicknesses, and compounds.</p>
+                        <a href="#cta" class="product-link">
+                            Learn More
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&q=80" alt="Gaskets & Seals">
+                    </div>
+                    <div class="product-content">
+                        <div class="product-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="9"/>
+                                <circle cx="12" cy="12" r="4"/>
+                            </svg>
                         </div>
-                        <p class="text-neutral-700 italic mb-4">"Their technical team helped us spec the right chemical hose for our application. Excellent product knowledge and support."</p>
-                        <footer class="text-sm">
-                            <cite class="not-italic font-semibold text-neutral-800">— James R.</cite>
-                            <span class="text-neutral-500 block">Chemical Plant Engineer</span>
-                        </footer>
-                    </blockquote>
-                </div>
+                        <h3>Gaskets & Seals</h3>
+                        <p>Custom and standard gaskets for sealing solutions across industries.</p>
+                        <a href="#cta" class="product-link">
+                            Learn More
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1590959651373-a3db0f38a961?w=600&q=80" alt="Fittings">
+                    </div>
+                    <div class="product-content">
+                        <div class="product-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                            </svg>
+                        </div>
+                        <h3>Fittings & Couplings</h3>
+                        <p>Brass, steel, and cam-lock fittings for secure hose connections.</p>
+                        <a href="#cta" class="product-link">
+                            Learn More
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
             </div>
         </section>
 
-        <!-- Quote CTA -->
-        <section id="quote" class="py-16 md:py-24 bg-gradient-to-br from-primary to-primary/90">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="bg-white rounded-2xl shadow-2xl p-8 md:p-12">
-                    <div class="text-center mb-8">
-                        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Request a Bulk Quote</h2>
-                        <p class="text-lg text-neutral-600">Get competitive wholesale pricing for your industrial hose and rubber needs.</p>
-                    </div>
-                    <form class="space-y-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label for="name" class="block text-sm font-medium text-neutral-700 mb-1">Full Name *</label>
-                                <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition">
+        <section class="features" id="features">
+            <div class="features-grid">
+                <div class="features-content">
+                    <span class="section-tag">Why Choose Us</span>
+                    <h2>Trusted by <span class="highlight">Industries</span> Nationwide</h2>
+                    <p>With decades of experience and strategic warehouse locations, we deliver quality products and exceptional service to businesses across America.</p>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                                    <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                    <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                </svg>
                             </div>
-                            <div>
-                                <label for="company" class="block text-sm font-medium text-neutral-700 mb-1">Company Name</label>
-                                <input type="text" id="company" name="company" class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition">
-                            </div>
-                            <div>
-                                <label for="email" class="block text-sm font-medium text-neutral-700 mb-1">Email Address *</label>
-                                <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition">
-                            </div>
-                            <div>
-                                <label for="phone" class="block text-sm font-medium text-neutral-700 mb-1">Phone Number</label>
-                                <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition">
+                            <div class="feature-text">
+                                <h4>Dual Warehouse Locations</h4>
+                                <p>Fast shipping from Alabama and Kentucky for reduced transit times nationwide.</p>
                             </div>
                         </div>
-                        <div>
-                            <label for="product" class="block text-sm font-medium text-neutral-700 mb-1">Product Category</label>
-                            <select id="product" name="product" class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition">
-                                <option value="">Select a category...</option>
-                                <option value="industrial-hose">Industrial Hose</option>
-                                <option value="sheet-rubber">Sheet Rubber</option>
-                                <option value="gaskets-seals">Gaskets & Seals</option>
-                                <option value="fittings">Fittings & Couplings</option>
-                                <option value="other">Other / Multiple Products</option>
-                            </select>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Quality Commitment</h4>
+                                <p>ISO-certified products from trusted manufacturers with rigorous quality standards.</p>
+                            </div>
                         </div>
-                        <div>
-                            <label for="message" class="block text-sm font-medium text-neutral-700 mb-1">Message / Order Details *</label>
-                            <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition" placeholder="Please describe the products you need, quantities, and any specifications..."></textarea>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                                    <path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Bulk Supply Ready</h4>
+                                <p>Large inventory with competitive wholesale pricing for orders of any size.</p>
+                            </div>
                         </div>
-                        <button type="submit" class="w-full bg-secondary hover:bg-amber-600 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg text-lg">
-                            Submit Quote Request
-                        </button>
-                    </form>
+                    </div>
+                </div>
+                <div class="features-visual">
+                    <img src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=800&q=80" alt="Warehouse operations" class="features-image">
+                    <div class="stats-overlay">
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="30">0</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="5000">0</span>
+                            <span class="stat-label">Products</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="98">0</span>
+                            <span class="stat-label">% Satisfaction</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Info -->
-        <section id="contact" class="py-16 md:py-20 bg-neutral-100">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Our Warehouse Locations</h2>
-                    <p class="text-lg text-neutral-600">Strategically located to serve you faster.</p>
+        <section class="locations" id="locations">
+            <div class="section-header">
+                <span class="section-tag">Our Locations</span>
+                <h2>Strategically <span class="highlight">Positioned</span></h2>
+                <p>Two warehouse locations ensure faster delivery times and better service for customers across the nation.</p>
+            </div>
+            <div class="locations-grid">
+                <div class="location-card">
+                    <span class="location-badge">Headquarters</span>
+                    <h3>Decatur, Alabama</h3>
+                    <p class="location-address">
+                        123 Industrial Parkway<br>
+                        Decatur, AL 35601<br>
+                        Mon-Fri: 8AM - 5PM CST
+                    </p>
+                    <a href="tel:+12565551234" class="location-phone">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                        </svg>
+                        (256) 555-1234
+                    </a>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                    <div class="bg-white rounded-xl p-8 shadow-md text-center">
-                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-neutral-800 mb-2">Decatur, Alabama</h3>
-                        <address class="not-italic text-neutral-600 leading-relaxed">
-                            123 Industrial Parkway<br>
-                            Decatur, AL 35601<br>
-                            <a href="tel:+12565551234" class="text-primary hover:text-secondary">(256) 555-1234</a>
-                        </address>
+                <div class="location-card">
+                    <span class="location-badge">Distribution</span>
+                    <h3>Louisville, Kentucky</h3>
+                    <p class="location-address">
+                        456 Commerce Drive<br>
+                        Louisville, KY 40201<br>
+                        Mon-Fri: 8AM - 5PM EST
+                    </p>
+                    <a href="tel:+15025555678" class="location-phone">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                        </svg>
+                        (502) 555-5678
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials" id="testimonials">
+            <div class="section-header">
+                <span class="section-tag">Testimonials</span>
+                <h2>What Our <span class="highlight">Clients</span> Say</h2>
+                <p>Trusted by businesses across the nation for quality products and reliable service.</p>
+            </div>
+            <div class="testimonials-track">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                     </div>
-                    <div class="bg-white rounded-xl p-8 shadow-md text-center">
-                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                            </svg>
+                    <p class="testimonial-text">"Great prices on bulk rubber sheeting. Fast shipping from their Alabama warehouse got our order to us in 2 days. Highly recommend!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MT</div>
+                        <div class="author-info">
+                            <h4>Mike Thompson</h4>
+                            <span>Manufacturing Plant Manager</span>
                         </div>
-                        <h3 class="text-xl font-bold text-neutral-800 mb-2">Louisville, Kentucky</h3>
-                        <address class="not-italic text-neutral-600 leading-relaxed">
-                            456 Commerce Drive<br>
-                            Louisville, KY 40201<br>
-                            <a href="tel:+15025555678" class="text-primary hover:text-secondary">(502) 555-5678</a>
-                        </address>
                     </div>
                 </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="testimonial-text">"We've been ordering industrial hoses from AHG for years. Consistent quality and they always have what we need in stock."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SK</div>
+                        <div class="author-info">
+                            <h4>Sarah Kim</h4>
+                            <span>Procurement Director</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="testimonial-text">"Their technical team helped us spec the right chemical hose for our application. Excellent product knowledge and support."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JR</div>
+                        <div class="author-info">
+                            <h4>James Rodriguez</h4>
+                            <span>Chemical Plant Engineer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="testimonial-text">"Outstanding service and product quality. AHG has become our go-to supplier for all industrial rubber needs."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">LP</div>
+                        <div class="author-info">
+                            <h4>Linda Parker</h4>
+                            <span>Operations Manager</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta" id="cta">
+            <div class="cta-content">
+                <span class="section-tag">Get Started</span>
+                <h2>Ready to <span class="highlight">Order</span>?</h2>
+                <p>Request a quote for your industrial hose and rubber needs. Our team will respond within 24 hours.</p>
+                <form class="cta-form">
+                    <input type="email" class="cta-input" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn-primary">
+                        Get Quote
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </form>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-neutral-900 text-white py-12 md:py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-                <div>
-                    <div class="flex items-center space-x-2 mb-4">
-                        <div class="w-10 h-10 bg-secondary rounded-full flex items-center justify-center">
-                            <span class="text-white font-bold text-lg">AH</span>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-bold">American Hose & Gasket</h3>
-                        </div>
-                    </div>
-                    <p class="text-neutral-400 text-sm leading-relaxed">Your source for wholesale hose & rubber! Top-quality industrial products shipped from our dual locations nationwide.</p>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Products</h4>
-                    <ul class="space-y-2 text-neutral-400">
-                        <li><a href="#" class="hover:text-secondary transition">Industrial Hose</a></li>
-                        <li><a href="#" class="hover:text-secondary transition">Sheet Rubber</a></li>
-                        <li><a href="#" class="hover:text-secondary transition">Gaskets & Seals</a></li>
-                        <li><a href="#" class="hover:text-secondary transition">Fittings & Couplings</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Company</h4>
-                    <ul class="space-y-2 text-neutral-400">
-                        <li><a href="#" class="hover:text-secondary transition">About Us</a></li>
-                        <li><a href="#contact" class="hover:text-secondary transition">Locations</a></li>
-                        <li><a href="#quote" class="hover:text-secondary transition">Request Quote</a></li>
-                        <li><a href="#" class="hover:text-secondary transition">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Contact Us</h4>
-                    <ul class="space-y-2 text-neutral-400 text-sm">
-                        <li class="flex items-start gap-2">
-                            <svg class="w-5 h-5 mt-0.5 text-secondary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                            </svg>
-                            <a href="mailto:sales@americanhosegasket.com" class="hover:text-secondary transition">sales@americanhosegasket.com</a>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <svg class="w-5 h-5 mt-0.5 text-secondary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                            </svg>
-                            <span>1-800-555-HOSE</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <svg class="w-5 h-5 mt-0.5 text-secondary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                            </svg>
-                            <span>Mon-Fri: 8AM - 5PM CST</span>
-                        </li>
-                    </ul>
-                </div>
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="#" class="logo">
+                    <span class="logo-icon">AH</span>
+                    American Hose & Gasket
+                </a>
+                <p>Your trusted source for wholesale industrial hose and rubber products. Shipping nationwide from our dual warehouse locations.</p>
             </div>
-            <div class="border-t border-neutral-800 pt-8">
-                <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p class="text-neutral-500 text-sm">&copy; 2024 American Hose & Gasket. All rights reserved.</p>
-                    <nav class="flex gap-6 text-sm text-neutral-400">
-                        <a href="#" class="hover:text-secondary transition">Privacy Policy</a>
-                        <a href="#" class="hover:text-secondary transition">Terms of Service</a>
-                        <a href="#" class="hover:text-secondary transition">Shipping Policy</a>
-                    </nav>
-                </div>
+            <div class="footer-links">
+                <h4>Products</h4>
+                <ul>
+                    <li><a href="#products">Industrial Hose</a></li>
+                    <li><a href="#products">Sheet Rubber</a></li>
+                    <li><a href="#products">Gaskets & Seals</a></li>
+                    <li><a href="#products">Fittings</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#features">About Us</a></li>
+                    <li><a href="#locations">Locations</a></li>
+                    <li><a href="#testimonials">Reviews</a></li>
+                    <li><a href="#cta">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:sales@americanhosegasket.com">sales@americanhosegasket.com</a></li>
+                    <li><a href="tel:+18005554673">1-800-555-HOSE</a></li>
+                    <li>Mon-Fri: 8AM - 5PM CST</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 American Hose & Gasket. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" aria-label="LinkedIn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                </a>
+                <a href="#" aria-label="Twitter">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                    </svg>
+                </a>
+                <a href="#" aria-label="Facebook">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    </svg>
+                </a>
             </div>
         </div>
     </footer>
 
     <script>
-        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
+        gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+        const cursor = document.querySelector('.cursor');
+        const cursorFollower = document.querySelector('.cursor-follower');
+        let mouseX = 0, mouseY = 0;
+        let cursorX = 0, cursorY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        gsap.ticker.add(() => {
+            cursorX += (mouseX - cursorX) * 0.2;
+            cursorY += (mouseY - cursorY) * 0.2;
+            gsap.set(cursor, { x: mouseX - 10, y: mouseY - 10 });
+            gsap.set(cursorFollower, { x: cursorX - 4, y: cursorY - 4 });
+        });
+
+        document.querySelectorAll('a, button').forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+        });
+
+        const loaderTl = gsap.timeline();
+        loaderTl.to('.loader-progress', { width: '100%', duration: 1.5, ease: 'power2.inOut' })
+            .to('.loader', { yPercent: -100, duration: 0.8, ease: 'power4.inOut' }, '+=0.2');
+
+        loaderTl.add(() => {
+            gsap.from('.hero-tag', { opacity: 0, y: 30, duration: 0.8 });
+            gsap.from('.hero h1 .word', { 
+                opacity: 0, 
+                y: 100, 
+                rotateX: -90,
+                stagger: 0.1, 
+                duration: 1,
+                ease: 'power4.out'
+            });
+            gsap.from('.hero-desc', { opacity: 0, y: 30, duration: 0.8, delay: 0.5 });
+            gsap.from('.hero-buttons', { opacity: 0, y: 30, duration: 0.8, delay: 0.7 });
+            gsap.from('.hero-visual', { opacity: 0, x: 100, duration: 1, delay: 0.5 });
+            gsap.from('.floating-card', { opacity: 0, scale: 0.8, stagger: 0.2, duration: 0.8, delay: 1 });
+        });
+
+        gsap.to('.shape-1', {
+            y: 50,
+            x: 30,
+            scrollTrigger: {
+                trigger: '.hero',
+                start: 'top top',
+                end: 'bottom top',
+                scrub: 1
+            }
+        });
+
+        gsap.to('.shape-2', {
+            y: -30,
+            x: -20,
+            scrollTrigger: {
+                trigger: '.hero',
+                start: 'top top',
+                end: 'bottom top',
+                scrub: 1
+            }
+        });
+
+        gsap.utils.toArray('.product-card').forEach((card, i) => {
+            gsap.from(card, {
+                opacity: 0,
+                y: 80,
+                duration: 0.8,
+                delay: i * 0.1,
+                scrollTrigger: {
+                    trigger: card,
+                    start: 'top 85%',
+                    toggleActions: 'play none none reverse'
+                }
+            });
+        });
+
+        gsap.from('.features-content', {
+            opacity: 0,
+            x: -80,
+            duration: 1,
+            scrollTrigger: {
+                trigger: '.features',
+                start: 'top 70%',
+                toggleActions: 'play none none reverse'
+            }
+        });
+
+        gsap.from('.features-visual', {
+            opacity: 0,
+            x: 80,
+            duration: 1,
+            scrollTrigger: {
+                trigger: '.features',
+                start: 'top 70%',
+                toggleActions: 'play none none reverse'
+            }
+        });
+
+        gsap.utils.toArray('.feature-item').forEach((item, i) => {
+            gsap.from(item, {
+                opacity: 0,
+                x: -40,
+                duration: 0.6,
+                delay: i * 0.15,
+                scrollTrigger: {
+                    trigger: item,
+                    start: 'top 85%',
+                    toggleActions: 'play none none reverse'
+                }
+            });
+        });
+
+        const statNumbers = document.querySelectorAll('.stat-number');
+        statNumbers.forEach(num => {
+            const target = parseInt(num.dataset.count);
+            ScrollTrigger.create({
+                trigger: num,
+                start: 'top 85%',
+                onEnter: () => {
+                    gsap.to(num, {
+                        innerText: target,
+                        duration: 2,
+                        snap: { innerText: 1 },
+                        ease: 'power2.out'
+                    });
+                }
+            });
+        });
+
+        gsap.utils.toArray('.location-card').forEach((card, i) => {
+            gsap.from(card, {
+                opacity: 0,
+                y: 60,
+                duration: 0.8,
+                delay: i * 0.2,
+                scrollTrigger: {
+                    trigger: card,
+                    start: 'top 85%',
+                    toggleActions: 'play none none reverse'
+                }
+            });
+        });
+
+        const track = document.querySelector('.testimonials-track');
+        gsap.to(track, {
+            x: -track.scrollWidth / 2,
+            duration: 30,
+            ease: 'none',
+            repeat: -1
+        });
+
+        gsap.utils.toArray('.section-header').forEach(header => {
+            gsap.from(header.children, {
+                opacity: 0,
+                y: 50,
+                stagger: 0.15,
+                duration: 0.8,
+                scrollTrigger: {
+                    trigger: header,
+                    start: 'top 80%',
+                    toggleActions: 'play none none reverse'
+                }
+            });
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    gsap.to(window, { 
+                        scrollTo: { y: target, offsetY: 80 },
+                        duration: 1,
+                        ease: 'power3.inOut'
+                    });
+                }
+            });
+        });
+
+        let lastScroll = 0;
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > 100) {
+                header.style.background = 'rgba(10, 10, 10, 0.9)';
+                header.style.backdropFilter = 'blur(20px)';
+                header.style.mixBlendMode = 'normal';
+            } else {
+                header.style.background = 'transparent';
+                header.style.backdropFilter = 'none';
+                header.style.mixBlendMode = 'difference';
+            }
+            lastScroll = currentScroll;
+        });
+
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('nav');
+        menuToggle.addEventListener('click', () => {
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+            nav.style.position = 'fixed';
+            nav.style.top = '80px';
+            nav.style.left = '0';
+            nav.style.right = '0';
+            nav.style.background = 'rgba(10, 10, 10, 0.98)';
+            nav.style.flexDirection = 'column';
+            nav.style.padding = '30px';
+            nav.style.gap = '20px';
         });
     </script>
 </body>
