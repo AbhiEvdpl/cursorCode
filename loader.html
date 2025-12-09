@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pelion VP Style Loader</title>
+  <title>Idaho Pharmacy — Loading</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="loader.css">
 </head>
 <body>
@@ -14,12 +14,21 @@
     <div class="loader__backdrop"></div>
     <div class="loader__content">
       <div class="loader__logo">
-        <svg class="loader__icon" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path class="loader__icon-path" d="M30 5L55 17.5V42.5L30 55L5 42.5V17.5L30 5Z" stroke="currentColor" stroke-width="2"/>
-          <path class="loader__icon-inner" d="M30 15L45 22.5V37.5L30 45L15 37.5V22.5L30 15Z" stroke="currentColor" stroke-width="2"/>
-          <circle class="loader__icon-dot" cx="30" cy="30" r="4" fill="currentColor"/>
-        </svg>
-        <span class="loader__brand">PELION</span>
+        <div class="loader__logo-icon">
+          <svg class="loader__svg" viewBox="0 0 60 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="loader__path loader__path--1" d="M8 40 L24 16" stroke="#1E4637" stroke-width="4" stroke-linecap="round"/>
+            <path class="loader__path loader__path--2" d="M24 16 L28 24" stroke="#1E4637" stroke-width="4" stroke-linecap="round"/>
+            <path class="loader__path loader__path--3" d="M28 24 L38 12" stroke="#1E4637" stroke-width="4" stroke-linecap="round"/>
+            <circle class="loader__dot loader__dot--1" cx="8" cy="40" r="3" fill="#C89F4A"/>
+            <circle class="loader__dot loader__dot--2" cx="24" cy="16" r="3" fill="#C89F4A"/>
+            <circle class="loader__dot loader__dot--3" cx="28" cy="24" r="3" fill="#C89F4A"/>
+            <circle class="loader__dot loader__dot--4" cx="38" cy="12" r="3" fill="#C89F4A"/>
+          </svg>
+        </div>
+        <div class="loader__brand">
+          <span class="loader__brand-text">Idaho Pharmacy</span>
+          <span class="loader__brand-tagline">Long-Term Care Partner</span>
+        </div>
       </div>
       <div class="loader__progress">
         <div class="loader__progress-track">
@@ -27,10 +36,11 @@
         </div>
         <span class="loader__progress-text" id="progress-text">0%</span>
       </div>
-      <div class="loader__tagline">
-        <span class="loader__tagline-word">Building</span>
-        <span class="loader__tagline-word">the</span>
-        <span class="loader__tagline-word">future</span>
+      <div class="loader__message">
+        <span class="loader__message-word" data-text="Delivering">Delivering</span>
+        <span class="loader__message-word" data-text="care">care</span>
+        <span class="loader__message-word" data-text="across">across</span>
+        <span class="loader__message-word" data-text="Idaho">Idaho</span>
       </div>
     </div>
     <div class="loader__corners">
@@ -44,22 +54,27 @@
   <main class="page-content" id="page-content">
     <section class="hero">
       <nav class="nav">
-        <div class="nav__brand">PELION</div>
+        <div class="nav__brand">
+          <svg viewBox="0 0 180 48" class="nav__logo">
+            <path d="M12 36 L28 12 L32 20 L42 8" stroke="#1E4637" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <text x="60" y="30" font-family="'Inter', sans-serif" font-size="20" fill="#1E4637" font-weight="700">Idaho Pharmacy</text>
+          </svg>
+        </div>
         <ul class="nav__links">
-          <li><a href="#">About</a></li>
-          <li><a href="#">Portfolio</a></li>
-          <li><a href="#">Team</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#areas">Service Areas</a></li>
+          <li><a href="#emar">eMAR</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
       <div class="hero__content">
-        <h1 class="hero__title">Investing in<br><span>Visionary Founders</span></h1>
-        <p class="hero__text">We partner with exceptional entrepreneurs building transformative companies across technology sectors.</p>
-        <a href="#" class="hero__cta">Explore Portfolio</a>
-      </div>
-      <div class="hero__scroll">
-        <span>Scroll to explore</span>
-        <div class="hero__scroll-line"></div>
+        <p class="hero__eyebrow">Idaho's Trusted LTC Pharmacy Partner</p>
+        <h1 class="hero__title">Your Idaho Long-Term<br><span>Care Pharmacy Partner</span></h1>
+        <p class="hero__text">Idaho Pharmacy is a dedicated, independent, locally owned and operated long-term care pharmacy serving facilities across the state.</p>
+        <div class="hero__actions">
+          <a href="#contact" class="hero__cta hero__cta--primary">Start Service</a>
+          <a href="#services" class="hero__cta hero__cta--secondary">Our Services</a>
+        </div>
       </div>
     </section>
   </main>
