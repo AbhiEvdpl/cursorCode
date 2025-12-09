@@ -1,8 +1,7 @@
 class PageLoader {
   constructor(options = {}) {
     this.options = {
-      minLoadTime: options.minLoadTime || 4000,
-      progressSpeed: options.progressSpeed || 30,
+      minLoadTime: options.minLoadTime || 4500,
       exitDelay: options.exitDelay || 600,
       ...options
     };
@@ -10,12 +9,22 @@ class PageLoader {
     this.loader = document.getElementById('loader');
     this.progressBar = document.getElementById('progress-bar');
     this.progressText = document.getElementById('progress-text');
+    this.progressStatus = document.getElementById('progress-status');
     this.pageContent = document.getElementById('page-content');
 
     this.progress = 0;
     this.targetProgress = 0;
     this.isComplete = false;
     this.startTime = Date.now();
+
+    this.statusMessages = [
+      { threshold: 0, message: 'Initializing...' },
+      { threshold: 15, message: 'Loading assets...' },
+      { threshold: 35, message: 'Preparing components...' },
+      { threshold: 55, message: 'Almost there...' },
+      { threshold: 75, message: 'Finalizing...' },
+      { threshold: 95, message: 'Ready!' }
+    ];
 
     this.init();
   }
@@ -37,7 +46,7 @@ class PageLoader {
 
       if (this.progress < this.targetProgress) {
         const diff = this.targetProgress - this.progress;
-        const increment = Math.max(0.3, diff * 0.08);
+        const increment = Math.max(0.2, diff * 0.06);
         this.progress = Math.min(this.progress + increment, this.targetProgress);
         this.updateProgress(this.progress);
       }
@@ -94,6 +103,15 @@ class PageLoader {
     const rounded = Math.round(value);
     this.progressBar.style.width = `${value}%`;
     this.progressText.textContent = `${rounded}%`;
+
+    const status = [...this.statusMessages].reverse().find(s => rounded >= s.threshold);
+    if (status && this.progressStatus.textContent !== status.message) {
+      this.progressStatus.style.opacity = '0';
+      setTimeout(() => {
+        this.progressStatus.textContent = status.message;
+        this.progressStatus.style.opacity = '1';
+      }, 150);
+    }
   }
 
   async completeLoading() {
@@ -110,7 +128,7 @@ class PageLoader {
       const animate = () => {
         if (this.progress < 100) {
           const diff = 100 - this.progress;
-          const increment = Math.max(0.8, diff * 0.12);
+          const increment = Math.max(0.5, diff * 0.1);
           this.progress = Math.min(this.progress + increment, 100);
           this.updateProgress(this.progress);
           requestAnimationFrame(animate);
@@ -148,7 +166,7 @@ class PageLoader {
 
   animatePageContent() {
     const elements = document.querySelectorAll(
-      '.hero__eyebrow, .hero__title, .hero__text, .hero__cta, .nav__logo, .nav__links li'
+      '.hero__badge, .hero__title, .hero__text, .hero__cta, .nav__brand, .nav__links li, .nav__cta'
     );
     
     elements.forEach((el, index) => {
@@ -166,163 +184,130 @@ class PageLoader {
   }
 }
 
-class LoaderEffects {
+class ParticleSystem {
   constructor() {
-    this.addFloatingShapes();
-    this.addLogoGlow();
+    this.container = document.getElementById('particles');
+    this.particles = [];
+    this.colors = ['#6366F1', '#8B5CF6', '#EC4899', '#FF6B35'];
+    this.init();
   }
 
-  addFloatingShapes() {
-    const loader = document.getElementById('loader');
-    const container = document.createElement('div');
-    container.className = 'loader__shapes';
-    container.style.cssText = `
-      position: absolute;
-      inset: 0;
-      overflow: hidden;
-      pointer-events: none;
-      opacity: 0.4;
-    `;
-
-    const colors = ['#1E4637', '#224E7A', '#C89F4A', '#88C0E6'];
-
-    for (let i = 0; i < 15; i++) {
-      const shape = document.createElement('span');
-      const size = Math.random() * 8 + 4;
-      const x = Math.random() * 100;
-      const delay = Math.random() * 8;
-      const duration = Math.random() * 15 + 20;
-      const color = colors[Math.floor(Math.random() * colors.length)];
-
-      shape.style.cssText = `
-        position: absolute;
-        width: ${size}px;
-        height: ${size}px;
-        background: ${color};
-        border-radius: 50%;
-        left: ${x}%;
-        bottom: -20px;
-        opacity: ${Math.random() * 0.5 + 0.2};
-        animation: floatShape ${duration}s ease-in-out ${delay}s infinite;
-      `;
-      container.appendChild(shape);
+  init() {
+    for (let i = 0; i < 30; i++) {
+      this.createParticle();
     }
-
-    const style = document.createElement('style');
-    style.textContent = `
-      @keyframes floatShape {
-        0% {
-          transform: translateY(0) translateX(0) scale(1);
-          opacity: 0;
-        }
-        10% {
-          opacity: 0.6;
-        }
-        50% {
-          transform: translateY(-50vh) translateX(${Math.random() * 40 - 20}px) scale(0.8);
-        }
-        90% {
-          opacity: 0.6;
-        }
-        100% {
-          transform: translateY(-100vh) translateX(${Math.random() * 60 - 30}px) scale(0.3);
-          opacity: 0;
-        }
-      }
-    `;
-    document.head.appendChild(style);
-    loader.insertBefore(container, loader.firstChild);
   }
 
-  addLogoGlow() {
-    const logoIcon = document.querySelector('.loader__logo-icon');
-    if (!logoIcon) return;
+  createParticle() {
+    const particle = document.createElement('div');
+    particle.className = 'particle';
+    
+    const size = Math.random() * 6 + 2;
+    const x = Math.random() * 100;
+    const delay = Math.random() * 5;
+    const duration = Math.random() * 20 + 15;
+    const color = this.colors[Math.floor(Math.random() * this.colors.length)];
 
-    const glow = document.createElement('div');
-    glow.style.cssText = `
-      position: absolute;
-      width: 140px;
-      height: 120px;
-      background: radial-gradient(ellipse at center, rgba(30, 70, 55, 0.15) 0%, transparent 70%);
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      animation: logoGlow 3s ease-in-out infinite;
-      pointer-events: none;
-      z-index: -1;
+    particle.style.cssText = `
+      width: ${size}px;
+      height: ${size}px;
+      background: ${color};
+      left: ${x}%;
+      bottom: -10px;
+      opacity: ${Math.random() * 0.6 + 0.2};
+      box-shadow: 0 0 ${size * 2}px ${color};
+      animation: floatParticle ${duration}s ease-in-out ${delay}s infinite;
     `;
 
-    const style = document.createElement('style');
-    style.textContent = `
-      @keyframes logoGlow {
-        0%, 100% {
-          transform: translate(-50%, -50%) scale(1);
-          opacity: 0.5;
-        }
-        50% {
-          transform: translate(-50%, -50%) scale(1.15);
-          opacity: 0.8;
-        }
-      }
-    `;
-    document.head.appendChild(style);
-
-    logoIcon.style.position = 'relative';
-    logoIcon.appendChild(glow);
+    this.container.appendChild(particle);
+    this.particles.push(particle);
   }
 }
 
-class LogoAnimator {
+class MagneticEffect {
   constructor() {
-    this.paths = document.querySelectorAll('.loader__path');
-    this.dots = document.querySelectorAll('.loader__dot');
-    this.addPulseEffect();
+    this.logo = document.querySelector('.loader__logo-mark');
+    if (!this.logo) return;
+    
+    this.bounds = null;
+    this.mouseX = 0;
+    this.mouseY = 0;
+    
+    this.init();
   }
 
-  addPulseEffect() {
-    const style = document.createElement('style');
-    style.textContent = `
-      .loader__dot {
-        animation-fill-mode: forwards;
-      }
-      
-      .loader__dot.pulse {
-        animation: dotPulse 2s ease-in-out infinite;
-      }
-      
-      @keyframes dotPulse {
-        0%, 100% {
-          transform: scale(1);
-          filter: drop-shadow(0 0 0 rgba(200, 159, 74, 0));
-        }
-        50% {
-          transform: scale(1.2);
-          filter: drop-shadow(0 0 8px rgba(200, 159, 74, 0.6));
-        }
-      }
-    `;
-    document.head.appendChild(style);
+  init() {
+    document.addEventListener('mousemove', (e) => {
+      this.mouseX = e.clientX;
+      this.mouseY = e.clientY;
+      this.updatePosition();
+    });
+  }
 
-    setTimeout(() => {
-      this.dots.forEach((dot, index) => {
-        setTimeout(() => {
-          dot.classList.add('pulse');
-        }, index * 200);
-      });
-    }, 2000);
+  updatePosition() {
+    if (!this.logo) return;
+    
+    this.bounds = this.logo.getBoundingClientRect();
+    const centerX = this.bounds.left + this.bounds.width / 2;
+    const centerY = this.bounds.top + this.bounds.height / 2;
+    
+    const deltaX = this.mouseX - centerX;
+    const deltaY = this.mouseY - centerY;
+    const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+    
+    const maxDistance = 300;
+    const maxMove = 15;
+    
+    if (distance < maxDistance) {
+      const factor = 1 - (distance / maxDistance);
+      const moveX = (deltaX / distance) * maxMove * factor;
+      const moveY = (deltaY / distance) * maxMove * factor;
+      
+      this.logo.style.transform = `translate(${moveX}px, ${moveY}px)`;
+    } else {
+      this.logo.style.transform = 'translate(0, 0)';
+    }
   }
 }
+
+const style = document.createElement('style');
+style.textContent = `
+  @keyframes floatParticle {
+    0% {
+      transform: translateY(0) translateX(0) scale(1);
+      opacity: 0;
+    }
+    10% {
+      opacity: 0.8;
+    }
+    90% {
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateY(-100vh) translateX(${Math.random() * 100 - 50}px) scale(0.5);
+      opacity: 0;
+    }
+  }
+  
+  .loader__progress-status {
+    transition: opacity 0.15s ease;
+  }
+  
+  .loader__logo-mark {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+`;
+document.head.appendChild(style);
 
 document.addEventListener('DOMContentLoaded', () => {
-  new LoaderEffects();
-  new LogoAnimator();
+  new ParticleSystem();
+  new MagneticEffect();
   new PageLoader({
-    minLoadTime: 4500,
-    progressSpeed: 20,
+    minLoadTime: 5000,
     exitDelay: 500
   });
 });
 
 document.addEventListener('loaderComplete', () => {
-  console.log('Idaho Pharmacy page loaded successfully');
+  console.log('Gadzoom page loaded successfully');
 });

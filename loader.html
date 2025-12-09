@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Idaho Pharmacy — Loading</title>
+  <title>Gadzoom — Loading</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="loader.css">
 </head>
 <body>
@@ -14,66 +14,92 @@
     <div class="loader__backdrop"></div>
     <div class="loader__content">
       <div class="loader__logo">
-        <div class="loader__logo-icon">
-          <svg class="loader__svg" viewBox="0 0 60 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path class="loader__path loader__path--1" d="M8 40 L24 16" stroke="#1E4637" stroke-width="4" stroke-linecap="round"/>
-            <path class="loader__path loader__path--2" d="M24 16 L28 24" stroke="#1E4637" stroke-width="4" stroke-linecap="round"/>
-            <path class="loader__path loader__path--3" d="M28 24 L38 12" stroke="#1E4637" stroke-width="4" stroke-linecap="round"/>
-            <circle class="loader__dot loader__dot--1" cx="8" cy="40" r="3" fill="#C89F4A"/>
-            <circle class="loader__dot loader__dot--2" cx="24" cy="16" r="3" fill="#C89F4A"/>
-            <circle class="loader__dot loader__dot--3" cx="28" cy="24" r="3" fill="#C89F4A"/>
-            <circle class="loader__dot loader__dot--4" cx="38" cy="12" r="3" fill="#C89F4A"/>
+        <div class="loader__logo-mark">
+          <!-- Gadzoom Logo Mark - Animated "G" with Zoom Effect -->
+          <svg class="loader__svg" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Outer ring -->
+            <circle class="loader__ring loader__ring--outer" cx="40" cy="40" r="36" stroke="url(#gradient1)" stroke-width="3"/>
+            <!-- Inner ring -->
+            <circle class="loader__ring loader__ring--inner" cx="40" cy="40" r="26" stroke="url(#gradient2)" stroke-width="2"/>
+            <!-- G letter path -->
+            <path class="loader__letter" d="M40 20 C25 20 16 30 16 40 C16 50 25 60 40 60 C50 60 56 54 58 48 L44 48 L44 40 L64 40 L64 44 C64 56 54 68 40 68 C22 68 8 54 8 40 C8 26 22 12 40 12 C52 12 60 18 64 26 L54 30 C52 26 47 20 40 20Z" fill="url(#gradient1)"/>
+            <!-- Zoom lines -->
+            <line class="loader__zoom loader__zoom--1" x1="58" y1="58" x2="72" y2="72" stroke="url(#gradient1)" stroke-width="4" stroke-linecap="round"/>
+            <circle class="loader__zoom-dot" cx="72" cy="72" r="4" fill="#FF6B35"/>
+            <!-- Gradients -->
+            <defs>
+              <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#6366F1"/>
+                <stop offset="50%" stop-color="#8B5CF6"/>
+                <stop offset="100%" stop-color="#EC4899"/>
+              </linearGradient>
+              <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#8B5CF6"/>
+                <stop offset="100%" stop-color="#EC4899"/>
+              </linearGradient>
+            </defs>
           </svg>
+          <div class="loader__glow"></div>
         </div>
         <div class="loader__brand">
-          <span class="loader__brand-text">Idaho Pharmacy</span>
-          <span class="loader__brand-tagline">Long-Term Care Partner</span>
+          <span class="loader__brand-name">
+            <span class="loader__char">G</span>
+            <span class="loader__char">A</span>
+            <span class="loader__char">D</span>
+            <span class="loader__char">Z</span>
+            <span class="loader__char">O</span>
+            <span class="loader__char">O</span>
+            <span class="loader__char">M</span>
+          </span>
         </div>
       </div>
       <div class="loader__progress">
         <div class="loader__progress-track">
           <div class="loader__progress-bar" id="progress-bar"></div>
         </div>
-        <span class="loader__progress-text" id="progress-text">0%</span>
-      </div>
-      <div class="loader__message">
-        <span class="loader__message-word" data-text="Delivering">Delivering</span>
-        <span class="loader__message-word" data-text="care">care</span>
-        <span class="loader__message-word" data-text="across">across</span>
-        <span class="loader__message-word" data-text="Idaho">Idaho</span>
+        <div class="loader__progress-info">
+          <span class="loader__progress-text" id="progress-text">0%</span>
+          <span class="loader__progress-status" id="progress-status">Initializing...</span>
+        </div>
       </div>
     </div>
-    <div class="loader__corners">
-      <span class="loader__corner loader__corner--tl"></span>
-      <span class="loader__corner loader__corner--tr"></span>
-      <span class="loader__corner loader__corner--bl"></span>
-      <span class="loader__corner loader__corner--br"></span>
-    </div>
+    <div class="loader__particles" id="particles"></div>
   </div>
 
   <main class="page-content" id="page-content">
     <section class="hero">
       <nav class="nav">
         <div class="nav__brand">
-          <svg viewBox="0 0 180 48" class="nav__logo">
-            <path d="M12 36 L28 12 L32 20 L42 8" stroke="#1E4637" stroke-width="4" fill="none" stroke-linecap="round"/>
-            <text x="60" y="30" font-family="'Inter', sans-serif" font-size="20" fill="#1E4637" font-weight="700">Idaho Pharmacy</text>
+          <svg viewBox="0 0 80 80" class="nav__logo" fill="none">
+            <path d="M40 20 C25 20 16 30 16 40 C16 50 25 60 40 60 C50 60 56 54 58 48 L44 48 L44 40 L64 40 L64 44 C64 56 54 68 40 68 C22 68 8 54 8 40 C8 26 22 12 40 12 C52 12 60 18 64 26 L54 30 C52 26 47 20 40 20Z" fill="url(#navGrad)"/>
+            <line x1="58" y1="58" x2="72" y2="72" stroke="url(#navGrad)" stroke-width="4" stroke-linecap="round"/>
+            <defs>
+              <linearGradient id="navGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#6366F1"/>
+                <stop offset="100%" stop-color="#EC4899"/>
+              </linearGradient>
+            </defs>
           </svg>
+          <span>GADZOOM</span>
         </div>
         <ul class="nav__links">
-          <li><a href="#services">Services</a></li>
-          <li><a href="#areas">Service Areas</a></li>
-          <li><a href="#emar">eMAR</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#">Solutions</a></li>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Contact</a></li>
         </ul>
+        <a href="#" class="nav__cta">Get Started</a>
       </nav>
       <div class="hero__content">
-        <p class="hero__eyebrow">Idaho's Trusted LTC Pharmacy Partner</p>
-        <h1 class="hero__title">Your Idaho Long-Term<br><span>Care Pharmacy Partner</span></h1>
-        <p class="hero__text">Idaho Pharmacy is a dedicated, independent, locally owned and operated long-term care pharmacy serving facilities across the state.</p>
+        <div class="hero__badge">🚀 Now with AI-powered features</div>
+        <h1 class="hero__title">Scale Your Business<br><span>at Lightning Speed</span></h1>
+        <p class="hero__text">Gadzoom helps companies accelerate growth with powerful automation tools and intelligent insights.</p>
         <div class="hero__actions">
-          <a href="#contact" class="hero__cta hero__cta--primary">Start Service</a>
-          <a href="#services" class="hero__cta hero__cta--secondary">Our Services</a>
+          <a href="#" class="hero__cta hero__cta--primary">Start Free Trial</a>
+          <a href="#" class="hero__cta hero__cta--secondary">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            Watch Demo
+          </a>
         </div>
       </div>
     </section>
