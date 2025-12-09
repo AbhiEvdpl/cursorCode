@@ -1,3 +1,16 @@
+const vpLoader = document.getElementById('vp-loader');
+const hideLoader = () => {
+  if (vpLoader) {
+    vpLoader.classList.add('is-hidden');
+    vpLoader.addEventListener('animationend', () => vpLoader.remove(), { once: true });
+  }
+};
+if (document.readyState === 'complete') {
+  hideLoader();
+} else {
+  window.addEventListener('load', hideLoader);
+}
+
 const navToggle = document.querySelector('.nav-toggle');
 const primaryNav = document.querySelector('.primary-nav');
 const header = document.querySelector('.site-header');
