@@ -1,30 +1,20 @@
 class PageLoader {
   constructor(options = {}) {
     this.options = {
-      minLoadTime: options.minLoadTime || 4500,
-      exitDelay: options.exitDelay || 600,
+      minLoadTime: options.minLoadTime || 3000,
+      exitDelay: options.exitDelay || 400,
       ...options
     };
 
     this.loader = document.getElementById('loader');
     this.progressBar = document.getElementById('progress-bar');
     this.progressText = document.getElementById('progress-text');
-    this.progressStatus = document.getElementById('progress-status');
     this.pageContent = document.getElementById('page-content');
 
     this.progress = 0;
     this.targetProgress = 0;
     this.isComplete = false;
     this.startTime = Date.now();
-
-    this.statusMessages = [
-      { threshold: 0, message: 'Initializing...' },
-      { threshold: 15, message: 'Loading assets...' },
-      { threshold: 35, message: 'Preparing components...' },
-      { threshold: 55, message: 'Almost there...' },
-      { threshold: 75, message: 'Finalizing...' },
-      { threshold: 95, message: 'Ready!' }
-    ];
 
     this.init();
   }
@@ -46,7 +36,7 @@ class PageLoader {
 
       if (this.progress < this.targetProgress) {
         const diff = this.targetProgress - this.progress;
-        const increment = Math.max(0.2, diff * 0.06);
+        const increment = Math.max(0.3, diff * 0.08);
         this.progress = Math.min(this.progress + increment, this.targetProgress);
         this.updateProgress(this.progress);
       }
@@ -103,15 +93,6 @@ class PageLoader {
     const rounded = Math.round(value);
     this.progressBar.style.width = `${value}%`;
     this.progressText.textContent = `${rounded}%`;
-
-    const status = [...this.statusMessages].reverse().find(s => rounded >= s.threshold);
-    if (status && this.progressStatus.textContent !== status.message) {
-      this.progressStatus.style.opacity = '0';
-      setTimeout(() => {
-        this.progressStatus.textContent = status.message;
-        this.progressStatus.style.opacity = '1';
-      }, 150);
-    }
   }
 
   async completeLoading() {
@@ -128,7 +109,7 @@ class PageLoader {
       const animate = () => {
         if (this.progress < 100) {
           const diff = 100 - this.progress;
-          const increment = Math.max(0.5, diff * 0.1);
+          const increment = Math.max(0.8, diff * 0.15);
           this.progress = Math.min(this.progress + increment, 100);
           this.updateProgress(this.progress);
           requestAnimationFrame(animate);
@@ -147,12 +128,12 @@ class PageLoader {
       this.loader.classList.add('exit');
       this.pageContent.classList.add('visible');
       document.body.classList.remove('loading');
-    }, 600);
+    }, 500);
 
     setTimeout(() => {
       this.loader.style.display = 'none';
       this.onComplete();
-    }, 1800);
+    }, 1300);
   }
 
   wait(ms) {
@@ -171,8 +152,8 @@ class PageLoader {
     
     elements.forEach((el, index) => {
       el.style.opacity = '0';
-      el.style.transform = 'translateY(30px)';
-      el.style.transition = `opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1) ${index * 0.08}s, transform 0.8s cubic-bezier(0.4, 0, 0.2, 1) ${index * 0.08}s`;
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = `opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${index * 0.06}s, transform 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${index * 0.06}s`;
       
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
@@ -184,130 +165,13 @@ class PageLoader {
   }
 }
 
-class ParticleSystem {
-  constructor() {
-    this.container = document.getElementById('particles');
-    this.particles = [];
-    this.colors = ['#6366F1', '#8B5CF6', '#EC4899', '#FF6B35'];
-    this.init();
-  }
-
-  init() {
-    for (let i = 0; i < 30; i++) {
-      this.createParticle();
-    }
-  }
-
-  createParticle() {
-    const particle = document.createElement('div');
-    particle.className = 'particle';
-    
-    const size = Math.random() * 6 + 2;
-    const x = Math.random() * 100;
-    const delay = Math.random() * 5;
-    const duration = Math.random() * 20 + 15;
-    const color = this.colors[Math.floor(Math.random() * this.colors.length)];
-
-    particle.style.cssText = `
-      width: ${size}px;
-      height: ${size}px;
-      background: ${color};
-      left: ${x}%;
-      bottom: -10px;
-      opacity: ${Math.random() * 0.6 + 0.2};
-      box-shadow: 0 0 ${size * 2}px ${color};
-      animation: floatParticle ${duration}s ease-in-out ${delay}s infinite;
-    `;
-
-    this.container.appendChild(particle);
-    this.particles.push(particle);
-  }
-}
-
-class MagneticEffect {
-  constructor() {
-    this.logo = document.querySelector('.loader__logo-mark');
-    if (!this.logo) return;
-    
-    this.bounds = null;
-    this.mouseX = 0;
-    this.mouseY = 0;
-    
-    this.init();
-  }
-
-  init() {
-    document.addEventListener('mousemove', (e) => {
-      this.mouseX = e.clientX;
-      this.mouseY = e.clientY;
-      this.updatePosition();
-    });
-  }
-
-  updatePosition() {
-    if (!this.logo) return;
-    
-    this.bounds = this.logo.getBoundingClientRect();
-    const centerX = this.bounds.left + this.bounds.width / 2;
-    const centerY = this.bounds.top + this.bounds.height / 2;
-    
-    const deltaX = this.mouseX - centerX;
-    const deltaY = this.mouseY - centerY;
-    const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
-    
-    const maxDistance = 300;
-    const maxMove = 15;
-    
-    if (distance < maxDistance) {
-      const factor = 1 - (distance / maxDistance);
-      const moveX = (deltaX / distance) * maxMove * factor;
-      const moveY = (deltaY / distance) * maxMove * factor;
-      
-      this.logo.style.transform = `translate(${moveX}px, ${moveY}px)`;
-    } else {
-      this.logo.style.transform = 'translate(0, 0)';
-    }
-  }
-}
-
-const style = document.createElement('style');
-style.textContent = `
-  @keyframes floatParticle {
-    0% {
-      transform: translateY(0) translateX(0) scale(1);
-      opacity: 0;
-    }
-    10% {
-      opacity: 0.8;
-    }
-    90% {
-      opacity: 0.8;
-    }
-    100% {
-      transform: translateY(-100vh) translateX(${Math.random() * 100 - 50}px) scale(0.5);
-      opacity: 0;
-    }
-  }
-  
-  .loader__progress-status {
-    transition: opacity 0.15s ease;
-  }
-  
-  .loader__logo-mark {
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-`;
-document.head.appendChild(style);
-
 document.addEventListener('DOMContentLoaded', () => {
-  new ParticleSystem();
-  new MagneticEffect();
   new PageLoader({
-    minLoadTime: 5000,
-    exitDelay: 500
+    minLoadTime: 3000,
+    exitDelay: 400
   });
 });
 
 document.addEventListener('loaderComplete', () => {
-  console.log('Gadzoom page loaded successfully');
+  console.log('Gadzoom loaded');
 });
