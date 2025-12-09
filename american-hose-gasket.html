@@ -58,6 +58,41 @@
             z-index: 9998;
         }
         
+        .cursor-text {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--light);
+            opacity: 0;
+            transform: translate(-50%, -50%);
+        }
+        
+        /* Noise Overlay */
+        .noise-overlay {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9990;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)'/%3E%3C/svg%3E");
+        }
+        
+        /* Scroll Progress */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+            z-index: 9999;
+            transform-origin: left;
+            transform: scaleX(0);
+        }
+        
         /* Loader */
         .loader {
             position: fixed;
@@ -69,6 +104,7 @@
             justify-content: center;
             flex-direction: column;
             gap: 2rem;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
         }
         
         .loader-text {
@@ -96,6 +132,25 @@
             height: 100%;
             width: 0;
             background: var(--secondary);
+        }
+        
+        .loader-counter {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(4rem, 15vw, 12rem);
+            font-weight: 800;
+            color: rgba(255,255,255,0.1);
+            position: absolute;
+            bottom: 2rem;
+            right: 4rem;
+            line-height: 1;
+        }
+        
+        .loader-tagline {
+            font-size: 0.875rem;
+            color: rgba(255,255,255,0.4);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-top: 1rem;
         }
         
         /* Header */
@@ -243,6 +298,56 @@
             color: rgba(255,255,255,0.03);
             white-space: nowrap;
             pointer-events: none;
+        }
+        
+        /* Floating Shapes */
+        .floating-shapes {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        
+        .shape {
+            position: absolute;
+            border: 2px solid rgba(249,115,22,0.2);
+            border-radius: 50%;
+        }
+        
+        .shape-1 {
+            width: 300px;
+            height: 300px;
+            top: 10%;
+            right: 15%;
+        }
+        
+        .shape-2 {
+            width: 150px;
+            height: 150px;
+            bottom: 20%;
+            left: 10%;
+            border-color: rgba(251,191,36,0.15);
+        }
+        
+        .shape-3 {
+            width: 80px;
+            height: 80px;
+            top: 40%;
+            left: 25%;
+            background: rgba(249,115,22,0.05);
+        }
+        
+        /* Image Reveal */
+        .img-reveal {
+            overflow: hidden;
+        }
+        
+        .img-reveal img {
+            clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+        }
+        
+        .img-reveal.revealed img {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
         }
         
         .hero-content {
@@ -429,6 +534,27 @@
             background: var(--secondary);
             padding: 1.5rem 0;
             overflow: hidden;
+            position: relative;
+        }
+        
+        .marquee::before,
+        .marquee::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100px;
+            z-index: 2;
+        }
+        
+        .marquee::before {
+            left: 0;
+            background: linear-gradient(90deg, var(--secondary), transparent);
+        }
+        
+        .marquee::after {
+            right: 0;
+            background: linear-gradient(-90deg, var(--secondary), transparent);
         }
         
         .marquee-track {
@@ -737,6 +863,11 @@
             width: 32px;
             height: 32px;
             color: var(--primary);
+            transition: transform 0.4s ease;
+        }
+        
+        .feature-card:hover .feature-icon svg {
+            transform: scale(1.1) rotate(5deg);
         }
         
         .feature-title {
@@ -818,6 +949,12 @@
             padding: 2.5rem;
             border-radius: 24px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.12);
         }
         
         .testimonial-stars {
@@ -961,6 +1098,7 @@
         
         .form-input:focus {
             border-color: var(--secondary);
+            box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.1);
         }
         
         .form-select {
@@ -1042,6 +1180,17 @@
             width: 36px;
             height: 36px;
             color: var(--secondary);
+            transition: transform 0.4s ease;
+        }
+        
+        .location-card:hover .location-icon svg {
+            transform: scale(1.15);
+            animation: bounce 0.6s ease;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: scale(1.15) translateY(0); }
+            50% { transform: scale(1.15) translateY(-5px); }
         }
         
         .location-city {
@@ -1107,11 +1256,13 @@
         .footer-links a {
             color: rgba(255,255,255,0.6);
             text-decoration: none;
-            transition: color 0.3s;
+            transition: color 0.3s, transform 0.3s;
+            display: inline-block;
         }
         
         .footer-links a:hover {
             color: var(--secondary);
+            transform: translateX(5px);
         }
         
         .footer-contact-item {
@@ -1159,6 +1310,88 @@
             color: var(--secondary);
         }
         
+        /* 3D Tilt Card Effect */
+        .tilt-card {
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+        
+        .tilt-card-inner {
+            transition: transform 0.3s ease;
+            transform-style: preserve-3d;
+        }
+        
+        /* Text Scramble */
+        .scramble-text {
+            display: inline-block;
+        }
+        
+        /* Split Characters */
+        .char {
+            display: inline-block;
+            transform: translateY(100%);
+            opacity: 0;
+        }
+        
+        /* Section Transitions */
+        .section-dark {
+            background: var(--primary);
+            color: var(--light);
+        }
+        
+        .section-light {
+            background: var(--light);
+            color: var(--primary);
+        }
+        
+        /* Parallax Image Container */
+        .parallax-img {
+            overflow: hidden;
+        }
+        
+        .parallax-img img {
+            transform: scale(1.2);
+            will-change: transform;
+        }
+        
+        /* Glowing Button */
+        .btn-glow::before {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            border-radius: inherit;
+            z-index: -1;
+            opacity: 0;
+            filter: blur(15px);
+            transition: opacity 0.4s;
+        }
+        
+        .btn-glow:hover::before {
+            opacity: 0.6;
+        }
+        
+        /* Animated Underline */
+        .animated-underline {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .animated-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--secondary);
+            transition: width 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+        
+        .animated-underline:hover::after {
+            width: 100%;
+        }
+        
         /* Responsive */
         @media (max-width: 1024px) {
             .header { padding: 1.5rem 2rem; }
@@ -1172,7 +1405,9 @@
             .why-image { order: -1; }
             .cta-grid { grid-template-columns: 1fr; gap: 3rem; }
             .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
-            .cursor, .cursor-follower { display: none; }
+            .cursor, .cursor-follower, .cursor-text { display: none; }
+            .floating-shapes { display: none; }
+            .loader-counter { font-size: 6rem; right: 2rem; }
         }
         
         @media (max-width: 640px) {
@@ -1209,6 +1444,12 @@
     </style>
 </head>
 <body>
+    <!-- Noise Overlay -->
+    <div class="noise-overlay"></div>
+    
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+    
     <!-- Loader -->
     <div class="loader" id="loader">
         <div class="loader-text">
@@ -1217,11 +1458,14 @@
         <div class="loader-progress">
             <div class="loader-bar" id="loader-bar"></div>
         </div>
+        <div class="loader-tagline">Industrial Excellence Since 1974</div>
+        <div class="loader-counter" id="loader-counter">0</div>
     </div>
 
     <!-- Custom Cursor -->
     <div class="cursor" id="cursor"></div>
     <div class="cursor-follower" id="cursor-follower"></div>
+    <div class="cursor-text" id="cursor-text"></div>
 
     <!-- Header -->
     <header class="header">
@@ -1251,6 +1495,11 @@
         <!-- Hero Section -->
         <section class="hero">
             <div class="hero-bg-text">INDUSTRIAL</div>
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
             <div class="hero-content">
                 <div class="hero-label">
                     <span></span>
@@ -1265,7 +1514,7 @@
                     American Hose & Gasket proudly ships top-quality industrial hose and sheet rubber products from our dual locations in Decatur, AL and Louisville, KY. Serving businesses nationwide with reliable bulk supply.
                 </p>
                 <div class="hero-cta">
-                    <a href="#categories" class="btn btn-primary">
+                    <a href="#categories" class="btn btn-primary btn-glow" data-cursor="Click">
                         Explore Products
                         <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -1275,16 +1524,16 @@
                 </div>
             </div>
             <div class="hero-visual">
-                <div class="hero-image">
+                <div class="hero-image parallax-img">
                     <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80" alt="Industrial Hose Manufacturing">
                 </div>
                 <div class="hero-stats">
                     <div class="stat-card">
-                        <div class="stat-number">2</div>
+                        <div class="stat-number counter" data-target="2">0</div>
                         <div class="stat-label">Warehouse Locations</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number">50+</div>
+                        <div class="stat-number counter" data-target="50">0</div>
                         <div class="stat-label">Years Experience</div>
                     </div>
                 </div>
@@ -1327,7 +1576,7 @@
                 <p class="section-desc reveal">Comprehensive selection of industrial hose and rubber products for every application, backed by decades of expertise.</p>
             </div>
             <div class="categories-grid">
-                <a href="#" class="category-card reveal-scale">
+                <a href="#" class="category-card reveal-scale img-reveal" data-cursor="View">
                     <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Industrial Hose">
                     <div class="category-overlay">
                         <span class="category-number">01</span>
@@ -1340,7 +1589,7 @@
                         </svg>
                     </div>
                 </a>
-                <a href="#" class="category-card reveal-scale">
+                <a href="#" class="category-card reveal-scale img-reveal" data-cursor="View">
                     <img src="https://images.unsplash.com/photo-1615811361523-6bd03d7748e7?w=600&q=80" alt="Sheet Rubber">
                     <div class="category-overlay">
                         <span class="category-number">02</span>
@@ -1353,7 +1602,7 @@
                         </svg>
                     </div>
                 </a>
-                <a href="#" class="category-card reveal-scale">
+                <a href="#" class="category-card reveal-scale img-reveal" data-cursor="View">
                     <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&q=80" alt="Gaskets & Seals">
                     <div class="category-overlay">
                         <span class="category-number">03</span>
@@ -1366,7 +1615,7 @@
                         </svg>
                     </div>
                 </a>
-                <a href="#" class="category-card reveal-scale">
+                <a href="#" class="category-card reveal-scale img-reveal" data-cursor="View">
                     <img src="https://images.unsplash.com/photo-1590959651373-a3db0f38a961?w=600&q=80" alt="Fittings">
                     <div class="category-overlay">
                         <span class="category-number">04</span>
@@ -1389,10 +1638,10 @@
                     <span class="section-label">Featured Products</span>
                     <h2 class="section-title reveal">Best Sellers &<br>Top Rated</h2>
                 </div>
-                <a href="#" class="btn btn-primary reveal">View All Products</a>
+                <a href="#" class="btn btn-primary btn-glow reveal" data-cursor="Browse">View All Products</a>
             </div>
             <div class="products-grid">
-                <a href="#contact" class="product-card reveal">
+                <a href="#contact" class="product-card reveal tilt-card" data-cursor="Quote">
                     <div class="product-image">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
                             <circle cx="12" cy="12" r="10"/>
@@ -1549,10 +1798,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="why-image reveal-right">
+                <div class="why-image reveal-right parallax-img">
                     <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&q=80" alt="Industrial Facility">
                     <div class="why-badge">
-                        <div class="why-badge-number">50+</div>
+                        <div class="why-badge-number counter" data-target="50">0</div>
                         <div class="why-badge-text">Years of Excellence</div>
                     </div>
                 </div>
@@ -1819,36 +2068,70 @@
         
         const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         
-        // Cursor
+        // Cursor with text labels
         const cursor = document.getElementById('cursor');
         const cursorFollower = document.getElementById('cursor-follower');
+        const cursorText = document.getElementById('cursor-text');
         
         if (!prefersReducedMotion && window.innerWidth > 1024) {
             document.addEventListener('mousemove', (e) => {
                 gsap.to(cursor, { x: e.clientX - 10, y: e.clientY - 10, duration: 0.1 });
                 gsap.to(cursorFollower, { x: e.clientX - 4, y: e.clientY - 4, duration: 0.3 });
+                gsap.to(cursorText, { x: e.clientX, y: e.clientY - 30, duration: 0.2 });
             });
             
-            document.querySelectorAll('a, button, .category-card, .product-card').forEach(el => {
-                el.addEventListener('mouseenter', () => gsap.to(cursor, { scale: 2, duration: 0.2 }));
+            document.querySelectorAll('[data-cursor]').forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    const text = el.getAttribute('data-cursor');
+                    cursorText.textContent = text;
+                    gsap.to(cursor, { scale: 2.5, duration: 0.3 });
+                    gsap.to(cursorText, { opacity: 1, duration: 0.3 });
+                });
+                el.addEventListener('mouseleave', () => {
+                    gsap.to(cursor, { scale: 1, duration: 0.3 });
+                    gsap.to(cursorText, { opacity: 0, duration: 0.3 });
+                });
+            });
+            
+            document.querySelectorAll('a:not([data-cursor]), button:not([data-cursor])').forEach(el => {
+                el.addEventListener('mouseenter', () => gsap.to(cursor, { scale: 1.5, duration: 0.2 }));
                 el.addEventListener('mouseleave', () => gsap.to(cursor, { scale: 1, duration: 0.2 }));
             });
         } else {
             cursor.style.display = 'none';
             cursorFollower.style.display = 'none';
+            cursorText.style.display = 'none';
         }
         
-        // Loader
+        // Enhanced Loader with Counter
         const loader = document.getElementById('loader');
         const loaderBar = document.getElementById('loader-bar');
         const loaderText = document.querySelectorAll('.loader-text span');
+        const loaderCounter = document.getElementById('loader-counter');
         
         const loaderTl = gsap.timeline();
+        let counter = { value: 0 };
         
         loaderTl
-            .to(loaderText, { y: 0, stagger: 0.1, duration: 0.6, ease: 'power3.out' })
-            .to(loaderBar, { width: '100%', duration: 1.5, ease: 'power2.inOut' })
-            .to(loader, { yPercent: -100, duration: 0.8, ease: 'power3.inOut', onComplete: initAnimations });
+            .to(loaderText, { y: 0, stagger: 0.15, duration: 0.8, ease: 'power3.out' })
+            .to(counter, {
+                value: 100,
+                duration: 2,
+                ease: 'power2.inOut',
+                onUpdate: () => {
+                    loaderCounter.textContent = Math.round(counter.value);
+                }
+            }, '-=0.5')
+            .to(loaderBar, { width: '100%', duration: 2, ease: 'power2.inOut' }, '-=2')
+            .to('.loader-tagline', { opacity: 0, y: -20, duration: 0.3 })
+            .to(loaderCounter, { opacity: 0, scale: 0.8, duration: 0.3 }, '-=0.3')
+            .to(loaderText, { y: -100, opacity: 0, stagger: 0.05, duration: 0.4 }, '-=0.2')
+            .to(loader, { 
+                clipPath: 'polygon(0 0, 100% 0, 100% 0, 0 0)',
+                duration: 1,
+                ease: 'power4.inOut',
+                onComplete: initAnimations 
+            });
         
         // Navigation
         const navToggle = document.getElementById('nav-toggle');
@@ -1881,16 +2164,147 @@
             });
         });
         
+        // Counter Animation Function
+        function animateCounter(el) {
+            const target = parseInt(el.getAttribute('data-target'));
+            const suffix = el.textContent.includes('+') ? '+' : '';
+            gsap.to({ val: 0 }, {
+                val: target,
+                duration: 2,
+                ease: 'power2.out',
+                onUpdate: function() {
+                    el.textContent = Math.round(this.targets()[0].val) + suffix;
+                }
+            });
+        }
+        
+        // 3D Tilt Effect
+        function initTilt() {
+            document.querySelectorAll('.tilt-card').forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    const rotateX = (y - centerY) / 10;
+                    const rotateY = (centerX - x) / 10;
+                    
+                    gsap.to(card, {
+                        rotateX: rotateX,
+                        rotateY: rotateY,
+                        duration: 0.5,
+                        ease: 'power2.out'
+                    });
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    gsap.to(card, {
+                        rotateX: 0,
+                        rotateY: 0,
+                        duration: 0.5,
+                        ease: 'power2.out'
+                    });
+                });
+            });
+        }
+        
+        // Text Scramble Effect
+        class TextScramble {
+            constructor(el) {
+                this.el = el;
+                this.chars = '!<>-_\\/[]{}—=+*^?#________';
+                this.update = this.update.bind(this);
+            }
+            setText(newText) {
+                const oldText = this.el.innerText;
+                const length = Math.max(oldText.length, newText.length);
+                const promise = new Promise(resolve => this.resolve = resolve);
+                this.queue = [];
+                for (let i = 0; i < length; i++) {
+                    const from = oldText[i] || '';
+                    const to = newText[i] || '';
+                    const start = Math.floor(Math.random() * 40);
+                    const end = start + Math.floor(Math.random() * 40);
+                    this.queue.push({ from, to, start, end });
+                }
+                cancelAnimationFrame(this.frameRequest);
+                this.frame = 0;
+                this.update();
+                return promise;
+            }
+            update() {
+                let output = '';
+                let complete = 0;
+                for (let i = 0, n = this.queue.length; i < n; i++) {
+                    let { from, to, start, end, char } = this.queue[i];
+                    if (this.frame >= end) {
+                        complete++;
+                        output += to;
+                    } else if (this.frame >= start) {
+                        if (!char || Math.random() < 0.28) {
+                            char = this.chars[Math.floor(Math.random() * this.chars.length)];
+                            this.queue[i].char = char;
+                        }
+                        output += `<span style="color:var(--secondary)">${char}</span>`;
+                    } else {
+                        output += from;
+                    }
+                }
+                this.el.innerHTML = output;
+                if (complete === this.queue.length) {
+                    this.resolve();
+                } else {
+                    this.frameRequest = requestAnimationFrame(this.update);
+                    this.frame++;
+                }
+            }
+        }
+        
         function initAnimations() {
             if (prefersReducedMotion) {
                 document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
                     el.style.opacity = 1;
                     el.style.transform = 'none';
                 });
+                document.querySelectorAll('.img-reveal img').forEach(img => {
+                    img.style.clipPath = 'polygon(0 0, 100% 0, 100% 100%, 0 100%)';
+                });
                 return;
             }
             
-            // Hero animations
+            // Initialize 3D tilt
+            initTilt();
+            
+            // Floating shapes animation
+            gsap.to('.shape-1', {
+                y: 30,
+                x: 20,
+                rotation: 360,
+                duration: 20,
+                repeat: -1,
+                yoyo: true,
+                ease: 'sine.inOut'
+            });
+            gsap.to('.shape-2', {
+                y: -40,
+                x: -30,
+                rotation: -360,
+                duration: 25,
+                repeat: -1,
+                yoyo: true,
+                ease: 'sine.inOut'
+            });
+            gsap.to('.shape-3', {
+                y: 50,
+                scale: 1.2,
+                duration: 15,
+                repeat: -1,
+                yoyo: true,
+                ease: 'sine.inOut'
+            });
+            
+            // Hero animations with staggered character reveal
             gsap.to('.hero-title .word', {
                 y: 0,
                 stagger: 0.08,
@@ -1903,7 +2317,16 @@
             gsap.from('.hero-desc', { opacity: 0, y: 30, duration: 0.6, delay: 0.6 });
             gsap.from('.hero-cta', { opacity: 0, y: 30, duration: 0.6, delay: 0.8 });
             gsap.from('.hero-visual', { opacity: 0, x: 100, duration: 1, delay: 0.5 });
-            gsap.from('.stat-card', { opacity: 0, y: 50, stagger: 0.2, duration: 0.6, delay: 1 });
+            gsap.from('.stat-card', { 
+                opacity: 0, 
+                y: 50, 
+                stagger: 0.2, 
+                duration: 0.6, 
+                delay: 1,
+                onComplete: () => {
+                    document.querySelectorAll('.stat-card .counter').forEach(animateCounter);
+                }
+            });
             
             // Background text parallax
             gsap.to('.hero-bg-text', {
@@ -1914,6 +2337,33 @@
                     end: 'bottom top',
                     scrub: 1
                 }
+            });
+            
+            // Parallax for floating shapes
+            gsap.to('.floating-shapes', {
+                yPercent: 30,
+                scrollTrigger: {
+                    trigger: '.hero',
+                    start: 'top top',
+                    end: 'bottom top',
+                    scrub: 1.5
+                }
+            });
+            
+            // Image reveal animations
+            gsap.utils.toArray('.img-reveal').forEach(container => {
+                const img = container.querySelector('img');
+                gsap.to(img, {
+                    clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
+                    duration: 1.2,
+                    ease: 'power4.inOut',
+                    scrollTrigger: {
+                        trigger: container,
+                        start: 'top 80%',
+                        toggleActions: 'play none none none'
+                    },
+                    onComplete: () => container.classList.add('revealed')
+                });
             });
             
             // Scroll reveals
@@ -1974,7 +2424,18 @@
                 });
             });
             
-            // Product cards stagger
+            // Counter animation for why-badge
+            ScrollTrigger.create({
+                trigger: '.why-badge',
+                start: 'top 90%',
+                onEnter: () => {
+                    const counter = document.querySelector('.why-badge .counter');
+                    if (counter) animateCounter(counter);
+                },
+                once: true
+            });
+            
+            // Product cards stagger with 3D effect
             gsap.utils.toArray('.product-card').forEach((card, i) => {
                 gsap.to(card, {
                     opacity: 1,
@@ -2004,7 +2465,7 @@
                 });
             });
             
-            // Testimonials horizontal scroll
+            // Testimonials horizontal scroll with parallax
             const slider = document.getElementById('testimonials-slider');
             const sliderWidth = slider.scrollWidth - slider.offsetWidth;
             
@@ -2015,6 +2476,18 @@
                     trigger: '.testimonials',
                     start: 'top 20%',
                     end: 'bottom 80%',
+                    scrub: 1.5
+                }
+            });
+            
+            // Parallax for why-image
+            gsap.to('.why-image img', {
+                yPercent: -15,
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: '.why-image',
+                    start: 'top bottom',
+                    end: 'bottom top',
                     scrub: 1
                 }
             });
@@ -2046,6 +2519,23 @@
                     toggleActions: 'play none none none'
                 }
             });
+            
+            // Section parallax backgrounds
+            gsap.utils.toArray('section').forEach(section => {
+                const bg = section.querySelector('.section-bg');
+                if (bg) {
+                    gsap.to(bg, {
+                        yPercent: 30,
+                        ease: 'none',
+                        scrollTrigger: {
+                            trigger: section,
+                            start: 'top bottom',
+                            end: 'bottom top',
+                            scrub: true
+                        }
+                    });
+                }
+            });
         }
         
         // Magnetic buttons
@@ -2069,12 +2559,39 @@
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     gsap.to(window, { 
-                        duration: 1, 
+                        duration: 1.2, 
                         scrollTo: { y: target, offsetY: 80 }, 
                         ease: 'power3.inOut' 
                     });
                 }
             });
+        });
+        
+        // Header scroll effect
+        let lastScroll = 0;
+        const header = document.querySelector('.header');
+        
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                gsap.to(header, { yPercent: -100, duration: 0.3 });
+            } else {
+                gsap.to(header, { yPercent: 0, duration: 0.3 });
+            }
+            lastScroll = currentScroll;
+        });
+        
+        // Scroll Progress Indicator
+        const scrollProgress = document.getElementById('scroll-progress');
+        gsap.to(scrollProgress, {
+            scaleX: 1,
+            ease: 'none',
+            scrollTrigger: {
+                trigger: document.body,
+                start: 'top top',
+                end: 'bottom bottom',
+                scrub: 0.3
+            }
         });
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
