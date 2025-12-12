@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="American Hose Company - Industrial hose and rubber solutions. Engineered for performance, built for America.">
-  <title>American Hose Company — Industrial Hose & Rubber Solutions</title>
+  <meta name="description" content="American Hose & Gasket - Wholesale industrial hose, fittings, and rubber products. Dual warehouse locations for fast fulfillment. Shop bulk hose and assemblies.">
+  <title>American Hose & Gasket — Industrial Hose & Rubber Wholesale</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -14,10 +14,10 @@
   <header class="header">
     <div class="header__top">
       <div class="container header__top-inner">
-        <span class="header__tagline">Engineered for Performance. Built in America.</span>
+        <span class="header__tagline">Wholesale Industrial Hose & Rubber — Decatur, AL & Louisville, KY</span>
         <div class="header__contact-bar">
-          <a href="tel:1-800-555-4673"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg> 1-800-555-HOSE</a>
-          <a href="mailto:sales@americanhose.com"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> sales@americanhose.com</a>
+          <a href="tel:+19417692593"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg> (941) 769-2593</a>
+          <a href="mailto:tim@americanhosegasket.com"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> tim@americanhosegasket.com</a>
         </div>
       </div>
     </div>
@@ -33,7 +33,7 @@
           </div>
           <div class="logo__text">
             <span class="logo__name">American Hose</span>
-            <span class="logo__sub">Company</span>
+            <span class="logo__sub">& Gasket</span>
           </div>
         </a>
         <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
@@ -41,251 +41,370 @@
         </button>
         <ul class="nav" id="navMenu">
           <li><a href="#products">Products</a></li>
+          <li><a href="#why-us">Why Us</a></li>
           <li><a href="#industries">Industries</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#quote" class="nav__cta">Get Quote</a></li>
+          <li><a href="#locations">Locations</a></li>
+          <li><a href="#contact" class="nav__cta">Contact Us</a></li>
         </ul>
       </div>
     </nav>
   </header>
 
   <main>
-    <section class="hero">
-      <div class="hero__bg"></div>
-      <div class="hero__streak" aria-hidden="true"></div>
-      <div class="hero__streak hero__streak--2" aria-hidden="true"></div>
-      <div class="container hero__content">
-        <div class="hero__badge">Since 1985</div>
-        <h1 class="hero__title">Industrial Hose &<br><span>Rubber Solutions</span></h1>
-        <p class="hero__text">Premium quality hose, fittings, and rubber products engineered for demanding industrial applications. Trusted by manufacturers nationwide.</p>
-        <div class="hero__actions">
-          <a href="#quote" class="btn btn--primary">Request a Quote</a>
-          <a href="#products" class="btn btn--outline">Browse Products</a>
+    <!-- Hero Slider -->
+    <section class="hero-slider">
+      <div class="hero-slider__track" id="heroTrack">
+        <!-- Slide 1: Agriculture -->
+        <div class="hero-slide hero-slide--agriculture active">
+          <div class="hero-slide__bg"></div>
+          <div class="hero-slide__overlay"></div>
+          <div class="container hero-slide__content">
+            <span class="hero-slide__tag">Agriculture</span>
+            <h1 class="hero-slide__title">Durable Hose & Assembly Solutions for <span>Agriculture</span></h1>
+            <p class="hero-slide__text">Built for OEMs, equipment dealers, and farm supply operations—our hose assemblies deliver reliability in the toughest field conditions. Private-label and custom farm kits available.</p>
+            <a href="#products" class="btn btn--primary">Shop Agricultural Products</a>
+          </div>
         </div>
-        <div class="hero__stats">
-          <div class="stat">
-            <span class="stat__number">38+</span>
-            <span class="stat__label">Years Experience</span>
+        <!-- Slide 2: Chemical -->
+        <div class="hero-slide hero-slide--chemical">
+          <div class="hero-slide__bg"></div>
+          <div class="hero-slide__overlay"></div>
+          <div class="container hero-slide__content">
+            <span class="hero-slide__tag">Chemical</span>
+            <h1 class="hero-slide__title">High-Performance Chemical Hose Built for <span>Safety</span></h1>
+            <p class="hero-slide__text">Stocked hoses and custom assemblies engineered for corrosive media, bulk chemical transfer, and in-plant operations. Testing & tagging services available for compliance and lifecycle tracking.</p>
+            <a href="#products" class="btn btn--primary">Shop Chemical Hose</a>
           </div>
-          <div class="stat">
-            <span class="stat__number">10K+</span>
-            <span class="stat__label">Products</span>
+        </div>
+        <!-- Slide 3: Concrete -->
+        <div class="hero-slide hero-slide--concrete">
+          <div class="hero-slide__bg"></div>
+          <div class="hero-slide__overlay"></div>
+          <div class="container hero-slide__content">
+            <span class="hero-slide__tag">Concrete & Construction</span>
+            <h1 class="hero-slide__title">Engineered Hose Solutions for <span>Concrete & Shotcrete</span> Applications</h1>
+            <p class="hero-slide__text">Rugged assemblies for concrete pumping, gunite, sandblast, and high-pressure water blasting—trusted by OEMs, distributors, and contractors demanding dependable jobsite performance.</p>
+            <a href="#products" class="btn btn--primary">View Material Handling Solutions</a>
           </div>
-          <div class="stat">
-            <span class="stat__number">50</span>
-            <span class="stat__label">States Served</span>
+        </div>
+        <!-- Slide 4: Industrial -->
+        <div class="hero-slide hero-slide--industrial">
+          <div class="hero-slide__bg"></div>
+          <div class="hero-slide__overlay"></div>
+          <div class="container hero-slide__content">
+            <span class="hero-slide__tag">Industrial & General Purpose</span>
+            <h1 class="hero-slide__title">Industrial Hose Solutions for <span>High-Demand</span> Environments</h1>
+            <p class="hero-slide__text">With deep inventory and expert support, we supply industrial distributors, OEMs, and specialized users with hose, tubing, and sheet rubber for everyday maintenance and mission-critical operations.</p>
+            <a href="#products" class="btn btn--primary">Shop All Industrial Hose</a>
           </div>
         </div>
       </div>
-      <div class="hero__scroll">
-        <span>Scroll</span>
-        <div class="hero__scroll-line"></div>
+      <div class="hero-slider__nav">
+        <button class="hero-slider__dot active" data-slide="0" aria-label="Agriculture slide"></button>
+        <button class="hero-slider__dot" data-slide="1" aria-label="Chemical slide"></button>
+        <button class="hero-slider__dot" data-slide="2" aria-label="Concrete slide"></button>
+        <button class="hero-slider__dot" data-slide="3" aria-label="Industrial slide"></button>
       </div>
+      <button class="hero-slider__arrow hero-slider__arrow--prev" aria-label="Previous slide">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button class="hero-slider__arrow hero-slider__arrow--next" aria-label="Next slide">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
     </section>
 
+    <!-- Shop by Product Category -->
     <section class="products" id="products">
       <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Our Products</span>
-          <h2 class="section-title">Industrial-Grade Solutions</h2>
-          <p class="section-desc">Comprehensive range of hose, rubber, and fluid transfer products for every application.</p>
+        <div class="section-header section-header--center">
+          <h2 class="section-title">Shop by Product Category</h2>
         </div>
-        <div class="products__grid">
-          <a href="#" class="product-card">
-            <div class="product-card__icon">
+        <div class="category-grid">
+          <!-- Industrial Hose Tile -->
+          <div class="category-tile">
+            <div class="category-tile__icon">
               <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="32" cy="32" r="28"/>
-                <path d="M20 32h24M32 20v24"/>
+                <path d="M8 32c0-8 4-12 12-12h24c8 0 12 4 12 12s-4 12-12 12H20c-8 0-12-4-12-12z"/>
+                <circle cx="16" cy="32" r="4"/><circle cx="48" cy="32" r="4"/>
               </svg>
             </div>
-            <h3 class="product-card__title">Hydraulic Hose</h3>
-            <p class="product-card__text">High-pressure hose assemblies rated to 6,000 PSI</p>
-            <span class="product-card__link">View Products →</span>
-          </a>
-          <a href="#" class="product-card">
-            <div class="product-card__icon">
-              <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="12" y="12" width="40" height="40" rx="4"/>
-                <path d="M12 32h40"/>
-              </svg>
+            <h3 class="category-tile__title">Industrial Hose</h3>
+            <p class="category-tile__text">Bulk hose & assemblies for air, water, chemical, petroleum, suction, discharge, and material handling applications.</p>
+            <a href="#" class="btn btn--secondary">Shop All Hose</a>
+            <div class="category-tile__subcats">
+              <h4>Subcategories:</h4>
+              <ul>
+                <li><a href="#">Air Hydraulic Hose</a></li>
+                <li><a href="#">Bull Hose</a></li>
+                <li><a href="#">Chemical Hose</a></li>
+                <li><a href="#">Dry Bulk Material Hose</a></li>
+                <li><a href="#">HBS</a></li>
+                <li><a href="#">Heavy-Duty PVC Discharge Hose</a></li>
+                <li><a href="#">Heavy-Duty PVC Hose</a></li>
+                <li><a href="#">Helix PVC Suction Hose</a></li>
+                <li><a href="#">Hot Air Blower Hose</a></li>
+                <li><a href="#">Jack Hammer Hose</a></li>
+                <li><a href="#">Nitrile/PVC Rubber Hose</a></li>
+                <li><a href="#">Potable Water Hose</a></li>
+                <li><a href="#">Pressure Washer Hose</a></li>
+                <li><a href="#">PVC Layflat Hose</a></li>
+                <li><a href="#">Sand Blast Hose</a></li>
+                <li><a href="#">Semi-Rigid Hose</a></li>
+                <li><a href="#">Tank Truck Hose</a></li>
+                <li><a href="#">Water Suction Discharge Hose</a></li>
+              </ul>
             </div>
-            <h3 class="product-card__title">Industrial Hose</h3>
-            <p class="product-card__text">Air, water, chemical & material handling solutions</p>
-            <span class="product-card__link">View Products →</span>
-          </a>
-          <a href="#" class="product-card">
-            <div class="product-card__icon">
-              <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="8" y="20" width="48" height="24"/>
-                <path d="M8 32h48"/>
-              </svg>
-            </div>
-            <h3 class="product-card__title">Sheet Rubber</h3>
-            <p class="product-card__text">Premium rubber sheeting in all grades & compounds</p>
-            <span class="product-card__link">View Products →</span>
-          </a>
-          <a href="#" class="product-card">
-            <div class="product-card__icon">
-              <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="32" cy="32" r="20"/>
-                <circle cx="32" cy="32" r="12"/>
-              </svg>
-            </div>
-            <h3 class="product-card__title">Gaskets & Seals</h3>
-            <p class="product-card__text">Standard & custom gaskets for critical sealing</p>
-            <span class="product-card__link">View Products →</span>
-          </a>
-          <a href="#" class="product-card">
-            <div class="product-card__icon">
-              <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M16 32h12l8-16 8 32 8-16h12"/>
-              </svg>
-            </div>
-            <h3 class="product-card__title">Fittings & Couplings</h3>
-            <p class="product-card__text">Brass, steel & aluminum connection solutions</p>
-            <span class="product-card__link">View Products →</span>
-          </a>
-          <a href="#" class="product-card">
-            <div class="product-card__icon">
-              <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M32 8v48M16 24l16-16 16 16M16 40l16 16 16-16"/>
-              </svg>
-            </div>
-            <h3 class="product-card__title">Custom Fabrication</h3>
-            <p class="product-card__text">In-house assembly & specialty solutions</p>
-            <span class="product-card__link">View Products →</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="industries" id="industries">
-      <div class="industries__bg"></div>
-      <div class="container">
-        <div class="section-header section-header--light">
-          <span class="section-tag">Industries Served</span>
-          <h2 class="section-title">Powering America's Industries</h2>
-        </div>
-        <div class="industries__grid">
-          <div class="industry">
-            <div class="industry__number">01</div>
-            <h3 class="industry__title">Manufacturing</h3>
-            <p class="industry__text">Fluid power and material handling for production lines</p>
           </div>
-          <div class="industry">
-            <div class="industry__number">02</div>
-            <h3 class="industry__title">Oil & Gas</h3>
-            <p class="industry__text">High-pressure solutions for drilling and refining</p>
-          </div>
-          <div class="industry">
-            <div class="industry__number">03</div>
-            <h3 class="industry__title">Construction</h3>
-            <p class="industry__text">Heavy equipment hose and fittings</p>
-          </div>
-          <div class="industry">
-            <div class="industry__number">04</div>
-            <h3 class="industry__title">Agriculture</h3>
-            <p class="industry__text">Spray, chemical, and irrigation systems</p>
-          </div>
-          <div class="industry">
-            <div class="industry__number">05</div>
-            <h3 class="industry__title">Food & Beverage</h3>
-            <p class="industry__text">FDA-compliant sanitary hose solutions</p>
-          </div>
-          <div class="industry">
-            <div class="industry__number">06</div>
-            <h3 class="industry__title">Mining</h3>
-            <p class="industry__text">Abrasion-resistant material transfer</p>
+          <!-- Camlock Fittings Tile -->
+          <div class="category-tile">
+            <div class="category-tile__icon">
+              <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="12" y="20" width="16" height="24" rx="2"/>
+                <rect x="36" y="20" width="16" height="24" rx="2"/>
+                <path d="M28 32h8"/>
+              </svg>
+            </div>
+            <h3 class="category-tile__title">Camlock Fittings</h3>
+            <p class="category-tile__text">Precision aluminum, stainless, and polypropylene camlocks built to ensure secure, leak-free hose connections in demanding applications.</p>
+            <a href="#" class="btn btn--secondary">Shop Camlock Fittings</a>
+            <div class="category-tile__subcats">
+              <h4>Types Available:</h4>
+              <ul class="category-tile__types">
+                <li><a href="#">Type A</a></li>
+                <li><a href="#">Type B</a></li>
+                <li><a href="#">Type C</a></li>
+                <li><a href="#">Type D</a></li>
+                <li><a href="#">Type DC</a></li>
+                <li><a href="#">Type DP</a></li>
+                <li><a href="#">Type E</a></li>
+                <li><a href="#">Type F</a></li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="features">
+    <!-- Why American Hose & Gasket -->
+    <section class="why-us" id="why-us">
       <div class="container">
-        <div class="features__grid">
-          <div class="feature">
-            <div class="feature__icon">
-              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M24 4l20 10v20L24 44 4 34V14L24 4z"/>
-                <path d="M24 44V24M4 14l20 10 20-10"/>
-              </svg>
-            </div>
-            <h3 class="feature__title">Same-Day Shipping</h3>
-            <p class="feature__text">In-stock items ship same day when ordered by 2PM</p>
-          </div>
-          <div class="feature">
-            <div class="feature__icon">
+        <div class="section-header section-header--center">
+          <h2 class="section-title">Why Distributors & OEMs Choose American Hose & Gasket</h2>
+          <p class="section-desc">We combine wholesale pricing, reliable product quality, and responsive service to help you stay competitive in a fast-moving marketplace.</p>
+        </div>
+        <div class="value-grid">
+          <div class="value-card">
+            <div class="value-card__icon">
               <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
                 <circle cx="24" cy="24" r="20"/>
                 <path d="M16 24l6 6 12-12"/>
               </svg>
             </div>
-            <h3 class="feature__title">Quality Certified</h3>
-            <p class="feature__text">ISO 9001 certified with full traceability</p>
+            <h3 class="value-card__title">Proven Product Quality</h3>
+            <p class="value-card__text">We partner with ISO-certified factories and maintain a dedicated office in Asia that audits production and quality standards. Products are checked on-site before shipping to help ensure consistent, reliable performance.</p>
           </div>
-          <div class="feature">
-            <div class="feature__icon">
+          <div class="value-card">
+            <div class="value-card__icon">
               <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M24 4C12 4 4 12 4 24s8 20 20 20 20-8 20-20"/>
-                <path d="M44 4L24 24"/>
+                <rect x="6" y="14" width="36" height="24" rx="2"/>
+                <path d="M6 22h36M14 30h8"/>
               </svg>
             </div>
-            <h3 class="feature__title">Expert Support</h3>
-            <p class="feature__text">Technical specialists ready to assist</p>
+            <h3 class="value-card__title">Fast, Reliable Shipping</h3>
+            <p class="value-card__text">Most standard orders can ship the same day from our Decatur, AL warehouse, with additional support from Louisville, KY. You'll be advised quickly if a special request impacts lead time.</p>
           </div>
-          <div class="feature">
-            <div class="feature__icon">
+          <div class="value-card">
+            <div class="value-card__icon">
               <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="8" y="8" width="32" height="32" rx="2"/>
-                <path d="M8 16h32M16 8v32"/>
+                <path d="M4 36l8-8 8 8 16-16"/>
+                <path d="M28 12h8v8"/>
               </svg>
             </div>
-            <h3 class="feature__title">Custom Solutions</h3>
-            <p class="feature__text">In-house fabrication for your exact specs</p>
+            <h3 class="value-card__title">Freight Advantages</h3>
+            <p class="value-card__text">We ship FOB Decatur, AL, and offer free freight on qualifying large orders—helping distributors protect margin while staying competitive on delivered costs.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M24 4l6 12 13 2-9 9 2 13-12-6-12 6 2-13-9-9 13-2z"/>
+              </svg>
+            </div>
+            <h3 class="value-card__title">1-Year Product Warranty</h3>
+            <p class="value-card__text">Our products are warranted to be free from defects under normal use for one year. Our liability is limited to the cost of the proven defective product, and claims are handled through a straightforward written authorization and return process.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="about" id="about">
-      <div class="container about__grid">
-        <div class="about__content">
-          <span class="section-tag">About AHC</span>
-          <h2 class="section-title">Engineering Excellence Since 1985</h2>
-          <p class="about__text">American Hose Company was founded on a simple principle: deliver the highest quality industrial hose and rubber products with unmatched service.</p>
-          <p class="about__text">Today, we've grown into a trusted partner for thousands of businesses across all 50 states, offering over 10,000 products and custom fabrication capabilities.</p>
-          <ul class="about__list">
-            <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> ISO 9001:2015 Certified</li>
-            <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> DOT & FDA Compliant Options</li>
-            <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Nationwide Distribution Network</li>
-            <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Technical Engineering Support</li>
-          </ul>
-          <a href="#contact" class="btn btn--secondary">Learn More</a>
+    <!-- Industries We Serve -->
+    <section class="industries" id="industries">
+      <div class="industries__bg"></div>
+      <div class="container">
+        <div class="section-header section-header--center section-header--light">
+          <h2 class="section-title">Industries & Applications We Serve</h2>
+          <p class="section-desc">We support a wide range of industries with purpose-built hose, fittings, and rubber solutions engineered for performance, safety, and durability.</p>
         </div>
-        <div class="about__visual">
-          <div class="about__image"></div>
-          <div class="about__accent"></div>
+        <div class="industries__grid">
+          <a href="#" class="industry-card">
+            <div class="industry-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M8 40h32M16 40V28l8-12 8 12v12M24 16V8"/>
+              </svg>
+            </div>
+            <span class="industry-card__title">Agriculture</span>
+          </a>
+          <a href="#" class="industry-card">
+            <div class="industry-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="24" cy="28" r="12"/><path d="M24 16V8M18 20l-4-4M30 20l4-4"/>
+              </svg>
+            </div>
+            <span class="industry-card__title">Chemical</span>
+          </a>
+          <a href="#" class="industry-card">
+            <div class="industry-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M8 40h32M12 40V24h8v16M28 40V16h8v24"/>
+              </svg>
+            </div>
+            <span class="industry-card__title">Concrete</span>
+          </a>
+          <a href="#" class="industry-card">
+            <div class="industry-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M24 8v8M24 32v8M8 24h8M32 24h8"/><circle cx="24" cy="24" r="8"/>
+              </svg>
+            </div>
+            <span class="industry-card__title">Fire Suppression</span>
+          </a>
+          <a href="#" class="industry-card">
+            <div class="industry-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="8" y="16" width="32" height="20" rx="2"/><path d="M16 16V12h16v4"/>
+              </svg>
+            </div>
+            <span class="industry-card__title">General Industrial</span>
+          </a>
+          <a href="#" class="industry-card">
+            <div class="industry-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="24" cy="24" r="16"/><circle cx="24" cy="24" r="6"/>
+              </svg>
+            </div>
+            <span class="industry-card__title">Hydraulic</span>
+          </a>
+          <a href="#" class="industry-card">
+            <div class="industry-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 8v32M24 8v32M36 8v32M8 20h32M8 32h32"/>
+              </svg>
+            </div>
+            <span class="industry-card__title">Industrial</span>
+          </a>
+          <a href="#" class="industry-card">
+            <div class="industry-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M24 8c-8 0-16 8-16 20v12h32V28c0-12-8-20-16-20z"/>
+              </svg>
+            </div>
+            <span class="industry-card__title">Petroleum</span>
+          </a>
+        </div>
+        <p class="industries__note">Select your industry to explore recommended hose types, assemblies, and compatible fittings.</p>
+      </div>
+    </section>
+
+    <!-- Our Product Promise -->
+    <section class="promise">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Our Commitment</span>
+          <h2 class="section-title">Our Product & Service Promise</h2>
+        </div>
+        <div class="promise__grid">
+          <div class="promise__item">
+            <div class="promise__number">01</div>
+            <h3 class="promise__title">Quality</h3>
+            <p class="promise__text">Almost all of our products are produced under strict quality systems at ISO-certified partner factories, supported by on-site audits and inspections.</p>
+          </div>
+          <div class="promise__item">
+            <div class="promise__number">02</div>
+            <h3 class="promise__title">Delivery & Freight</h3>
+            <p class="promise__text">We work to ship most orders the same day and clearly communicate lead times for specialty items. Large orders may qualify for free shipment, making it easier to stock what you need without excessive freight costs.</p>
+          </div>
+          <div class="promise__item">
+            <div class="promise__number">03</div>
+            <h3 class="promise__title">Special Requests & Support</h3>
+            <p class="promise__text">If you require a product that is not listed on our website, our team is happy to review your specifications and help locate or assemble a suitable solution.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="cta">
-      <div class="cta__diagonal"></div>
-      <div class="container cta__content">
-        <h2 class="cta__title">Ready to Get Started?</h2>
-        <p class="cta__text">Request a quote today and see why thousands of businesses trust American Hose Company.</p>
-        <a href="#quote" class="btn btn--light">Request Quote</a>
+    <!-- Dual Warehouse Locations -->
+    <section class="locations" id="locations">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <h2 class="section-title">Dual Warehouses for Faster Fulfillment</h2>
+          <p class="section-desc">Strategically located facilities help us serve customers efficiently throughout the United States.</p>
+        </div>
+        <div class="locations__grid">
+          <div class="location-card">
+            <div class="location-card__marker">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            </div>
+            <h3 class="location-card__title">Decatur Warehouse</h3>
+            <address class="location-card__address">
+              843 Woodall Road<br>
+              Decatur, Alabama 35601
+            </address>
+            <div class="location-card__contact">
+              <a href="tel:+19417692593"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg> (941) 769-2593</a>
+              <a href="mailto:tim@americanhosegasket.com"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> tim@americanhosegasket.com</a>
+            </div>
+          </div>
+          <div class="location-card">
+            <div class="location-card__marker">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            </div>
+            <h3 class="location-card__title">Louisville Warehouse</h3>
+            <address class="location-card__address">
+              Louisville, Kentucky<br>
+              <em>Contact for details</em>
+            </address>
+            <div class="location-card__contact">
+              <span class="location-card__note">Additional fulfillment support</span>
+            </div>
+          </div>
+        </div>
+        <div class="locations__cta">
+          <a href="#contact" class="btn btn--primary">Contact Us for Pricing & Availability</a>
+        </div>
       </div>
     </section>
 
+    <!-- Final CTA Strip -->
+    <section class="cta-strip">
+      <div class="cta-strip__bg"></div>
+      <div class="container cta-strip__content">
+        <div class="cta-strip__text">
+          <h2 class="cta-strip__title">Shop Industrial Hose & Rubber Products with Fast, Reliable Fulfillment</h2>
+          <p class="cta-strip__desc">Bulk hose, assemblies, fittings, and sheet rubber—ready to ship directly from our U.S. warehouses. Order online anytime.</p>
+        </div>
+        <div class="cta-strip__actions">
+          <a href="#products" class="btn btn--light">Shop All Products</a>
+          <a href="#industries" class="btn btn--outline">View Hose by Industry</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
     <section class="contact" id="contact">
       <div class="container contact__grid">
         <div class="contact__info">
-          <span class="section-tag">Contact Us</span>
-          <h2 class="section-title">Let's Talk</h2>
-          <p class="contact__text">Our team is ready to help you find the right solution for your application.</p>
+          <span class="section-tag">Get in Touch</span>
+          <h2 class="section-title">Contact Us</h2>
+          <p class="contact__text">Ready to place an order or need help finding the right product? Our team is here to assist with pricing, availability, and technical questions.</p>
           <div class="contact__details">
             <div class="contact__item">
               <div class="contact__icon">
@@ -293,7 +412,7 @@
               </div>
               <div>
                 <strong>Phone</strong>
-                <a href="tel:1-800-555-4673">1-800-555-HOSE</a>
+                <a href="tel:+19417692593">(941) 769-2593</a>
               </div>
             </div>
             <div class="contact__item">
@@ -302,7 +421,7 @@
               </div>
               <div>
                 <strong>Email</strong>
-                <a href="mailto:sales@americanhose.com">sales@americanhose.com</a>
+                <a href="mailto:tim@americanhosegasket.com">tim@americanhosegasket.com</a>
               </div>
             </div>
             <div class="contact__item">
@@ -310,14 +429,14 @@
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
               </div>
               <div>
-                <strong>Headquarters</strong>
-                <span>1200 Industrial Blvd<br>Houston, TX 77001</span>
+                <strong>Main Warehouse</strong>
+                <span>843 Woodall Road<br>Decatur, AL 35601</span>
               </div>
             </div>
           </div>
         </div>
-        <form class="contact__form" id="quote">
-          <h3 class="contact__form-title">Request a Quote</h3>
+        <form class="contact__form">
+          <h3 class="contact__form-title">Send Us a Message</h3>
           <div class="form-row form-row--half">
             <div class="form-group">
               <label for="name">Name *</label>
@@ -339,22 +458,21 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="product">Product Category</label>
-            <select id="product" name="product">
-              <option value="">Select a category...</option>
-              <option value="hydraulic">Hydraulic Hose</option>
-              <option value="industrial">Industrial Hose</option>
-              <option value="rubber">Sheet Rubber</option>
-              <option value="gaskets">Gaskets & Seals</option>
-              <option value="fittings">Fittings & Couplings</option>
-              <option value="custom">Custom Fabrication</option>
+            <label for="subject">Subject</label>
+            <select id="subject" name="subject">
+              <option value="">Select a topic...</option>
+              <option value="pricing">Pricing & Availability</option>
+              <option value="order">Place an Order</option>
+              <option value="technical">Technical Question</option>
+              <option value="custom">Custom/Special Request</option>
+              <option value="other">Other</option>
             </select>
           </div>
           <div class="form-group">
-            <label for="message">Project Details *</label>
+            <label for="message">Message *</label>
             <textarea id="message" name="message" rows="4" required></textarea>
           </div>
-          <button type="submit" class="btn btn--primary btn--full">Submit Request</button>
+          <button type="submit" class="btn btn--primary btn--full">Send Message</button>
         </form>
       </div>
     </section>
@@ -374,44 +492,42 @@
             </div>
             <div class="logo__text">
               <span class="logo__name">American Hose</span>
-              <span class="logo__sub">Company</span>
+              <span class="logo__sub">& Gasket</span>
             </div>
           </a>
-          <p class="footer__tagline">Industrial hose and rubber solutions engineered for America's toughest applications.</p>
+          <p class="footer__tagline">Wholesale industrial hose, fittings, and rubber products shipped from our U.S. warehouses.</p>
         </div>
         <div class="footer__links">
           <h4>Products</h4>
           <ul>
-            <li><a href="#">Hydraulic Hose</a></li>
             <li><a href="#">Industrial Hose</a></li>
+            <li><a href="#">Camlock Fittings</a></li>
             <li><a href="#">Sheet Rubber</a></li>
             <li><a href="#">Gaskets & Seals</a></li>
-            <li><a href="#">Fittings</a></li>
+          </ul>
+        </div>
+        <div class="footer__links">
+          <h4>Industries</h4>
+          <ul>
+            <li><a href="#">Agriculture</a></li>
+            <li><a href="#">Chemical</a></li>
+            <li><a href="#">Concrete</a></li>
+            <li><a href="#">Industrial</a></li>
           </ul>
         </div>
         <div class="footer__links">
           <h4>Company</h4>
           <ul>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#industries">Industries</a></li>
-            <li><a href="#">Careers</a></li>
+            <li><a href="#why-us">Why Us</a></li>
+            <li><a href="#locations">Locations</a></li>
             <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer__links">
-          <h4>Support</h4>
-          <ul>
-            <li><a href="#">Technical Resources</a></li>
-            <li><a href="#">Product Catalogs</a></li>
-            <li><a href="#">Shipping Info</a></li>
-            <li><a href="#">Returns</a></li>
           </ul>
         </div>
       </div>
     </div>
     <div class="footer__bottom">
       <div class="container footer__bottom-inner">
-        <p>&copy; 2024 American Hose Company. All rights reserved.</p>
+        <p>&copy; 2024 American Hose & Gasket. All rights reserved.</p>
         <div class="footer__legal">
           <a href="#">Privacy Policy</a>
           <a href="#">Terms of Service</a>
