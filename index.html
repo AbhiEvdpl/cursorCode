@@ -3,394 +3,423 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="American Hose Company - Industrial hose and rubber solutions. Engineered for performance, built for America. Quality industrial hose, gaskets, and fittings.">
+  <meta name="description" content="American Hose Company - Industrial hose and rubber solutions. Engineered for performance, built for America.">
   <title>American Hose Company — Industrial Hose & Rubber Solutions</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="vp-loader" id="vp-loader" aria-label="Loading page content" role="status">
-    <div class="vp-loader__spinner">
-      <svg viewBox="0 0 50 50" aria-hidden="true">
-        <circle cx="25" cy="25" r="20"></circle>
-      </svg>
-    </div>
-    <span class="vp-loader__text">American Hose Co.</span>
-  </div>
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-  <header class="site-header" data-cms-key="header">
-    <div class="container header__layout">
-      <a class="brand" href="#home" aria-label="American Hose Company home">
-        <svg width="48" height="48" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <rect width="100" height="100" fill="#C62828"/>
-          <polygon points="50,10 90,50 50,90 10,50" fill="#0C1E32"/>
-          <polygon points="50,25 75,50 50,75 25,50" fill="#1F4E8F"/>
-          <path d="M30,50 L50,30 L90,50" stroke="#fff" stroke-width="3" fill="none"/>
-          <text x="50" y="58" text-anchor="middle" fill="#fff" font-family="Oswald, sans-serif" font-size="18" font-weight="700">AHC</text>
-        </svg>
-        <div class="brand-text">
-          <span class="brand-name">American Hose Co.</span>
-          <span class="brand-tagline">Engineered for Performance</span>
+  <header class="header">
+    <div class="header__top">
+      <div class="container header__top-inner">
+        <span class="header__tagline">Engineered for Performance. Built in America.</span>
+        <div class="header__contact-bar">
+          <a href="tel:1-800-555-4673"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg> 1-800-555-HOSE</a>
+          <a href="mailto:sales@americanhose.com"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> sales@americanhose.com</a>
         </div>
-      </a>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <nav class="primary-nav" id="primary-navigation">
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#services">Products</a></li>
-          <li><a href="#service-areas">Coverage</a></li>
-          <li><a href="#experts">About Us</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-      <div class="header__cta">
-        <button class="btn btn--primary" data-open-modal="onboarding" data-cms-key="cta-start">Get Quote</button>
       </div>
     </div>
+    <nav class="header__main">
+      <div class="container header__main-inner">
+        <a href="#" class="logo">
+          <div class="logo__icon">
+            <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="30,5 55,30 30,55 5,30" fill="#C62828"/>
+              <polygon points="30,12 48,30 30,48 12,30" fill="#1F4E8F"/>
+              <path d="M15,30 L30,15 L55,30" stroke="#fff" stroke-width="2.5" fill="none"/>
+            </svg>
+          </div>
+          <div class="logo__text">
+            <span class="logo__name">American Hose</span>
+            <span class="logo__sub">Company</span>
+          </div>
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav" id="navMenu">
+          <li><a href="#products">Products</a></li>
+          <li><a href="#industries">Industries</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#quote" class="nav__cta">Get Quote</a></li>
+        </ul>
+      </div>
+    </nav>
   </header>
 
-  <main id="main-content">
-    <section class="hero" id="home">
-      <div class="star-streak-container" aria-hidden="true">
-        <div class="star-streak"></div>
-        <div class="star-streak"></div>
-        <div class="star-streak"></div>
+  <main>
+    <section class="hero">
+      <div class="hero__bg"></div>
+      <div class="hero__streak" aria-hidden="true"></div>
+      <div class="hero__streak hero__streak--2" aria-hidden="true"></div>
+      <div class="container hero__content">
+        <div class="hero__badge">Since 1985</div>
+        <h1 class="hero__title">Industrial Hose &<br><span>Rubber Solutions</span></h1>
+        <p class="hero__text">Premium quality hose, fittings, and rubber products engineered for demanding industrial applications. Trusted by manufacturers nationwide.</p>
+        <div class="hero__actions">
+          <a href="#quote" class="btn btn--primary">Request a Quote</a>
+          <a href="#products" class="btn btn--outline">Browse Products</a>
+        </div>
+        <div class="hero__stats">
+          <div class="stat">
+            <span class="stat__number">38+</span>
+            <span class="stat__label">Years Experience</span>
+          </div>
+          <div class="stat">
+            <span class="stat__number">10K+</span>
+            <span class="stat__label">Products</span>
+          </div>
+          <div class="stat">
+            <span class="stat__number">50</span>
+            <span class="stat__label">States Served</span>
+          </div>
+        </div>
       </div>
-      <div class="container hero__grid">
-        <div class="hero__content">
-          <p class="eyebrow" data-cms-key="hero-tag">America's Industrial Hose Leader</p>
-          <h1 data-cms-key="hero-headline"><span>Engineered</span> Industrial Hose & Rubber Solutions</h1>
-          <p class="hero__subhead" data-cms-key="hero-subhead">Built Strong. Built American. Built to Perform.</p>
-          <p class="hero__body" data-cms-key="hero-body-one">American Hose Company delivers premium industrial hose, rubber products, gaskets, and fittings engineered for the toughest applications. From manufacturing plants to construction sites, our products are trusted by industries nationwide.</p>
-          <p class="hero__body" data-cms-key="hero-body-two">With decades of expertise, we provide custom solutions, rapid fulfillment, and technical support that keeps your operations running at peak performance.</p>
-          <div class="hero__actions">
-            <button class="btn btn--primary" data-open-modal="onboarding">Get a Quote</button>
-            <a class="btn btn--ghost btn--ghost-light" href="#services" data-cms-key="cta-facility">View Products</a>
-          </div>
-          <ul class="hero__list">
-            <li>Industrial hose for hydraulic, pneumatic, and chemical applications</li>
-            <li>Custom rubber fabrication and gasket manufacturing</li>
-            <li>Nationwide shipping with rapid fulfillment</li>
-          </ul>
-        </div>
-        <div class="hero__visual">
-          <picture>
-            <source srcset="assets/images/hero-courier.webp" type="image/webp">
-            <img src="assets/images/hero-courier.png" alt="Industrial hose and rubber products engineered for performance" loading="lazy">
-          </picture>
-          <div class="hero__quote" role="note">
-            <p>"AHC delivers quality products on time, every time. Essential to our operations."</p>
-            <span>Plant Manager, Houston TX</span>
-          </div>
-        </div>
+      <div class="hero__scroll">
+        <span>Scroll</span>
+        <div class="hero__scroll-line"></div>
       </div>
     </section>
 
-    <section class="intro" id="about">
-      <div class="container intro__grid">
-        <div>
-          <p class="eyebrow">About American Hose Company</p>
-          <h2>American-Made Industrial Excellence</h2>
-          <p data-cms-key="about-blurb">American Hose Company is a leading supplier of industrial hose, rubber products, and fluid transfer solutions. We serve manufacturing, petrochemical, construction, agriculture, and OEM markets with products engineered for durability and performance in demanding environments.</p>
-          <div class="facility-chips">
-            <span>Hydraulic Hose</span>
-            <span>Industrial Rubber</span>
-            <span>Gaskets & Seals</span>
-            <span>Fittings</span>
-            <span>Custom Fab</span>
-          </div>
-        </div>
-        <div class="intro__map" aria-label="Nationwide coverage map">
-          <img src="assets/images/idaho-map.svg" alt="American Hose Company nationwide coverage">
-        </div>
-      </div>
-    </section>
-
-    <section class="why" id="services">
+    <section class="products" id="products">
       <div class="container">
-        <p class="eyebrow">Premium Product Lines</p>
-        <h2>Industrial Hose & Rubber Products</h2>
-        <div class="card-grid">
-          <article class="service-card">
-            <img src="assets/images/icon-after-hours.svg" alt="Hydraulic hose icon">
-            <h3>Hydraulic Hose & Assemblies</h3>
-            <p>High-pressure hydraulic hose rated up to 6,000 PSI with crimped fittings and custom lengths.</p>
-          </article>
-          <article class="service-card">
-            <img src="assets/images/icon-daily-delivery.svg" alt="Industrial hose icon">
-            <h3>Industrial Hose Solutions</h3>
-            <p>Air, water, chemical, and material handling hoses for every industrial application.</p>
-          </article>
-          <article class="service-card">
-            <img src="assets/images/icon-packaging.svg" alt="Rubber products icon">
-            <h3>Sheet Rubber & Matting</h3>
-            <p>Premium rubber sheeting, anti-fatigue mats, and custom die-cut rubber components.</p>
-          </article>
-          <article class="service-card">
-            <img src="assets/images/icon-emar.svg" alt="Gaskets icon">
-            <h3>Gaskets & Sealing Products</h3>
-            <p>Standard and custom gaskets in rubber, cork, fiber, and metal for critical sealing applications.</p>
-          </article>
-          <article class="service-card">
-            <img src="assets/images/icon-consultant.svg" alt="Fittings icon">
-            <h3>Fittings & Couplings</h3>
-            <p>Brass, steel, and aluminum fittings including cam-lock, quick-disconnect, and threaded options.</p>
-          </article>
-          <article class="service-card">
-            <img src="assets/images/icon-stat.svg" alt="Clamps icon">
-            <h3>Clamps & Accessories</h3>
-            <p>Hose clamps, adapters, safety guards, and accessories for complete installations.</p>
-          </article>
-          <article class="service-card">
-            <img src="assets/images/icon-onboarding.svg" alt="Custom fabrication icon">
-            <h3>Custom Fabrication</h3>
-            <p>In-house fabrication capabilities for custom hose assemblies, rubber parts, and specialty solutions.</p>
-          </article>
+        <div class="section-header">
+          <span class="section-tag">Our Products</span>
+          <h2 class="section-title">Industrial-Grade Solutions</h2>
+          <p class="section-desc">Comprehensive range of hose, rubber, and fluid transfer products for every application.</p>
+        </div>
+        <div class="products__grid">
+          <a href="#" class="product-card">
+            <div class="product-card__icon">
+              <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="32" cy="32" r="28"/>
+                <path d="M20 32h24M32 20v24"/>
+              </svg>
+            </div>
+            <h3 class="product-card__title">Hydraulic Hose</h3>
+            <p class="product-card__text">High-pressure hose assemblies rated to 6,000 PSI</p>
+            <span class="product-card__link">View Products →</span>
+          </a>
+          <a href="#" class="product-card">
+            <div class="product-card__icon">
+              <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="12" y="12" width="40" height="40" rx="4"/>
+                <path d="M12 32h40"/>
+              </svg>
+            </div>
+            <h3 class="product-card__title">Industrial Hose</h3>
+            <p class="product-card__text">Air, water, chemical & material handling solutions</p>
+            <span class="product-card__link">View Products →</span>
+          </a>
+          <a href="#" class="product-card">
+            <div class="product-card__icon">
+              <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="8" y="20" width="48" height="24"/>
+                <path d="M8 32h48"/>
+              </svg>
+            </div>
+            <h3 class="product-card__title">Sheet Rubber</h3>
+            <p class="product-card__text">Premium rubber sheeting in all grades & compounds</p>
+            <span class="product-card__link">View Products →</span>
+          </a>
+          <a href="#" class="product-card">
+            <div class="product-card__icon">
+              <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="32" cy="32" r="20"/>
+                <circle cx="32" cy="32" r="12"/>
+              </svg>
+            </div>
+            <h3 class="product-card__title">Gaskets & Seals</h3>
+            <p class="product-card__text">Standard & custom gaskets for critical sealing</p>
+            <span class="product-card__link">View Products →</span>
+          </a>
+          <a href="#" class="product-card">
+            <div class="product-card__icon">
+              <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 32h12l8-16 8 32 8-16h12"/>
+              </svg>
+            </div>
+            <h3 class="product-card__title">Fittings & Couplings</h3>
+            <p class="product-card__text">Brass, steel & aluminum connection solutions</p>
+            <span class="product-card__link">View Products →</span>
+          </a>
+          <a href="#" class="product-card">
+            <div class="product-card__icon">
+              <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M32 8v48M16 24l16-16 16 16M16 40l16 16 16-16"/>
+              </svg>
+            </div>
+            <h3 class="product-card__title">Custom Fabrication</h3>
+            <p class="product-card__text">In-house assembly & specialty solutions</p>
+            <span class="product-card__link">View Products →</span>
+          </a>
         </div>
       </div>
     </section>
 
-    <section class="serving" id="service-areas">
-      <div class="container serving__grid">
-        <div class="serving__map" aria-describedby="service-labels">
-          <img src="assets/images/idaho-map.svg" alt="Nationwide distribution coverage">
-          <button class="map-pin" data-region="West Coast Distribution Hub" style="top: 42%; left: 25%;" aria-label="West Coast distribution center">
-            <img src="assets/images/map-pin.svg" alt="Location pin">
-          </button>
-          <button class="map-pin" data-region="Central Distribution Center" style="top: 50%; left: 55%;" aria-label="Central distribution center">
-            <img src="assets/images/map-pin.svg" alt="Location pin">
-          </button>
-          <div class="map-tooltip" role="status" aria-live="polite"></div>
+    <section class="industries" id="industries">
+      <div class="industries__bg"></div>
+      <div class="container">
+        <div class="section-header section-header--light">
+          <span class="section-tag">Industries Served</span>
+          <h2 class="section-title">Powering America's Industries</h2>
         </div>
-        <div class="serving__details" id="service-labels">
-          <p class="eyebrow">Nationwide Coverage</p>
-          <h2>Distribution Across America</h2>
-          <ul class="serving__list">
-            <li>Same-day shipping on in-stock items</li>
-            <li>Strategic warehouse locations coast to coast</li>
+        <div class="industries__grid">
+          <div class="industry">
+            <div class="industry__number">01</div>
+            <h3 class="industry__title">Manufacturing</h3>
+            <p class="industry__text">Fluid power and material handling for production lines</p>
+          </div>
+          <div class="industry">
+            <div class="industry__number">02</div>
+            <h3 class="industry__title">Oil & Gas</h3>
+            <p class="industry__text">High-pressure solutions for drilling and refining</p>
+          </div>
+          <div class="industry">
+            <div class="industry__number">03</div>
+            <h3 class="industry__title">Construction</h3>
+            <p class="industry__text">Heavy equipment hose and fittings</p>
+          </div>
+          <div class="industry">
+            <div class="industry__number">04</div>
+            <h3 class="industry__title">Agriculture</h3>
+            <p class="industry__text">Spray, chemical, and irrigation systems</p>
+          </div>
+          <div class="industry">
+            <div class="industry__number">05</div>
+            <h3 class="industry__title">Food & Beverage</h3>
+            <p class="industry__text">FDA-compliant sanitary hose solutions</p>
+          </div>
+          <div class="industry">
+            <div class="industry__number">06</div>
+            <h3 class="industry__title">Mining</h3>
+            <p class="industry__text">Abrasion-resistant material transfer</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container">
+        <div class="features__grid">
+          <div class="feature">
+            <div class="feature__icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M24 4l20 10v20L24 44 4 34V14L24 4z"/>
+                <path d="M24 44V24M4 14l20 10 20-10"/>
+              </svg>
+            </div>
+            <h3 class="feature__title">Same-Day Shipping</h3>
+            <p class="feature__text">In-stock items ship same day when ordered by 2PM</p>
+          </div>
+          <div class="feature">
+            <div class="feature__icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="24" cy="24" r="20"/>
+                <path d="M16 24l6 6 12-12"/>
+              </svg>
+            </div>
+            <h3 class="feature__title">Quality Certified</h3>
+            <p class="feature__text">ISO 9001 certified with full traceability</p>
+          </div>
+          <div class="feature">
+            <div class="feature__icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M24 4C12 4 4 12 4 24s8 20 20 20 20-8 20-20"/>
+                <path d="M44 4L24 24"/>
+              </svg>
+            </div>
+            <h3 class="feature__title">Expert Support</h3>
+            <p class="feature__text">Technical specialists ready to assist</p>
+          </div>
+          <div class="feature">
+            <div class="feature__icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="8" y="8" width="32" height="32" rx="2"/>
+                <path d="M8 16h32M16 8v32"/>
+              </svg>
+            </div>
+            <h3 class="feature__title">Custom Solutions</h3>
+            <p class="feature__text">In-house fabrication for your exact specs</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="container about__grid">
+        <div class="about__content">
+          <span class="section-tag">About AHC</span>
+          <h2 class="section-title">Engineering Excellence Since 1985</h2>
+          <p class="about__text">American Hose Company was founded on a simple principle: deliver the highest quality industrial hose and rubber products with unmatched service.</p>
+          <p class="about__text">Today, we've grown into a trusted partner for thousands of businesses across all 50 states, offering over 10,000 products and custom fabrication capabilities.</p>
+          <ul class="about__list">
+            <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> ISO 9001:2015 Certified</li>
+            <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> DOT & FDA Compliant Options</li>
+            <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Nationwide Distribution Network</li>
+            <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Technical Engineering Support</li>
           </ul>
-          <p>Our distribution network ensures fast delivery to industrial customers across all 50 states with dedicated freight and parcel options.</p>
-          <div class="serving__badges">
-            <article class="badge-card">
-              <h3>Rapid Fulfillment</h3>
-              <p>In-stock items ship same day. Custom orders processed within 24-48 hours.</p>
-            </article>
-            <article class="badge-card">
-              <h3>Technical Support</h3>
-              <p>Expert product selection assistance and application engineering support.</p>
-            </article>
-          </div>
+          <a href="#contact" class="btn btn--secondary">Learn More</a>
+        </div>
+        <div class="about__visual">
+          <div class="about__image"></div>
+          <div class="about__accent"></div>
         </div>
       </div>
     </section>
 
-    <section class="experts" id="experts">
-      <div class="container experts__grid">
-        <div class="experts__photo">
-          <picture>
-            <source srcset="assets/images/experts-team.webp" type="image/webp">
-            <img src="assets/images/experts-team.png" alt="American Hose Company expert team" loading="lazy">
-          </picture>
-        </div>
-        <div class="experts__content">
-          <p class="eyebrow">Why Choose AHC</p>
-          <h2>Engineering Excellence Since 1985</h2>
-          <p>Our team of industry experts combines decades of experience with cutting-edge product knowledge to deliver solutions that exceed expectations.</p>
-          <div class="experts__cards">
-            <article class="expert-card">
-              <img src="assets/images/icon-team.svg" alt="Expert team icon">
-              <h3>Technical Expertise</h3>
-              <p>Certified specialists with deep knowledge in fluid transfer and industrial applications.</p>
-            </article>
-            <article class="expert-card">
-              <img src="assets/images/icon-certifications.svg" alt="Quality icon">
-              <h3>Quality Assurance</h3>
-              <p>ISO 9001 certified processes ensuring consistent product quality and performance.</p>
-            </article>
-            <article class="expert-card">
-              <img src="assets/images/icon-regulatory.svg" alt="Compliance icon">
-              <h3>Industry Compliance</h3>
-              <p>Products meeting DOT, FDA, SAE, and industry-specific standards and certifications.</p>
-            </article>
-            <article class="expert-card">
-              <img src="assets/images/icon-resident.svg" alt="Customer focus icon">
-              <h3>Customer Focus</h3>
-              <p>Dedicated account managers providing personalized service and support.</p>
-            </article>
-          </div>
-          <div class="experts__actions">
-            <button class="btn btn--secondary" data-open-modal="onboarding">Request Quote</button>
-            <a class="btn btn--ghost" href="#contact">Contact Sales</a>
-          </div>
-        </div>
+    <section class="cta">
+      <div class="cta__diagonal"></div>
+      <div class="container cta__content">
+        <h2 class="cta__title">Ready to Get Started?</h2>
+        <p class="cta__text">Request a quote today and see why thousands of businesses trust American Hose Company.</p>
+        <a href="#quote" class="btn btn--light">Request Quote</a>
       </div>
     </section>
 
     <section class="contact" id="contact">
       <div class="container contact__grid">
-        <div>
-          <p class="eyebrow" id="contact-label">Get in Touch</p>
-          <h2>Talk to Our Sales Team</h2>
-          <p>Ready to discuss your industrial hose and rubber needs? Our experts are standing by to help you find the right solution.</p>
-          <dl class="contact-info">
-            <div>
-              <dt>Phone</dt>
-              <dd><a href="tel:+18005551234">1-800-555-1234</a></dd>
+        <div class="contact__info">
+          <span class="section-tag">Contact Us</span>
+          <h2 class="section-title">Let's Talk</h2>
+          <p class="contact__text">Our team is ready to help you find the right solution for your application.</p>
+          <div class="contact__details">
+            <div class="contact__item">
+              <div class="contact__icon">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              </div>
+              <div>
+                <strong>Phone</strong>
+                <a href="tel:1-800-555-4673">1-800-555-HOSE</a>
+              </div>
             </div>
-            <div>
-              <dt>Email</dt>
-              <dd><a href="mailto:sales@americanhose.com">sales@americanhose.com</a></dd>
+            <div class="contact__item">
+              <div class="contact__icon">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              </div>
+              <div>
+                <strong>Email</strong>
+                <a href="mailto:sales@americanhose.com">sales@americanhose.com</a>
+              </div>
             </div>
-            <div>
-              <dt>Headquarters</dt>
-              <dd>1200 Industrial Blvd, Houston, TX 77001</dd>
+            <div class="contact__item">
+              <div class="contact__icon">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              </div>
+              <div>
+                <strong>Headquarters</strong>
+                <span>1200 Industrial Blvd<br>Houston, TX 77001</span>
+              </div>
             </div>
-          </dl>
+          </div>
         </div>
-        <form class="contact-form" aria-labelledby="contact-label" data-endpoint="https://example.com/api/quote">
-          <div class="form-row">
-            <label for="name">Contact Name</label>
-            <input type="text" id="name" name="name" required data-cms-key="form-name">
+        <form class="contact__form" id="quote">
+          <h3 class="contact__form-title">Request a Quote</h3>
+          <div class="form-row form-row--half">
+            <div class="form-group">
+              <label for="name">Name *</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="company">Company</label>
+              <input type="text" id="company" name="company">
+            </div>
           </div>
-          <div class="form-row">
-            <label for="facility">Company Name</label>
-            <input type="text" id="facility" name="facility" required>
+          <div class="form-row form-row--half">
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone">
+            </div>
           </div>
-          <div class="form-row">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-          <div class="form-row">
-            <label for="phone">Phone</label>
-            <input type="tel" id="phone" name="phone" required pattern="[0-9\-\+\s()]{7,}">
-          </div>
-          <div class="form-row">
-            <label for="facility-type">Product Category</label>
-            <select id="facility-type" name="facilityType" required>
-              <option value="">Select category</option>
-              <option>Hydraulic Hose</option>
-              <option>Industrial Hose</option>
-              <option>Sheet Rubber</option>
-              <option>Gaskets & Seals</option>
-              <option>Fittings & Couplings</option>
-              <option>Custom Fabrication</option>
+          <div class="form-group">
+            <label for="product">Product Category</label>
+            <select id="product" name="product">
+              <option value="">Select a category...</option>
+              <option value="hydraulic">Hydraulic Hose</option>
+              <option value="industrial">Industrial Hose</option>
+              <option value="rubber">Sheet Rubber</option>
+              <option value="gaskets">Gaskets & Seals</option>
+              <option value="fittings">Fittings & Couplings</option>
+              <option value="custom">Custom Fabrication</option>
             </select>
           </div>
-          <div class="form-row">
-            <label for="message">Project Details</label>
+          <div class="form-group">
+            <label for="message">Project Details *</label>
             <textarea id="message" name="message" rows="4" required></textarea>
           </div>
-          <button class="btn btn--primary" type="submit">Submit Request</button>
-          <p class="form-note">By submitting, you agree to American Hose Company contacting you about your inquiry.</p>
+          <button type="submit" class="btn btn--primary btn--full">Submit Request</button>
         </form>
-      </div>
-    </section>
-
-    <section class="cta" id="onboarding">
-      <div class="container">
-        <h2>Ready to Power Your Operations?</h2>
-        <p>Get a custom quote for your industrial hose and rubber needs. Fast response, competitive pricing, expert support.</p>
-        <div class="cta__actions">
-          <button class="btn btn--light" data-open-modal="onboarding">Request Quote</button>
-          <a class="btn btn--ghost btn--ghost-light" href="#contact">Contact Sales</a>
-        </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer__grid">
-      <div>
-        <svg width="48" height="48" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="margin-bottom: 16px;">
-          <rect width="100" height="100" fill="#C62828"/>
-          <polygon points="50,10 90,50 50,90 10,50" fill="#0C1E32"/>
-          <polygon points="50,25 75,50 50,75 25,50" fill="#1F4E8F"/>
-          <path d="M30,50 L50,30 L90,50" stroke="#fff" stroke-width="3" fill="none"/>
-          <text x="50" y="58" text-anchor="middle" fill="#fff" font-family="Oswald, sans-serif" font-size="18" font-weight="700">AHC</text>
-        </svg>
-        <p>American Hose Company — Industrial hose and rubber solutions engineered for America.</p>
-      </div>
-      <div>
-        <h3>Products</h3>
-        <ul>
-          <li><a href="#services">Hydraulic Hose</a></li>
-          <li><a href="#services">Industrial Hose</a></li>
-          <li><a href="#services">Sheet Rubber</a></li>
-          <li><a href="#services">Gaskets & Fittings</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Company</h3>
-        <ul>
-          <li><a href="#experts">About Us</a></li>
-          <li><button class="link" data-open-modal="onboarding">Request Quote</button></li>
-          <li><a href="#contact">Contact Sales</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Headquarters</h3>
-        <address>
-          1200 Industrial Blvd<br>
-          Houston, TX 77001<br>
-          1-800-555-1234
-        </address>
+  <footer class="footer">
+    <div class="footer__main">
+      <div class="container footer__grid">
+        <div class="footer__brand">
+          <a href="#" class="logo logo--footer">
+            <div class="logo__icon">
+              <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="30,5 55,30 30,55 5,30" fill="#C62828"/>
+                <polygon points="30,12 48,30 30,48 12,30" fill="#1F4E8F"/>
+                <path d="M15,30 L30,15 L55,30" stroke="#fff" stroke-width="2.5" fill="none"/>
+              </svg>
+            </div>
+            <div class="logo__text">
+              <span class="logo__name">American Hose</span>
+              <span class="logo__sub">Company</span>
+            </div>
+          </a>
+          <p class="footer__tagline">Industrial hose and rubber solutions engineered for America's toughest applications.</p>
+        </div>
+        <div class="footer__links">
+          <h4>Products</h4>
+          <ul>
+            <li><a href="#">Hydraulic Hose</a></li>
+            <li><a href="#">Industrial Hose</a></li>
+            <li><a href="#">Sheet Rubber</a></li>
+            <li><a href="#">Gaskets & Seals</a></li>
+            <li><a href="#">Fittings</a></li>
+          </ul>
+        </div>
+        <div class="footer__links">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#industries">Industries</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__links">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Technical Resources</a></li>
+            <li><a href="#">Product Catalogs</a></li>
+            <li><a href="#">Shipping Info</a></li>
+            <li><a href="#">Returns</a></li>
+          </ul>
+        </div>
       </div>
     </div>
-    <p class="footer__legal">© <span id="year"></span> American Hose Company. All rights reserved. Built in America.</p>
+    <div class="footer__bottom">
+      <div class="container footer__bottom-inner">
+        <p>&copy; 2024 American Hose Company. All rights reserved.</p>
+        <div class="footer__legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
   </footer>
 
-  <dialog class="modal" id="onboarding-modal" aria-labelledby="modal-title">
-    <form class="modal__content">
-      <button class="modal__close" aria-label="Close modal">×</button>
-      <p class="eyebrow">Request Quote</p>
-      <h2 id="modal-title">Tell Us About Your Project</h2>
-      <p class="modal__helper">Complete the form below and our sales team will provide a custom quote within 24 hours.</p>
-      <div class="modal__form" role="document"></div>
-      <button class="btn btn--primary" type="submit" data-submit-modal>Submit Request</button>
-    </form>
-  </dialog>
-
-  <template id="onboarding-form-template">
-    <div class="form-row">
-      <label for="modal-name">Contact Name</label>
-      <input type="text" id="modal-name" name="name" required>
-    </div>
-    <div class="form-row">
-      <label for="modal-facility">Company Name</label>
-      <input type="text" id="modal-facility" name="facility" required>
-    </div>
-    <div class="form-row">
-      <label for="modal-email">Email</label>
-      <input type="email" id="modal-email" name="email" required>
-    </div>
-    <div class="form-row">
-      <label for="modal-phone">Phone</label>
-      <input type="tel" id="modal-phone" name="phone" required pattern="[0-9\\-\\+\\s()]{7,}">
-    </div>
-    <div class="form-row">
-      <label for="modal-type">Product Category</label>
-      <select id="modal-type" name="facilityType" required>
-        <option value="">Select category</option>
-        <option>Hydraulic Hose</option>
-        <option>Industrial Hose</option>
-        <option>Sheet Rubber</option>
-        <option>Gaskets & Seals</option>
-        <option>Fittings & Couplings</option>
-        <option>Custom Fabrication</option>
-      </select>
-    </div>
-    <div class="form-row">
-      <label for="modal-message">Project Details</label>
-      <textarea id="modal-message" name="message" rows="4" required></textarea>
-    </div>
-  </template>
-
-  <script src="script.js" defer></script>
+  <script src="script.js"></script>
 </body>
 </html>

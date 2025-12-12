@@ -1,149 +1,90 @@
-const vpLoader = document.getElementById('vp-loader');
-const hideLoader = () => {
-  if (vpLoader) {
-    vpLoader.classList.add('is-hidden');
-    vpLoader.addEventListener('animationend', () => vpLoader.remove(), { once: true });
-  }
-};
-if (document.readyState === 'complete') {
-  hideLoader();
-} else {
-  window.addEventListener('load', hideLoader);
-}
-
-const navToggle = document.querySelector('.nav-toggle');
-const primaryNav = document.querySelector('.primary-nav');
-const header = document.querySelector('.site-header');
-const tooltip = document.querySelector('.map-tooltip');
-const mapPins = document.querySelectorAll('.map-pin');
-const modal = document.getElementById('onboarding-modal');
-const modalForm = modal?.querySelector('form');
-const modalFormContainer = modal?.querySelector('.modal__form');
-const modalTemplate = document.getElementById('onboarding-form-template');
-const openModalButtons = document.querySelectorAll('[data-open-modal="onboarding"]');
-const modalCloseBtn = modal?.querySelector('.modal__close');
-const yearEl = document.getElementById('year');
-const contactForm = document.querySelector('.contact-form');
-
-if (yearEl) {
-  yearEl.textContent = new Date().getFullYear();
-}
-
-if (modalTemplate && modalFormContainer && modalFormContainer.children.length === 0) {
-  modalFormContainer.appendChild(modalTemplate.content.cloneNode(true));
-}
+// Navigation Toggle
+const navToggle = document.getElementById('navToggle');
+const navMenu = document.getElementById('navMenu');
 
 navToggle?.addEventListener('click', () => {
-  const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-  navToggle.setAttribute('aria-expanded', String(!expanded));
-  primaryNav?.classList.toggle('open');
-  document.body.classList.toggle('nav-open');
+  navMenu.classList.toggle('active');
+  navToggle.classList.toggle('active');
 });
 
-primaryNav?.querySelectorAll('a').forEach((link) => {
+// Close nav on link click (mobile)
+document.querySelectorAll('.nav a').forEach(link => {
   link.addEventListener('click', () => {
-    if (window.innerWidth <= 960 && primaryNav.classList.contains('open')) {
-      navToggle?.click();
+    navMenu.classList.remove('active');
+    navToggle.classList.remove('active');
+  });
+});
+
+// Header scroll effect
+const header = document.querySelector('.header');
+let lastScroll = 0;
+
+window.addEventListener('scroll', () => {
+  const currentScroll = window.scrollY;
+  if (currentScroll > 100) {
+    header.style.boxShadow = '0 4px 20px rgba(12, 30, 50, 0.3)';
+  } else {
+    header.style.boxShadow = 'none';
+  }
+  lastScroll = currentScroll;
+});
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      const headerHeight = header.offsetHeight;
+      const targetPosition = target.offsetTop - headerHeight;
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      });
     }
   });
 });
 
-window.addEventListener('scroll', () => {
-  const offset = window.scrollY;
-  header?.classList.toggle('is-scrolled', offset > 10);
+// Form submission
+const contactForm = document.querySelector('.contact__form');
+contactForm?.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  
+  const formData = new FormData(contactForm);
+  const data = Object.fromEntries(formData.entries());
+  
+  const submitBtn = contactForm.querySelector('button[type="submit"]');
+  const originalText = submitBtn.textContent;
+  submitBtn.textContent = 'Sending...';
+  submitBtn.disabled = true;
+  
+  // Simulate API call
+  await new Promise(resolve => setTimeout(resolve, 1000));
+  
+  alert('Thank you for your inquiry! Our team will contact you shortly.');
+  contactForm.reset();
+  submitBtn.textContent = originalText;
+  submitBtn.disabled = false;
 });
 
-mapPins.forEach((pin) => {
-  const showTooltip = () => {
-    if (!tooltip) return;
-    tooltip.textContent = pin.dataset.region || '';
-    tooltip.style.opacity = '1';
-  };
-  const hideTooltip = () => {
-    if (!tooltip) return;
-    tooltip.style.opacity = '0';
-  };
-  pin.addEventListener('mouseenter', showTooltip);
-  pin.addEventListener('focus', showTooltip);
-  pin.addEventListener('mouseleave', hideTooltip);
-  pin.addEventListener('blur', hideTooltip);
-});
-
-const openModal = () => {
-  if (!modal) return;
-  if (typeof modal.showModal === 'function') {
-    modal.showModal();
-  } else {
-    modal.setAttribute('open', 'true');
-  }
+// Animate elements on scroll
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
 };
 
-const closeModal = () => {
-  if (!modal) return;
-  if (typeof modal.close === 'function') {
-    modal.close();
-  }
-  modal.removeAttribute('open');
-};
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, observerOptions);
 
-openModalButtons.forEach((btn) => btn.addEventListener('click', openModal));
-modalCloseBtn?.addEventListener('click', (event) => {
-  event.preventDefault();
-  closeModal();
+document.querySelectorAll('.product-card, .industry, .feature, .about__content, .about__visual').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(30px)';
+  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  observer.observe(el);
 });
-
-modal?.addEventListener('click', (event) => {
-  if (event.target === modal) {
-    closeModal();
-  }
-});
-
-const statusMessage = document.createElement('p');
-statusMessage.className = 'form-status';
-statusMessage.setAttribute('role', 'status');
-statusMessage.setAttribute('aria-live', 'polite');
-contactForm?.appendChild(statusMessage);
-
-const modalStatus = document.createElement('p');
-modalStatus.className = 'form-status';
-modalStatus.setAttribute('role', 'status');
-modalStatus.setAttribute('aria-live', 'polite');
-modalForm?.appendChild(modalStatus);
-
-const fakeSubmit = () => new Promise((resolve) => setTimeout(resolve, 600));
-
-const handleFormSubmit = async (form, messageEl) => {
-  if (!form.reportValidity()) {
-    return false;
-  }
-  const formData = new FormData(form);
-  const payload = Object.fromEntries(formData.entries());
-  messageEl.textContent = 'Sending…';
-  form.classList.add('is-submitting');
-  try {
-    await fakeSubmit(payload);
-    messageEl.textContent = 'Thank you! Our onboarding team will reach out shortly.';
-    form.reset();
-    return true;
-  } catch (error) {
-    console.error(error);
-    messageEl.textContent = 'Something went wrong. Please try again.';
-    return false;
-  } finally {
-    form.classList.remove('is-submitting');
-  }
-};
-
-contactForm?.addEventListener('submit', (event) => {
-  event.preventDefault();
-  handleFormSubmit(contactForm, statusMessage);
-});
-
-modalForm?.addEventListener('submit', async (event) => {
-  event.preventDefault();
-  const success = await handleFormSubmit(modalForm, modalStatus);
-  if (success) {
-    setTimeout(closeModal, 400);
-  }
-});
-*** End of File
