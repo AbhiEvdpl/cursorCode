@@ -439,6 +439,9 @@ img {
   border-radius: 32px;
   overflow: hidden;
   box-shadow: var(--shadow-card);
+}
+
+.gsap-float {
   animation: floatCard 8s ease-in-out infinite;
 }
 
@@ -561,8 +564,11 @@ section {
   border: none;
   padding: 0;
   cursor: pointer;
-  animation: pulsePin 3s ease-in-out infinite;
   transition: transform 0.2s ease;
+}
+
+.map-pin.gsap-pulse {
+  animation: pulsePin 3s ease-in-out infinite;
 }
 
 .map-pin img {
