@@ -864,6 +864,163 @@ h2 {
   font-size: 0.9rem;
 }
 
+/* Desktop Analytics Banner */
+.analytics-banner {
+  background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-ahc-blue) 100%);
+  color: var(--color-white);
+  position: relative;
+  overflow: hidden;
+}
+
+.analytics-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 18% 24%, rgba(198, 40, 40, 0.28) 0%, transparent 48%),
+    radial-gradient(circle at 82% 38%, rgba(255, 255, 255, 0.08) 0%, transparent 55%),
+    repeating-linear-gradient(90deg, transparent 0px, transparent 110px, rgba(255,255,255,0.03) 110px, rgba(255,255,255,0.03) 111px),
+    repeating-linear-gradient(0deg, transparent 0px, transparent 110px, rgba(255,255,255,0.03) 110px, rgba(255,255,255,0.03) 111px);
+  pointer-events: none;
+}
+
+.analytics-banner__grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 56px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.analytics-banner .eyebrow {
+  color: var(--color-ahc-red);
+}
+
+.analytics-banner .eyebrow::before {
+  background: var(--color-ahc-red);
+}
+
+.analytics-banner h2 {
+  color: var(--color-white);
+}
+
+.analytics-banner__subhead {
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 20px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 60ch;
+}
+
+.analytics-banner__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px;
+  display: grid;
+  gap: 12px;
+}
+
+.analytics-banner__list li {
+  position: relative;
+  padding-left: 28px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.analytics-banner__list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  background: var(--color-ahc-red);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.analytics-banner__actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.analytics-banner__stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.analytics-stat {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 16px 16px 14px;
+  box-shadow: var(--shadow-soft);
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+  display: grid;
+  gap: 6px;
+  align-content: start;
+}
+
+.analytics-stat img {
+  width: 32px;
+  height: 32px;
+  filter: brightness(0) invert(1);
+}
+
+.analytics-stat__value {
+  margin: 0;
+  font-family: 'Oswald', system-ui, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.analytics-stat__label {
+  margin: 0;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 600;
+}
+
+.analytics-banner__visual {
+  position: relative;
+}
+
+.analytics-banner__visual picture,
+.analytics-banner__visual img {
+  box-shadow: var(--shadow-card);
+  clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 30px, 100% 100%, 30px 100%, 0 calc(100% - 30px));
+}
+
+.analytics-banner__badge {
+  position: absolute;
+  bottom: 18px;
+  left: -14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background: rgba(12, 30, 50, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: var(--color-white);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  box-shadow: var(--shadow-soft);
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+}
+
+.analytics-banner__badge-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-ahc-red);
+  box-shadow: 0 0 0 4px rgba(198, 40, 40, 0.18);
+}
+
 /* Contact Section */
 .contact {
   background: var(--color-light);
@@ -1191,6 +1348,15 @@ textarea:focus {
   .brand-tagline {
     display: none;
   }
+
+  .analytics-banner__grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .analytics-banner__badge {
+    left: 16px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -1221,5 +1387,9 @@ textarea:focus {
   .btn {
     padding: 12px 20px;
     font-size: 0.85rem;
+  }
+
+  .analytics-banner__stats {
+    grid-template-columns: 1fr;
   }
 }
