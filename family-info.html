@@ -1,0 +1,1340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Information for families and residents about how Idaho Pharmacy works with long-term care facilities. Learn about billing, refills, insurance, and FAQs.">
+  <title>Family & Resident Information — Idaho Pharmacy, LLC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-primary: #1E4637;
+      --color-primary-light: #2a5f4a;
+      --color-primary-dark: #153325;
+      --color-secondary: #224E7A;
+      --color-secondary-light: #2d6399;
+      --color-accent: #C89F4A;
+      --color-accent-light: #d4b06a;
+      --color-light-accent: #88C0E6;
+      --color-dark: #2D3436;
+      --color-gray: #636E72;
+      --color-light: #F8F9FA;
+      --color-white: #FFFFFF;
+      --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 25px 60px rgba(0, 0, 0, 0.15);
+      --max-width: 1200px;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(2deg); }
+    }
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+    @keyframes gradientFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    @keyframes shimmer {
+      0% { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(200, 159, 74, 0.4); }
+      50% { box-shadow: 0 0 20px 5px rgba(200, 159, 74, 0.2); }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      color: var(--color-dark);
+      background: var(--color-light);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    body.nav-open { overflow: hidden; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(100% - 48px, var(--max-width)); margin: 0 auto; }
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 16px;
+      background: var(--color-secondary);
+      color: var(--color-white);
+      padding: 8px 16px;
+      border-radius: 8px;
+      z-index: 999;
+    }
+    .skip-link:focus { top: 16px; }
+
+    /* Header */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(20px);
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+    .site-header.is-scrolled {
+      background: rgba(255, 255, 255, 0.98);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+    }
+    .header__layout {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+      gap: 24px;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand img { height: 44px; transition: transform 0.3s ease; }
+    .brand:hover img { transform: scale(1.05); }
+    .brand-text { display: flex; flex-direction: column; }
+    .brand-name { font-size: 1.3rem; font-weight: 700; color: var(--color-primary); line-height: 1.2; }
+    .brand-tagline { font-size: 0.7rem; color: var(--color-secondary); letter-spacing: 0.08em; text-transform: uppercase; }
+    .primary-nav ul { display: flex; list-style: none; gap: 32px; }
+    .primary-nav a {
+      font-weight: 600;
+      color: var(--color-dark);
+      position: relative;
+      padding: 8px 0;
+      transition: color 0.3s ease;
+    }
+    .primary-nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--color-accent), var(--color-secondary));
+      transition: width 0.3s ease;
+    }
+    .primary-nav a:hover { color: var(--color-secondary); }
+    .primary-nav a:hover::after { width: 100%; }
+    .header__cta { display: flex; gap: 12px; }
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+    .nav-toggle span { width: 24px; height: 2px; background: var(--color-dark); transition: all 0.3s ease; }
+
+    /* Buttons */
+    .btn {
+      border: none;
+      border-radius: 50px;
+      padding: 14px 32px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: left 0.6s ease;
+    }
+    .btn:hover::before { left: 100%; }
+    .btn--primary {
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+      color: var(--color-white);
+      box-shadow: 0 8px 25px rgba(30, 70, 55, 0.35);
+    }
+    .btn--primary:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(30, 70, 55, 0.45); }
+    .btn--secondary {
+      background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-secondary-light) 100%);
+      color: var(--color-white);
+      box-shadow: 0 8px 25px rgba(34, 78, 122, 0.35);
+    }
+    .btn--light {
+      background: var(--color-white);
+      color: var(--color-primary);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+    .btn--light:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15); }
+    .btn--outline {
+      background: transparent;
+      color: var(--color-white);
+      border: 2px solid rgba(255,255,255,0.5);
+    }
+    .btn--outline:hover { background: var(--color-white); color: var(--color-primary); border-color: var(--color-white); }
+    .btn--accent {
+      background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
+      color: var(--color-white);
+      box-shadow: 0 8px 25px rgba(200, 159, 74, 0.4);
+    }
+    .btn--accent:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(200, 159, 74, 0.5); }
+
+    /* Hero */
+    .hero {
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding: 140px 0 100px;
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 60%, var(--color-secondary-light) 100%);
+      background-size: 300% 300%;
+      animation: gradientFlow 20s ease infinite;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: 
+        radial-gradient(circle at 20% 80%, rgba(200, 159, 74, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 85% 30%, rgba(136, 192, 230, 0.2) 0%, transparent 40%);
+    }
+    .hero-pattern {
+      position: absolute;
+      inset: 0;
+      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    }
+    .hero-shapes {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .hero-shape {
+      position: absolute;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%);
+    }
+    .hero-shape--1 { width: 400px; height: 400px; top: -100px; right: -80px; animation: float 15s ease-in-out infinite; }
+    .hero-shape--2 { width: 250px; height: 250px; bottom: -60px; left: -60px; animation: floatSlow 12s ease-in-out infinite 2s; }
+    .hero-shape--3 { width: 120px; height: 120px; top: 40%; left: 15%; animation: float 10s ease-in-out infinite 1s; }
+    .hero-icon {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+    .hero-icon svg { width: 32px; height: 32px; stroke: var(--color-accent); }
+    .hero-icon--1 { top: 25%; right: 12%; animation: floatSlow 6s ease-in-out infinite; }
+    .hero-icon--2 { bottom: 25%; right: 20%; animation: float 7s ease-in-out infinite 1s; }
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: var(--color-white);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 10px 24px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 28px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      animation: slideUp 0.8s ease-out;
+    }
+    .hero__badge svg { width: 20px; height: 20px; stroke: var(--color-accent); }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      line-height: 1.15;
+      margin-bottom: 24px;
+      font-weight: 700;
+      animation: slideUp 0.8s ease-out 0.1s both;
+    }
+    .hero h1 span {
+      display: inline;
+      background: linear-gradient(90deg, var(--color-accent), var(--color-light-accent), var(--color-accent));
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shimmer 4s linear infinite;
+    }
+    .hero__subtitle {
+      font-size: 1.15rem;
+      opacity: 0.9;
+      line-height: 1.8;
+      margin-bottom: 40px;
+      animation: slideUp 0.8s ease-out 0.2s both;
+    }
+    .hero__actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: slideUp 0.8s ease-out 0.3s both;
+    }
+
+    /* Section Styles */
+    section { padding: 100px 0; position: relative; }
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 60px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-size: 0.8rem;
+      color: var(--color-accent);
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .eyebrow::before, .eyebrow::after {
+      content: '';
+      width: 40px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--color-accent), transparent);
+    }
+    .eyebrow::after { transform: rotate(180deg); }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      color: var(--color-dark);
+      line-height: 1.2;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+    .section-header p { font-size: 1.1rem; color: var(--color-gray); line-height: 1.7; }
+
+    /* How It Works Section */
+    .works-section {
+      background: var(--color-white);
+      position: relative;
+      overflow: hidden;
+    }
+    .works-section::before {
+      content: '';
+      position: absolute;
+      top: -150px;
+      right: -150px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(136, 192, 230, 0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .works-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .works-content h2 { text-align: left; margin-bottom: 24px; }
+    .works-content > p { font-size: 1.1rem; color: var(--color-gray); margin-bottom: 32px; line-height: 1.8; }
+    .works-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .works-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 20px;
+      background: var(--color-light);
+      border-radius: 16px;
+      transition: all 0.3s ease;
+    }
+    .works-item:hover {
+      background: linear-gradient(135deg, rgba(30, 70, 55, 0.08) 0%, rgba(136, 192, 230, 0.08) 100%);
+      transform: translateX(8px);
+    }
+    .works-item__icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .works-item__icon svg { width: 24px; height: 24px; stroke: var(--color-white); }
+    .works-item span { font-weight: 600; color: var(--color-dark); }
+    .works-visual {
+      position: relative;
+    }
+    .works-card {
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+      border-radius: 32px;
+      padding: 48px;
+      color: var(--color-white);
+      position: relative;
+      overflow: hidden;
+    }
+    .works-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+    }
+    .works-card__inner { position: relative; z-index: 1; }
+    .works-card__icon {
+      width: 80px;
+      height: 80px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      animation: floatSlow 6s ease-in-out infinite;
+    }
+    .works-card__icon svg { width: 40px; height: 40px; stroke: var(--color-white); }
+    .works-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      margin-bottom: 16px;
+      color: var(--color-white);
+    }
+    .works-card p { opacity: 0.9; line-height: 1.7; }
+    .works-accent {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      background: linear-gradient(135deg, var(--color-accent) 0%, rgba(200, 159, 74, 0.3) 100%);
+      border-radius: 30px;
+      bottom: -30px;
+      right: -30px;
+      z-index: -1;
+      animation: floatSlow 8s ease-in-out infinite;
+    }
+
+    /* Billing Section */
+    .billing-section {
+      background: linear-gradient(180deg, var(--color-light) 0%, rgba(136, 192, 230, 0.1) 50%, var(--color-light) 100%);
+    }
+    .billing-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .billing-card {
+      background: var(--color-white);
+      border-radius: 24px;
+      padding: 36px 28px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
+      border: 2px solid transparent;
+    }
+    .billing-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--color-secondary), var(--color-accent));
+      transform: scaleX(0);
+      transition: transform 0.4s ease;
+    }
+    .billing-card:hover {
+      transform: translateY(-12px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(200, 159, 74, 0.2);
+    }
+    .billing-card:hover::before { transform: scaleX(1); }
+    .billing-card__icon {
+      width: 72px;
+      height: 72px;
+      background: linear-gradient(135deg, var(--color-light-accent) 0%, rgba(136, 192, 230, 0.3) 100%);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      transition: all 0.4s ease;
+    }
+    .billing-card:hover .billing-card__icon {
+      transform: scale(1.1) rotate(-5deg);
+      background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
+    }
+    .billing-card__icon svg {
+      width: 32px;
+      height: 32px;
+      stroke: var(--color-secondary);
+      transition: stroke 0.4s ease;
+    }
+    .billing-card:hover .billing-card__icon svg { stroke: var(--color-white); }
+    .billing-card h3 { font-size: 1.05rem; color: var(--color-dark); margin: 0; line-height: 1.4; }
+
+    /* FAQ Section */
+    .faq-section {
+      background: var(--color-white);
+    }
+    .faq-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      background: var(--color-light);
+      border-radius: 20px;
+      margin-bottom: 16px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+    .faq-item:hover { border-color: rgba(34, 78, 122, 0.1); }
+    .faq-item.active {
+      background: var(--color-white);
+      box-shadow: var(--shadow-md);
+      border-color: var(--color-accent);
+    }
+    .faq-question {
+      width: 100%;
+      padding: 24px 28px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      text-align: left;
+      font-family: inherit;
+    }
+    .faq-question__text {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .faq-question__icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+    }
+    .faq-item.active .faq-question__icon {
+      background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
+    }
+    .faq-question__icon svg { width: 24px; height: 24px; stroke: var(--color-white); }
+    .faq-question h3 {
+      font-size: 1.1rem;
+      color: var(--color-dark);
+      margin: 0;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    .faq-item.active .faq-question h3 { color: var(--color-secondary); }
+    .faq-toggle {
+      width: 40px;
+      height: 40px;
+      background: rgba(34, 78, 122, 0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+    }
+    .faq-item.active .faq-toggle {
+      background: var(--color-secondary);
+      transform: rotate(180deg);
+    }
+    .faq-toggle svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--color-secondary);
+      transition: stroke 0.3s ease;
+    }
+    .faq-item.active .faq-toggle svg { stroke: var(--color-white); }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+    }
+    .faq-item.active .faq-answer {
+      max-height: 800px;
+    }
+    .faq-answer__inner {
+      padding: 0 28px 28px;
+      padding-left: 92px;
+    }
+    .faq-answer p {
+      color: var(--color-gray);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .faq-answer p:last-child { margin-bottom: 0; }
+    .faq-answer ul {
+      list-style: none;
+      margin: 16px 0;
+    }
+    .faq-answer li {
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: 12px;
+      color: var(--color-gray);
+      line-height: 1.7;
+    }
+    .faq-answer li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 8px;
+      height: 8px;
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+      border-radius: 50%;
+    }
+    .faq-answer strong {
+      color: var(--color-dark);
+      font-weight: 600;
+    }
+    .faq-contact-box {
+      background: linear-gradient(135deg, rgba(30, 70, 55, 0.08) 0%, rgba(136, 192, 230, 0.08) 100%);
+      border-radius: 16px;
+      padding: 24px;
+      margin-top: 20px;
+      border-left: 4px solid var(--color-accent);
+    }
+    .faq-contact-box h4 {
+      font-size: 1rem;
+      color: var(--color-dark);
+      margin-bottom: 12px;
+    }
+    .faq-contact-box p {
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 50%, var(--color-secondary) 100%);
+      color: var(--color-white);
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.03)"/><circle cx="50" cy="30" r="1.5" fill="rgba(255,255,255,0.03)"/><circle cx="90" cy="60" r="1" fill="rgba(255,255,255,0.03)"/></svg>');
+      background-size: 80px 80px;
+    }
+    .contact-section .eyebrow { color: var(--color-light-accent); }
+    .contact-section .eyebrow::before, .contact-section .eyebrow::after { background: linear-gradient(90deg, var(--color-light-accent), transparent); }
+    .contact-section h2 { color: var(--color-white); }
+    .contact-section .section-header p { color: rgba(255,255,255,0.85); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 80px;
+      align-items: start;
+      position: relative;
+      z-index: 1;
+    }
+    .contact-info h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: var(--color-white);
+    }
+    .contact-info > p { font-size: 1.05rem; margin-bottom: 32px; opacity: 0.9; line-height: 1.8; }
+    .contact-cards { display: flex; flex-direction: column; gap: 16px; }
+    .contact-card {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 20px 24px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+    .contact-card:hover {
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateX(8px);
+      border-color: var(--color-accent);
+    }
+    .contact-card__icon {
+      width: 52px;
+      height: 52px;
+      background: linear-gradient(135deg, rgba(200, 159, 74, 0.3) 0%, rgba(200, 159, 74, 0.1) 100%);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-card__icon svg { width: 26px; height: 26px; stroke: var(--color-accent); }
+    .contact-card__text h4 { font-size: 0.8rem; opacity: 0.7; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
+    .contact-card__text a, .contact-card__text span { font-size: 1.05rem; font-weight: 600; }
+    .contact-card__text a:hover { color: var(--color-accent); }
+    .contact-form {
+      background: var(--color-white);
+      border-radius: 32px;
+      padding: 48px;
+      box-shadow: var(--shadow-lg);
+      color: var(--color-dark);
+    }
+    .contact-form h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      text-align: center;
+      margin-bottom: 32px;
+      color: var(--color-dark);
+    }
+    .form-grid { display: grid; gap: 24px; }
+    .form-row { display: flex; flex-direction: column; gap: 8px; }
+    .form-row--half { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .form-row label { font-weight: 600; font-size: 0.9rem; color: var(--color-dark); }
+    .form-row label .optional { font-weight: 400; opacity: 0.6; }
+    input, select, textarea {
+      border: 2px solid rgba(0,0,0,0.08);
+      border-radius: 14px;
+      padding: 16px 20px;
+      font-size: 1rem;
+      font-family: inherit;
+      background: var(--color-light);
+      transition: all 0.3s ease;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--color-secondary);
+      background: var(--color-white);
+      box-shadow: 0 0 0 4px rgba(34, 78, 122, 0.1);
+    }
+    textarea { resize: vertical; min-height: 130px; }
+    .form-submit { margin-top: 8px; }
+    .form-submit .btn { width: 100%; padding: 18px 32px; font-size: 1rem; }
+
+    /* CTA Section */
+    .cta-section {
+      background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 50%, #d4a855 100%);
+      color: var(--color-white);
+      text-align: center;
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1) 0%, transparent 60%);
+    }
+    .cta-section .container { position: relative; z-index: 1; }
+    .cta-section h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      margin-bottom: 16px;
+      color: var(--color-white);
+    }
+    .cta-section p { max-width: 550px; margin: 0 auto 32px; font-size: 1.1rem; opacity: 0.95; }
+    .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn--dark {
+      background: var(--color-primary-dark);
+      color: var(--color-white);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    }
+    .btn--dark:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3); }
+
+    /* Footer */
+    .site-footer {
+      background: linear-gradient(180deg, var(--color-primary-dark) 0%, #0f1f18 100%);
+      color: var(--color-white);
+      padding: 80px 0 32px;
+      position: relative;
+    }
+    .site-footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--color-accent), var(--color-light-accent), var(--color-secondary), var(--color-accent));
+      background-size: 300% 100%;
+      animation: gradientFlow 5s linear infinite;
+    }
+    .footer__grid { display: grid; grid-template-columns: 1.5fr repeat(3, 1fr); gap: 48px; }
+    .footer__brand p { opacity: 0.7; line-height: 1.7; margin-top: 20px; }
+    .site-footer h3 {
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+      color: var(--color-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .site-footer ul { list-style: none; }
+    .site-footer li { margin-bottom: 14px; }
+    .site-footer a { color: rgba(255, 255, 255, 0.7); transition: all 0.3s ease; display: inline-block; }
+    .site-footer a:hover { color: var(--color-white); transform: translateX(5px); }
+    .site-footer address { font-style: normal; color: rgba(255, 255, 255, 0.7); line-height: 1.9; }
+    .footer__legal {
+      text-align: center;
+      margin-top: 60px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    @media (max-width: 1024px) {
+      .works-grid, .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+      .works-visual { order: -1; }
+      .billing-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer__grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .container { width: min(100% - 32px, var(--max-width)); }
+      section { padding: 80px 0; }
+      .primary-nav {
+        position: fixed;
+        inset: 0 0 0 30%;
+        background: var(--color-white);
+        padding: 100px 32px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        box-shadow: -10px 0 40px rgba(0,0,0,0.15);
+      }
+      .primary-nav.open { transform: translateX(0); }
+      .primary-nav ul { flex-direction: column; gap: 24px; }
+      .nav-toggle { display: flex; }
+      .header__cta { display: none; }
+      .hero { min-height: auto; padding: 120px 0 80px; }
+      .hero-icon { display: none; }
+      .works-list { grid-template-columns: 1fr; }
+      .billing-grid { grid-template-columns: 1fr; }
+      .form-row--half { grid-template-columns: 1fr; }
+      .faq-answer__inner { padding-left: 28px; }
+      .cta-actions { flex-direction: column; align-items: center; }
+      .footer__grid { grid-template-columns: 1fr; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <div class="container header__layout">
+      <a class="brand" href="index.html" aria-label="Idaho Pharmacy home">
+        <img src="assets/images/logo.svg" alt="Idaho Pharmacy logo">
+        <div class="brand-text">
+          <span class="brand-name">Idaho Pharmacy</span>
+          <span class="brand-tagline">Long-Term Care Specialists</span>
+        </div>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="primary-nav" id="primary-navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="ltc-services.html">LTC Services</a></li>
+          <li><a href="family-info.html">For Families</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header__cta">
+        <a class="btn btn--primary" href="#contact">Contact Us</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero">
+      <div class="hero-pattern"></div>
+      <div class="hero-shapes">
+        <div class="hero-shape hero-shape--1"></div>
+        <div class="hero-shape hero-shape--2"></div>
+        <div class="hero-shape hero-shape--3"></div>
+      </div>
+      <div class="hero-icon hero-icon--1">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        </svg>
+      </div>
+      <div class="hero-icon hero-icon--2">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+      </div>
+      <div class="container">
+        <div class="hero__content">
+          <div class="hero__badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+            </svg>
+            Information & Resources
+          </div>
+          <h1>Information for <span>Families & Residents</span></h1>
+          <p class="hero__subtitle">Learn how our pharmacy partners with your loved one's care facility to ensure safe, reliable medication management and billing support.</p>
+          <div class="hero__actions">
+            <a class="btn btn--light" href="#faq">View FAQs</a>
+            <a class="btn btn--outline" href="#contact">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="works-section" id="how-it-works">
+      <div class="container">
+        <div class="works-grid">
+          <div class="works-content">
+            <p class="eyebrow">How It Works</p>
+            <h2>How Our Pharmacy Works with Your Facility</h2>
+            <p>We partner directly with the care team to ensure your loved one's medications are managed safely, accurately, and on time—every single day.</p>
+            <div class="works-list">
+              <div class="works-item">
+                <div class="works-item__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>
+                  </svg>
+                </div>
+                <span>Med Orders</span>
+              </div>
+              <div class="works-item">
+                <div class="works-item__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
+                  </svg>
+                </div>
+                <span>Refills</span>
+              </div>
+              <div class="works-item">
+                <div class="works-item__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                  </svg>
+                </div>
+                <span>Medication Changes</span>
+              </div>
+              <div class="works-item">
+                <div class="works-item__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                  </svg>
+                </div>
+                <span>Billing Coordination</span>
+              </div>
+            </div>
+          </div>
+          <div class="works-visual">
+            <div class="works-card">
+              <div class="works-card__inner">
+                <div class="works-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                  </svg>
+                </div>
+                <h3>Partnering with Care Teams</h3>
+                <p>Our pharmacists work hand-in-hand with nurses, providers, and facility staff to coordinate all medication needs—so families can have peace of mind knowing their loved ones are in good hands.</p>
+              </div>
+            </div>
+            <div class="works-accent"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="billing-section" id="billing">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Understanding Billing</p>
+          <h2>We Help Families Navigate</h2>
+          <p>Insurance and billing can be confusing. Our dedicated billing team is here to help you understand coverage, costs, and payment options.</p>
+        </div>
+        <div class="billing-grid">
+          <article class="billing-card">
+            <div class="billing-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/>
+              </svg>
+            </div>
+            <h3>Medicare Part D</h3>
+          </article>
+          <article class="billing-card">
+            <div class="billing-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <h3>Idaho Medicaid</h3>
+          </article>
+          <article class="billing-card">
+            <div class="billing-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
+              </svg>
+            </div>
+            <h3>Private Insurance</h3>
+          </article>
+          <article class="billing-card">
+            <div class="billing-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              </svg>
+            </div>
+            <h3>Copays & Out-of-Pocket</h3>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section" id="faq">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">FAQ</p>
+          <h2>Frequently Asked Questions</h2>
+          <p>Find answers to common questions about how our pharmacy works with your loved one's care facility.</p>
+        </div>
+        <div class="faq-container">
+          <div class="faq-item active">
+            <button class="faq-question" aria-expanded="true">
+              <div class="faq-question__text">
+                <div class="faq-question__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
+                  </svg>
+                </div>
+                <h3>How do refills work?</h3>
+              </div>
+              <div class="faq-toggle">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"/>
+                </svg>
+              </div>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer__inner">
+                <p>In a long-term care setting, our pharmacy manages refills directly with your facility's nursing staff and providers. Here's how the process works in Idaho LTC care:</p>
+                <ul>
+                  <li>Nursing staff monitor medication supplies and request refills before a resident runs low.</li>
+                  <li>Our pharmacy verifies the refill authorization and insurance coverage.</li>
+                  <li>If a prescription requires provider approval, we contact the prescriber on behalf of the resident.</li>
+                  <li>Once approved, the refill is prepared and delivered on the facility's next scheduled delivery day—or sooner if needed.</li>
+                </ul>
+                <p><strong>Families typically do not need to request refills</strong>, as the facility and pharmacy coordinate all medication needs automatically.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <div class="faq-question__text">
+                <div class="faq-question__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="4" width="20" height="16" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/>
+                  </svg>
+                </div>
+                <h3>What if insurance changes?</h3>
+              </div>
+              <div class="faq-toggle">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"/>
+                </svg>
+              </div>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer__inner">
+                <p>Insurance changes are common, especially during annual Medicare Part D enrollment or Medicaid updates. When a resident's insurance changes:</p>
+                <ul>
+                  <li>The facility notifies our pharmacy with the new insurance card or plan information.</li>
+                  <li>We update the resident's profile and run coverage checks on all active medications.</li>
+                  <li>If any medications require prior authorization or a preferred formulary alternative, we work directly with the prescriber and facility to resolve it.</li>
+                </ul>
+                <p><strong>Families may be contacted if:</strong></p>
+                <ul>
+                  <li>A new plan has higher copays</li>
+                  <li>A medication is not covered</li>
+                  <li>Additional financial documentation is needed for Idaho Medicaid</li>
+                </ul>
+                <p>Our billing team ensures a smooth transition with minimal interruption to medication therapy.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <div class="faq-question__text">
+                <div class="faq-question__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                  </svg>
+                </div>
+                <h3>Who do I call for billing questions?</h3>
+              </div>
+              <div class="faq-toggle">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"/>
+                </svg>
+              </div>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer__inner">
+                <p>For any billing-related questions—copays, statements, insurance coverage, or account changes—families can contact our Billing Department directly.</p>
+                <p><strong>We provide dedicated support for:</strong></p>
+                <ul>
+                  <li>Medicare Part D coverage questions</li>
+                  <li>Idaho Medicaid billing</li>
+                  <li>Private insurance issues</li>
+                  <li>Copay clarification</li>
+                  <li>Coordination of benefits</li>
+                </ul>
+                <div class="faq-contact-box">
+                  <h4>Billing Support Contact</h4>
+                  <p><strong>Phone:</strong> (208) 555-1234<br>
+                  <strong>Email:</strong> billing@idahopharmacy.com</p>
+                </div>
+                <p>Your facility's staff can also help you connect with the correct billing representative.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <div class="faq-question__text">
+                <div class="faq-question__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+                  </svg>
+                </div>
+                <h3>How does emergency medication delivery work?</h3>
+              </div>
+              <div class="faq-toggle">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"/>
+                </svg>
+              </div>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer__inner">
+                <p>Long-term care facilities often need medications urgently, and our Idaho LTC pharmacy provides after-hour delivery services to ensure resident safety.</p>
+                <p><strong>Here's how emergency and STAT delivery works:</strong></p>
+                <ul>
+                  <li>A nurse contacts our on-call pharmacist for an urgent medication need.</li>
+                  <li>We verify the order from the prescriber and prepare the medication immediately.</li>
+                  <li>Emergency deliveries are dispatched through our STAT courier or on-call delivery team.</li>
+                  <li>After-hours deliveries are prioritized based on clinical urgency.</li>
+                </ul>
+                <p><strong>Common reasons for emergency delivery include:</strong></p>
+                <ul>
+                  <li>New admissions</li>
+                  <li>New antibiotic starts</li>
+                  <li>Pain or symptom-management needs</li>
+                  <li>Critical dose changes</li>
+                </ul>
+                <p>Our goal is to ensure facilities receive urgent medications as quickly and safely as possible—day or night.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <p class="eyebrow">Get In Touch</p>
+            <h3>Have Questions? We're Here to Help</h3>
+            <p>Our team is happy to answer questions about billing, medications, or how our pharmacy works with your loved one's care facility.</p>
+            <div class="contact-cards">
+              <div class="contact-card">
+                <div class="contact-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                  </svg>
+                </div>
+                <div class="contact-card__text">
+                  <h4>Phone</h4>
+                  <a href="tel:+12085551234">(208) 555-1234</a>
+                </div>
+              </div>
+              <div class="contact-card">
+                <div class="contact-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                  </svg>
+                </div>
+                <div class="contact-card__text">
+                  <h4>Email</h4>
+                  <a href="mailto:info@idahopharmacy.com">info@idahopharmacy.com</a>
+                </div>
+              </div>
+              <div class="contact-card">
+                <div class="contact-card__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                </div>
+                <div class="contact-card__text">
+                  <h4>Hours</h4>
+                  <span>Mon–Fri 8am–6pm</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <form class="contact-form" action="#" method="post">
+            <h3>Contact Us</h3>
+            <div class="form-grid">
+              <div class="form-row">
+                <label for="name">Name *</label>
+                <input type="text" id="name" name="name" required placeholder="Your full name">
+              </div>
+              <div class="form-row">
+                <label for="business">Business <span class="optional">(If applicable)</span></label>
+                <input type="text" id="business" name="business" placeholder="Facility name if applicable">
+              </div>
+              <div class="form-row--half">
+                <div class="form-row">
+                  <label for="phone">Phone *</label>
+                  <input type="tel" id="phone" name="phone" required placeholder="(208) 555-1234">
+                </div>
+                <div class="form-row">
+                  <label for="email">Email *</label>
+                  <input type="email" id="email" name="email" required placeholder="you@example.com">
+                </div>
+              </div>
+              <div class="form-row">
+                <label for="message">How can we help you? *</label>
+                <textarea id="message" name="message" required placeholder="Questions about billing, medications, or our services..."></textarea>
+              </div>
+              <div class="form-submit">
+                <button type="submit" class="btn btn--primary">Send Message</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <h2>Need Immediate Assistance?</h2>
+        <p>Our team is available to help with urgent questions about your loved one's care.</p>
+        <div class="cta-actions">
+          <a class="btn btn--dark" href="tel:+12085551234">Call (208) 555-1234</a>
+          <a class="btn btn--outline" href="about.html">Learn About Us</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <img src="assets/images/logo.svg" alt="Idaho Pharmacy logo" style="height: 44px; filter: brightness(0) invert(1); opacity: 0.9;">
+        <p>Idaho's trusted long-term care pharmacy partner, proudly locally owned and serving facilities statewide.</p>
+      </div>
+      <div>
+        <h3>Services</h3>
+        <ul>
+          <li><a href="ltc-services.html">LTC Services</a></li>
+          <li><a href="onboarding.html">Facility Onboarding</a></li>
+          <li><a href="clinical-resources.html">Clinical Resources</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Company</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="family-info.html">For Families</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <address>
+          1200 Evergreen Ln<br>
+          Boise, ID 83702<br>
+          (208) 555-1234
+        </address>
+      </div>
+    </div>
+    <p class="footer__legal">© <span id="year"></span> Idaho Pharmacy, LLC. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // Nav toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const primaryNav = document.querySelector('.primary-nav');
+    navToggle?.addEventListener('click', () => {
+      const isOpen = primaryNav.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', isOpen);
+      document.body.classList.toggle('nav-open', isOpen);
+    });
+    
+    // Header scroll
+    const header = document.querySelector('.site-header');
+    window.addEventListener('scroll', () => header.classList.toggle('is-scrolled', window.scrollY > 10));
+    
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.closest('.faq-item');
+        const isActive = item.classList.contains('active');
+        
+        // Close all other items
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('active');
+          i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        });
+        
+        // Toggle current item
+        if (!isActive) {
+          item.classList.add('active');
+          button.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
