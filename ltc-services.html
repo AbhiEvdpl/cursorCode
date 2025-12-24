@@ -8,24 +8,187 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Lato:wght@400;600&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
   <style>
+    :root {
+      --color-primary: #1E4637;
+      --color-secondary: #224E7A;
+      --color-accent: #C89F4A;
+      --color-light-accent: #88C0E6;
+      --color-dark: #4A545E;
+      --color-light: #F4F4F2;
+      --color-white: #FFFFFF;
+      --shadow-card: 0 20px 40px rgba(14, 24, 42, 0.14);
+      --shadow-soft: 0 10px 30px rgba(14, 24, 42, 0.1);
+      --max-width: 1200px;
+      --grid-gap: 32px;
+    }
+    @keyframes floatCard {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+      100% { transform: translateY(0); }
+    }
+    @keyframes pulsePin {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'DM Sans', 'Lato', 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      margin: 0;
+      color: var(--color-dark);
+      background: var(--color-light);
+      line-height: 1.6;
+    }
+    body.nav-open { overflow: hidden; }
+    a { color: inherit; }
+    img { max-width: 100%; display: block; }
+    .container {
+      width: min(100% - 48px, var(--max-width));
+      margin: 0 auto;
+    }
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 16px;
+      background: var(--color-secondary);
+      color: var(--color-white);
+      padding: 8px 16px;
+      border-radius: 8px;
+      z-index: 999;
+    }
+    .skip-link:focus { top: 16px; }
+    .site-header {
+      position: sticky;
+      top: 0;
+      background: var(--color-white);
+      z-index: 900;
+      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+    }
+    .site-header.is-scrolled {
+      box-shadow: 0 15px 25px rgba(4, 16, 16, 0.12);
+      backdrop-filter: blur(8px);
+    }
+    .header__layout {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+      gap: 24px;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .brand img { height: 40px; }
+    .brand-text { display: flex; flex-direction: column; }
+    .brand-name {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      line-height: 1.2;
+    }
+    .brand-tagline {
+      font-size: 0.7rem;
+      color: var(--color-secondary);
+      letter-spacing: 0.05em;
+    }
+    .primary-nav ul {
+      display: flex;
+      list-style: none;
+      gap: 24px;
+      margin: 0;
+      padding: 0;
+    }
+    .primary-nav a {
+      text-decoration: none;
+      font-weight: 500;
+      color: var(--color-dark);
+    }
+    .primary-nav a:hover,
+    .primary-nav a:focus {
+      color: var(--color-secondary);
+    }
+    .header__cta { display: flex; gap: 12px; }
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    .nav-toggle span {
+      width: 24px;
+      height: 2px;
+      background: var(--color-dark);
+    }
+    .btn {
+      border: none;
+      border-radius: 999px;
+      padding: 12px 24px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .btn:focus-visible {
+      outline: 3px solid var(--color-light-accent);
+      outline-offset: 2px;
+    }
+    .btn--primary {
+      background: var(--color-primary);
+      color: var(--color-white);
+    }
+    .btn--secondary {
+      background: var(--color-secondary);
+      color: var(--color-white);
+    }
+    .btn--light {
+      background: var(--color-white);
+      color: var(--color-primary);
+    }
+    .btn--ghost {
+      background: transparent;
+      color: var(--color-secondary);
+      border: 1px solid var(--color-secondary);
+    }
+    .btn--ghost-light {
+      color: var(--color-white);
+      border-color: var(--color-white);
+    }
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-soft);
+    }
+    section { padding: 96px 0; }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.85rem;
+      color: var(--color-accent);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    h2 {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      color: var(--color-secondary);
+      line-height: 1.2;
+      margin: 0 0 16px;
+    }
     .ltc-hero {
       position: relative;
-      padding: 140px 0 100px;
-      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-      color: var(--color-white);
+      padding: 120px 0 80px;
+      background: linear-gradient(135deg, rgba(136, 192, 230, 0.45), rgba(30, 70, 55, 0.12));
       overflow: hidden;
     }
-    .ltc-hero::before {
+    .ltc-hero::after {
       content: '';
       position: absolute;
-      top: 0;
-      right: 0;
-      width: 50%;
-      height: 100%;
-      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="80" cy="20" r="40" fill="rgba(255,255,255,0.03)"/><circle cx="60" cy="80" r="30" fill="rgba(255,255,255,0.02)"/></svg>');
-      background-size: cover;
+      inset: auto 0 0;
+      height: 200px;
+      background: linear-gradient(to top, var(--color-light), transparent);
       pointer-events: none;
     }
     .ltc-hero__content {
@@ -36,16 +199,17 @@
       text-align: center;
     }
     .ltc-hero h1 {
-      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
       line-height: 1.15;
       margin-bottom: 24px;
-      color: var(--color-white);
+      color: var(--color-secondary);
     }
     .ltc-hero__subtitle {
-      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
       opacity: 0.9;
       max-width: 600px;
       margin: 0 auto 32px;
+      color: var(--color-dark);
     }
     .ltc-hero__actions {
       display: flex;
@@ -58,13 +222,7 @@
       max-width: 720px;
       margin: 0 auto 48px;
     }
-    .section-intro h2 {
-      color: var(--color-secondary);
-      margin-bottom: 16px;
-    }
-    .ltc-packaging {
-      background: var(--color-light);
-    }
+    .ltc-packaging { background: var(--color-light); }
     .packaging-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -92,9 +250,7 @@
       transform-origin: bottom;
       transition: transform 0.3s ease;
     }
-    .packaging-card:hover::before {
-      transform: scaleY(1);
-    }
+    .packaging-card:hover::before { transform: scaleY(1); }
     .packaging-card:hover {
       transform: translateY(-6px);
       box-shadow: var(--shadow-card);
@@ -140,29 +296,20 @@
       height: 40px;
       stroke: var(--color-primary);
     }
-    .compliance-note p {
-      margin: 0;
-      font-weight: 500;
-    }
+    .compliance-note p { margin: 0; font-weight: 500; }
     .ltc-support {
       background: var(--color-secondary);
       color: var(--color-white);
     }
-    .ltc-support .eyebrow {
-      color: var(--color-light-accent);
-    }
-    .ltc-support h2 {
-      color: var(--color-white);
-    }
+    .ltc-support .eyebrow { color: var(--color-light-accent); }
+    .ltc-support h2 { color: var(--color-white); }
     .support-grid {
       display: grid;
       grid-template-columns: 1fr 1.2fr;
       gap: 48px;
       align-items: center;
     }
-    .support-visual {
-      position: relative;
-    }
+    .support-visual { position: relative; }
     .support-visual__card {
       background: var(--color-white);
       border-radius: 24px;
@@ -221,9 +368,7 @@
       border-radius: 16px;
       transition: background 0.2s ease;
     }
-    .support-list li:hover {
-      background: rgba(255, 255, 255, 0.12);
-    }
+    .support-list li:hover { background: rgba(255, 255, 255, 0.12); }
     .support-list__icon {
       width: 44px;
       height: 44px;
@@ -239,15 +384,8 @@
       height: 22px;
       stroke: var(--color-light-accent);
     }
-    .support-list__text h4 {
-      margin: 0 0 4px;
-      font-size: 1.05rem;
-    }
-    .support-list__text p {
-      margin: 0;
-      opacity: 0.85;
-      font-size: 0.9rem;
-    }
+    .support-list__text h4 { margin: 0 0 4px; font-size: 1.05rem; }
+    .support-list__text p { margin: 0; opacity: 0.85; font-size: 0.9rem; }
     .ltc-emar {
       background: linear-gradient(180deg, var(--color-light) 0%, rgba(136, 192, 230, 0.15) 100%);
     }
@@ -290,9 +428,7 @@
       font-size: 1rem;
       color: var(--color-secondary);
     }
-    .ltc-delivery {
-      background: var(--color-white);
-    }
+    .ltc-delivery { background: var(--color-white); }
     .delivery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -320,9 +456,7 @@
       background: var(--color-light);
       color: var(--color-dark);
     }
-    .delivery-card--alt h3 {
-      color: var(--color-secondary);
-    }
+    .delivery-card--alt h3 { color: var(--color-secondary); }
     .delivery-card__icon {
       width: 52px;
       height: 52px;
@@ -333,17 +467,13 @@
       justify-content: center;
       margin-bottom: 20px;
     }
-    .delivery-card--alt .delivery-card__icon {
-      background: var(--color-white);
-    }
+    .delivery-card--alt .delivery-card__icon { background: var(--color-white); }
     .delivery-card__icon svg {
       width: 26px;
       height: 26px;
       stroke: currentColor;
     }
-    .delivery-card--alt .delivery-card__icon svg {
-      stroke: var(--color-secondary);
-    }
+    .delivery-card--alt .delivery-card__icon svg { stroke: var(--color-secondary); }
     .delivery-card h3 {
       font-size: 1.15rem;
       margin: 0 0 12px;
@@ -409,12 +539,8 @@
       background: var(--color-secondary);
       color: var(--color-white);
     }
-    .ltc-facilities .eyebrow {
-      color: var(--color-light-accent);
-    }
-    .ltc-facilities h2 {
-      color: var(--color-white);
-    }
+    .ltc-facilities .eyebrow { color: var(--color-light-accent); }
+    .ltc-facilities h2 { color: var(--color-white); }
     .facilities-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -447,12 +573,9 @@
       height: 36px;
       stroke: var(--color-light-accent);
     }
-    .facility-card h3 {
-      margin: 0;
-      font-size: 1.05rem;
-    }
+    .facility-card h3 { margin: 0; font-size: 1.05rem; }
     .final-cta {
-      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+      background: var(--color-primary);
       color: var(--color-white);
       text-align: center;
       position: relative;
@@ -469,35 +592,85 @@
       transform: translate(-50%, -50%);
       pointer-events: none;
     }
-    .final-cta .container {
-      position: relative;
-      z-index: 1;
-    }
+    .final-cta .container { position: relative; z-index: 1; }
     .final-cta h2 {
       font-size: clamp(1.8rem, 4vw, 2.5rem);
       margin-bottom: 16px;
+      color: var(--color-white);
     }
     .final-cta p {
       max-width: 600px;
       margin: 0 auto 32px;
       opacity: 0.9;
     }
+    .cta__actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .site-footer {
+      background: var(--color-primary);
+      color: var(--color-white);
+      padding: 64px 0 24px;
+    }
+    .footer__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+    }
+    .site-footer h3 {
+      font-size: 1rem;
+      margin: 0 0 16px;
+    }
+    .site-footer ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .site-footer li { margin-bottom: 8px; }
+    .site-footer a {
+      color: var(--color-white);
+      text-decoration: none;
+      opacity: 0.85;
+    }
+    .site-footer a:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+    .site-footer address {
+      font-style: normal;
+      opacity: 0.85;
+      line-height: 1.8;
+    }
+    .footer__legal {
+      text-align: center;
+      margin-top: 32px;
+      font-size: 0.85rem;
+      opacity: 0.7;
+    }
     @media (max-width: 960px) {
-      .support-grid {
-        grid-template-columns: 1fr;
+      .container { width: min(100% - 32px, var(--max-width)); }
+      .support-grid { grid-template-columns: 1fr; }
+      .support-features { grid-template-columns: 1fr; }
+      .primary-nav {
+        position: fixed;
+        inset: 0 0 0 35%;
+        background: var(--color-white);
+        padding: 100px 32px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
       }
-      .support-features {
-        grid-template-columns: 1fr;
-      }
+      .primary-nav.open { transform: translateX(0); }
+      .primary-nav ul { flex-direction: column; gap: 16px; }
+      .nav-toggle { display: flex; }
+      .header__cta { display: none; }
     }
     @media (max-width: 600px) {
-      .ltc-hero {
-        padding: 100px 0 72px;
-      }
-      .compliance-note {
-        flex-direction: column;
-        text-align: center;
-      }
+      .ltc-hero { padding: 96px 0 64px; }
+      section { padding: 72px 0; }
+      .compliance-note { flex-direction: column; text-align: center; }
+      .cta__actions { flex-direction: column; }
     }
   </style>
 </head>
@@ -507,6 +680,10 @@
     <div class="container header__layout">
       <a class="brand" href="index.html" aria-label="Idaho Pharmacy home">
         <img src="assets/images/logo.svg" alt="Idaho Pharmacy logo">
+        <div class="brand-text">
+          <span class="brand-name">Idaho Pharmacy</span>
+          <span class="brand-tagline">Long-Term Care Specialists</span>
+        </div>
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation">
         <span></span>
@@ -537,8 +714,8 @@
           <h1>Comprehensive Long-Term Care Pharmacy Services in Idaho</h1>
           <p class="ltc-hero__subtitle">Dedicated LTC pharmacy expertise delivering medication packaging, 24/7 pharmacist support, seamless eMAR integration, and specialized care for Idaho facilities.</p>
           <div class="ltc-hero__actions">
-            <a class="btn btn--light" href="index.html#contact">Get Started</a>
-            <a class="btn btn--ghost btn--ghost-light" href="#packaging">Explore Services</a>
+            <a class="btn btn--primary" href="index.html#contact">Start Service</a>
+            <a class="btn btn--ghost" href="#packaging">Explore Services</a>
           </div>
         </div>
       </div>
@@ -1007,8 +1184,8 @@
   <footer class="site-footer">
     <div class="container footer__grid">
       <div>
-        <img src="assets/images/logo.svg" alt="Idaho Pharmacy logo">
-        <p>Idaho's trusted long-term care pharmacy partner.</p>
+        <img src="assets/images/logo.svg" alt="Idaho Pharmacy logo" style="height: 40px; margin-bottom: 16px;">
+        <p style="opacity: 0.85;">Idaho's trusted long-term care pharmacy partner.</p>
       </div>
       <div>
         <h3>Quick Links</h3>
@@ -1039,16 +1216,13 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-    
     const navToggle = document.querySelector('.nav-toggle');
     const primaryNav = document.querySelector('.primary-nav');
-    
     navToggle?.addEventListener('click', () => {
       const isOpen = primaryNav.classList.toggle('open');
       navToggle.setAttribute('aria-expanded', isOpen);
       document.body.classList.toggle('nav-open', isOpen);
     });
-
     const header = document.querySelector('.site-header');
     window.addEventListener('scroll', () => {
       header.classList.toggle('is-scrolled', window.scrollY > 10);
