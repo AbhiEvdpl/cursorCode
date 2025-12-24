@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Meet the experienced Idaho LTC pharmacists dedicated to resident care. Learn about our mission, expertise, and commitment to Idaho's long-term care facilities.">
+  <title>About Us — Idaho Pharmacy, LLC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Lato:wght@400;600&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-primary: #1E4637;
+      --color-primary-light: #2a5f4a;
+      --color-secondary: #224E7A;
+      --color-secondary-light: #2d6399;
+      --color-accent: #C89F4A;
+      --color-accent-light: #d4b06a;
+      --color-light-accent: #88C0E6;
+      --color-dark: #4A545E;
+      --color-light: #F4F4F2;
+      --color-white: #FFFFFF;
+      --shadow-card: 0 25px 50px rgba(14, 24, 42, 0.15);
+      --shadow-soft: 0 10px 40px rgba(14, 24, 42, 0.1);
+      --shadow-glow: 0 0 60px rgba(136, 192, 230, 0.3);
+      --max-width: 1200px;
+      --grid-gap: 32px;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(2deg); }
+    }
+    @keyframes floatReverse {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(200, 159, 74, 0.4); }
+      50% { transform: scale(1.02); box-shadow: 0 0 20px 5px rgba(200, 159, 74, 0.2); }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', 'Lato', 'Source Sans Pro', system-ui, sans-serif;
+      margin: 0;
+      color: var(--color-dark);
+      background: var(--color-light);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    body.nav-open { overflow: hidden; }
+    a { color: inherit; }
+    img { max-width: 100%; display: block; }
+    .container {
+      width: min(100% - 48px, var(--max-width));
+      margin: 0 auto;
+    }
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 16px;
+      background: var(--color-secondary);
+      color: var(--color-white);
+      padding: 8px 16px;
+      border-radius: 8px;
+      z-index: 999;
+    }
+    .skip-link:focus { top: 16px; }
+    .site-header {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      z-index: 900;
+      border-bottom: 1px solid rgba(34, 78, 122, 0.1);
+    }
+    .site-header.is-scrolled {
+      box-shadow: 0 10px 40px rgba(4, 16, 16, 0.1);
+    }
+    .header__layout {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+      gap: 24px;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .brand img { height: 44px; transition: transform 0.3s ease; }
+    .brand:hover img { transform: scale(1.05); }
+    .brand-text { display: flex; flex-direction: column; }
+    .brand-name {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      line-height: 1.2;
+    }
+    .brand-tagline {
+      font-size: 0.7rem;
+      color: var(--color-secondary);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .primary-nav ul {
+      display: flex;
+      list-style: none;
+      gap: 28px;
+      margin: 0;
+      padding: 0;
+    }
+    .primary-nav a {
+      text-decoration: none;
+      font-weight: 600;
+      color: var(--color-dark);
+      position: relative;
+      padding: 8px 0;
+      transition: color 0.3s ease;
+    }
+    .primary-nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--color-accent), var(--color-secondary));
+      transition: width 0.3s ease;
+    }
+    .primary-nav a:hover { color: var(--color-secondary); }
+    .primary-nav a:hover::after { width: 100%; }
+    .header__cta { display: flex; gap: 12px; }
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+    .nav-toggle span {
+      width: 24px;
+      height: 2px;
+      background: var(--color-dark);
+      transition: all 0.3s ease;
+    }
+    .btn {
+      border: none;
+      border-radius: 50px;
+      padding: 14px 28px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: left 0.5s ease;
+    }
+    .btn:hover::before { left: 100%; }
+    .btn:focus-visible {
+      outline: 3px solid var(--color-light-accent);
+      outline-offset: 2px;
+    }
+    .btn--primary {
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+      color: var(--color-white);
+      box-shadow: 0 4px 15px rgba(30, 70, 55, 0.3);
+    }
+    .btn--primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(30, 70, 55, 0.4);
+    }
+    .btn--secondary {
+      background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-secondary-light) 100%);
+      color: var(--color-white);
+      box-shadow: 0 4px 15px rgba(34, 78, 122, 0.3);
+    }
+    .btn--light {
+      background: var(--color-white);
+      color: var(--color-primary);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    .btn--ghost {
+      background: transparent;
+      color: var(--color-secondary);
+      border: 2px solid var(--color-secondary);
+    }
+    .btn--ghost:hover {
+      background: var(--color-secondary);
+      color: var(--color-white);
+    }
+    .btn--ghost-light {
+      color: var(--color-white);
+      border-color: rgba(255,255,255,0.5);
+    }
+    .btn--ghost-light:hover {
+      background: var(--color-white);
+      color: var(--color-primary);
+    }
+    section { padding: 100px 0; position: relative; }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.8rem;
+      color: var(--color-accent);
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .eyebrow::before {
+      content: '';
+      width: 40px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--color-accent), transparent);
+      border-radius: 2px;
+    }
+    h2 {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      color: var(--color-secondary);
+      line-height: 1.2;
+      margin: 0 0 20px;
+      font-weight: 700;
+    }
+    h3 {
+      font-size: 1.2rem;
+      color: var(--color-secondary);
+      margin: 0 0 12px;
+      font-weight: 600;
+    }
+
+    /* Hero Section */
+    .about-hero {
+      position: relative;
+      padding: 140px 0 120px;
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 50%, #1a3a5c 100%);
+      background-size: 200% 200%;
+      animation: gradientShift 15s ease infinite;
+      color: var(--color-white);
+      overflow: hidden;
+    }
+    .about-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+      pointer-events: none;
+    }
+    .hero-shapes {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .hero-shape {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+    }
+    .hero-shape--1 {
+      width: 400px;
+      height: 400px;
+      top: -100px;
+      right: -100px;
+      animation: float 8s ease-in-out infinite;
+    }
+    .hero-shape--2 {
+      width: 300px;
+      height: 300px;
+      bottom: -80px;
+      left: -80px;
+      animation: floatReverse 10s ease-in-out infinite;
+    }
+    .hero-shape--3 {
+      width: 150px;
+      height: 150px;
+      top: 40%;
+      left: 15%;
+      animation: float 6s ease-in-out infinite 1s;
+    }
+    .hero-idaho {
+      position: absolute;
+      right: 5%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 300px;
+      opacity: 0.1;
+    }
+    .about-hero__content {
+      position: relative;
+      z-index: 1;
+      max-width: 750px;
+    }
+    .about-hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .about-hero__badge svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--color-accent);
+    }
+    .about-hero h1 {
+      font-size: clamp(2.5rem, 5.5vw, 3.8rem);
+      line-height: 1.1;
+      margin-bottom: 24px;
+      color: var(--color-white);
+      font-weight: 700;
+    }
+    .about-hero h1 span {
+      background: linear-gradient(90deg, var(--color-accent), var(--color-light-accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .about-hero__subtitle {
+      font-size: clamp(1.1rem, 2vw, 1.3rem);
+      opacity: 0.9;
+      max-width: 650px;
+      margin-bottom: 40px;
+      line-height: 1.7;
+    }
+    .about-hero__actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* Our Story Section */
+    .story-section {
+      background: linear-gradient(180deg, var(--color-light) 0%, var(--color-white) 100%);
+      position: relative;
+    }
+    .story-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100px;
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+      clip-path: ellipse(80% 100% at 50% 0%);
+    }
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .story-content h2 {
+      margin-bottom: 24px;
+    }
+    .story-content p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .story-content p:last-of-type {
+      margin-bottom: 0;
+    }
+    .story-visual {
+      position: relative;
+    }
+    .story-card {
+      background: var(--color-white);
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: var(--shadow-card);
+      position: relative;
+      overflow: hidden;
+    }
+    .story-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, var(--color-primary), var(--color-accent), var(--color-secondary));
+    }
+    .story-card__icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 30px rgba(30, 70, 55, 0.3);
+    }
+    .story-card__icon svg {
+      width: 40px;
+      height: 40px;
+      stroke: var(--color-white);
+    }
+    .story-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 16px;
+    }
+    .story-card p {
+      margin: 0;
+      line-height: 1.7;
+      color: var(--color-dark);
+    }
+    .story-accent {
+      position: absolute;
+      top: -30px;
+      right: -30px;
+      width: 120px;
+      height: 120px;
+      background: linear-gradient(135deg, rgba(200, 159, 74, 0.2) 0%, rgba(136, 192, 230, 0.2) 100%);
+      border-radius: 24px;
+      transform: rotate(15deg);
+      z-index: -1;
+    }
+
+    /* Pharmacists Section */
+    .pharmacists-section {
+      background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%);
+      color: var(--color-white);
+      position: relative;
+      overflow: hidden;
+    }
+    .pharmacists-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.05)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.05)"/><circle cx="40" cy="80" r="2" fill="rgba(255,255,255,0.05)"/></svg>');
+      background-size: 100px 100px;
+    }
+    .pharmacists-section .eyebrow { color: var(--color-light-accent); }
+    .pharmacists-section .eyebrow::before { background: linear-gradient(90deg, var(--color-light-accent), transparent); }
+    .pharmacists-section h2 { color: var(--color-white); }
+    .pharmacists-intro {
+      max-width: 700px;
+      margin-bottom: 48px;
+      position: relative;
+      z-index: 1;
+    }
+    .pharmacists-intro p {
+      font-size: 1.15rem;
+      opacity: 0.9;
+      line-height: 1.7;
+    }
+    .specialties-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      position: relative;
+      z-index: 1;
+    }
+    .specialty-card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 28px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      transition: all 0.4s ease;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .specialty-card:hover {
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateY(-6px) translateX(4px);
+      border-color: var(--color-accent);
+    }
+    .specialty-card__icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, rgba(200, 159, 74, 0.3) 0%, rgba(200, 159, 74, 0.1) 100%);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+    .specialty-card:hover .specialty-card__icon {
+      transform: scale(1.1) rotate(5deg);
+    }
+    .specialty-card__icon svg {
+      width: 30px;
+      height: 30px;
+      stroke: var(--color-accent);
+    }
+    .specialty-card h3 {
+      color: var(--color-white);
+      margin: 0;
+      font-size: 1.1rem;
+    }
+
+    /* Idaho Roots Section */
+    .roots-section {
+      background: var(--color-white);
+      position: relative;
+      overflow: hidden;
+    }
+    .roots-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(136, 192, 230, 0.1) 0%, transparent 100%);
+      pointer-events: none;
+    }
+    .roots-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .roots-visual {
+      position: relative;
+    }
+    .roots-map {
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+      border-radius: 32px;
+      padding: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-card);
+      position: relative;
+      overflow: hidden;
+    }
+    .roots-map::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/><circle cx="50" cy="50" r="30" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/><circle cx="50" cy="50" r="20" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></svg>');
+      background-size: 200px 200px;
+    }
+    .roots-map img {
+      max-width: 200px;
+      filter: brightness(0) invert(1);
+      opacity: 0.9;
+      position: relative;
+      z-index: 1;
+    }
+    .roots-badge {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      background: var(--color-accent);
+      color: var(--color-white);
+      padding: 16px 24px;
+      border-radius: 16px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      box-shadow: 0 10px 30px rgba(200, 159, 74, 0.4);
+      animation: pulse 3s ease-in-out infinite;
+    }
+    .roots-content h2 {
+      margin-bottom: 24px;
+    }
+    .roots-content p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .roots-highlight {
+      background: linear-gradient(135deg, rgba(30, 70, 55, 0.08) 0%, rgba(136, 192, 230, 0.08) 100%);
+      border-left: 4px solid var(--color-accent);
+      padding: 24px 28px;
+      border-radius: 0 16px 16px 0;
+      margin: 28px 0;
+    }
+    .roots-highlight p {
+      margin: 0;
+      font-weight: 500;
+      font-style: italic;
+      color: var(--color-secondary);
+    }
+
+    /* Quality Section */
+    .quality-section {
+      background: linear-gradient(180deg, var(--color-light) 0%, rgba(136, 192, 230, 0.15) 50%, var(--color-light) 100%);
+    }
+    .section-intro {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 60px;
+    }
+    .section-intro p {
+      font-size: 1.1rem;
+      color: var(--color-dark);
+    }
+    .quality-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      margin-bottom: 60px;
+    }
+    .quality-card {
+      background: var(--color-white);
+      border-radius: 20px;
+      padding: 32px 24px;
+      text-align: center;
+      box-shadow: var(--shadow-soft);
+      transition: all 0.4s ease;
+      border: 1px solid transparent;
+    }
+    .quality-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-card);
+      border-color: var(--color-accent);
+    }
+    .quality-card__icon {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, var(--color-light-accent) 0%, rgba(136, 192, 230, 0.3) 100%);
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      transition: transform 0.3s ease;
+    }
+    .quality-card:hover .quality-card__icon {
+      transform: scale(1.1) rotate(5deg);
+    }
+    .quality-card__icon svg {
+      width: 32px;
+      height: 32px;
+      stroke: var(--color-secondary);
+    }
+    .quality-card h3 {
+      margin: 0;
+      font-size: 1.05rem;
+    }
+
+    /* Compliance Section */
+    .compliance-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .compliance-card {
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+      color: var(--color-white);
+      border-radius: 20px;
+      padding: 28px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      transition: all 0.3s ease;
+    }
+    .compliance-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card);
+    }
+    .compliance-card__icon {
+      width: 52px;
+      height: 52px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .compliance-card__icon svg {
+      width: 26px;
+      height: 26px;
+      stroke: var(--color-white);
+    }
+    .compliance-card span {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      background: var(--color-white);
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .contact-info h2 { margin-bottom: 24px; }
+    .contact-info > p {
+      font-size: 1.1rem;
+      margin-bottom: 32px;
+      color: var(--color-dark);
+    }
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .contact-item__icon {
+      width: 52px;
+      height: 52px;
+      background: linear-gradient(135deg, var(--color-light-accent) 0%, rgba(136, 192, 230, 0.3) 100%);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-item__icon svg {
+      width: 26px;
+      height: 26px;
+      stroke: var(--color-secondary);
+    }
+    .contact-item__text h4 {
+      margin: 0 0 4px;
+      font-size: 0.85rem;
+      color: var(--color-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .contact-item__text a,
+    .contact-item__text span {
+      font-size: 1.1rem;
+      color: var(--color-secondary);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .contact-item__text a:hover { color: var(--color-primary); }
+    .contact-form {
+      background: linear-gradient(135deg, var(--color-light) 0%, rgba(136, 192, 230, 0.1) 100%);
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: var(--shadow-card);
+    }
+    .contact-form h3 {
+      margin-bottom: 24px;
+      text-align: center;
+      font-size: 1.4rem;
+    }
+    .form-grid {
+      display: grid;
+      gap: 20px;
+    }
+    .form-row {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .form-row--half {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .form-row label {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--color-dark);
+    }
+    .form-row label .optional {
+      font-weight: 400;
+      opacity: 0.7;
+    }
+    input, select, textarea {
+      border: 2px solid rgba(34, 78, 122, 0.15);
+      border-radius: 12px;
+      padding: 14px 18px;
+      font-size: 1rem;
+      font-family: inherit;
+      background: var(--color-white);
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--color-secondary);
+      box-shadow: 0 0 0 4px rgba(34, 78, 122, 0.1);
+    }
+    textarea { resize: vertical; min-height: 120px; }
+    .form-submit { margin-top: 8px; }
+    .form-submit .btn {
+      width: 100%;
+      padding: 16px 32px;
+      font-size: 1rem;
+    }
+    .form-note {
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--color-dark);
+      opacity: 0.7;
+      margin-top: 16px;
+    }
+
+    /* Final CTA */
+    .final-cta {
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 50%, var(--color-secondary) 100%);
+      background-size: 200% 200%;
+      animation: gradientShift 10s ease infinite;
+      color: var(--color-white);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      padding: 100px 0;
+    }
+    .final-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/><circle cx="50" cy="50" r="30" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/></svg>');
+      background-size: 200px 200px;
+    }
+    .final-cta .container { position: relative; z-index: 1; }
+    .final-cta h2 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      margin-bottom: 20px;
+      color: var(--color-white);
+    }
+    .final-cta p {
+      max-width: 600px;
+      margin: 0 auto 40px;
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+    .cta__actions {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Footer */
+    .site-footer {
+      background: linear-gradient(180deg, var(--color-primary) 0%, #142e24 100%);
+      color: var(--color-white);
+      padding: 80px 0 32px;
+      position: relative;
+    }
+    .site-footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--color-accent), var(--color-light-accent), var(--color-secondary));
+    }
+    .footer__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+    }
+    .site-footer h3 {
+      font-size: 1rem;
+      margin: 0 0 20px;
+      color: var(--color-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .site-footer ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .site-footer li { margin-bottom: 12px; }
+    .site-footer a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+    .site-footer a:hover {
+      color: var(--color-white);
+      transform: translateX(4px);
+    }
+    .site-footer address {
+      font-style: normal;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.8;
+    }
+    .footer__legal {
+      text-align: center;
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    @media (max-width: 960px) {
+      .container { width: min(100% - 32px, var(--max-width)); }
+      .story-grid, .roots-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .hero-idaho { display: none; }
+      .roots-visual { order: -1; }
+      .primary-nav {
+        position: fixed;
+        inset: 0 0 0 35%;
+        background: var(--color-white);
+        padding: 100px 32px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        box-shadow: -10px 0 40px rgba(0,0,0,0.1);
+      }
+      .primary-nav.open { transform: translateX(0); }
+      .primary-nav ul { flex-direction: column; gap: 20px; }
+      .nav-toggle { display: flex; }
+      .header__cta { display: none; }
+    }
+    @media (max-width: 768px) {
+      .form-row--half { grid-template-columns: 1fr; }
+      .specialties-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .about-hero { padding: 100px 0 80px; }
+      section { padding: 72px 0; }
+      .cta__actions { flex-direction: column; align-items: center; }
+      .contact-form { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <div class="container header__layout">
+      <a class="brand" href="index.html" aria-label="Idaho Pharmacy home">
+        <img src="assets/images/logo.svg" alt="Idaho Pharmacy logo">
+        <div class="brand-text">
+          <span class="brand-name">Idaho Pharmacy</span>
+          <span class="brand-tagline">Long-Term Care Specialists</span>
+        </div>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="primary-nav" id="primary-navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="ltc-services.html">LTC Services</a></li>
+          <li><a href="onboarding.html">Onboarding</a></li>
+          <li><a href="clinical-resources.html">Resources</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header__cta">
+        <a class="btn btn--primary" href="#contact">Contact Us</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="about-hero">
+      <div class="hero-shapes">
+        <div class="hero-shape hero-shape--1"></div>
+        <div class="hero-shape hero-shape--2"></div>
+        <div class="hero-shape hero-shape--3"></div>
+      </div>
+      <img src="assets/images/idaho-map.svg" alt="" class="hero-idaho" aria-hidden="true">
+      <div class="container">
+        <div class="about-hero__content">
+          <div class="about-hero__badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+            Idaho's Trusted LTC Partner
+          </div>
+          <h1>Our Pharmacists & <span>LTC Expertise</span></h1>
+          <p class="about-hero__subtitle">Experienced Idaho LTC pharmacists dedicated to resident care. We deliver accurate, compassionate, and dependable long-term care pharmacy services to facilities across Idaho.</p>
+          <div class="about-hero__actions">
+            <a class="btn btn--light" href="#contact">Contact Our Team</a>
+            <a class="btn btn--ghost btn--ghost-light" href="#story">Our Story</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="story-section" id="story">
+      <div class="container">
+        <div class="story-grid">
+          <div class="story-content">
+            <p class="eyebrow">Our Story</p>
+            <h2>A Mission of Care & Excellence</h2>
+            <p>Our mission is to deliver accurate, compassionate, and dependable long-term care pharmacy services to facilities across Idaho while improving resident outcomes and supporting nursing teams.</p>
+            <p>We founded our Idaho long-term care pharmacy with a clear purpose: to elevate medication safety, strengthen regulatory compliance, and enhance resident well-being in every community we serve.</p>
+            <p>With decades of LTC experience, our team understands the unique challenges faced by Idaho's care facilities—particularly those in rural and frontier regions.</p>
+          </div>
+          <div class="story-visual">
+            <div class="story-accent"></div>
+            <div class="story-card">
+              <div class="story-card__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+              </div>
+              <h3>Our Core Values</h3>
+              <p>Safety, accuracy, compassion, and reliability guide everything we do. We're committed to supporting Idaho's LTC facilities with personalized service that puts residents first.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pharmacists-section" id="pharmacists">
+      <div class="container">
+        <div class="pharmacists-intro">
+          <p class="eyebrow">Meet Our Pharmacists</p>
+          <h2>Specialized LTC Expertise</h2>
+          <p>Our pharmacists bring decades of combined experience in long-term care pharmacy. They specialize in the unique medication needs of skilled nursing, assisted living, memory care, and other LTC settings.</p>
+        </div>
+        <div class="specialties-grid">
+          <article class="specialty-card">
+            <div class="specialty-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                <polyline points="9 22 9 12 15 12 15 22"/>
+              </svg>
+            </div>
+            <h3>Skilled Nursing Medication Management</h3>
+          </article>
+
+          <article class="specialty-card">
+            <div class="specialty-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+            </div>
+            <h3>Assisted Living & Memory Care Support</h3>
+          </article>
+
+          <article class="specialty-card">
+            <div class="specialty-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+                <line x1="9" y1="9" x2="9.01" y2="9"/>
+                <line x1="15" y1="9" x2="15.01" y2="9"/>
+              </svg>
+            </div>
+            <h3>Psychotropic Medication Monitoring</h3>
+          </article>
+
+          <article class="specialty-card">
+            <div class="specialty-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+              </svg>
+            </div>
+            <h3>Chronic Disease Management</h3>
+          </article>
+
+          <article class="specialty-card">
+            <div class="specialty-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+              </svg>
+            </div>
+            <h3>Idaho LTC Regulations</h3>
+          </article>
+
+          <article class="specialty-card">
+            <div class="specialty-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <h3>Consultant Pharmacist Services</h3>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="roots-section" id="roots">
+      <div class="container">
+        <div class="roots-grid">
+          <div class="roots-visual">
+            <div class="roots-map">
+              <img src="assets/images/idaho-map.svg" alt="Idaho state outline">
+              <div class="roots-badge">Locally Owned</div>
+            </div>
+          </div>
+          <div class="roots-content">
+            <p class="eyebrow">Our Idaho Roots</p>
+            <h2>Proudly Serving Our Home State</h2>
+            <p>At Idaho Pharmacy, we believe the heart of excellent care begins right here at home. As a locally owned and operated long-term care pharmacy, we're proud to serve the communities we live in, raise our families in, and deeply care about.</p>
+            <p>Because we aren't part of a national chain or out-of-state corporation, there are no distant decision-makers, no delays, and no corporate barriers standing between your facility and the support you need.</p>
+            <div class="roots-highlight">
+              <p>"We're more than a pharmacy—we're a partner in care. And we're proud to support Idaho's long-term care facilities with the compassion, attention, and dependability our neighbors deserve."</p>
+            </div>
+            <p>Our team understands Idaho—its people, its values, and the importance of reliability in long-term care. That's why we're committed to delivering personalized, responsive, relationship-driven pharmacy services that put residents and caregivers first.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="quality-section" id="quality">
+      <div class="container">
+        <div class="section-intro">
+          <p class="eyebrow">Committed to Quality</p>
+          <h2>Our Standards of Excellence</h2>
+          <p>We maintain the highest standards to ensure safe, accurate, and reliable pharmacy services for every facility we serve.</p>
+        </div>
+        <div class="quality-grid">
+          <article class="quality-card">
+            <div class="quality-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                <polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+            </div>
+            <h3>Medication Accuracy</h3>
+          </article>
+
+          <article class="quality-card">
+            <div class="quality-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+              </svg>
+            </div>
+            <h3>Documentation Compliance</h3>
+          </article>
+
+          <article class="quality-card">
+            <div class="quality-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <h3>Medication Safety</h3>
+          </article>
+
+          <article class="quality-card">
+            <div class="quality-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="1" y="3" width="15" height="13"/>
+                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+                <circle cx="5.5" cy="18.5" r="2.5"/>
+                <circle cx="18.5" cy="18.5" r="2.5"/>
+              </svg>
+            </div>
+            <h3>Delivery Reliability</h3>
+          </article>
+
+          <article class="quality-card">
+            <div class="quality-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </div>
+            <h3>Resident-Centered Care</h3>
+          </article>
+        </div>
+
+        <div class="section-intro">
+          <p class="eyebrow">Licensing & Compliance</p>
+          <h2>Certified & Accredited</h2>
+        </div>
+        <div class="compliance-grid">
+          <article class="compliance-card">
+            <div class="compliance-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+              </svg>
+            </div>
+            <span>Idaho Board of Pharmacy Licensed</span>
+          </article>
+
+          <article class="compliance-card">
+            <div class="compliance-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <span>DEA Registered</span>
+          </article>
+
+          <article class="compliance-card">
+            <div class="compliance-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                <polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+            </div>
+            <span>CMS & Medicare Compliant</span>
+          </article>
+
+          <article class="compliance-card">
+            <div class="compliance-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+              </svg>
+            </div>
+            <span>Annual Regulatory Training</span>
+          </article>
+
+          <article class="compliance-card">
+            <div class="compliance-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="8" x2="12" y2="12"/>
+                <line x1="12" y1="16" x2="12.01" y2="16"/>
+              </svg>
+            </div>
+            <span>Infection Control Certification</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <p class="eyebrow">Get In Touch</p>
+            <h2>Contact Our Team</h2>
+            <p>Have questions about our services or want to learn more about partnering with Idaho Pharmacy? We'd love to hear from you.</p>
+            <div class="contact-details">
+              <div class="contact-item">
+                <div class="contact-item__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                  </svg>
+                </div>
+                <div class="contact-item__text">
+                  <h4>Phone</h4>
+                  <a href="tel:+12085551234">(208) 555-1234</a>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-item__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                    <polyline points="22,6 12,13 2,6"/>
+                  </svg>
+                </div>
+                <div class="contact-item__text">
+                  <h4>Email</h4>
+                  <a href="mailto:info@idahopharmacy.com">info@idahopharmacy.com</a>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-item__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                  </svg>
+                </div>
+                <div class="contact-item__text">
+                  <h4>Address</h4>
+                  <span>1200 Evergreen Ln, Boise, ID 83702</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <form class="contact-form" action="#" method="post">
+            <h3>Send Us a Message</h3>
+            <div class="form-grid">
+              <div class="form-row">
+                <label for="name">Name *</label>
+                <input type="text" id="name" name="name" required placeholder="Your full name">
+              </div>
+              <div class="form-row">
+                <label for="business">Business <span class="optional">(If applicable)</span></label>
+                <input type="text" id="business" name="business" placeholder="Facility or organization name">
+              </div>
+              <div class="form-row--half">
+                <div class="form-row">
+                  <label for="phone">Phone *</label>
+                  <input type="tel" id="phone" name="phone" required placeholder="(208) 555-1234">
+                </div>
+                <div class="form-row">
+                  <label for="email">Email *</label>
+                  <input type="email" id="email" name="email" required placeholder="you@example.com">
+                </div>
+              </div>
+              <div class="form-row">
+                <label for="message">How can we help you? *</label>
+                <textarea id="message" name="message" required placeholder="Tell us about your facility or questions..."></textarea>
+              </div>
+              <div class="form-submit">
+                <button type="submit" class="btn btn--primary">Send Message</button>
+              </div>
+            </div>
+            <p class="form-note">We typically respond within 1 business day.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="container">
+        <h2>Ready to Partner with Idaho Pharmacy?</h2>
+        <p>Join the Idaho LTC facilities that trust us for dependable, compassionate pharmacy services.</p>
+        <div class="cta__actions">
+          <a class="btn btn--light" href="onboarding.html">Start Onboarding</a>
+          <a class="btn btn--ghost btn--ghost-light" href="ltc-services.html">View Our Services</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__grid">
+      <div>
+        <img src="assets/images/logo.svg" alt="Idaho Pharmacy logo" style="height: 44px; margin-bottom: 20px;">
+        <p style="opacity: 0.8; line-height: 1.6;">Idaho's trusted long-term care pharmacy partner, proudly locally owned and operated.</p>
+      </div>
+      <div>
+        <h3>Services</h3>
+        <ul>
+          <li><a href="ltc-services.html">LTC Services</a></li>
+          <li><a href="onboarding.html">Facility Onboarding</a></li>
+          <li><a href="clinical-resources.html">Clinical Resources</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Company</h3>
+        <ul>
+          <li><a href="#story">Our Story</a></li>
+          <li><a href="#pharmacists">Our Team</a></li>
+          <li><a href="#quality">Quality Standards</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <address>
+          1200 Evergreen Ln<br>
+          Boise, ID 83702<br>
+          (208) 555-1234
+        </address>
+      </div>
+    </div>
+    <p class="footer__legal">© <span id="year"></span> Idaho Pharmacy, LLC. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const navToggle = document.querySelector('.nav-toggle');
+    const primaryNav = document.querySelector('.primary-nav');
+    navToggle?.addEventListener('click', () => {
+      const isOpen = primaryNav.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', isOpen);
+      document.body.classList.toggle('nav-open', isOpen);
+    });
+    const header = document.querySelector('.site-header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('is-scrolled', window.scrollY > 10);
+    });
+  </script>
+</body>
+</html>
