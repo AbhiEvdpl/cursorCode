@@ -176,6 +176,11 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
   gap: 12px;
 }
 
+.logo__img {
+  height: 50px;
+  width: auto;
+}
+
 .logo__icon {
   width: 48px;
   height: 48px;
@@ -209,6 +214,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
 
 .logo--light .logo__name { color: var(--white); }
 .logo--light .logo__tagline { color: var(--gray-400); }
+.logo--light .logo__img { filter: brightness(0) invert(1); }
 
 .nav__list {
   display: flex;
@@ -268,7 +274,58 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
   padding-left: 24px;
 }
 
-.header__actions { display: flex; gap: 16px; }
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--gray-700);
+  transition: all var(--transition);
+  position: relative;
+}
+
+.header__icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.header__icon:hover {
+  color: var(--accent);
+}
+
+.header__icon--cart {
+  position: relative;
+}
+
+.header__cart-count {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 18px;
+  height: 18px;
+  background: var(--accent);
+  color: var(--white);
+  font-size: 0.7rem;
+  font-weight: 700;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__actions .btn {
+  margin-left: 8px;
+}
 
 .nav-toggle {
   display: none;
@@ -1312,7 +1369,10 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
   .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
   .nav-toggle.active span:nth-child(2) { opacity: 0; }
   .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
-  .header__actions { display: none; }
+  .header__actions .btn { display: none; }
+  .header__actions { gap: 4px; }
+  .header__icon { width: 36px; height: 36px; }
+  .header__icon svg { width: 20px; height: 20px; }
 
   .hero { min-height: auto; padding: 60px 0; }
   .hero__features { flex-direction: column; gap: 16px; }
