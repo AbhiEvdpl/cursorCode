@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(update);
   }
 
-  const fadeElements = document.querySelectorAll('.product-card, .industry-card, .service-item, .contact__item, .feature-box');
+  const fadeElements = document.querySelectorAll('.category-tile, .product-item, .product-card, .industry-card, .service-item, .contact__item, .feature-box');
   const fadeObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry, index) => {
       if (entry.isIntersecting) {
