@@ -10,11 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let lastScroll = 0;
   window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
-    if (currentScroll > 50) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
+    header.classList.toggle('scrolled', currentScroll > 100);
     lastScroll = currentScroll;
   }, { passive: true });
 
@@ -22,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
     navToggle.addEventListener('click', () => {
       const isOpen = nav.classList.toggle('active');
       navToggle.classList.toggle('active');
-      navToggle.setAttribute('aria-expanded', isOpen);
       document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
@@ -30,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
       link.addEventListener('click', () => {
         nav.classList.remove('active');
         navToggle.classList.remove('active');
-        navToggle.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
       });
     });
@@ -38,10 +32,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href === '#') return;
       e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
+      const target = document.querySelector(href);
       if (target) {
-        const headerHeight = header.offsetHeight;
+        const headerHeight = header.offsetHeight + 20;
         const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
         window.scrollTo({ top: targetPosition, behavior: 'smooth' });
       }
@@ -58,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       await new Promise(resolve => setTimeout(resolve, 1500));
 
-      btn.textContent = 'Message Sent!';
+      btn.textContent = 'Request Sent!';
       btn.style.background = '#10b981';
       contactForm.reset();
 
@@ -70,56 +66,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animate-in');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
-
-  document.querySelectorAll('.capability-card, .industry-card, .feature-card, .contact__item').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(el);
-  });
-
-  const style = document.createElement('style');
-  style.textContent = `.animate-in { opacity: 1 !important; transform: translateY(0) !important; }`;
-  document.head.appendChild(style);
-
-  document.querySelectorAll('.material-tag').forEach((tag, i) => {
-    tag.style.animationDelay = `${i * 0.05}s`;
-  });
-
-  const statNumbers = document.querySelectorAll('.stat__number');
+  const statCards = document.querySelectorAll('.stat-card__number');
   const statsObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        animateValue(entry.target);
+        animateCounter(entry.target);
         statsObserver.unobserve(entry.target);
       }
     });
   }, { threshold: 0.5 });
 
-  statNumbers.forEach(stat => statsObserver.observe(stat));
+  statCards.forEach(stat => statsObserver.observe(stat));
 
-  function animateValue(el) {
-    const text = el.textContent;
-    const hasPlus = text.includes('+');
-    const hasPercent = text.includes('%');
-    const hasK = text.includes('K');
-    let endValue = parseInt(text.replace(/[^0-9]/g, ''));
-    
-    if (hasK) endValue = endValue;
-    
+  function animateCounter(el) {
+    const target = parseInt(el.dataset.target);
     const duration = 2000;
     const startTime = performance.now();
 
@@ -127,17 +87,49 @@ document.addEventListener('DOMContentLoaded', () => {
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
       const easeOut = 1 - Math.pow(1 - progress, 3);
-      const current = Math.floor(easeOut * endValue);
-      
-      let display = current.toString();
-      if (hasK) display += 'K';
-      if (hasPlus) display += '+';
-      if (hasPercent) display += '%';
-      
-      el.textContent = display;
-      
+      el.textContent = Math.floor(easeOut * target);
       if (progress < 1) requestAnimationFrame(update);
     }
     requestAnimationFrame(update);
   }
+
+  const fadeElements = document.querySelectorAll('.product-card, .industry-card, .service-item, .contact__item, .feature-box');
+  const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }, index * 50);
+        fadeObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  fadeElements.forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    fadeObserver.observe(el);
+  });
+
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav__list a[href^="#"]');
+
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+        });
+      }
+    });
+  }, { threshold: 0.3, rootMargin: '-100px 0px -50% 0px' });
+
+  sections.forEach(section => sectionObserver.observe(section));
+
+  const style = document.createElement('style');
+  style.textContent = `.nav__list a.active { color: var(--accent); }`;
+  document.head.appendChild(style);
 });

@@ -3,43 +3,72 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Trinity Rubber and Machine - Your trusted partner for precision rubber products, custom gaskets, seals, and machining solutions. Quality manufacturing since establishment.">
-  <title>Trinity Rubber and Machine | Precision Rubber Products & Custom Machining</title>
+  <meta name="description" content="Trinity Rubber and Machine - Industrial hose, fittings, gaskets, seals, and custom rubber products. Your complete source for fluid transfer solutions.">
+  <title>Trinity Rubber and Machine | Industrial Hose, Fittings & Rubber Products</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="trinity-styles.css">
 </head>
 <body>
+  <div class="top-bar">
+    <div class="container top-bar__inner">
+      <div class="top-bar__contact">
+        <a href="tel:+1-555-123-4567">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          (555) 123-4567
+        </a>
+        <a href="mailto:sales@trinityrubber.com">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          sales@trinityrubber.com
+        </a>
+      </div>
+      <div class="top-bar__hours">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+        Mon-Fri: 7:00 AM - 5:00 PM
+      </div>
+    </div>
+  </div>
+
   <header class="header" id="header">
     <div class="container header__inner">
       <a href="#" class="logo">
-        <svg class="logo__icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2"/>
-          <circle cx="20" cy="20" r="12" stroke="currentColor" stroke-width="2"/>
-          <circle cx="20" cy="20" r="6" fill="currentColor"/>
-        </svg>
-        <span class="logo__text">Trinity Rubber<span>&amp; Machine</span></span>
+        <div class="logo__icon">
+          <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="25" cy="25" r="22" stroke="currentColor" stroke-width="3"/>
+            <circle cx="25" cy="25" r="14" stroke="currentColor" stroke-width="2"/>
+            <circle cx="25" cy="25" r="6" fill="currentColor"/>
+            <path d="M25 3V10M25 40V47M3 25H10M40 25H47" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="logo__text">
+          <span class="logo__name">TRINITY</span>
+          <span class="logo__tagline">RUBBER & MACHINE</span>
+        </div>
       </a>
       <nav class="nav" id="nav">
         <ul class="nav__list">
-          <li><a href="#capabilities">Capabilities</a></li>
-          <li><a href="#products">Products</a></li>
+          <li><a href="#home">Home</a></li>
+          <li class="has-dropdown">
+            <a href="#products">Products <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg></a>
+            <ul class="dropdown">
+              <li><a href="#products">Industrial Hose</a></li>
+              <li><a href="#products">Hose Fittings</a></li>
+              <li><a href="#products">Gaskets & Seals</a></li>
+              <li><a href="#products">Rubber Sheets</a></li>
+              <li><a href="#products">Expansion Joints</a></li>
+            </ul>
+          </li>
+          <li><a href="#services">Services</a></li>
           <li><a href="#industries">Industries</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
       <div class="header__actions">
-        <a href="tel:+1-555-123-4567" class="header__phone">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
-          </svg>
-          <span>(555) 123-4567</span>
-        </a>
-        <a href="#contact" class="btn btn--primary">Request Quote</a>
+        <a href="#contact" class="btn btn--primary">Get A Quote</a>
       </div>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
         <span></span>
         <span></span>
         <span></span>
@@ -48,214 +77,245 @@
   </header>
 
   <main>
-    <section class="hero">
-      <div class="hero__bg">
-        <div class="hero__pattern"></div>
-        <div class="hero__gradient"></div>
-      </div>
+    <section class="hero" id="home">
+      <div class="hero__bg"></div>
+      <div class="hero__overlay"></div>
       <div class="container hero__content">
-        <div class="hero__text">
-          <span class="badge">Precision Manufacturing Since Day One</span>
-          <h1>Custom Rubber Products <span class="highlight">&amp; Machining</span> Solutions</h1>
-          <p>From custom gaskets and seals to precision-machined components, Trinity Rubber and Machine delivers quality solutions for demanding industrial applications.</p>
-          <div class="hero__cta">
-            <a href="#contact" class="btn btn--primary btn--lg">Get Started Today</a>
-            <a href="#capabilities" class="btn btn--outline btn--lg">View Capabilities</a>
-          </div>
-          <div class="hero__stats">
-            <div class="stat">
-              <span class="stat__number">500+</span>
-              <span class="stat__label">Satisfied Clients</span>
-            </div>
-            <div class="stat">
-              <span class="stat__number">10K+</span>
-              <span class="stat__label">Parts Delivered</span>
-            </div>
-            <div class="stat">
-              <span class="stat__number">99%</span>
-              <span class="stat__label">Quality Rate</span>
-            </div>
-          </div>
+        <span class="hero__badge">Your Industrial Supply Partner</span>
+        <h1>INDUSTRIAL HOSE, FITTINGS <span>&</span> RUBBER PRODUCTS</h1>
+        <p>Complete fluid transfer solutions for oil & gas, manufacturing, agriculture, and construction industries. Quality products, expert service, fast delivery.</p>
+        <div class="hero__cta">
+          <a href="#products" class="btn btn--primary btn--lg">View Products</a>
+          <a href="#contact" class="btn btn--outline-light btn--lg">Request Quote</a>
         </div>
-        <div class="hero__visual">
-          <div class="hero__card hero__card--main">
-            <div class="hero__card-icon">
-              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="32" cy="32" r="28" stroke="currentColor" stroke-width="2" stroke-dasharray="4 4"/>
-                <circle cx="32" cy="32" r="20" stroke="currentColor" stroke-width="3"/>
-                <circle cx="32" cy="32" r="10" fill="currentColor"/>
-              </svg>
-            </div>
-            <h3>Precision Gaskets</h3>
-            <p>Custom-engineered to your exact specifications</p>
+        <div class="hero__features">
+          <div class="hero__feature">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            <span>Quality Certified</span>
           </div>
-          <div class="hero__card hero__card--float hero__card--1">
-            <svg viewBox="0 0 48 48" fill="none">
-              <rect x="4" y="4" width="40" height="40" rx="8" stroke="currentColor" stroke-width="2"/>
-              <path d="M16 24h16M24 16v16" stroke="currentColor" stroke-width="2"/>
-            </svg>
-            <span>CNC Machining</span>
+          <div class="hero__feature">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 4l-4 4h3v7c0 1.1-.9 2-2 2s-2-.9-2-2V8c0-2.21-1.79-4-4-4S5 5.79 5 8v7H2l4 4 4-4H7V8c0-1.1.9-2 2-2s2 .9 2 2v7c0 2.21 1.79 4 4 4s4-1.79 4-4V8h3l-4-4z"/></svg>
+            <span>Same Day Shipping</span>
           </div>
-          <div class="hero__card hero__card--float hero__card--2">
-            <svg viewBox="0 0 48 48" fill="none">
-              <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2"/>
-              <path d="M24 12v12l8 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-            <span>Fast Turnaround</span>
-          </div>
-          <div class="hero__card hero__card--float hero__card--3">
-            <svg viewBox="0 0 48 48" fill="none">
-              <path d="M12 24l8 8 16-16" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <span>Quality Assured</span>
+          <div class="hero__feature">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+            <span>Custom Fabrication</span>
           </div>
         </div>
       </div>
       <div class="hero__scroll">
-        <span>Scroll to explore</span>
-        <div class="hero__scroll-line"></div>
-      </div>
-    </section>
-
-    <section class="capabilities" id="capabilities">
-      <div class="container">
-        <div class="section-header">
-          <span class="badge">What We Do</span>
-          <h2>Manufacturing <span class="highlight">Capabilities</span></h2>
-          <p>Comprehensive rubber and machining solutions backed by decades of expertise</p>
-        </div>
-        <div class="capabilities__grid">
-          <article class="capability-card">
-            <div class="capability-card__icon">
-              <svg viewBox="0 0 48 48" fill="none">
-                <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="2"/>
-                <circle cx="24" cy="24" r="12" stroke="currentColor" stroke-width="2"/>
-                <circle cx="24" cy="24" r="4" fill="currentColor"/>
-              </svg>
-            </div>
-            <h3>Custom Gaskets</h3>
-            <p>Precision-cut gaskets from a wide range of materials including rubber, silicone, neoprene, and specialty compounds.</p>
-            <ul class="capability-card__list">
-              <li>Die-cut gaskets</li>
-              <li>Water-jet cutting</li>
-              <li>Custom profiles</li>
-            </ul>
-          </article>
-          <article class="capability-card">
-            <div class="capability-card__icon">
-              <svg viewBox="0 0 48 48" fill="none">
-                <rect x="8" y="8" width="32" height="32" rx="4" stroke="currentColor" stroke-width="2"/>
-                <path d="M16 24h16M24 16v16" stroke="currentColor" stroke-width="2"/>
-              </svg>
-            </div>
-            <h3>Rubber Molding</h3>
-            <p>Custom molded rubber parts using compression, transfer, and injection molding processes.</p>
-            <ul class="capability-card__list">
-              <li>Compression molding</li>
-              <li>Transfer molding</li>
-              <li>Injection molding</li>
-            </ul>
-          </article>
-          <article class="capability-card">
-            <div class="capability-card__icon">
-              <svg viewBox="0 0 48 48" fill="none">
-                <path d="M24 4L4 14v20l20 10 20-10V14L24 4z" stroke="currentColor" stroke-width="2"/>
-                <path d="M4 14l20 10 20-10M24 24v20" stroke="currentColor" stroke-width="2"/>
-              </svg>
-            </div>
-            <h3>CNC Machining</h3>
-            <p>Precision machining services for metal and plastic components with tight tolerances.</p>
-            <ul class="capability-card__list">
-              <li>Turning & milling</li>
-              <li>Multi-axis machining</li>
-              <li>Prototype to production</li>
-            </ul>
-          </article>
-          <article class="capability-card">
-            <div class="capability-card__icon">
-              <svg viewBox="0 0 48 48" fill="none">
-                <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2" stroke-dasharray="6 3"/>
-                <circle cx="24" cy="24" r="8" stroke="currentColor" stroke-width="2"/>
-              </svg>
-            </div>
-            <h3>Seals & O-Rings</h3>
-            <p>Standard and custom sealing solutions for hydraulic, pneumatic, and static applications.</p>
-            <ul class="capability-card__list">
-              <li>Standard O-rings</li>
-              <li>Custom seals</li>
-              <li>Seal kits</li>
-            </ul>
-          </article>
-          <article class="capability-card">
-            <div class="capability-card__icon">
-              <svg viewBox="0 0 48 48" fill="none">
-                <path d="M8 36V12a4 4 0 014-4h24a4 4 0 014 4v24a4 4 0 01-4 4H12a4 4 0 01-4-4z" stroke="currentColor" stroke-width="2"/>
-                <path d="M16 20h16M16 28h10" stroke="currentColor" stroke-width="2"/>
-              </svg>
-            </div>
-            <h3>Rubber Extrusions</h3>
-            <p>Custom extruded rubber profiles for weatherstripping, edge trim, and specialized applications.</p>
-            <ul class="capability-card__list">
-              <li>Custom profiles</li>
-              <li>Co-extrusions</li>
-              <li>High-volume runs</li>
-            </ul>
-          </article>
-          <article class="capability-card">
-            <div class="capability-card__icon">
-              <svg viewBox="0 0 48 48" fill="none">
-                <path d="M24 8v32M8 24h32" stroke="currentColor" stroke-width="2"/>
-                <circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="2"/>
-              </svg>
-            </div>
-            <h3>Assembly Services</h3>
-            <p>Complete sub-assembly and kitting services to streamline your supply chain.</p>
-            <ul class="capability-card__list">
-              <li>Rubber-to-metal bonding</li>
-              <li>Kit assembly</li>
-              <li>Inventory programs</li>
-            </ul>
-          </article>
-        </div>
+        <span>Scroll</span>
+        <div class="hero__scroll-icon"></div>
       </div>
     </section>
 
     <section class="products" id="products">
       <div class="container">
-        <div class="products__inner">
-          <div class="products__content">
-            <span class="badge">Our Products</span>
-            <h2>Quality <span class="highlight">Materials</span> for Every Application</h2>
-            <p>We work with a comprehensive range of rubber and elastomer materials to meet your specific requirements.</p>
-            <div class="materials-grid">
-              <div class="material-tag">Natural Rubber</div>
-              <div class="material-tag">Neoprene</div>
-              <div class="material-tag">EPDM</div>
-              <div class="material-tag">Silicone</div>
-              <div class="material-tag">Viton®</div>
-              <div class="material-tag">Nitrile (Buna-N)</div>
-              <div class="material-tag">Polyurethane</div>
-              <div class="material-tag">PTFE</div>
-              <div class="material-tag">SBR</div>
-              <div class="material-tag">Hypalon</div>
+        <div class="section-header">
+          <span class="section-tag">Our Products</span>
+          <h2>INDUSTRIAL RUBBER & HOSE PRODUCTS</h2>
+          <p>Premium quality products for demanding industrial applications</p>
+        </div>
+        <div class="products__grid">
+          <article class="product-card">
+            <div class="product-card__image">
+              <div class="product-card__icon">
+                <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M8 20h48v24H8z"/>
+                  <path d="M8 20c0-6 4-12 12-12h24c8 0 12 6 12 12"/>
+                  <path d="M8 44c0 6 4 12 12 12h24c8 0 12-6 12-12"/>
+                  <circle cx="20" cy="32" r="4" fill="currentColor"/>
+                  <circle cx="44" cy="32" r="4" fill="currentColor"/>
+                </svg>
+              </div>
             </div>
-            <a href="#contact" class="btn btn--primary">Request Material Specs</a>
+            <div class="product-card__content">
+              <h3>Industrial Hose</h3>
+              <p>Air, water, chemical, petroleum, food grade, and specialty hoses for every application.</p>
+              <ul>
+                <li>Hydraulic Hose</li>
+                <li>Suction & Discharge</li>
+                <li>Chemical Transfer</li>
+                <li>Food & Beverage</li>
+              </ul>
+              <a href="#contact" class="product-card__link">Learn More →</a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card__image">
+              <div class="product-card__icon">
+                <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M16 32h32"/>
+                  <rect x="8" y="24" width="16" height="16" rx="2"/>
+                  <rect x="40" y="24" width="16" height="16" rx="2"/>
+                  <circle cx="16" cy="32" r="6"/>
+                  <circle cx="48" cy="32" r="6"/>
+                </svg>
+              </div>
+            </div>
+            <div class="product-card__content">
+              <h3>Hose Fittings & Couplings</h3>
+              <p>Complete line of fittings, adapters, and couplings for secure connections.</p>
+              <ul>
+                <li>Cam & Groove</li>
+                <li>Crimp Fittings</li>
+                <li>Quick Disconnects</li>
+                <li>Clamps & Ferrules</li>
+              </ul>
+              <a href="#contact" class="product-card__link">Learn More →</a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card__image">
+              <div class="product-card__icon">
+                <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="32" cy="32" r="24"/>
+                  <circle cx="32" cy="32" r="16"/>
+                  <circle cx="32" cy="32" r="8"/>
+                </svg>
+              </div>
+            </div>
+            <div class="product-card__content">
+              <h3>Gaskets & Seals</h3>
+              <p>Custom and standard gaskets for all sealing applications.</p>
+              <ul>
+                <li>Flange Gaskets</li>
+                <li>O-Rings</li>
+                <li>Custom Die-Cut</li>
+                <li>Spiral Wound</li>
+              </ul>
+              <a href="#contact" class="product-card__link">Learn More →</a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card__image">
+              <div class="product-card__icon">
+                <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="8" y="16" width="48" height="32" rx="2"/>
+                  <path d="M8 24h48M8 32h48M8 40h48"/>
+                </svg>
+              </div>
+            </div>
+            <div class="product-card__content">
+              <h3>Rubber Sheets & Rolls</h3>
+              <p>Industrial rubber sheeting in various compounds and thicknesses.</p>
+              <ul>
+                <li>Neoprene</li>
+                <li>EPDM</li>
+                <li>Nitrile (Buna-N)</li>
+                <li>Silicone</li>
+              </ul>
+              <a href="#contact" class="product-card__link">Learn More →</a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card__image">
+              <div class="product-card__icon">
+                <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M16 8v48M48 8v48"/>
+                  <path d="M16 16c8 4 16 4 24 0"/>
+                  <path d="M16 32c8 4 16 4 24 0"/>
+                  <path d="M16 48c8 4 16 4 24 0"/>
+                </svg>
+              </div>
+            </div>
+            <div class="product-card__content">
+              <h3>Expansion Joints</h3>
+              <p>Flexible connectors for piping systems to absorb movement and vibration.</p>
+              <ul>
+                <li>Rubber Expansion Joints</li>
+                <li>Metal Bellows</li>
+                <li>Fabric Joints</li>
+                <li>PTFE Joints</li>
+              </ul>
+              <a href="#contact" class="product-card__link">Learn More →</a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card__image">
+              <div class="product-card__icon">
+                <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="32" cy="32" r="20"/>
+                  <path d="M32 12v8M32 44v8M12 32h8M44 32h8"/>
+                  <circle cx="32" cy="32" r="8" fill="currentColor"/>
+                </svg>
+              </div>
+            </div>
+            <div class="product-card__content">
+              <h3>Valves & Accessories</h3>
+              <p>Industrial valves and accessories for complete system solutions.</p>
+              <ul>
+                <li>Ball Valves</li>
+                <li>Gate Valves</li>
+                <li>Check Valves</li>
+                <li>Strainers</li>
+              </ul>
+              <a href="#contact" class="product-card__link">Learn More →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="services__bg"></div>
+      <div class="container">
+        <div class="services__grid">
+          <div class="services__content">
+            <span class="section-tag section-tag--light">Our Services</span>
+            <h2>COMPLETE FABRICATION & ASSEMBLY SERVICES</h2>
+            <p>From custom hose assemblies to gasket fabrication, we provide complete solutions tailored to your specifications.</p>
+            <div class="services__list">
+              <div class="service-item">
+                <div class="service-item__icon">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 9V7h-2V5c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-2h2v-2h-2v-2h2v-2h-2V9h2zm-4 10H4V5h14v14zM6 13h5v4H6zm6-6h4v3h-4zM6 7h5v5H6zm6 4h4v6h-4z"/></svg>
+                </div>
+                <div>
+                  <h4>Custom Hose Assemblies</h4>
+                  <p>Made-to-order hose assemblies with certified crimping and testing.</p>
+                </div>
+              </div>
+              <div class="service-item">
+                <div class="service-item__icon">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 6l-3.75 5 2.85 3.8-1.6 1.2C9.81 13.75 7 10 7 10l-6 8h22L14 6z"/></svg>
+                </div>
+                <div>
+                  <h4>Gasket Fabrication</h4>
+                  <p>Die-cut, waterjet, and hand-cut gaskets from your drawings or samples.</p>
+                </div>
+              </div>
+              <div class="service-item">
+                <div class="service-item__icon">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/></svg>
+                </div>
+                <div>
+                  <h4>On-Site Service</h4>
+                  <p>Mobile hose repair and replacement services at your location.</p>
+                </div>
+              </div>
+              <div class="service-item">
+                <div class="service-item__icon">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/></svg>
+                </div>
+                <div>
+                  <h4>Inventory Programs</h4>
+                  <p>Vendor managed inventory and scheduled delivery programs.</p>
+                </div>
+              </div>
+            </div>
+            <a href="#contact" class="btn btn--light btn--lg">Request Service</a>
           </div>
-          <div class="products__features">
-            <div class="feature-card">
-              <div class="feature-card__number">01</div>
-              <h3>Material Selection</h3>
-              <p>Expert guidance on choosing the right material for your application, temperature, and chemical requirements.</p>
-            </div>
-            <div class="feature-card">
-              <div class="feature-card__number">02</div>
-              <h3>Custom Formulations</h3>
-              <p>Proprietary rubber compounds developed for specialized performance characteristics.</p>
-            </div>
-            <div class="feature-card">
-              <div class="feature-card__number">03</div>
-              <h3>Testing & Certification</h3>
-              <p>Comprehensive testing and documentation to meet industry specifications and standards.</p>
+          <div class="services__image">
+            <div class="services__card">
+              <div class="services__card-content">
+                <span class="services__card-number">24/7</span>
+                <span class="services__card-text">Emergency Service Available</span>
+              </div>
             </div>
           </div>
         </div>
@@ -264,71 +324,132 @@
 
     <section class="industries" id="industries">
       <div class="container">
-        <div class="section-header section-header--light">
-          <span class="badge badge--light">Industries Served</span>
-          <h2>Trusted Across <span class="highlight">Industries</span></h2>
-          <p>Delivering precision components to diverse sectors worldwide</p>
+        <div class="section-header">
+          <span class="section-tag">Industries We Serve</span>
+          <h2>TRUSTED ACROSS INDUSTRIES</h2>
+          <p>Providing reliable solutions to diverse sectors nationwide</p>
         </div>
         <div class="industries__grid">
           <article class="industry-card">
             <div class="industry-card__icon">
-              <svg viewBox="0 0 48 48" fill="none">
-                <path d="M24 4v8M24 36v8M4 24h8M36 24h8M9.86 9.86l5.66 5.66M32.48 32.48l5.66 5.66M9.86 38.14l5.66-5.66M32.48 15.52l5.66-5.66" stroke="currentColor" stroke-width="2"/>
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M24 4v40"/>
+                <path d="M12 12l12-8 12 8"/>
+                <path d="M8 44h32"/>
+                <circle cx="24" cy="28" r="8"/>
               </svg>
             </div>
             <h3>Oil & Gas</h3>
-            <p>High-performance seals and gaskets for drilling, refining, and pipeline applications.</p>
+            <p>High-pressure hoses, fittings, and seals for upstream, midstream, and downstream operations.</p>
           </article>
           <article class="industry-card">
             <div class="industry-card__icon">
-              <svg viewBox="0 0 48 48" fill="none">
-                <rect x="8" y="20" width="32" height="20" rx="2" stroke="currentColor" stroke-width="2"/>
-                <path d="M16 20V12a8 8 0 1116 0v8" stroke="currentColor" stroke-width="2"/>
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="4" y="20" width="40" height="24"/>
+                <path d="M12 20V8h8v12"/>
+                <path d="M28 20V12h8v8"/>
+                <path d="M4 32h40"/>
               </svg>
             </div>
-            <h3>Aerospace</h3>
-            <p>AS9100 compliant components meeting stringent aerospace quality requirements.</p>
+            <h3>Manufacturing</h3>
+            <p>Production equipment hoses, pneumatic systems, and process piping components.</p>
           </article>
           <article class="industry-card">
             <div class="industry-card__icon">
-              <svg viewBox="0 0 48 48" fill="none">
-                <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2"/>
-                <circle cx="24" cy="24" r="6" stroke="currentColor" stroke-width="2"/>
-                <path d="M24 6v6M24 36v6M6 24h6M36 24h6" stroke="currentColor" stroke-width="2"/>
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M8 44V20l16-12 16 12v24"/>
+                <rect x="18" y="28" width="12" height="16"/>
+                <path d="M4 44h40"/>
               </svg>
             </div>
-            <h3>Automotive</h3>
-            <p>Precision seals, gaskets, and molded components for OEM and aftermarket applications.</p>
+            <h3>Construction</h3>
+            <p>Hydraulic hose, concrete placement hose, and dewatering solutions.</p>
           </article>
           <article class="industry-card">
             <div class="industry-card__icon">
-              <svg viewBox="0 0 48 48" fill="none">
-                <path d="M24 4l-4 16h8l-4 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <rect x="8" y="36" width="32" height="8" rx="2" stroke="currentColor" stroke-width="2"/>
-              </svg>
-            </div>
-            <h3>Industrial</h3>
-            <p>Heavy-duty components for manufacturing, construction, and material handling equipment.</p>
-          </article>
-          <article class="industry-card">
-            <div class="industry-card__icon">
-              <svg viewBox="0 0 48 48" fill="none">
-                <path d="M24 4v40M8 24h32" stroke="currentColor" stroke-width="2"/>
-                <circle cx="24" cy="24" r="8" stroke="currentColor" stroke-width="2"/>
-              </svg>
-            </div>
-            <h3>Medical</h3>
-            <p>FDA-compliant materials for medical devices and pharmaceutical applications.</p>
-          </article>
-          <article class="industry-card">
-            <div class="industry-card__icon">
-              <svg viewBox="0 0 48 48" fill="none">
-                <path d="M8 40h32M12 40V28l12-20 12 20v12" stroke="currentColor" stroke-width="2"/>
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M24 8c-8 0-16 8-16 20v12h32V28c0-12-8-20-16-20z"/>
+                <path d="M16 28c0-4 4-8 8-8s8 4 8 8"/>
+                <path d="M8 40h32"/>
               </svg>
             </div>
             <h3>Agriculture</h3>
-            <p>Durable components designed to withstand harsh agricultural environments.</p>
+            <p>Irrigation, chemical spray, and farm equipment hoses built to withstand harsh conditions.</p>
           </article>
+          <article class="industry-card">
+            <div class="industry-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="8" y="8" width="32" height="32" rx="4"/>
+                <path d="M16 20h16M16 28h16"/>
+                <circle cx="24" cy="24" r="8"/>
+              </svg>
+            </div>
+            <h3>Food & Beverage</h3>
+            <p>FDA-compliant hoses and fittings for sanitary processing applications.</p>
+          </article>
+          <article class="industry-card">
+            <div class="industry-card__icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="24" cy="24" r="16"/>
+                <path d="M24 8v32M8 24h32"/>
+                <path d="M12 12l24 24M36 12L12 36"/>
+              </svg>
+            </div>
+            <h3>Mining</h3>
+            <p>Heavy-duty hoses and fittings for abrasive material handling and equipment.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="why-us">
+      <div class="container">
+        <div class="why-us__grid">
+          <div class="why-us__content">
+            <span class="section-tag">Why Choose Us</span>
+            <h2>YOUR COMPLETE INDUSTRIAL SUPPLY PARTNER</h2>
+            <p>With decades of experience and a commitment to quality, Trinity Rubber and Machine is your trusted source for industrial hose, fittings, and rubber products.</p>
+          </div>
+          <div class="why-us__stats">
+            <div class="stat-card">
+              <span class="stat-card__number" data-target="25">0</span>
+              <span class="stat-card__suffix">+</span>
+              <span class="stat-card__label">Years Experience</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-card__number" data-target="5000">0</span>
+              <span class="stat-card__suffix">+</span>
+              <span class="stat-card__label">Products In Stock</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-card__number" data-target="98">0</span>
+              <span class="stat-card__suffix">%</span>
+              <span class="stat-card__label">Customer Satisfaction</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-card__number" data-target="24">0</span>
+              <span class="stat-card__suffix">HR</span>
+              <span class="stat-card__label">Emergency Response</span>
+            </div>
+          </div>
+        </div>
+        <div class="features-bar">
+          <div class="feature-box">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            <span>Quality Guaranteed</span>
+          </div>
+          <div class="feature-box">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 4l-4 4h3v7c0 1.1-.9 2-2 2s-2-.9-2-2V8c0-2.21-1.79-4-4-4S5 5.79 5 8v7H2l4 4 4-4H7V8c0-1.1.9-2 2-2s2 .9 2 2v7c0 2.21 1.79 4 4 4s4-1.79 4-4V8h3l-4-4z"/></svg>
+            <span>Fast Shipping</span>
+          </div>
+          <div class="feature-box">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
+            <span>Competitive Pricing</span>
+          </div>
+          <div class="feature-box">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+            <span>Expert Support</span>
+          </div>
         </div>
       </div>
     </section>
@@ -336,68 +457,52 @@
     <section class="about" id="about">
       <div class="container">
         <div class="about__grid">
-          <div class="about__content">
-            <span class="badge">About Us</span>
-            <h2>Your Partner in <span class="highlight">Precision</span> Manufacturing</h2>
-            <p class="about__lead">Trinity Rubber and Machine has been delivering quality rubber products and precision machining solutions to industries across America.</p>
-            <p>Our commitment to quality, innovation, and customer service has made us a trusted supplier to companies ranging from small shops to Fortune 500 corporations. We combine traditional craftsmanship with modern technology to deliver components that meet the most demanding specifications.</p>
-            <div class="about__values">
-              <div class="value">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                </svg>
-                <div>
-                  <h4>Quality First</h4>
-                  <p>ISO certified processes ensuring consistent excellence</p>
-                </div>
-              </div>
-              <div class="value">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <circle cx="12" cy="12" r="10"/>
-                  <path d="M12 6v6l4 2"/>
-                </svg>
-                <div>
-                  <h4>Fast Delivery</h4>
-                  <p>Quick turnaround without compromising quality</p>
-                </div>
-              </div>
-              <div class="value">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
-                  <circle cx="9" cy="7" r="4"/>
-                  <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
-                </svg>
-                <div>
-                  <h4>Expert Team</h4>
-                  <p>Decades of combined industry experience</p>
-                </div>
-              </div>
+          <div class="about__image">
+            <div class="about__image-main"></div>
+            <div class="about__image-accent"></div>
+            <div class="about__badge">
+              <span class="about__badge-text">Trusted Since</span>
+              <span class="about__badge-year">1998</span>
             </div>
           </div>
-          <div class="about__visual">
-            <div class="about__image-stack">
-              <div class="about__image about__image--1"></div>
-              <div class="about__image about__image--2"></div>
+          <div class="about__content">
+            <span class="section-tag">About Us</span>
+            <h2>YOUR LOCAL INDUSTRIAL SUPPLY EXPERTS</h2>
+            <p class="about__lead">Trinity Rubber and Machine has been serving the industrial community with quality products and exceptional service for over two decades.</p>
+            <p>We are a full-service industrial distributor specializing in hose, fittings, gaskets, seals, and rubber products. Our experienced team understands the demands of industrial applications and is committed to providing solutions that keep your operations running smoothly.</p>
+            <div class="about__highlights">
+              <div class="highlight">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                <span>Locally Owned & Operated</span>
+              </div>
+              <div class="highlight">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                <span>Extensive Inventory</span>
+              </div>
+              <div class="highlight">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                <span>Certified Technicians</span>
+              </div>
+              <div class="highlight">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                <span>Custom Fabrication</span>
+              </div>
             </div>
-            <div class="about__badge">
-              <span class="about__badge-number">25+</span>
-              <span class="about__badge-text">Years of Excellence</span>
-            </div>
+            <a href="#contact" class="btn btn--primary btn--lg">Contact Us Today</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="cta-section">
+    <section class="cta-banner">
+      <div class="cta-banner__bg"></div>
       <div class="container">
-        <div class="cta-box">
-          <div class="cta-box__content">
-            <h2>Ready to Start Your Project?</h2>
-            <p>Get a quote for your custom rubber or machining needs. Our team is ready to help bring your project to life.</p>
-          </div>
-          <div class="cta-box__actions">
-            <a href="#contact" class="btn btn--light btn--lg">Request a Quote</a>
-            <a href="tel:+1-555-123-4567" class="btn btn--outline-light btn--lg">Call Us Now</a>
+        <div class="cta-banner__content">
+          <h2>NEED A QUOTE OR HAVE QUESTIONS?</h2>
+          <p>Our team is ready to help with product selection, custom fabrication, and technical support.</p>
+          <div class="cta-banner__actions">
+            <a href="#contact" class="btn btn--light btn--lg">Request Quote</a>
+            <a href="tel:+1-555-123-4567" class="btn btn--outline-light btn--lg">Call (555) 123-4567</a>
           </div>
         </div>
       </div>
@@ -407,51 +512,59 @@
       <div class="container">
         <div class="contact__grid">
           <div class="contact__info">
-            <span class="badge">Get In Touch</span>
-            <h2>Let's <span class="highlight">Build</span> Something Together</h2>
-            <p>Have a project in mind? Contact our team for expert guidance and competitive pricing.</p>
+            <span class="section-tag">Contact Us</span>
+            <h2>GET IN TOUCH</h2>
+            <p>Have questions or need a quote? Contact our team and we'll respond within 24 hours.</p>
             <div class="contact__details">
               <div class="contact__item">
                 <div class="contact__item-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1118 0z"/>
-                    <circle cx="12" cy="10" r="3"/>
-                  </svg>
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
                 </div>
                 <div>
-                  <h4>Visit Us</h4>
-                  <p>123 Industrial Parkway<br>Dallas, TX 75001</p>
+                  <h4>Address</h4>
+                  <p>123 Industrial Blvd<br>Houston, TX 77001</p>
                 </div>
               </div>
               <div class="contact__item">
                 <div class="contact__item-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
-                  </svg>
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
                 </div>
                 <div>
-                  <h4>Call Us</h4>
-                  <p>(555) 123-4567<br>Mon-Fri: 7AM - 5PM CST</p>
+                  <h4>Phone</h4>
+                  <p>(555) 123-4567<br>Toll Free: (800) 555-1234</p>
                 </div>
               </div>
               <div class="contact__item">
                 <div class="contact__item-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                    <path d="M22 6l-10 7L2 6"/>
-                  </svg>
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
                 </div>
                 <div>
-                  <h4>Email Us</h4>
-                  <p>info@trinityrubber.com<br>quotes@trinityrubber.com</p>
+                  <h4>Email</h4>
+                  <p>sales@trinityrubber.com<br>support@trinityrubber.com</p>
+                </div>
+              </div>
+              <div class="contact__item">
+                <div class="contact__item-icon">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                </div>
+                <div>
+                  <h4>Hours</h4>
+                  <p>Mon-Fri: 7:00 AM - 5:00 PM<br>Emergency Service: 24/7</p>
                 </div>
               </div>
             </div>
           </div>
           <form class="contact__form" id="contactForm">
-            <div class="form-group">
-              <label for="name">Full Name *</label>
-              <input type="text" id="name" name="name" required>
+            <h3>Request a Quote</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name *</label>
+                <input type="text" id="firstName" name="firstName" required>
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name *</label>
+                <input type="text" id="lastName" name="lastName" required>
+              </div>
             </div>
             <div class="form-row">
               <div class="form-group">
@@ -459,8 +572,8 @@
                 <input type="email" id="email" name="email" required>
               </div>
               <div class="form-group">
-                <label for="phone">Phone</label>
-                <input type="tel" id="phone" name="phone">
+                <label for="phone">Phone *</label>
+                <input type="tel" id="phone" name="phone" required>
               </div>
             </div>
             <div class="form-group">
@@ -468,23 +581,25 @@
               <input type="text" id="company" name="company">
             </div>
             <div class="form-group">
-              <label for="service">Service Needed</label>
-              <select id="service" name="service">
-                <option value="">Select a service...</option>
-                <option value="gaskets">Custom Gaskets</option>
-                <option value="molding">Rubber Molding</option>
-                <option value="machining">CNC Machining</option>
-                <option value="seals">Seals & O-Rings</option>
-                <option value="extrusions">Rubber Extrusions</option>
-                <option value="assembly">Assembly Services</option>
+              <label for="productType">Product/Service Needed</label>
+              <select id="productType" name="productType">
+                <option value="">Select...</option>
+                <option value="hose">Industrial Hose</option>
+                <option value="fittings">Hose Fittings & Couplings</option>
+                <option value="gaskets">Gaskets & Seals</option>
+                <option value="rubber">Rubber Sheets & Rolls</option>
+                <option value="expansion">Expansion Joints</option>
+                <option value="valves">Valves & Accessories</option>
+                <option value="assembly">Custom Hose Assembly</option>
+                <option value="fabrication">Gasket Fabrication</option>
                 <option value="other">Other</option>
               </select>
             </div>
             <div class="form-group">
               <label for="message">Project Details *</label>
-              <textarea id="message" name="message" rows="4" required placeholder="Tell us about your project, quantities, materials, and timeline..."></textarea>
+              <textarea id="message" name="message" rows="4" required placeholder="Please describe your requirements, quantities, specifications..."></textarea>
             </div>
-            <button type="submit" class="btn btn--primary btn--full">Send Request</button>
+            <button type="submit" class="btn btn--primary btn--full">Submit Request</button>
           </form>
         </div>
       </div>
@@ -493,26 +608,42 @@
 
   <footer class="footer">
     <div class="container">
-      <div class="footer__top">
+      <div class="footer__main">
         <div class="footer__brand">
           <a href="#" class="logo logo--light">
-            <svg class="logo__icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2"/>
-              <circle cx="20" cy="20" r="12" stroke="currentColor" stroke-width="2"/>
-              <circle cx="20" cy="20" r="6" fill="currentColor"/>
-            </svg>
-            <span class="logo__text">Trinity Rubber<span>&amp; Machine</span></span>
+            <div class="logo__icon">
+              <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="25" cy="25" r="22" stroke="currentColor" stroke-width="3"/>
+                <circle cx="25" cy="25" r="14" stroke="currentColor" stroke-width="2"/>
+                <circle cx="25" cy="25" r="6" fill="currentColor"/>
+                <path d="M25 3V10M25 40V47M3 25H10M40 25H47" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <div class="logo__text">
+              <span class="logo__name">TRINITY</span>
+              <span class="logo__tagline">RUBBER & MACHINE</span>
+            </div>
           </a>
-          <p>Your trusted partner for precision rubber products and custom machining solutions.</p>
+          <p>Your trusted source for industrial hose, fittings, gaskets, and rubber products since 1998.</p>
         </div>
         <div class="footer__links">
           <div class="footer__col">
+            <h4>Products</h4>
+            <ul>
+              <li><a href="#products">Industrial Hose</a></li>
+              <li><a href="#products">Hose Fittings</a></li>
+              <li><a href="#products">Gaskets & Seals</a></li>
+              <li><a href="#products">Rubber Sheets</a></li>
+              <li><a href="#products">Expansion Joints</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
             <h4>Services</h4>
             <ul>
-              <li><a href="#capabilities">Custom Gaskets</a></li>
-              <li><a href="#capabilities">Rubber Molding</a></li>
-              <li><a href="#capabilities">CNC Machining</a></li>
-              <li><a href="#capabilities">Seals & O-Rings</a></li>
+              <li><a href="#services">Hose Assembly</a></li>
+              <li><a href="#services">Gasket Fabrication</a></li>
+              <li><a href="#services">On-Site Service</a></li>
+              <li><a href="#services">Inventory Programs</a></li>
             </ul>
           </div>
           <div class="footer__col">
@@ -520,23 +651,23 @@
             <ul>
               <li><a href="#about">About Us</a></li>
               <li><a href="#industries">Industries</a></li>
-              <li><a href="#products">Materials</a></li>
               <li><a href="#contact">Contact</a></li>
+              <li><a href="#">Careers</a></li>
             </ul>
           </div>
           <div class="footer__col">
             <h4>Contact</h4>
             <ul>
-              <li>123 Industrial Parkway</li>
-              <li>Dallas, TX 75001</li>
+              <li>123 Industrial Blvd</li>
+              <li>Houston, TX 77001</li>
               <li><a href="tel:+1-555-123-4567">(555) 123-4567</a></li>
-              <li><a href="mailto:info@trinityrubber.com">info@trinityrubber.com</a></li>
+              <li><a href="mailto:sales@trinityrubber.com">sales@trinityrubber.com</a></li>
             </ul>
           </div>
         </div>
       </div>
       <div class="footer__bottom">
-        <p>&copy; <span id="year"></span> Trinity Rubber and Machine. All rights reserved.</p>
+        <p>&copy; <span id="year"></span> Trinity Rubber and Machine. All Rights Reserved.</p>
         <div class="footer__legal">
           <a href="#">Privacy Policy</a>
           <a href="#">Terms of Service</a>
