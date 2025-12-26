@@ -1,13 +1,14 @@
 :root {
-  --color-primary: #1E4637;
-  --color-secondary: #224E7A;
-  --color-accent: #C89F4A;
-  --color-light-accent: #88C0E6;
-  --color-dark: #4A545E;
-  --color-light: #F4F4F2;
+  --color-primary: #1D1D1D;
+  --color-secondary: #E63946;
+  --color-accent: #E63946;
+  --color-light-accent: #F8D7DA;
+  --color-dark: #2D2D2D;
+  --color-medium: #6B7280;
+  --color-light: #F5F5F5;
   --color-white: #FFFFFF;
-  --shadow-card: 0 20px 40px rgba(14, 24, 42, 0.14);
-  --shadow-soft: 0 10px 30px rgba(14, 24, 42, 0.1);
+  --shadow-card: 0 20px 40px rgba(29, 29, 29, 0.12);
+  --shadow-soft: 0 10px 30px rgba(29, 29, 29, 0.08);
   --max-width: 1200px;
   --grid-gap: 32px;
 }
@@ -98,7 +99,7 @@
   align-items: center;
   justify-content: center;
   gap: 24px;
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, #3D3D3D 100%);
 }
 
 .vp-loader.is-hidden {
@@ -144,6 +145,14 @@ body {
   line-height: 1.6;
 }
 
+h1, h2, h3 {
+  color: var(--color-primary);
+}
+
+h2 {
+  margin-top: 0;
+}
+
 body.nav-open {
   overflow: hidden;
 }
@@ -166,7 +175,7 @@ img {
   position: absolute;
   top: -40px;
   left: 16px;
-  background: var(--color-secondary);
+  background: var(--color-primary);
   color: var(--color-white);
   padding: 8px 16px;
   border-radius: 8px;
@@ -218,7 +227,7 @@ img {
 
 .primary-nav a:hover,
 .primary-nav a:focus {
-  color: var(--color-secondary);
+  color: var(--color-accent);
 }
 
 .header__cta {
@@ -255,12 +264,12 @@ img {
 }
 
 .btn:focus-visible {
-  outline: 3px solid var(--color-light-accent);
+  outline: 3px solid var(--color-secondary);
   outline-offset: 2px;
 }
 
 .btn--primary {
-  background: var(--color-primary);
+  background: var(--color-secondary);
   color: var(--color-white);
 }
 
@@ -269,15 +278,21 @@ img {
   color: var(--color-white);
 }
 
+.btn--outline {
+  background: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+}
+
 .btn--light {
   background: var(--color-white);
-  color: var(--color-primary);
+  color: var(--color-secondary);
 }
 
 .btn--ghost {
   background: transparent;
-  color: var(--color-secondary);
-  border: 1px solid var(--color-secondary);
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
 }
 
 .btn--ghost-light {
@@ -293,7 +308,7 @@ img {
 .hero {
   position: relative;
   padding: 120px 0 80px;
-  background: linear-gradient(135deg, rgba(136, 192, 230, 0.45), rgba(30, 70, 55, 0.12));
+  background: linear-gradient(135deg, rgba(245, 245, 245, 0.95), rgba(229, 231, 235, 0.8));
   overflow: hidden;
 }
 
@@ -382,13 +397,13 @@ img {
 .hero h1 {
   font-size: clamp(2.5rem, 4vw, 3.5rem);
   line-height: 1.2;
-  color: var(--color-secondary);
+  color: var(--color-primary);
 }
 
 .hero__subhead {
   font-size: clamp(1.25rem, 2vw, 1.5rem);
   margin-bottom: 16px;
-  color: var(--color-secondary);
+  color: var(--color-dark);
   font-weight: 500;
 }
 
@@ -461,9 +476,19 @@ section {
 .eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  font-size: 0.85rem;
-  color: var(--color-accent);
+  font-size: 0.8rem;
+  color: var(--color-secondary);
   font-weight: 600;
+}
+
+.eyebrow--pill {
+  display: inline-block;
+  background: var(--color-secondary);
+  color: var(--color-white);
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  margin-bottom: 16px;
 }
 
 .intro__grid {
@@ -502,8 +527,22 @@ section {
 }
 
 .why {
-  background: var(--color-secondary);
+  background: var(--color-primary);
   color: var(--color-white);
+  text-align: center;
+}
+
+.why h2,
+.why .eyebrow {
+  color: var(--color-white);
+}
+
+.why .eyebrow {
+  opacity: 0.8;
+}
+
+.why .service-card {
+  text-align: left;
 }
 
 .card-grid {
@@ -517,11 +556,11 @@ section {
   background: var(--color-white);
   padding: 32px;
   border-radius: 20px;
-  border: 1px solid rgba(34, 78, 122, 0.12);
+  border: 1px solid rgba(107, 114, 128, 0.15);
   display: flex;
   flex-direction: column;
   gap: 16px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
   color: var(--color-dark);
 }
 
@@ -530,14 +569,25 @@ section {
   height: 48px;
 }
 
+.service-card h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--color-primary);
+}
+
+.service-card p {
+  margin: 0;
+  color: var(--color-medium);
+}
+
 .service-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-card);
-  border-color: rgba(200, 159, 74, 0.5);
+  border-color: var(--color-secondary);
 }
 
 .serving {
-  background: linear-gradient(180deg, rgba(136, 192, 230, 0.3), rgba(244, 244, 242, 1));
+  background: linear-gradient(180deg, rgba(229, 231, 235, 0.5), rgba(245, 245, 245, 1));
 }
 
 .serving__grid {
@@ -570,7 +620,7 @@ section {
 }
 
 .map-pin:focus-visible {
-  outline: 3px solid var(--color-light-accent);
+  outline: 3px solid var(--color-secondary);
   border-radius: 50%;
 }
 
@@ -579,7 +629,7 @@ section {
   bottom: 16px;
   left: 16px;
   right: 16px;
-  background: rgba(30, 70, 55, 0.9);
+  background: rgba(29, 29, 29, 0.95);
   color: var(--color-white);
   padding: 10px 16px;
   border-radius: 12px;
@@ -600,14 +650,14 @@ section {
   border-radius: 18px;
   padding: 20px;
   box-shadow: var(--shadow-soft);
-  border: 1px solid rgba(34, 78, 122, 0.15);
+  border: 1px solid rgba(107, 114, 128, 0.15);
 }
 
 .badge-card h3 {
   margin-top: 0;
   margin-bottom: 8px;
   font-size: 1.1rem;
-  color: var(--color-secondary);
+  color: var(--color-primary);
 }
 
 .serving__list {
@@ -618,7 +668,7 @@ section {
   flex-direction: column;
   gap: 8px;
   font-weight: 600;
-  color: var(--color-secondary);
+  color: var(--color-primary);
 }
 
 .serving__list li {
@@ -638,57 +688,38 @@ section {
   transform: translateY(-50%);
 }
 
-.experts__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: var(--grid-gap);
-  align-items: center;
+.experts {
+  background: var(--color-white);
+  text-align: center;
 }
 
-.experts__photo picture,
-.experts__photo img {
-  border-radius: 32px;
-  box-shadow: var(--shadow-card);
+.experts h2 {
+  margin-top: 8px;
+}
+
+.experts__lead {
+  max-width: 800px;
+  margin: 0 auto 48px;
+  font-size: 1.1rem;
+  color: var(--color-medium);
+}
+
+.experts .service-card {
+  text-align: left;
 }
 
 .experts__actions {
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 48px;
 }
 
-.experts__cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 16px;
-  margin: 32px 0;
+.card-grid--4 {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
-.expert-card {
-  background: var(--color-white);
-  border-radius: 20px;
-  padding: 20px;
-  border: 1px solid rgba(34, 78, 122, 0.12);
-  box-shadow: var(--shadow-soft);
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.expert-card img {
-  width: 48px;
-  height: 48px;
-}
-
-.expert-card h3 {
-  margin: 0;
-  font-size: 1.1rem;
-  color: var(--color-secondary);
-}
-
-.expert-card p {
-  margin: 0;
-}
 
 .contact {
   background: var(--color-white);
@@ -708,7 +739,7 @@ section {
 
 .contact-info dt {
   font-weight: 600;
-  color: var(--color-secondary);
+  color: var(--color-primary);
 }
 
 .contact-form {
@@ -729,7 +760,7 @@ section {
 input,
 select,
 textarea {
-  border: 1px solid rgba(34, 78, 122, 0.3);
+  border: 1px solid rgba(107, 114, 128, 0.3);
   border-radius: 12px;
   padding: 12px;
   font-size: 1rem;
@@ -739,7 +770,7 @@ textarea {
 input:focus,
 select:focus,
 textarea:focus {
-  outline: 2px solid var(--color-light-accent);
+  outline: 2px solid var(--color-secondary);
   border-color: transparent;
 }
 
@@ -750,7 +781,7 @@ textarea:focus {
 .form-status {
   font-size: 0.9rem;
   margin: 0;
-  color: var(--color-secondary);
+  color: var(--color-primary);
 }
 
 .contact-form.is-submitting {
@@ -759,7 +790,7 @@ textarea:focus {
 }
 
 .cta {
-  background: var(--color-primary);
+  background: var(--color-secondary);
   color: var(--color-white);
   text-align: center;
 }
