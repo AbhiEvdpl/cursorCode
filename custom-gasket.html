@@ -3,137 +3,141 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="We make custom gaskets! Precise CNC cutting of prototype gaskets or large production runs of thousands of seals. Contact the gasket experts!">
-  <title>CUSTOM GASKETS — Trinity Rubber & Machine Products</title>
+  <meta name="description" content="Custom gasket fabrication in Decatur, AL. Precise CNC cutting for prototype gaskets or large production runs. Contact Trinity Rubber & Machine Products - the gasket experts!">
+  <title>CUSTOM GASKETS — Trinity Rubber & Machine Products | Decatur, AL</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --color-primary: #1E3A5F;
-      --color-secondary: #2563EB;
-      --color-accent: #F59E0B;
-      --color-light-accent: #60A5FA;
-      --color-dark: #1F2937;
+      --color-primary: #0F2A4A;
+      --color-secondary: #1E56A0;
+      --color-accent: #D4A017;
+      --color-accent-light: #F4C430;
+      --color-dark: #1A1A2E;
+      --color-gray: #64748B;
       --color-light: #F8FAFC;
       --color-white: #FFFFFF;
-      --shadow-card: 0 20px 40px rgba(14, 24, 42, 0.12);
-      --shadow-soft: 0 10px 30px rgba(14, 24, 42, 0.08);
-      --max-width: 1200px;
-      --grid-gap: 32px;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+      --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+      --shadow-2xl: 0 25px 50px -12px rgba(0,0,0,0.25);
+      --max-width: 1280px;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --radius-2xl: 32px;
     }
 
-    @keyframes floatCard {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
-      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
       color: var(--color-dark);
-      background: var(--color-light);
+      background: var(--color-white);
       line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
 
     body.nav-open { overflow: hidden; }
 
-    a { color: inherit; }
+    a { color: inherit; text-decoration: none; }
     img { max-width: 100%; display: block; }
 
     .container {
-      width: min(100% - 48px, var(--max-width));
+      width: min(100% - 40px, var(--max-width));
       margin: 0 auto;
     }
 
-    .skip-link {
-      position: absolute;
-      top: -40px;
-      left: 16px;
-      background: var(--color-secondary);
-      color: var(--color-white);
-      padding: 8px 16px;
-      border-radius: 8px;
-      z-index: 999;
-      text-decoration: none;
-    }
-
-    .skip-link:focus { top: 16px; }
-
     .site-header {
-      position: sticky;
+      position: fixed;
       top: 0;
-      background: var(--color-white);
-      z-index: 900;
-      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+      left: 0;
+      right: 0;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(20px);
+      z-index: 1000;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      transition: box-shadow 0.3s, background 0.3s;
     }
 
     .site-header.is-scrolled {
-      box-shadow: 0 15px 25px rgba(4, 16, 16, 0.12);
+      box-shadow: var(--shadow-lg);
+      background: rgba(255,255,255,0.98);
     }
 
-    .header__layout {
+    .header__inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 16px 0;
-      gap: 24px;
+      gap: 32px;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
-      text-decoration: none;
+      gap: 14px;
     }
 
     .brand__logo {
-      width: 48px;
-      height: 48px;
+      width: 52px;
+      height: 52px;
       background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-      border-radius: 12px;
+      border-radius: var(--radius-md);
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--color-white);
-      font-weight: 700;
-      font-size: 1.1rem;
+      font-weight: 800;
+      font-size: 1rem;
+      letter-spacing: -0.5px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .brand__text {
+      line-height: 1.3;
     }
 
     .brand__text h1 {
-      font-size: 1.125rem;
+      font-size: 1.1rem;
       font-weight: 700;
       color: var(--color-primary);
-      margin: 0;
-      line-height: 1.2;
     }
 
     .brand__text span {
       font-size: 0.75rem;
-      color: #6B7280;
+      color: var(--color-gray);
+      font-weight: 500;
     }
 
     .primary-nav ul {
       display: flex;
       list-style: none;
-      gap: 24px;
-      margin: 0;
-      padding: 0;
+      gap: 8px;
     }
 
     .primary-nav a {
-      text-decoration: none;
+      padding: 10px 16px;
       font-weight: 500;
       color: var(--color-dark);
-      transition: color 0.2s;
       font-size: 0.9rem;
+      border-radius: var(--radius-sm);
+      transition: all 0.2s;
     }
 
-    .primary-nav a:hover { color: var(--color-secondary); }
+    .primary-nav a:hover {
+      background: var(--color-light);
+      color: var(--color-secondary);
+    }
 
-    .header__cta { display: flex; gap: 12px; }
+    .header__cta .btn {
+      padding: 12px 24px;
+    }
 
     .nav-toggle {
       display: none;
@@ -141,64 +145,86 @@
       gap: 5px;
       background: none;
       border: none;
-      padding: 8px;
+      padding: 10px;
       cursor: pointer;
+      border-radius: var(--radius-sm);
+      transition: background 0.2s;
     }
 
+    .nav-toggle:hover { background: var(--color-light); }
+
     .nav-toggle span {
-      width: 24px;
+      width: 22px;
       height: 2px;
       background: var(--color-dark);
       border-radius: 2px;
-      transition: 0.2s;
+      transition: 0.3s;
     }
 
     .btn {
-      border: none;
-      border-radius: 999px;
-      padding: 12px 28px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      text-decoration: none;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      font-family: inherit;
+      padding: 14px 28px;
+      font-weight: 600;
       font-size: 0.95rem;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-soft);
+      border: none;
+      border-radius: 100px;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      font-family: inherit;
     }
 
     .btn--primary {
-      background: var(--color-accent);
-      color: var(--color-white);
+      background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
+      color: var(--color-dark);
+      box-shadow: 0 4px 14px rgba(212, 160, 23, 0.4);
+    }
+
+    .btn--primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(212, 160, 23, 0.5);
     }
 
     .btn--secondary {
       background: var(--color-secondary);
       color: var(--color-white);
+      box-shadow: var(--shadow-md);
     }
 
-    .btn--ghost {
+    .btn--secondary:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .btn--outline {
       background: transparent;
-      color: var(--color-secondary);
-      border: 2px solid var(--color-secondary);
-    }
-
-    .btn--ghost-light {
       color: var(--color-white);
-      border-color: var(--color-white);
+      border: 2px solid rgba(255,255,255,0.3);
     }
 
+    .btn--outline:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.5);
+    }
+
+    .btn--white {
+      background: var(--color-white);
+      color: var(--color-primary);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .btn--white:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-xl);
+    }
+
+    /* Hero */
     .hero {
       position: relative;
-      padding: 80px 0 60px;
-      background: linear-gradient(135deg, var(--color-primary) 0%, #0F172A 100%);
+      padding: 160px 0 100px;
+      background: linear-gradient(160deg, var(--color-primary) 0%, #0a1628 60%, var(--color-secondary) 100%);
       overflow: hidden;
     }
 
@@ -207,331 +233,551 @@
       position: absolute;
       inset: 0;
       background: 
-        radial-gradient(circle at 20% 50%, rgba(96, 165, 250, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(245, 158, 11, 0.1) 0%, transparent 40%);
+        radial-gradient(ellipse 80% 50% at 20% 40%, rgba(30, 86, 160, 0.3) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 40% at 80% 20%, rgba(212, 160, 23, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse 50% 30% at 50% 90%, rgba(30, 86, 160, 0.2) 0%, transparent 50%);
     }
 
-    .hero__content {
+    .hero__pattern {
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .hero__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
       position: relative;
       z-index: 1;
-      color: var(--color-white);
-      text-align: center;
-      max-width: 900px;
-      margin: 0 auto;
     }
 
-    .eyebrow {
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
+    .hero__content { color: var(--color-white); }
+
+    .hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 100px;
       font-size: 0.85rem;
-      color: var(--color-accent);
-      font-weight: 600;
-      margin-bottom: 16px;
+      font-weight: 500;
+      margin-bottom: 24px;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero__badge svg {
+      width: 16px;
+      height: 16px;
+      fill: var(--color-accent);
     }
 
     .hero h1 {
-      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-size: clamp(2.75rem, 5vw, 4rem);
+      font-weight: 800;
       line-height: 1.1;
-      margin: 0 0 24px;
-      font-weight: 700;
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
     }
 
-    .hero__body {
-      font-size: 1.25rem;
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero__desc {
+      font-size: 1.2rem;
       line-height: 1.7;
-      color: rgba(255, 255, 255, 0.9);
-      margin: 0 0 32px;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 32px;
+      max-width: 540px;
     }
 
     .hero__actions {
       display: flex;
       gap: 16px;
       flex-wrap: wrap;
-      justify-content: center;
     }
 
-    section { padding: 80px 0; }
-
-    .section-header {
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto 48px;
+    .hero__visual {
+      position: relative;
     }
 
-    .section-header h2 {
-      font-size: clamp(2rem, 4vw, 2.75rem);
-      color: var(--color-primary);
-      margin: 0 0 16px;
-      font-weight: 700;
+    .hero__card {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius-2xl);
+      padding: 40px;
+      animation: float 8s ease-in-out infinite;
     }
 
-    .section-header p {
-      font-size: 1.125rem;
-      color: #6B7280;
-      margin: 0;
-      line-height: 1.7;
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-15px) rotate(1deg); }
     }
 
-    .about-section {
-      background: var(--color-white);
-    }
-
-    .about-content {
+    .hero__shapes {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: center;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
     }
 
-    .about-text h2 {
-      font-size: 2.5rem;
-      color: var(--color-primary);
-      margin: 0 0 24px;
-      font-weight: 700;
-    }
-
-    .about-text p {
-      font-size: 1.05rem;
-      line-height: 1.8;
-      color: #4B5563;
-      margin: 0 0 20px;
-    }
-
-    .about-image {
-      background: linear-gradient(135deg, var(--color-light) 0%, #E2E8F0 100%);
-      border-radius: 24px;
-      padding: 48px;
+    .hero__shape {
+      aspect-ratio: 1;
+      background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.02) 100%);
+      border-radius: var(--radius-lg);
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 400px;
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    .about-image svg {
-      width: 200px;
-      height: 200px;
-      stroke: var(--color-primary);
+    .hero__shape:hover {
+      transform: scale(1.05);
+      background: rgba(255,255,255,0.15);
+      border-color: rgba(255,255,255,0.2);
+    }
+
+    .hero__shape svg {
+      width: 56px;
+      height: 56px;
+      stroke-width: 2.5;
+      fill: none;
+    }
+
+    .hero__shape:nth-child(1) svg { stroke: var(--color-accent); }
+    .hero__shape:nth-child(2) svg { stroke: #60A5FA; }
+    .hero__shape:nth-child(3) svg { stroke: #fff; }
+    .hero__shape:nth-child(4) svg { stroke: var(--color-accent-light); }
+
+    .hero__card-caption {
+      text-align: center;
+      margin-top: 24px;
+      color: rgba(255,255,255,0.7);
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    /* Stats */
+    .stats {
+      background: var(--color-white);
+      padding: 0;
+      margin-top: -60px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .stats__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: var(--color-white);
+      border-radius: var(--radius-2xl);
+      box-shadow: var(--shadow-2xl);
+      overflow: hidden;
+    }
+
+    .stat-item {
+      padding: 40px 32px;
+      text-align: center;
+      border-right: 1px solid rgba(0,0,0,0.06);
+      transition: background 0.3s;
+    }
+
+    .stat-item:last-child { border-right: none; }
+
+    .stat-item:hover { background: var(--color-light); }
+
+    .stat-item__value {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--color-secondary);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat-item__label {
+      font-size: 0.9rem;
+      color: var(--color-gray);
+      font-weight: 500;
+    }
+
+    /* Section */
+    section { padding: 100px 0; }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: linear-gradient(135deg, rgba(30, 86, 160, 0.1) 0%, rgba(30, 86, 160, 0.05) 100%);
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--color-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 800;
+      color: var(--color-primary);
+      line-height: 1.2;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .section-desc {
+      font-size: 1.15rem;
+      color: var(--color-gray);
+      line-height: 1.7;
+      max-width: 640px;
+    }
+
+    /* About */
+    .about {
+      background: var(--color-light);
+    }
+
+    .about__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about__content p {
+      font-size: 1.05rem;
+      color: #4B5563;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .about__visual {
+      position: relative;
+    }
+
+    .about__image {
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+      border-radius: var(--radius-2xl);
+      padding: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 1;
+      box-shadow: var(--shadow-xl);
+    }
+
+    .about__image svg {
+      width: 65%;
+      height: 65%;
+      stroke: rgba(255,255,255,0.9);
+      fill: none;
+      stroke-width: 1.5;
+      animation: pulse 4s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.9; }
+      50% { transform: scale(1.02); opacity: 1; }
+    }
+
+    .about__badge {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      background: var(--color-white);
+      padding: 20px 28px;
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-xl);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .about__badge-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .about__badge-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--color-dark);
       fill: none;
       stroke-width: 2;
-      animation: floatCard 6s ease-in-out infinite;
     }
 
+    .about__badge-text {
+      font-weight: 700;
+      color: var(--color-primary);
+    }
+
+    .about__badge-text span {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--color-gray);
+    }
+
+    /* Benefits */
     .benefits {
-      background: var(--color-secondary);
+      background: linear-gradient(160deg, var(--color-secondary) 0%, var(--color-primary) 100%);
       color: var(--color-white);
+      position: relative;
+      overflow: hidden;
     }
 
-    .benefits .section-header h2,
-    .benefits .section-header p {
-      color: var(--color-white);
+    .benefits::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
     }
 
-    .benefits .section-header p { opacity: 0.85; }
+    .benefits .section-label {
+      background: rgba(255,255,255,0.15);
+      color: var(--color-accent);
+    }
+
+    .benefits .section-title { color: var(--color-white); }
+    .benefits .section-desc { color: rgba(255,255,255,0.8); }
+
+    .benefits__header {
+      text-align: center;
+      margin-bottom: 60px;
+      position: relative;
+      z-index: 1;
+    }
 
     .benefits__grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
+      position: relative;
+      z-index: 1;
     }
 
     .benefit-card {
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255,255,255,0.08);
       backdrop-filter: blur(10px);
-      border-radius: 20px;
-      padding: 32px;
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-xl);
+      padding: 36px;
       text-align: center;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-8px);
+      background: rgba(255,255,255,0.12);
+      border-color: rgba(255,255,255,0.2);
     }
 
     .benefit-card__icon {
-      width: 64px;
-      height: 64px;
-      background: var(--color-accent);
-      border-radius: 16px;
+      width: 72px;
+      height: 72px;
+      background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
+      border-radius: var(--radius-lg);
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto 20px;
+      margin: 0 auto 24px;
+      box-shadow: 0 8px 24px rgba(212, 160, 23, 0.3);
     }
 
     .benefit-card__icon svg {
       width: 32px;
       height: 32px;
-      stroke: var(--color-white);
+      stroke: var(--color-dark);
       fill: none;
       stroke-width: 2;
     }
 
     .benefit-card h3 {
       font-size: 1.15rem;
-      margin: 0 0 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.02em;
+      font-weight: 700;
+      margin-bottom: 12px;
     }
 
     .benefit-card p {
       font-size: 0.95rem;
-      opacity: 0.85;
-      margin: 0;
+      color: rgba(255,255,255,0.75);
       line-height: 1.6;
     }
 
-    .spiral-section {
-      background: var(--color-light);
+    /* Spiral */
+    .spiral {
+      background: var(--color-white);
     }
 
-    .spiral-content {
+    .spiral__grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 80px;
       align-items: center;
     }
 
-    .spiral-text h2 {
-      font-size: 2.25rem;
-      color: var(--color-primary);
-      margin: 0 0 20px;
-      font-weight: 700;
-    }
-
-    .spiral-text p {
-      font-size: 1.05rem;
-      line-height: 1.8;
-      color: #4B5563;
-      margin: 0 0 24px;
-    }
-
-    .spiral-visual {
-      background: var(--color-white);
-      border-radius: 24px;
-      padding: 48px;
-      box-shadow: var(--shadow-card);
+    .spiral__visual {
+      background: linear-gradient(135deg, var(--color-light) 0%, #E2E8F0 100%);
+      border-radius: var(--radius-2xl);
+      padding: 80px;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    .spiral-visual svg {
-      width: 200px;
-      height: 200px;
+    .spiral__visual svg {
+      width: 100%;
+      max-width: 280px;
+      height: auto;
     }
 
-    .products-section {
-      background: var(--color-white);
-    }
-
-    .products-intro {
-      text-align: center;
-      margin-bottom: 48px;
-    }
-
-    .products-intro h2 {
-      font-size: 2.25rem;
-      color: var(--color-primary);
-      margin: 0 0 12px;
-    }
-
-    .products-intro p {
+    .spiral__content p {
       font-size: 1.1rem;
-      color: #6B7280;
+      color: #4B5563;
+      line-height: 1.8;
+      margin-bottom: 28px;
     }
 
-    .products-grid {
+    /* Products */
+    .products {
+      background: var(--color-light);
+    }
+
+    .products__header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .products__grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
+      gap: 28px;
     }
 
-    .products-column {
-      background: var(--color-light);
-      border-radius: 20px;
-      padding: 32px;
+    .products__column {
+      background: var(--color-white);
+      border-radius: var(--radius-xl);
+      padding: 36px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid rgba(0,0,0,0.04);
+      transition: all 0.3s;
     }
 
-    .products-column ul {
+    .products__column:hover {
+      box-shadow: var(--shadow-xl);
+      transform: translateY(-4px);
+    }
+
+    .products__column ul {
       list-style: none;
-      padding: 0;
-      margin: 0;
     }
 
-    .products-column li {
-      padding: 12px 0;
-      border-bottom: 1px solid #E5E7EB;
+    .products__column li {
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
       color: #4B5563;
       font-size: 0.95rem;
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
+      transition: color 0.2s;
     }
 
-    .products-column li:last-child {
-      border-bottom: none;
-    }
+    .products__column li:hover { color: var(--color-secondary); }
+    .products__column li:last-child { border-bottom: none; }
 
-    .products-column li::before {
+    .products__column li::before {
       content: '';
       width: 8px;
       height: 8px;
-      background: var(--color-accent);
+      background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
       border-radius: 50%;
       flex-shrink: 0;
     }
 
-    .contact-section {
-      background: linear-gradient(135deg, var(--color-primary) 0%, #0F172A 100%);
-      padding: 80px 0;
+    /* Contact */
+    .contact {
+      background: linear-gradient(160deg, var(--color-primary) 0%, #0a1628 100%);
+      padding: 100px 0;
     }
 
-    .contact-card {
+    .contact__card {
       background: var(--color-white);
-      border-radius: 32px;
+      border-radius: var(--radius-2xl);
       overflow: hidden;
-      box-shadow: var(--shadow-card);
+      box-shadow: var(--shadow-2xl);
       display: grid;
       grid-template-columns: 2fr 3fr;
     }
 
-    .contact-info {
-      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-      padding: 48px;
+    .contact__info {
+      background: linear-gradient(160deg, var(--color-secondary) 0%, var(--color-primary) 100%);
+      padding: 56px;
       color: var(--color-white);
+      position: relative;
+      overflow: hidden;
     }
 
-    .contact-info h2 {
+    .contact__info::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .contact__info > * { position: relative; z-index: 1; }
+
+    .contact__info h2 {
       font-size: 1.75rem;
-      margin: 0 0 16px;
+      font-weight: 700;
+      margin-bottom: 12px;
     }
 
-    .contact-info > p {
-      opacity: 0.85;
-      margin: 0 0 32px;
+    .contact__info > p {
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 40px;
       line-height: 1.6;
     }
 
-    .contact-details {
+    .contact__details {
       display: flex;
       flex-direction: column;
-      gap: 24px;
+      gap: 28px;
     }
 
-    .contact-item {
+    .contact__item {
       display: flex;
       align-items: flex-start;
-      gap: 16px;
+      gap: 18px;
     }
 
-    .contact-item__icon {
-      width: 48px;
-      height: 48px;
-      background: rgba(245, 158, 11, 0.2);
-      border-radius: 12px;
+    .contact__item-icon {
+      width: 52px;
+      height: 52px;
+      background: rgba(212, 160, 23, 0.2);
+      border-radius: var(--radius-md);
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
     }
 
-    .contact-item__icon svg {
+    .contact__item-icon svg {
       width: 24px;
       height: 24px;
       stroke: var(--color-accent);
@@ -539,36 +785,39 @@
       stroke-width: 2;
     }
 
-    .contact-item h4 {
-      font-size: 1rem;
-      margin: 0 0 4px;
+    .contact__item h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 4px;
     }
 
-    .contact-item p,
-    .contact-item address {
+    .contact__item p,
+    .contact__item address {
       font-size: 0.95rem;
-      opacity: 0.85;
-      margin: 0;
+      color: rgba(255,255,255,0.75);
       font-style: normal;
       line-height: 1.5;
     }
 
-    .contact-item a {
+    .contact__item a {
       color: var(--color-accent);
-      text-decoration: none;
+      transition: opacity 0.2s;
     }
 
-    .contact-form {
-      padding: 48px;
+    .contact__item a:hover { opacity: 0.8; }
+
+    .contact__form {
+      padding: 56px;
     }
 
-    .contact-form h3 {
+    .contact__form h3 {
       font-size: 1.5rem;
+      font-weight: 700;
       color: var(--color-primary);
-      margin: 0 0 24px;
+      margin-bottom: 28px;
     }
 
-    .contact-form form {
+    .contact__form form {
       display: grid;
       gap: 20px;
     }
@@ -576,7 +825,7 @@
     .form-row {
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 8px;
     }
 
     .form-row--half {
@@ -587,101 +836,103 @@
 
     .form-row label {
       font-size: 0.875rem;
-      font-weight: 500;
+      font-weight: 600;
       color: var(--color-dark);
     }
 
     input, select, textarea {
-      border: 1px solid #E5E7EB;
-      border-radius: 12px;
-      padding: 14px 16px;
+      width: 100%;
+      padding: 14px 18px;
+      border: 2px solid #E5E7EB;
+      border-radius: var(--radius-md);
       font-size: 1rem;
       font-family: inherit;
-      background: var(--color-light);
-      transition: border-color 0.2s, box-shadow 0.2s;
+      background: var(--color-white);
+      transition: all 0.2s;
     }
 
     input:focus, select:focus, textarea:focus {
       outline: none;
       border-color: var(--color-secondary);
-      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+      box-shadow: 0 0 0 4px rgba(30, 86, 160, 0.1);
     }
 
-    textarea { resize: vertical; min-height: 100px; }
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
 
-    .contact-form .btn {
+    .contact__form .btn {
       width: 100%;
-      padding: 16px;
+      padding: 18px;
       font-size: 1rem;
     }
 
     .form-note {
-      font-size: 0.8rem;
-      color: #9CA3AF;
+      font-size: 0.85rem;
+      color: var(--color-gray);
       text-align: center;
-      margin: 0;
     }
 
+    /* Footer */
     .site-footer {
       background: var(--color-primary);
       color: var(--color-white);
-      padding: 64px 0 24px;
+      padding: 80px 0 32px;
     }
 
     .footer__grid {
       display: grid;
       grid-template-columns: 1.5fr 1fr 1fr 1fr;
-      gap: 48px;
-      margin-bottom: 48px;
+      gap: 60px;
+      margin-bottom: 60px;
     }
 
     .footer__brand {
       display: flex;
       align-items: center;
-      gap: 12px;
-      margin-bottom: 16px;
+      gap: 14px;
+      margin-bottom: 20px;
     }
 
     .footer__logo {
-      width: 48px;
-      height: 48px;
-      background: var(--color-accent);
-      border-radius: 12px;
+      width: 52px;
+      height: 52px;
+      background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
+      border-radius: var(--radius-md);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: 700;
-      font-size: 1.1rem;
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--color-dark);
     }
 
     .footer__brand h3 {
       font-size: 1rem;
-      margin: 0;
+      font-weight: 700;
       line-height: 1.3;
     }
 
     .site-footer > .container > div:first-child > p {
-      color: rgba(255, 255, 255, 0.7);
+      color: rgba(255,255,255,0.6);
       font-size: 0.95rem;
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
     .site-footer h4 {
-      font-size: 1rem;
-      margin: 0 0 20px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+      color: var(--color-white);
     }
 
-    .site-footer ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
+    .site-footer ul { list-style: none; }
 
-    .site-footer li { margin-bottom: 12px; }
+    .site-footer li { margin-bottom: 14px; }
 
     .site-footer a {
-      color: rgba(255, 255, 255, 0.7);
-      text-decoration: none;
+      color: rgba(255,255,255,0.6);
       font-size: 0.95rem;
       transition: color 0.2s;
     }
@@ -691,7 +942,7 @@
     .footer__contact li {
       display: flex;
       align-items: flex-start;
-      gap: 12px;
+      gap: 14px;
     }
 
     .footer__contact svg {
@@ -701,55 +952,74 @@
       fill: none;
       stroke-width: 2;
       flex-shrink: 0;
-      margin-top: 2px;
+      margin-top: 3px;
     }
 
-    .footer__legal {
-      padding-top: 24px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    .footer__bottom {
+      padding-top: 32px;
+      border-top: 1px solid rgba(255,255,255,0.1);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 0.875rem;
-      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.5);
     }
 
-    .footer__legal nav {
+    .footer__bottom nav {
       display: flex;
-      gap: 24px;
+      gap: 32px;
     }
 
+    /* Responsive */
     @media (max-width: 1024px) {
-      .about-content { grid-template-columns: 1fr; gap: 48px; }
-      .about-image { order: -1; min-height: 300px; }
+      .hero__grid { grid-template-columns: 1fr; gap: 60px; }
+      .hero__visual { display: none; }
+      .hero__content { text-align: center; }
+      .hero__desc { margin: 0 auto 32px; }
+      .hero__actions { justify-content: center; }
+      .stats__grid { grid-template-columns: repeat(2, 1fr); }
+      .stat-item { border-bottom: 1px solid rgba(0,0,0,0.06); }
+      .stat-item:nth-child(2) { border-right: none; }
+      .about__grid { grid-template-columns: 1fr; gap: 60px; }
+      .about__visual { order: -1; }
       .benefits__grid { grid-template-columns: repeat(2, 1fr); }
-      .spiral-content { grid-template-columns: 1fr; gap: 48px; }
-      .products-grid { grid-template-columns: 1fr; }
-      .contact-card { grid-template-columns: 1fr; }
-      .footer__grid { grid-template-columns: repeat(2, 1fr); }
+      .spiral__grid { grid-template-columns: 1fr; gap: 60px; }
+      .products__grid { grid-template-columns: 1fr; }
+      .contact__card { grid-template-columns: 1fr; }
+      .footer__grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
     }
 
     @media (max-width: 768px) {
       .container { width: min(100% - 32px, var(--max-width)); }
+
       .primary-nav {
         position: fixed;
-        inset: 0 0 0 30%;
+        inset: 0 0 0 25%;
         background: var(--color-white);
         padding: 100px 32px;
         transform: translateX(100%);
         transition: transform 0.3s ease;
-        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+        box-shadow: -10px 0 40px rgba(0,0,0,0.15);
+        z-index: 999;
       }
+
       .primary-nav.open { transform: translateX(0); }
-      .primary-nav ul { flex-direction: column; gap: 20px; }
+      .primary-nav ul { flex-direction: column; gap: 8px; }
+      .primary-nav a { display: block; padding: 14px 16px; }
       .nav-toggle { display: flex; }
       .header__cta { display: none; }
+
+      .hero { padding: 140px 0 80px; }
+      .stats__grid { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(0,0,0,0.06); }
+      .stat-item:last-child { border-bottom: none; }
       .benefits__grid { grid-template-columns: 1fr; }
-      .contact-info, .contact-form { padding: 32px; }
+      .contact__info, .contact__form { padding: 40px; }
       .form-row--half { grid-template-columns: 1fr; }
-      .footer__grid { grid-template-columns: 1fr; gap: 32px; }
-      .footer__legal { flex-direction: column; gap: 16px; text-align: center; }
-      section { padding: 64px 0; }
+      .footer__grid { grid-template-columns: 1fr; }
+      .footer__bottom { flex-direction: column; gap: 20px; text-align: center; }
+
+      section { padding: 80px 0; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -762,75 +1032,136 @@
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-
   <header class="site-header">
-    <div class="container header__layout">
-      <a class="brand" href="/">
-        <div class="brand__logo">TR</div>
-        <div class="brand__text">
-          <h1>Trinity Rubber & Machine Products</h1>
-          <span>Industrial Rubber Products</span>
+    <div class="container">
+      <div class="header__inner">
+        <a class="brand" href="/">
+          <div class="brand__logo">TRM</div>
+          <div class="brand__text">
+            <h1>Trinity Rubber & Machine</h1>
+            <span>Industrial Rubber Products</span>
+          </div>
+        </a>
+        <button class="nav-toggle" aria-expanded="false" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="primary-nav" id="primary-nav">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/rubber-products">Products</a></li>
+            <li><a href="/gaskets-gasket-materials-in-decatur-alabama">Gaskets</a></li>
+            <li><a href="/about-trinity-rubber-and-machine-products">About</a></li>
+            <li><a href="/contact-trinity-rubber-and-machine-products">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header__cta">
+          <a class="btn btn--primary" href="#contact">Get a Quote</a>
         </div>
-      </a>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <nav class="primary-nav" id="primary-navigation">
-        <ul>
-          <li><a href="/">HOME</a></li>
-          <li><a href="/rubber-products">RUBBER PRODUCTS</a></li>
-          <li><a href="/industrial-hose-in-decatur-alabama">INDUSTRIAL HOSE</a></li>
-          <li><a href="/sheet-rubber-in-decatur-alabama">SHEET RUBBER</a></li>
-          <li><a href="/gaskets-gasket-materials-in-decatur-alabama">GASKETS & GASKET MATERIALS</a></li>
-          <li><a href="/about-trinity-rubber-and-machine-products">ABOUT</a></li>
-          <li><a href="/contact-trinity-rubber-and-machine-products">CONTACT</a></li>
-        </ul>
-      </nav>
-      <div class="header__cta">
-        <a class="btn btn--primary" href="#contact">Contact Us</a>
       </div>
     </div>
   </header>
 
-  <main id="main-content">
+  <main>
     <section class="hero">
+      <div class="hero__pattern"></div>
       <div class="container">
-        <div class="hero__content">
-          <p class="eyebrow">Decatur, Alabama</p>
-          <h1>CUSTOM GASKETS</h1>
-          <p class="hero__body">We make custom gaskets! Precise CNC cutting of prototype gaskets or large production runs of thousands of seals. Contact the gasket experts!</p>
-          <div class="hero__actions">
-            <a class="btn btn--primary" href="#contact">Contact the Gasket Experts</a>
-            <a class="btn btn--ghost btn--ghost-light" href="tel:+12563060403">Call (256) 306-0403</a>
+        <div class="hero__grid">
+          <div class="hero__content">
+            <div class="hero__badge">
+              <svg viewBox="0 0 20 20"><path d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"/></svg>
+              Decatur, Alabama
+            </div>
+            <h1>Custom <span>Gasket</span> Fabrication</h1>
+            <p class="hero__desc">Precision CNC cutting for prototype gaskets or high-volume production runs. From single pieces to thousands of seals — we deliver quality, speed, and accuracy.</p>
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="#contact">Request a Quote</a>
+              <a class="btn btn--outline" href="tel:+12563060403">Call (256) 306-0403</a>
+            </div>
+          </div>
+          <div class="hero__visual">
+            <div class="hero__card">
+              <div class="hero__shapes">
+                <div class="hero__shape">
+                  <svg viewBox="0 0 80 80"><circle cx="40" cy="40" r="32"/><circle cx="40" cy="40" r="16"/></svg>
+                </div>
+                <div class="hero__shape">
+                  <svg viewBox="0 0 80 80"><rect x="12" y="12" width="56" height="56" rx="6"/><circle cx="40" cy="40" r="12"/></svg>
+                </div>
+                <div class="hero__shape">
+                  <svg viewBox="0 0 80 80"><ellipse cx="40" cy="40" rx="32" ry="20"/><ellipse cx="40" cy="40" rx="16" ry="10"/></svg>
+                </div>
+                <div class="hero__shape">
+                  <svg viewBox="0 0 80 80"><circle cx="40" cy="40" r="32"/><circle cx="24" cy="24" r="6"/><circle cx="56" cy="24" r="6"/><circle cx="24" cy="56" r="6"/><circle cx="56" cy="56" r="6"/></svg>
+                </div>
+              </div>
+              <p class="hero__card-caption">Any shape • Any size • Any material</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="about-section">
+    <section class="stats">
       <div class="container">
-        <div class="about-content">
-          <div class="about-text">
-            <h2>CNC Gasket Cutting</h2>
-            <p>Our advanced flash cutter can fabricate custom gaskets with impressive speed and accuracy, making it an ideal solution for a variety of applications. Remarkably, no individual tooling is necessary to effectively cut soft and semi-rigid materials, which simplifies the manufacturing process significantly.</p>
-            <p>Our knife cutting systems guarantee quality, reliability, and high performance, ensuring that each gasket meets the necessary specifications. Flash cutting is recognized as the fastest and least expensive process for producing flat gaskets, which is beneficial for many businesses.</p>
-            <p>The flash gasket cutter utilizes precise CNC control to accurately cut materials ranging from .001" to .750" in thickness. The material is carefully pulled with negative air pressure to lie flat on the table, which ensures a true and consistent cut.</p>
-            <p>This capability allows for custom options and faster production turnaround times, catering to the dynamic needs of our clients. CNC gasket cutting enables our clients to access quick prototypes, accommodate large production runs, and manage all order sizes in between, enhancing flexibility in their operations.</p>
-            <p>Additionally, the flash cutter employs an overhead projector, granting our gasket maker the ability to perfectly nest the gasket products, which maximizes material efficiency and ultimately contributes to a lower-cost product. We also offer a versatile water cutting service for gasket parts, providing even more options for our customers.</p>
+        <div class="stats__grid">
+          <div class="stat-item">
+            <div class="stat-item__value">.001"</div>
+            <div class="stat-item__label">Minimum Thickness</div>
           </div>
-          <div class="about-image">
-            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="100" cy="100" r="80" stroke-width="3"/>
-              <circle cx="100" cy="100" r="50" stroke-width="3"/>
-              <circle cx="100" cy="100" r="20" stroke-width="3"/>
-              <line x1="100" y1="10" x2="100" y2="40" stroke-width="2"/>
-              <line x1="100" y1="160" x2="100" y2="190" stroke-width="2"/>
-              <line x1="10" y1="100" x2="40" y2="100" stroke-width="2"/>
-              <line x1="160" y1="100" x2="190" y2="100" stroke-width="2"/>
-            </svg>
+          <div class="stat-item">
+            <div class="stat-item__value">.750"</div>
+            <div class="stat-item__label">Maximum Thickness</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-item__value">24hr</div>
+            <div class="stat-item__label">Rush Available</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-item__value">$0</div>
+            <div class="stat-item__label">Tooling Charges</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about">
+      <div class="container">
+        <div class="about__grid">
+          <div class="about__content">
+            <span class="section-label">Advanced Technology</span>
+            <h2 class="section-title">CNC Gasket Cutting</h2>
+            <p>Our advanced flash cutter fabricates custom gaskets with impressive speed and accuracy, making it ideal for a wide variety of applications. No individual tooling is required to cut soft and semi-rigid materials, which significantly simplifies the manufacturing process.</p>
+            <p>Our knife cutting systems guarantee quality, reliability, and high performance. Flash cutting is recognized as the fastest and most cost-effective process for producing flat gaskets — perfect for businesses of all sizes.</p>
+            <p>The flash gasket cutter utilizes precise CNC control to accurately cut materials ranging from .001" to .750" in thickness. Material is carefully pulled with negative air pressure to lie perfectly flat, ensuring a true and consistent cut every time.</p>
+            <p>Additionally, our overhead projector system enables perfect nesting of gasket products, maximizing material efficiency and delivering lower-cost products to our customers. We also offer versatile waterjet cutting services for even more options.</p>
+          </div>
+          <div class="about__visual">
+            <div class="about__image">
+              <svg viewBox="0 0 200 200">
+                <circle cx="100" cy="100" r="80" stroke-width="2"/>
+                <circle cx="100" cy="100" r="55" stroke-width="2"/>
+                <circle cx="100" cy="100" r="30" stroke-width="2"/>
+                <line x1="100" y1="10" x2="100" y2="35" stroke-width="1.5"/>
+                <line x1="100" y1="165" x2="100" y2="190" stroke-width="1.5"/>
+                <line x1="10" y1="100" x2="35" y2="100" stroke-width="1.5"/>
+                <line x1="165" y1="100" x2="190" y2="100" stroke-width="1.5"/>
+                <line x1="30" y1="30" x2="48" y2="48" stroke-width="1.5"/>
+                <line x1="152" y1="152" x2="170" y2="170" stroke-width="1.5"/>
+                <line x1="170" y1="30" x2="152" y2="48" stroke-width="1.5"/>
+                <line x1="48" y1="152" x2="30" y2="170" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <div class="about__badge">
+              <div class="about__badge-icon">
+                <svg viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              </div>
+              <div class="about__badge-text">
+                Fast Turnaround
+                <span>Same-day available</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -838,9 +1169,10 @@
 
     <section class="benefits">
       <div class="container">
-        <div class="section-header">
-          <p class="eyebrow" style="color: var(--color-accent);">Why Choose Us</p>
-          <h2>CNC Cutting Advantages</h2>
+        <div class="benefits__header">
+          <span class="section-label">Why Choose Us</span>
+          <h2 class="section-title">CNC Cutting Advantages</h2>
+          <p class="section-desc" style="margin: 0 auto;">Experience the benefits of precision CNC gasket cutting technology</p>
         </div>
         <div class="benefits__grid">
           <article class="benefit-card">
@@ -848,85 +1180,91 @@
               <svg viewBox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
             </div>
             <h3>Import Your Drawings</h3>
-            <p>We can import your drawings, create new CAD files from sketches or samples, or work with you to create the perfect part.</p>
+            <p>We import your CAD files, create new files from sketches or samples, or work with you to design the perfect part.</p>
           </article>
           <article class="benefit-card">
             <div class="benefit-card__icon">
               <svg viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
             </div>
-            <h3>Unmatched Speed!</h3>
-            <p>Gaskets cut at a breakneck pace!</p>
+            <h3>Unmatched Speed</h3>
+            <p>Gaskets cut at breakneck pace! Our CNC technology delivers the fastest turnaround in the industry.</p>
           </article>
           <article class="benefit-card">
             <div class="benefit-card__icon">
               <svg viewBox="0 0 24 24"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
             </div>
             <h3>Repeatability & Flexibility</h3>
-            <p>Get the same shape every time you order, or make adjustments as you go.</p>
+            <p>Get the exact same shape every time you order, or easily make adjustments between runs.</p>
           </article>
           <article class="benefit-card">
             <div class="benefit-card__icon">
               <svg viewBox="0 0 24 24"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
             </div>
-            <h3>Lower Cost!</h3>
-            <p>Minimized material waste translates to lower cost!</p>
+            <h3>Lower Costs</h3>
+            <p>Minimized material waste through precision nesting translates directly to lower costs for you.</p>
           </article>
           <article class="benefit-card">
             <div class="benefit-card__icon">
               <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
             </div>
-            <h3>Dieless Cutting</h3>
-            <p>No tooling charges.</p>
+            <h3>No Tooling Charges</h3>
+            <p>Dieless cutting eliminates expensive tooling charges. Save on setup costs for every custom order.</p>
           </article>
           <article class="benefit-card">
             <div class="benefit-card__icon">
               <svg viewBox="0 0 24 24"><path d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
             </div>
             <h3>Excellent Tolerances</h3>
-            <p>Precise CNC control ensures accurate cuts with excellent tolerances.</p>
+            <p>Precise CNC control ensures accurate cuts with excellent tolerances for critical applications.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="spiral-section" id="spiral">
+    <section class="spiral" id="spiral">
       <div class="container">
-        <div class="spiral-content">
-          <div class="spiral-visual">
-            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <div class="spiral__grid">
+          <div class="spiral__visual">
+            <svg viewBox="0 0 200 200">
               <defs>
-                <linearGradient id="spiralGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" style="stop-color:#1E3A5F"/>
-                  <stop offset="100%" style="stop-color:#2563EB"/>
+                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#1E56A0"/>
+                  <stop offset="100%" style="stop-color:#0F2A4A"/>
+                </linearGradient>
+                <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#D4A017"/>
+                  <stop offset="100%" style="stop-color:#F4C430"/>
                 </linearGradient>
               </defs>
-              <circle cx="100" cy="100" r="90" fill="none" stroke="url(#spiralGrad)" stroke-width="4"/>
-              <circle cx="100" cy="100" r="70" fill="none" stroke="#F59E0B" stroke-width="3"/>
-              <circle cx="100" cy="100" r="50" fill="none" stroke="url(#spiralGrad)" stroke-width="4"/>
-              <circle cx="100" cy="100" r="30" fill="none" stroke="#F59E0B" stroke-width="3"/>
-              <circle cx="100" cy="100" r="10" fill="#1E3A5F"/>
+              <circle cx="100" cy="100" r="90" fill="none" stroke="url(#grad1)" stroke-width="6"/>
+              <circle cx="100" cy="100" r="72" fill="none" stroke="url(#grad2)" stroke-width="4"/>
+              <circle cx="100" cy="100" r="54" fill="none" stroke="url(#grad1)" stroke-width="6"/>
+              <circle cx="100" cy="100" r="36" fill="none" stroke="url(#grad2)" stroke-width="4"/>
+              <circle cx="100" cy="100" r="18" fill="url(#grad1)"/>
             </svg>
           </div>
-          <div class="spiral-text">
-            <p class="eyebrow">Specialty Gaskets</p>
-            <h2>WE MAKE SPIRAL WOUND GASKETS!</h2>
-            <p>At Trinity Rubber & Machine Products, we offer custom metal windings that can be made-to-order, tailored to meet your specific requirements. Additionally, we have a wide selection of stock spiral wound gaskets available for immediate purchase.</p>
-            <a class="btn btn--secondary" href="/gaskets-gasket-materials-in-decatur-alabama">OUR GASKET PRODUCTS</a>
+          <div class="spiral__content">
+            <span class="section-label">Specialty Gaskets</span>
+            <h2 class="section-title">Spiral Wound Gaskets</h2>
+            <p>At Trinity Rubber & Machine Products, we offer custom metal windings made-to-order and tailored to your specific requirements. We also maintain a wide selection of stock spiral wound gaskets available for immediate purchase.</p>
+            <p>Spiral wound gaskets are ideal for high-pressure and high-temperature applications, providing excellent sealing performance in the most demanding industrial environments.</p>
+            <a class="btn btn--secondary" href="/gaskets-gasket-materials-in-decatur-alabama">View All Gasket Products</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="products-section" id="products">
+    <section class="products" id="products">
       <div class="container">
-        <div class="products-intro">
-          <p class="eyebrow">Our Gasket Products</p>
-          <h2>Some of the most common gasket types we produce:</h2>
+        <div class="products__header">
+          <span class="section-label">Our Products</span>
+          <h2 class="section-title">Gasket Types We Produce</h2>
+          <p class="section-desc" style="margin: 16px auto 0;">We manufacture a comprehensive range of custom gaskets for every industrial application</p>
         </div>
-        <div class="products-grid">
-          <div class="products-column">
+        <div class="products__grid">
+          <div class="products__column">
             <ul>
-              <li>Flange Gasket</li>
+              <li>Flange Gaskets</li>
               <li>Compressor Gaskets</li>
               <li>Pipe Gaskets</li>
               <li>Automotive Gaskets</li>
@@ -937,119 +1275,110 @@
               <li>Neoprene Gaskets</li>
               <li>Red Rubber Gaskets</li>
               <li>EPDM Gaskets</li>
-              <li>Fluorocarbon (Viton) Rubber Gaskets</li>
+              <li>Viton (FKM) Gaskets</li>
             </ul>
           </div>
-          <div class="products-column">
+          <div class="products__column">
             <ul>
               <li>Ring Gaskets</li>
+              <li>Full Face Gaskets</li>
               <li>Hose Coupling Gaskets</li>
               <li>Boiler Gaskets</li>
               <li>Tank Gaskets</li>
               <li>Sponge & Foam Gaskets</li>
               <li>Water Gaskets</li>
-              <li>Ring Gaskets</li>
-              <li>Full Face Gaskets</li>
               <li>Custom Seals</li>
               <li>EMI Gaskets</li>
               <li>Urethane Gaskets</li>
               <li>Fiber Gaskets</li>
+              <li>Sanitary Gaskets</li>
             </ul>
           </div>
-          <div class="products-column">
+          <div class="products__column">
             <ul>
               <li>Felt Gaskets</li>
               <li>Food Grade Gaskets</li>
               <li>Valve Gaskets</li>
-              <li>Automotive Gaskets</li>
               <li>Cork Gaskets</li>
               <li>Oil Gaskets</li>
               <li>Bushings & Washers</li>
-              <li>Sanitary Gaskets</li>
               <li>Garlock Gaskets</li>
-              <li>Valve Gaskets</li>
               <li>Fuel Oil Gaskets</li>
               <li>Vibration Absorbing Gaskets</li>
+              <li>Silicone Gaskets</li>
+              <li>Nitrile Gaskets</li>
+              <li>Custom Profiles</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="contact-section" id="contact">
+    <section class="contact" id="contact">
       <div class="container">
-        <div class="contact-card">
-          <div class="contact-info">
-            <h2>Contact Trinity Rubber & Machine Products</h2>
-            <p>Ready to get started on your custom gasket project? Reach out to our team today!</p>
-            <div class="contact-details">
-              <div class="contact-item">
-                <div class="contact-item__icon">
+        <div class="contact__card">
+          <div class="contact__info">
+            <h2>Contact the Gasket Experts</h2>
+            <p>Ready to start your custom gasket project? Our team is here to help with material selection, design assistance, and fast quotes.</p>
+            <div class="contact__details">
+              <div class="contact__item">
+                <div class="contact__item-icon">
                   <svg viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                 </div>
                 <div>
-                  <h4>Address</h4>
+                  <h4>Visit Us</h4>
                   <address>843 Woodall Road SW<br>Decatur, AL 35601</address>
                 </div>
               </div>
-              <div class="contact-item">
-                <div class="contact-item__icon">
+              <div class="contact__item">
+                <div class="contact__item-icon">
                   <svg viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
                 </div>
                 <div>
-                  <h4>Phone</h4>
+                  <h4>Call Us</h4>
                   <p><a href="tel:+12563060403">(256) 306-0403</a></p>
                 </div>
               </div>
-              <div class="contact-item">
-                <div class="contact-item__icon">
+              <div class="contact__item">
+                <div class="contact__item-icon">
                   <svg viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                 </div>
                 <div>
-                  <h4>Hours</h4>
-                  <p>Monday – Friday: 7:30am – 4:00pm</p>
-                </div>
-              </div>
-              <div class="contact-item">
-                <div class="contact-item__icon">
-                  <svg viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                </div>
-                <div>
-                  <h4>Email</h4>
-                  <p><a href="/contact-trinity-rubber-and-machine-products">Contact Form</a></p>
+                  <h4>Business Hours</h4>
+                  <p>Monday – Friday<br>7:30 AM – 4:00 PM</p>
                 </div>
               </div>
             </div>
           </div>
-          <div class="contact-form">
+          <div class="contact__form">
             <h3>Request a Quote</h3>
             <form>
               <div class="form-row form-row--half">
                 <div class="form-row">
                   <label for="name">Name *</label>
-                  <input type="text" id="name" name="name" required>
+                  <input type="text" id="name" name="name" required placeholder="Your name">
                 </div>
                 <div class="form-row">
                   <label for="company">Company</label>
-                  <input type="text" id="company" name="company">
+                  <input type="text" id="company" name="company" placeholder="Company name">
                 </div>
               </div>
               <div class="form-row form-row--half">
                 <div class="form-row">
                   <label for="email">Email *</label>
-                  <input type="email" id="email" name="email" required>
+                  <input type="email" id="email" name="email" required placeholder="you@company.com">
                 </div>
                 <div class="form-row">
                   <label for="phone">Phone</label>
-                  <input type="tel" id="phone" name="phone">
+                  <input type="tel" id="phone" name="phone" placeholder="(000) 000-0000">
                 </div>
               </div>
               <div class="form-row">
-                <label for="message">Tell us about your gasket needs *</label>
-                <textarea id="message" name="message" rows="4" required placeholder="Describe your gasket requirements, dimensions, materials, quantities..."></textarea>
+                <label for="message">Project Details *</label>
+                <textarea id="message" name="message" required placeholder="Tell us about your gasket requirements — dimensions, materials, quantities, application..."></textarea>
               </div>
-              <button class="btn btn--primary" type="submit">Submit Request</button>
-              <p class="form-note">We'll respond within one business day.</p>
+              <button class="btn btn--primary" type="submit">Submit Quote Request</button>
+              <p class="form-note">We typically respond within one business day.</p>
             </form>
           </div>
         </div>
@@ -1062,17 +1391,17 @@
       <div class="footer__grid">
         <div>
           <div class="footer__brand">
-            <div class="footer__logo">TR</div>
+            <div class="footer__logo">TRM</div>
             <h3>Trinity Rubber &<br>Machine Products</h3>
           </div>
-          <p>Your trusted source for industrial rubber products, custom gaskets, and machine services in Decatur, Alabama.</p>
+          <p>Your trusted partner for industrial rubber products, custom gasket fabrication, and precision machine services in Decatur, Alabama since 1985.</p>
         </div>
         <div>
-          <h4>Rubber Products</h4>
+          <h4>Products</h4>
           <ul>
             <li><a href="/industrial-hose-in-decatur-alabama">Industrial Hose</a></li>
             <li><a href="/sheet-rubber-in-decatur-alabama">Sheet Rubber</a></li>
-            <li><a href="/gaskets-gasket-materials-in-decatur-alabama">Gaskets & Gasket Materials</a></li>
+            <li><a href="/gaskets-gasket-materials-in-decatur-alabama">Gaskets & Materials</a></li>
             <li><a href="/industrial-mro-supply-in-decatur-alabama">Industrial & MRO Supply</a></li>
           </ul>
         </div>
@@ -1099,7 +1428,7 @@
           </ul>
         </div>
       </div>
-      <div class="footer__legal">
+      <div class="footer__bottom">
         <p>© <span id="year"></span> Trinity Rubber & Machine Products. All rights reserved.</p>
         <nav>
           <a href="/about-trinity-rubber-and-machine-products">About</a>
@@ -1114,7 +1443,7 @@
 
     const navToggle = document.querySelector('.nav-toggle');
     const primaryNav = document.querySelector('.primary-nav');
-    
+
     navToggle.addEventListener('click', () => {
       const isOpen = primaryNav.classList.toggle('open');
       navToggle.setAttribute('aria-expanded', isOpen);
@@ -1137,7 +1466,7 @@
     const header = document.querySelector('.site-header');
     window.addEventListener('scroll', () => {
       header.classList.toggle('is-scrolled', window.scrollY > 50);
-    });
+    }, { passive: true });
   </script>
 </body>
 </html>
