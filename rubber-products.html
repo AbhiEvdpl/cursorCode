@@ -1,0 +1,1481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Industrial rubber products in Decatur, AL. Custom hydraulic hose assemblies, sheet rubber, fittings & adapters. Neoprene, EPDM, Viton, Silicone and more!">
+  <title>Industrial Rubber Products — Trinity Rubber & Machine Products | Decatur, AL</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-primary: #0F2A4A;
+      --color-secondary: #1E56A0;
+      --color-accent: #D4A017;
+      --color-accent-light: #F4C430;
+      --color-dark: #1A1A2E;
+      --color-gray: #64748B;
+      --color-light: #F8FAFC;
+      --color-white: #FFFFFF;
+      --color-red: #DC2626;
+      --color-green: #059669;
+      --color-blue: #2563EB;
+      --color-orange: #EA580C;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+      --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1);
+      --shadow-2xl: 0 25px 50px -12px rgba(0,0,0,0.25);
+      --max-width: 1280px;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --radius-2xl: 32px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--color-dark);
+      background: var(--color-white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body.nav-open { overflow: hidden; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(100% - 40px, var(--max-width));
+      margin: 0 auto;
+    }
+
+    /* Header */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(20px);
+      z-index: 1000;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      transition: box-shadow 0.3s;
+    }
+
+    .site-header.is-scrolled {
+      box-shadow: var(--shadow-lg);
+    }
+
+    .header__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+      gap: 32px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand__logo {
+      width: 52px;
+      height: 52px;
+      background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-white);
+      font-weight: 800;
+      font-size: 1rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .brand__text h1 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      line-height: 1.3;
+    }
+
+    .brand__text span {
+      font-size: 0.75rem;
+      color: var(--color-gray);
+      font-weight: 500;
+    }
+
+    .primary-nav ul {
+      display: flex;
+      list-style: none;
+      gap: 8px;
+    }
+
+    .primary-nav a {
+      padding: 10px 16px;
+      font-weight: 500;
+      color: var(--color-dark);
+      font-size: 0.9rem;
+      border-radius: var(--radius-sm);
+      transition: all 0.2s;
+    }
+
+    .primary-nav a:hover {
+      background: var(--color-light);
+      color: var(--color-secondary);
+    }
+
+    .header__cta .btn { padding: 12px 24px; }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: var(--radius-sm);
+    }
+
+    .nav-toggle span {
+      width: 22px;
+      height: 2px;
+      background: var(--color-dark);
+      border-radius: 2px;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 28px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: none;
+      border-radius: 100px;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      font-family: inherit;
+    }
+
+    .btn--primary {
+      background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
+      color: var(--color-dark);
+      box-shadow: 0 4px 14px rgba(212, 160, 23, 0.4);
+    }
+
+    .btn--primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(212, 160, 23, 0.5);
+    }
+
+    .btn--secondary {
+      background: var(--color-secondary);
+      color: var(--color-white);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn--secondary:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .btn--outline {
+      background: transparent;
+      color: var(--color-white);
+      border: 2px solid rgba(255,255,255,0.3);
+    }
+
+    .btn--outline:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.5);
+    }
+
+    .btn--white {
+      background: var(--color-white);
+      color: var(--color-primary);
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      padding: 160px 0 100px;
+      background: linear-gradient(160deg, var(--color-primary) 0%, #0a1628 60%, var(--color-secondary) 100%);
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: 
+        radial-gradient(ellipse 80% 50% at 20% 40%, rgba(30, 86, 160, 0.3) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 40% at 80% 20%, rgba(212, 160, 23, 0.15) 0%, transparent 50%);
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+      color: var(--color-white);
+    }
+
+    .hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 24px;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero__badge svg {
+      width: 16px;
+      height: 16px;
+      fill: var(--color-accent);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.75rem, 5vw, 4rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero__desc {
+      font-size: 1.2rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 32px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero__actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Category Cards */
+    .categories {
+      padding: 0;
+      margin-top: -60px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .categories__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .category-card {
+      background: var(--color-white);
+      border-radius: var(--radius-2xl);
+      padding: 40px;
+      box-shadow: var(--shadow-2xl);
+      display: flex;
+      align-items: flex-start;
+      gap: 24px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      border: 1px solid rgba(0,0,0,0.04);
+    }
+
+    .category-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 30px 60px -15px rgba(0,0,0,0.2);
+    }
+
+    .category-card__icon {
+      width: 80px;
+      height: 80px;
+      border-radius: var(--radius-xl);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .category-card__icon svg {
+      width: 40px;
+      height: 40px;
+      stroke-width: 1.5;
+      fill: none;
+    }
+
+    .category-card__content h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 8px;
+    }
+
+    .category-card__content p {
+      color: var(--color-gray);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .category-card__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--color-secondary);
+      transition: gap 0.2s;
+    }
+
+    .category-card__link:hover { gap: 10px; }
+
+    .category-card__link svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+    }
+
+    /* Section Styles */
+    section { padding: 100px 0; }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: linear-gradient(135deg, rgba(30, 86, 160, 0.1), rgba(30, 86, 160, 0.05));
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--color-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 800;
+      color: var(--color-primary);
+      line-height: 1.2;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .section-desc {
+      font-size: 1.15rem;
+      color: var(--color-gray);
+      line-height: 1.7;
+      max-width: 640px;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-header .section-desc {
+      margin: 0 auto;
+    }
+
+    /* Hydraulic Section */
+    .hydraulic {
+      background: var(--color-light);
+    }
+
+    .hydraulic__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .hydraulic__content p {
+      font-size: 1.05rem;
+      color: #4B5563;
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+
+    .hydraulic__visual {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .hose-card {
+      background: var(--color-white);
+      border-radius: var(--radius-xl);
+      padding: 28px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(0,0,0,0.04);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .hose-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .hose-card h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 8px;
+    }
+
+    .hose-card p {
+      font-size: 0.85rem;
+      color: var(--color-gray);
+      line-height: 1.5;
+    }
+
+    .hose-card__size {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 4px 10px;
+      background: var(--color-light);
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--color-secondary);
+    }
+
+    /* Fittings */
+    .fittings {
+      background: linear-gradient(160deg, var(--color-secondary) 0%, var(--color-primary) 100%);
+      color: var(--color-white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .fittings::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .fittings .section-label {
+      background: rgba(255,255,255,0.15);
+      color: var(--color-accent);
+    }
+
+    .fittings .section-title,
+    .fittings .section-desc { color: var(--color-white); }
+    .fittings .section-desc { opacity: 0.85; }
+
+    .fittings__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .fitting-card {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-xl);
+      padding: 32px;
+      transition: all 0.3s;
+    }
+
+    .fitting-card:hover {
+      transform: translateY(-6px);
+      background: rgba(255,255,255,0.12);
+      border-color: rgba(255,255,255,0.2);
+    }
+
+    .fitting-card__icon {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 24px rgba(212, 160, 23, 0.3);
+    }
+
+    .fitting-card__icon svg {
+      width: 28px;
+      height: 28px;
+      stroke: var(--color-dark);
+      fill: none;
+      stroke-width: 2;
+    }
+
+    .fitting-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .fitting-card p {
+      font-size: 0.95rem;
+      opacity: 0.8;
+      line-height: 1.6;
+    }
+
+    .fitting-card__specs {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .fitting-card__specs li {
+      font-size: 0.85rem;
+      opacity: 0.75;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .fitting-card__specs li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--color-accent);
+      border-radius: 50%;
+    }
+
+    /* Sheet Rubber */
+    .sheet-rubber {
+      background: var(--color-white);
+    }
+
+    .rubber-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .rubber-card {
+      background: var(--color-light);
+      border-radius: var(--radius-xl);
+      padding: 28px;
+      text-align: center;
+      transition: all 0.3s;
+      border: 2px solid transparent;
+      cursor: pointer;
+    }
+
+    .rubber-card:hover {
+      background: var(--color-white);
+      border-color: var(--color-secondary);
+      box-shadow: var(--shadow-xl);
+      transform: translateY(-4px);
+    }
+
+    .rubber-card__swatch {
+      width: 64px;
+      height: 64px;
+      border-radius: var(--radius-lg);
+      margin: 0 auto 16px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .rubber-card h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 4px;
+    }
+
+    .rubber-card p {
+      font-size: 0.8rem;
+      color: var(--color-gray);
+    }
+
+    /* Materials Detail */
+    .materials {
+      background: var(--color-light);
+    }
+
+    .materials__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .material-card {
+      background: var(--color-white);
+      border-radius: var(--radius-xl);
+      padding: 32px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid rgba(0,0,0,0.04);
+      transition: all 0.3s;
+    }
+
+    .material-card:hover {
+      box-shadow: var(--shadow-xl);
+      transform: translateY(-4px);
+    }
+
+    .material-card__header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .material-card__abbr {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.85rem;
+      color: var(--color-white);
+      flex-shrink: 0;
+    }
+
+    .material-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--color-primary);
+    }
+
+    .material-card p {
+      font-size: 0.95rem;
+      color: #4B5563;
+      line-height: 1.7;
+    }
+
+    .material-card__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .material-card__tag {
+      padding: 4px 12px;
+      background: var(--color-light);
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--color-gray);
+    }
+
+    /* Contact */
+    .contact {
+      background: linear-gradient(160deg, var(--color-primary) 0%, #0a1628 100%);
+      padding: 100px 0;
+    }
+
+    .contact__card {
+      background: var(--color-white);
+      border-radius: var(--radius-2xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-2xl);
+      display: grid;
+      grid-template-columns: 2fr 3fr;
+    }
+
+    .contact__info {
+      background: linear-gradient(160deg, var(--color-secondary), var(--color-primary));
+      padding: 56px;
+      color: var(--color-white);
+      position: relative;
+    }
+
+    .contact__info::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .contact__info > * { position: relative; z-index: 1; }
+
+    .contact__info h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .contact__info > p {
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
+
+    .contact__details {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .contact__item {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+    }
+
+    .contact__item-icon {
+      width: 52px;
+      height: 52px;
+      background: rgba(212, 160, 23, 0.2);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact__item-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--color-accent);
+      fill: none;
+      stroke-width: 2;
+    }
+
+    .contact__item h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .contact__item p,
+    .contact__item address {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.75);
+      font-style: normal;
+      line-height: 1.5;
+    }
+
+    .contact__item a {
+      color: var(--color-accent);
+      transition: opacity 0.2s;
+    }
+
+    .contact__form {
+      padding: 56px;
+    }
+
+    .contact__form h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 28px;
+    }
+
+    .contact__form form {
+      display: grid;
+      gap: 20px;
+    }
+
+    .form-row {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-row--half {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-row label {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--color-dark);
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 14px 18px;
+      border: 2px solid #E5E7EB;
+      border-radius: var(--radius-md);
+      font-size: 1rem;
+      font-family: inherit;
+      background: var(--color-white);
+      transition: all 0.2s;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--color-secondary);
+      box-shadow: 0 0 0 4px rgba(30, 86, 160, 0.1);
+    }
+
+    textarea { resize: vertical; min-height: 120px; }
+
+    .contact__form .btn {
+      width: 100%;
+      padding: 18px;
+      font-size: 1rem;
+    }
+
+    .form-note {
+      font-size: 0.85rem;
+      color: var(--color-gray);
+      text-align: center;
+    }
+
+    /* Footer */
+    .site-footer {
+      background: var(--color-primary);
+      color: var(--color-white);
+      padding: 80px 0 32px;
+    }
+
+    .footer__grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 60px;
+    }
+
+    .footer__brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .footer__logo {
+      width: 52px;
+      height: 52px;
+      background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--color-dark);
+    }
+
+    .footer__brand h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .site-footer > .container > div:first-child > p {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .site-footer h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    .site-footer ul { list-style: none; }
+    .site-footer li { margin-bottom: 14px; }
+
+    .site-footer a {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    .site-footer a:hover { color: var(--color-accent); }
+
+    .footer__contact li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .footer__contact svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--color-accent);
+      fill: none;
+      stroke-width: 2;
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    .footer__bottom {
+      padding-top: 32px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .footer__bottom nav {
+      display: flex;
+      gap: 32px;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .categories__grid { grid-template-columns: 1fr; }
+      .hydraulic__grid { grid-template-columns: 1fr; gap: 60px; }
+      .fittings__grid { grid-template-columns: repeat(2, 1fr); }
+      .rubber-grid { grid-template-columns: repeat(2, 1fr); }
+      .materials__grid { grid-template-columns: 1fr; }
+      .contact__card { grid-template-columns: 1fr; }
+      .footer__grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+    }
+
+    @media (max-width: 768px) {
+      .container { width: min(100% - 32px, var(--max-width)); }
+
+      .primary-nav {
+        position: fixed;
+        inset: 0 0 0 25%;
+        background: var(--color-white);
+        padding: 100px 32px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        box-shadow: -10px 0 40px rgba(0,0,0,0.15);
+        z-index: 999;
+      }
+
+      .primary-nav.open { transform: translateX(0); }
+      .primary-nav ul { flex-direction: column; gap: 8px; }
+      .primary-nav a { display: block; padding: 14px 16px; }
+      .nav-toggle { display: flex; }
+      .header__cta { display: none; }
+
+      .hero { padding: 140px 0 80px; }
+      .category-card { flex-direction: column; text-align: center; }
+      .category-card__icon { margin: 0 auto; }
+      .hydraulic__visual { grid-template-columns: 1fr; }
+      .fittings__grid { grid-template-columns: 1fr; }
+      .rubber-grid { grid-template-columns: 1fr; }
+      .contact__info, .contact__form { padding: 40px; }
+      .form-row--half { grid-template-columns: 1fr; }
+      .footer__grid { grid-template-columns: 1fr; }
+      .footer__bottom { flex-direction: column; gap: 20px; text-align: center; }
+
+      section { padding: 80px 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="header__inner">
+        <a class="brand" href="/">
+          <div class="brand__logo">TRM</div>
+          <div class="brand__text">
+            <h1>Trinity Rubber & Machine</h1>
+            <span>Industrial Rubber Products</span>
+          </div>
+        </a>
+        <button class="nav-toggle" aria-expanded="false" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="primary-nav" id="primary-nav">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="#hydraulic">Hydraulic Hose</a></li>
+            <li><a href="#sheet-rubber">Sheet Rubber</a></li>
+            <li><a href="/custom-gasket-in-decatur">Custom Gaskets</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header__cta">
+          <a class="btn btn--primary" href="#contact">Get a Quote</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero__content">
+          <div class="hero__badge">
+            <svg viewBox="0 0 20 20"><path d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"/></svg>
+            Decatur, Alabama
+          </div>
+          <h1>Industrial <span>Rubber</span> Products</h1>
+          <p class="hero__desc">Your complete source for hydraulic hose assemblies, sheet rubber, fittings, and industrial rubber products. Custom assemblies made while you wait!</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#contact">Request a Quote</a>
+            <a class="btn btn--outline" href="tel:+12563060403">Call (256) 306-0403</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="categories">
+      <div class="container">
+        <div class="categories__grid">
+          <div class="category-card">
+            <div class="category-card__icon" style="background: linear-gradient(135deg, #2563EB, #1D4ED8);">
+              <svg viewBox="0 0 24 24" stroke="#fff"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <div class="category-card__content">
+              <h3>Hydraulic Hose & Fittings</h3>
+              <p>Custom hydraulic hose assemblies made while you wait. Complete range of fittings, adapters, and hose guards for every application.</p>
+              <a href="#hydraulic" class="category-card__link">
+                Learn More
+                <svg viewBox="0 0 24 24"><path d="M5 12h14m-7-7l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="category-card">
+            <div class="category-card__icon" style="background: linear-gradient(135deg, #059669, #047857);">
+              <svg viewBox="0 0 24 24" stroke="#fff"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            </div>
+            <div class="category-card__content">
+              <h3>Sheet Rubber Products</h3>
+              <p>Comprehensive selection of industrial sheet rubber — Neoprene, Nitrile, EPDM, Viton, Silicone, and specialty compounds.</p>
+              <a href="#sheet-rubber" class="category-card__link">
+                Learn More
+                <svg viewBox="0 0 24 24"><path d="M5 12h14m-7-7l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hydraulic" id="hydraulic">
+      <div class="container">
+        <div class="hydraulic__grid">
+          <div class="hydraulic__content">
+            <span class="section-label">Made While You Wait</span>
+            <h2 class="section-title">Hydraulic Hose & Fittings</h2>
+            <p>Trinity Rubber & Machine is proud to be a distributor for the world's leading manufacturers of hydraulic hose and fittings. Our skilled and knowledgeable staff is here to assist you in identifying the ideal solution for any application.</p>
+            <p>We provide custom hydraulic hose assemblies made while you wait. Whether it's for hose, cable, aviation, firefighting, petroleum, rescue operations, welding, or spray applications — we have you covered.</p>
+            <p>We offer a selection of American-made products built to last, as well as economical options to meet a wide range of demands. Contact us today for the best service in hydraulic hose!</p>
+            <a class="btn btn--secondary" href="#contact" style="margin-top: 8px;">Get Custom Assembly</a>
+          </div>
+          <div class="hydraulic__visual">
+            <div class="hose-card">
+              <h4>Textile Braid Hose</h4>
+              <p>Standard and premium grades for medium pressure applications</p>
+              <span class="hose-card__size">6mm to 51mm</span>
+            </div>
+            <div class="hose-card">
+              <h4>Wire Braid Hose</h4>
+              <p>High-pressure hydraulic applications with reinforced construction</p>
+              <span class="hose-card__size">5mm to 102mm</span>
+            </div>
+            <div class="hose-card">
+              <h4>Wire Spiral Hose</h4>
+              <p>Extra high-pressure applications with multiple spiral layers</p>
+              <span class="hose-card__size">6mm to 76mm</span>
+            </div>
+            <div class="hose-card">
+              <h4>Thermoplastic Hose</h4>
+              <p>Lightweight, flexible, with excellent bend radius</p>
+              <span class="hose-card__size">2mm to 25mm</span>
+            </div>
+            <div class="hose-card">
+              <h4>PTFE Hose</h4>
+              <p>Chemical resistant for aggressive fluid transfer</p>
+              <span class="hose-card__size">5mm to 51mm</span>
+            </div>
+            <div class="hose-card">
+              <h4>Hose Guard</h4>
+              <p>Protective spiral guard for hazardous environments</p>
+              <span class="hose-card__size">Standard • MSHA • FRAS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="fittings">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Complete Range</span>
+          <h2 class="section-title">Fittings & Adapters</h2>
+          <p class="section-desc">A complete range in carbon and stainless steel with operating pressures up to 40,000 PSI</p>
+        </div>
+        <div class="fittings__grid">
+          <article class="fitting-card">
+            <div class="fitting-card__icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg>
+            </div>
+            <h3>Standard Fittings</h3>
+            <p>One-piece and two-piece solutions for standard hydraulic applications</p>
+            <ul class="fitting-card__specs">
+              <li>Carbon & Stainless Steel</li>
+              <li>BSP, NPT, Metric threads</li>
+              <li>JIC, ORFS, SAE connections</li>
+            </ul>
+          </article>
+          <article class="fitting-card">
+            <div class="fitting-card__icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/></svg>
+            </div>
+            <h3>Multispiral Fittings</h3>
+            <p>Heavy-duty fittings for high-pressure spiral hose applications</p>
+            <ul class="fitting-card__specs">
+              <li>Up to 2,750 bar (40,000 PSI)</li>
+              <li>Interlock versions available</li>
+              <li>Staple Mining connections</li>
+            </ul>
+          </article>
+          <article class="fitting-card">
+            <div class="fitting-card__icon">
+              <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <h3>Hose Protection</h3>
+            <p>Spiral guards designed for hazardous environments</p>
+            <ul class="fitting-card__specs">
+              <li>Abrasion & impact protection</li>
+              <li>Standard, MSHA, FRAS versions</li>
+              <li>Easy installation design</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="sheet-rubber" id="sheet-rubber">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Premium Materials</span>
+          <h2 class="section-title">Sheet Rubber Products</h2>
+          <p class="section-desc">Comprehensive selection of industrial sheet rubber for gasketing, sealing, padding, and custom parts</p>
+        </div>
+        <div class="rubber-grid">
+          <div class="rubber-card">
+            <div class="rubber-card__swatch" style="background: linear-gradient(135deg, #1F2937, #374151);"></div>
+            <h4>Neoprene</h4>
+            <p>Oil & Weather Resistant</p>
+          </div>
+          <div class="rubber-card">
+            <div class="rubber-card__swatch" style="background: linear-gradient(135deg, #1E3A8A, #3B82F6);"></div>
+            <h4>Nitrile</h4>
+            <p>Petroleum Resistant</p>
+          </div>
+          <div class="rubber-card">
+            <div class="rubber-card__swatch" style="background: linear-gradient(135deg, #991B1B, #DC2626);"></div>
+            <h4>Red Rubber (SBR)</h4>
+            <p>General Purpose</p>
+          </div>
+          <div class="rubber-card">
+            <div class="rubber-card__swatch" style="background: linear-gradient(135deg, #065F46, #059669);"></div>
+            <h4>EPDM</h4>
+            <p>Weather & Ozone</p>
+          </div>
+          <div class="rubber-card">
+            <div class="rubber-card__swatch" style="background: linear-gradient(135deg, #D97706, #F59E0B);"></div>
+            <h4>Tan Gum</h4>
+            <p>FDA Approved</p>
+          </div>
+          <div class="rubber-card">
+            <div class="rubber-card__swatch" style="background: linear-gradient(135deg, #5B21B6, #7C3AED);"></div>
+            <h4>Viton® (FKM)</h4>
+            <p>Chemical Resistant</p>
+          </div>
+          <div class="rubber-card">
+            <div class="rubber-card__swatch" style="background: linear-gradient(135deg, #BE185D, #EC4899);"></div>
+            <h4>Silicone</h4>
+            <p>Extreme Temps</p>
+          </div>
+          <div class="rubber-card">
+            <div class="rubber-card__swatch" style="background: linear-gradient(135deg, #78716C, #A8A29E);"></div>
+            <h4>Butyl</h4>
+            <p>Gas Permeation</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="materials">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Material Guide</span>
+          <h2 class="section-title">Sheet Rubber Specifications</h2>
+          <p class="section-desc">All sheet goods manufactured to the highest quality standards at competitive prices</p>
+        </div>
+        <div class="materials__grid">
+          <article class="material-card">
+            <div class="material-card__header">
+              <div class="material-card__abbr" style="background: linear-gradient(135deg, #1F2937, #374151);">NEO</div>
+              <h3>Neoprene Rubber</h3>
+            </div>
+            <p>General purpose compound with low temperature flexibility and oil resistance. Resists rotting, checking, and cracking due to weather exposure. Commonly used for gaskets, sealing, skirting, cushioning, washers and bushings.</p>
+            <div class="material-card__tags">
+              <span class="material-card__tag">Oil Resistant</span>
+              <span class="material-card__tag">Weather Resistant</span>
+              <span class="material-card__tag">Low Temp Flex</span>
+            </div>
+          </article>
+          <article class="material-card">
+            <div class="material-card__header">
+              <div class="material-card__abbr" style="background: linear-gradient(135deg, #1E3A8A, #3B82F6);">NBR</div>
+              <h3>Nitrile Rubber</h3>
+            </div>
+            <p>For applications requiring high resistance to petroleum based fluids. White FDA Nitrile available for food, pharmaceutical, and cosmetic processing — non-marking, non-allergenic, safe for repeated food exposure.</p>
+            <div class="material-card__tags">
+              <span class="material-card__tag">Petroleum Resistant</span>
+              <span class="material-card__tag">FDA Available</span>
+              <span class="material-card__tag">Abrasion Resistant</span>
+            </div>
+          </article>
+          <article class="material-card">
+            <div class="material-card__header">
+              <div class="material-card__abbr" style="background: linear-gradient(135deg, #065F46, #059669);">EPDM</div>
+              <h3>EPDM Rubber</h3>
+            </div>
+            <p>For applications requiring higher temperature ranges, ozone, chemical and weather resistance. Excellent for outdoor applications and water/steam service.</p>
+            <div class="material-card__tags">
+              <span class="material-card__tag">High Temp</span>
+              <span class="material-card__tag">Ozone Resistant</span>
+              <span class="material-card__tag">Weather Resistant</span>
+            </div>
+          </article>
+          <article class="material-card">
+            <div class="material-card__header">
+              <div class="material-card__abbr" style="background: linear-gradient(135deg, #5B21B6, #7C3AED);">FKM</div>
+              <h3>Viton® Rubber</h3>
+            </div>
+            <p>Premium grade fluoro-elastomer sheet for the most demanding applications. Excellent heat and chemical resistance. Not suitable for flex fuels containing high levels of alcohol or MTBE.</p>
+            <div class="material-card__tags">
+              <span class="material-card__tag">Chemical Resistant</span>
+              <span class="material-card__tag">High Heat</span>
+              <span class="material-card__tag">Premium Grade</span>
+            </div>
+          </article>
+          <article class="material-card">
+            <div class="material-card__header">
+              <div class="material-card__abbr" style="background: linear-gradient(135deg, #BE185D, #EC4899);">SIL</div>
+              <h3>Silicone Rubber</h3>
+            </div>
+            <p>Designed for extreme high and low temperature resistance. Provides excellent UV and ozone resistance, is non-toxic, chemically inert and fungus resistant.</p>
+            <div class="material-card__tags">
+              <span class="material-card__tag">Extreme Temps</span>
+              <span class="material-card__tag">UV Resistant</span>
+              <span class="material-card__tag">Non-Toxic</span>
+            </div>
+          </article>
+          <article class="material-card">
+            <div class="material-card__header">
+              <div class="material-card__abbr" style="background: linear-gradient(135deg, #D97706, #F59E0B);">GUM</div>
+              <h3>Tan Gum Rubber</h3>
+            </div>
+            <p>Excellent physical properties — superior resilience, tensile, elongation, and abrasion resistance. FDA approved ingredients, non-marking, safe for repeated food exposure. Good tear strength, resistant to water and mild acids.</p>
+            <div class="material-card__tags">
+              <span class="material-card__tag">FDA Approved</span>
+              <span class="material-card__tag">Non-Marking</span>
+              <span class="material-card__tag">Food Safe</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="contact__card">
+          <div class="contact__info">
+            <h2>Get in Touch</h2>
+            <p>Need custom hydraulic hose assemblies, sheet rubber, or industrial products? Our expert team is ready to help!</p>
+            <div class="contact__details">
+              <div class="contact__item">
+                <div class="contact__item-icon">
+                  <svg viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                </div>
+                <div>
+                  <h4>Visit Us</h4>
+                  <address>843 Woodall Road SW<br>Decatur, AL 35601</address>
+                </div>
+              </div>
+              <div class="contact__item">
+                <div class="contact__item-icon">
+                  <svg viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                </div>
+                <div>
+                  <h4>Call Us</h4>
+                  <p><a href="tel:+12563060403">(256) 306-0403</a></p>
+                </div>
+              </div>
+              <div class="contact__item">
+                <div class="contact__item-icon">
+                  <svg viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </div>
+                <div>
+                  <h4>Business Hours</h4>
+                  <p>Monday – Friday<br>7:30 AM – 4:00 PM</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="contact__form">
+            <h3>Request a Quote</h3>
+            <form>
+              <div class="form-row form-row--half">
+                <div class="form-row">
+                  <label for="name">Name *</label>
+                  <input type="text" id="name" name="name" required placeholder="Your name">
+                </div>
+                <div class="form-row">
+                  <label for="company">Company</label>
+                  <input type="text" id="company" name="company" placeholder="Company name">
+                </div>
+              </div>
+              <div class="form-row form-row--half">
+                <div class="form-row">
+                  <label for="email">Email *</label>
+                  <input type="email" id="email" name="email" required placeholder="you@company.com">
+                </div>
+                <div class="form-row">
+                  <label for="phone">Phone</label>
+                  <input type="tel" id="phone" name="phone" placeholder="(000) 000-0000">
+                </div>
+              </div>
+              <div class="form-row">
+                <label for="product">Product Interest</label>
+                <select id="product" name="product">
+                  <option value="">Select a product category...</option>
+                  <option value="hydraulic-hose">Hydraulic Hose & Fittings</option>
+                  <option value="sheet-rubber">Sheet Rubber</option>
+                  <option value="custom-gaskets">Custom Gaskets</option>
+                  <option value="industrial-hose">Industrial Hose</option>
+                  <option value="other">Other Products</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <label for="message">Project Details *</label>
+                <textarea id="message" name="message" required placeholder="Tell us about your requirements — products needed, quantities, specifications..."></textarea>
+              </div>
+              <button class="btn btn--primary" type="submit">Submit Quote Request</button>
+              <p class="form-note">We typically respond within one business day.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand">
+            <div class="footer__logo">TRM</div>
+            <h3>Trinity Rubber &<br>Machine Products</h3>
+          </div>
+          <p>Your trusted partner for industrial rubber products, hydraulic hose assemblies, sheet rubber, and custom fabrication in Decatur, Alabama.</p>
+        </div>
+        <div>
+          <h4>Products</h4>
+          <ul>
+            <li><a href="/hydraulic-hose-hydraulic-fittings-in-decatur-alabama">Hydraulic Hose</a></li>
+            <li><a href="/sheet-rubber-in-decatur-alabama">Sheet Rubber</a></li>
+            <li><a href="/industrial-hose-in-decatur-alabama">Industrial Hose</a></li>
+            <li><a href="/gaskets-gasket-materials-in-decatur-alabama">Gaskets & Materials</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <ul>
+            <li><a href="/custom-hose-assembly-in-decatur-alabama">Custom Hose Assembly</a></li>
+            <li><a href="/custom-gasket-in-decatur">CNC Gasket Cutting</a></li>
+            <li><a href="/waterjet-cutting-decatur-al">Waterjet Cutting</a></li>
+            <li><a href="/in-plant-services-industrial-services-in-decatur-alabama">In-Plant Services</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul class="footer__contact">
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <span>843 Woodall Road SW<br>Decatur, AL 35601</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              <a href="tel:+12563060403">(256) 306-0403</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© <span id="year"></span> Trinity Rubber & Machine Products. All rights reserved.</p>
+        <nav>
+          <a href="/about-trinity-rubber-and-machine-products">About</a>
+          <a href="/contact-trinity-rubber-and-machine-products">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const navToggle = document.querySelector('.nav-toggle');
+    const primaryNav = document.querySelector('.primary-nav');
+
+    navToggle.addEventListener('click', () => {
+      const isOpen = primaryNav.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', isOpen);
+      document.body.classList.toggle('nav-open', isOpen);
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          primaryNav.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+          document.body.classList.remove('nav-open');
+        }
+      });
+    });
+
+    const header = document.querySelector('.site-header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('is-scrolled', window.scrollY > 50);
+    }, { passive: true });
+  </script>
+</body>
+</html>
