@@ -102,16 +102,15 @@
 
     /* Sheet Rubber Products */
     .sheet-rubber { background: var(--white); }
-    .rubber-products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 80px; }
-    .rubber-product { display: block; background: var(--light); border-radius: var(--radius); padding: 24px; text-align: center; transition: all 0.3s; border: 2px solid transparent; text-decoration: none; }
-    .rubber-product:hover { background: var(--white); border-color: var(--secondary); box-shadow: var(--shadow-lg); transform: translateY(-4px); }
-    .rubber-product-icon { width: 64px; height: 64px; margin: 0 auto 16px; border-radius: 12px; display: flex; align-items: center; justify-content: center; }
-    .rubber-product-icon svg { width: 28px; height: 28px; stroke: white; fill: none; stroke-width: 2; }
-    .rubber-product h4 { font-size: 1rem; font-weight: 700; color: var(--primary); margin-bottom: 4px; }
-    .rubber-product span { font-size: 0.8rem; color: var(--gray); }
-    .rubber-product .download { display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 12px; padding: 8px 14px; background: var(--secondary); color: white; border-radius: 100px; font-size: 0.75rem; font-weight: 600; opacity: 0; transform: translateY(8px); transition: all 0.3s; }
-    .rubber-product .download svg { width: 14px; height: 14px; }
-    .rubber-product:hover .download { opacity: 1; transform: translateY(0); }
+    .products-intro { text-align: center; font-size: 1.1rem; font-weight: 600; color: var(--primary); margin-bottom: 40px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .rubber-products-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 24px; margin-bottom: 60px; }
+    .rubber-product { display: block; text-align: center; transition: all 0.3s; text-decoration: none; }
+    .rubber-product:hover { transform: translateY(-8px); }
+    .rubber-product-img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: var(--radius); margin-bottom: 12px; background: var(--light); box-shadow: var(--shadow); transition: all 0.3s; }
+    .rubber-product:hover .rubber-product-img { box-shadow: var(--shadow-xl); }
+    .rubber-product h4 { font-size: 0.9rem; font-weight: 600; color: var(--primary); line-height: 1.3; }
+    .tolerances-link { display: inline-flex; align-items: center; gap: 8px; color: #B91C1C; font-weight: 600; font-size: 1rem; margin-top: 20px; transition: gap 0.2s; }
+    .tolerances-link:hover { gap: 12px; text-decoration: underline; }
 
     /* Material Specs */
     .materials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 24px; }
@@ -165,11 +164,14 @@
       .contact-card { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: repeat(2, 1fr); }
     }
+    @media (max-width: 1024px) {
+      .rubber-products-grid { grid-template-columns: repeat(4, 1fr); }
+    }
     @media (max-width: 768px) {
       nav { display: none; }
       .hero { padding: 120px 0 60px; }
       .fittings-grid { grid-template-columns: 1fr; }
-      .rubber-products-grid { grid-template-columns: repeat(2, 1fr); }
+      .rubber-products-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
       .materials-grid { grid-template-columns: 1fr; }
       .form-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr; }
@@ -177,7 +179,8 @@
       section { padding: 60px 0; }
     }
     @media (max-width: 480px) {
-      .rubber-products-grid { grid-template-columns: 1fr; }
+      .rubber-products-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .rubber-product h4 { font-size: 0.8rem; }
     }
   </style>
 </head>
@@ -333,86 +336,84 @@
         <p class="section-desc">We offer a comprehensive selection of industrial sheet rubber products. All of our sheet goods are manufactured to the highest quality standards at competitive prices. Click any product for detailed specifications.</p>
       </div>
 
+      <p class="products-intro">Click any product for more info</p>
+
       <div class="rubber-products-grid">
         <a href="https://www.trinityrubberandmachine.com/s/Neoprene-Sheet.pdf" target="_blank" class="rubber-product">
-          <div class="rubber-product-icon" style="background: linear-gradient(135deg, #1F2937, #374151);"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/></svg></div>
+          <img class="rubber-product-img" src="https://images.squarespace-cdn.com/content/v1/63d9ae71d7f8871333a25dac/1675210359249-RQI1VSPQFKYH0AR2ICG1/Screen+Shot+2022-03-23+at+3.21.18+PM.png" alt="Neoprene Sheet">
           <h4>Neoprene Sheet</h4>
-          <span>Oil & Weather Resistant</span>
-          <div class="download"><svg viewBox="0 0 24 24"><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>PDF Specs</div>
         </a>
         <a href="https://www.trinityrubberandmachine.com/s/Nitrile.pdf" target="_blank" class="rubber-product">
-          <div class="rubber-product-icon" style="background: linear-gradient(135deg, #1E3A8A, #3B82F6);"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/></svg></div>
+          <img class="rubber-product-img" src="https://images.squarespace-cdn.com/content/v1/63d9ae71d7f8871333a25dac/1675210359257-LWMDU3W2KYJ2DFLIANH1/Screen+Shot+2022-03-23+at+3.21.18+PM.png" alt="Nitrile Sheet">
           <h4>Nitrile Sheet</h4>
-          <span>Petroleum Resistant</span>
-          <div class="download"><svg viewBox="0 0 24 24"><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>PDF Specs</div>
         </a>
         <a href="https://www.trinityrubberandmachine.com/s/SBR.pdf" target="_blank" class="rubber-product">
-          <div class="rubber-product-icon" style="background: linear-gradient(135deg, #991B1B, #DC2626);"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/></svg></div>
+          <img class="rubber-product-img" src="https://images.squarespace-cdn.com/content/v1/63d9ae71d7f8871333a25dac/1675210359264-GTP9NQUAQ50SQVN9DR7R/Screen+Shot+2022-03-23+at+3.21.18+PM.png" alt="Black SBR Sheet">
           <h4>Black SBR Sheet</h4>
-          <span>General Purpose</span>
-          <div class="download"><svg viewBox="0 0 24 24"><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>PDF Specs</div>
         </a>
         <a href="https://www.trinityrubberandmachine.com/s/EPDM.pdf" target="_blank" class="rubber-product">
-          <div class="rubber-product-icon" style="background: linear-gradient(135deg, #065F46, #059669);"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/></svg></div>
+          <img class="rubber-product-img" src="https://images.squarespace-cdn.com/content/v1/63d9ae71d7f8871333a25dac/1675210359264-GTP9NQUAQ50SQVN9DR7R/Screen+Shot+2022-03-23+at+3.21.18+PM.png" alt="EPDM">
           <h4>EPDM</h4>
-          <span>Weather & Ozone</span>
-          <div class="download"><svg viewBox="0 0 24 24"><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>PDF Specs</div>
         </a>
         <a href="https://www.trinityrubberandmachine.com/s/GUM-SHEET.pdf" target="_blank" class="rubber-product">
-          <div class="rubber-product-icon" style="background: linear-gradient(135deg, #D97706, #F59E0B);"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/></svg></div>
+          <img class="rubber-product-img" src="https://images.squarespace-cdn.com/content/v1/63d9ae71d7f8871333a25dac/1675210359282-9XHXBYTA2Z2EGTCKFLDC/Screen+Shot+2022-04-11+at+11.13.48+AM.png" alt="Tan Gum Sheet">
           <h4>Tan Gum Sheet</h4>
-          <span>FDA Approved</span>
-          <div class="download"><svg viewBox="0 0 24 24"><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>PDF Specs</div>
         </a>
         <a href="https://www.trinityrubberandmachine.com/s/viton.pdf" target="_blank" class="rubber-product">
-          <div class="rubber-product-icon" style="background: linear-gradient(135deg, #5B21B6, #7C3AED);"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/></svg></div>
+          <img class="rubber-product-img" src="https://images.squarespace-cdn.com/content/v1/63d9ae71d7f8871333a25dac/1675210359345-IB3YPE6QT7NV600FQGIA/viton.png" alt="Viton">
           <h4>Viton</h4>
-          <span>Chemical Resistant</span>
-          <div class="download"><svg viewBox="0 0 24 24"><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>PDF Specs</div>
         </a>
         <a href="https://www.trinityrubberandmachine.com/s/Silicone.pdf" target="_blank" class="rubber-product">
-          <div class="rubber-product-icon" style="background: linear-gradient(135deg, #BE185D, #EC4899);"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/></svg></div>
+          <img class="rubber-product-img" src="https://images.squarespace-cdn.com/content/v1/63d9ae71d7f8871333a25dac/1675210359231-NG12GQ6N5SA5CL3IGFC8/Screen+Shot+2022-03-23+at+3.22.17+PM.png" alt="Silicone Sheet">
           <h4>Silicone Sheet</h4>
-          <span>Extreme Temps</span>
-          <div class="download"><svg viewBox="0 0 24 24"><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>PDF Specs</div>
         </a>
         <a href="https://www.trinityrubberandmachine.com/s/Hypalon.pdf" target="_blank" class="rubber-product">
-          <div class="rubber-product-icon" style="background: linear-gradient(135deg, #0E7490, #06B6D4);"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/></svg></div>
+          <img class="rubber-product-img" src="https://images.squarespace-cdn.com/content/v1/63d9ae71d7f8871333a25dac/1675210359313-59IR536CFGIEUTHSCAW4/hypalon+pic.png" alt="Hypalon">
           <h4>Hypalon</h4>
-          <span>Chemical & UV</span>
-          <div class="download"><svg viewBox="0 0 24 24"><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>PDF Specs</div>
         </a>
         <a href="https://www.trinityrubberandmachine.com/s/Skirtboard.pdf" target="_blank" class="rubber-product">
-          <div class="rubber-product-icon" style="background: linear-gradient(135deg, #374151, #4B5563);"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/></svg></div>
+          <img class="rubber-product-img" src="https://images.squarespace-cdn.com/content/v1/63d9ae71d7f8871333a25dac/1675210359224-1C10SF0D1CJ3HWZACBKB/Screen+Shot+2022-03-23+at+3.25.42+PM.png" alt="Skirtboard">
           <h4>Skirtboard</h4>
-          <span>Abrasion Resistant</span>
-          <div class="download"><svg viewBox="0 0 24 24"><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>PDF Specs</div>
         </a>
         <a href="https://www.trinityrubberandmachine.com/s/Fine-Ribbed-Rubber-Floor.pdf" target="_blank" class="rubber-product">
-          <div class="rubber-product-icon" style="background: linear-gradient(135deg, #78716C, #A8A29E);"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/></svg></div>
-          <h4>Fine Ribbed Floor</h4>
-          <span>Rubber Flooring</span>
-          <div class="download"><svg viewBox="0 0 24 24"><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>PDF Specs</div>
+          <img class="rubber-product-img" src="https://images.squarespace-cdn.com/content/v1/63d9ae71d7f8871333a25dac/1675210359356-4TKMB3YVY42EUN1ZFO2V/ribbed.jpg" alt="Fine Ribbed Mat">
+          <h4>Fine Ribbed Mat</h4>
         </a>
         <a href="https://www.trinityrubberandmachine.com/s/Round-Dot-Rubber-Floor.pdf" target="_blank" class="rubber-product">
-          <div class="rubber-product-icon" style="background: linear-gradient(135deg, #44403C, #78716C);"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/></svg></div>
-          <h4>Round Dot Floor</h4>
-          <span>Rubber Flooring</span>
-          <div class="download"><svg viewBox="0 0 24 24"><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>PDF Specs</div>
+          <img class="rubber-product-img" src="https://images.squarespace-cdn.com/content/v1/63d9ae71d7f8871333a25dac/1675210359373-X6BEQN4TO9EMPJQFG1CU/round%252Bdot.jpg" alt="Round Dot">
+          <h4>Round Dot</h4>
+        </a>
+        <a href="https://www.trinityrubberandmachine.com/s/Fine-Ribbed-Rubber-Floor.pdf" target="_blank" class="rubber-product">
+          <img class="rubber-product-img" src="https://images.squarespace-cdn.com/content/v1/63d9ae71d7f8871333a25dac/1675210359319-Q10UBC2KO5JRG54IBQK6/Diamond%252BPattern%252BFloor%25255B4%25255D.jpg" alt="Diamond Tread Pattern Floor">
+          <h4>Diamond Tread Pattern Floor</h4>
         </a>
         <a href="https://www.trinityrubberandmachine.com/s/Drainage-Rubber-Mat.pdf" target="_blank" class="rubber-product">
-          <div class="rubber-product-icon" style="background: linear-gradient(135deg, #292524, #57534E);"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/></svg></div>
+          <img class="rubber-product-img" src="https://images.squarespace-cdn.com/content/v1/63d9ae71d7f8871333a25dac/1675210359379-G0FH4ODO77J9ODZEJDM1/Drainage.jpg" alt="Drainage Mat">
+          <h4>Drainage Mat</h4>
+        </a>
+        <a href="https://www.trinityrubberandmachine.com/s/Drainage-Rubber-Mat.pdf" target="_blank" class="rubber-product">
+          <img class="rubber-product-img" src="https://images.squarespace-cdn.com/content/v1/63d9ae71d7f8871333a25dac/1675210359297-BEAY0LH9ZVVZE239VXYB/Screen+Shot+2022-04-19+at+12.35.11+PM.png" alt="Bubble Mat">
+          <h4>Bubble Mat</h4>
+        </a>
+        <a href="https://www.trinityrubberandmachine.com/s/Drainage-Rubber-Mat.pdf" target="_blank" class="rubber-product">
+          <img class="rubber-product-img" src="https://images.squarespace-cdn.com/content/v1/63d9ae71d7f8871333a25dac/1675210359388-ZG3HZ7P3Q6SBUX2JT8PW/Grooved%2BMat%255B6%255D.jpg" alt="Grooved Rubber Mat">
           <h4>Grooved Rubber Mat</h4>
-          <span>Drainage Mat</span>
-          <div class="download"><svg viewBox="0 0 24 24"><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>PDF Specs</div>
         </a>
         <a href="https://www.trinityrubberandmachine.com/s/Pebble-Rubber-Mat.pdf" target="_blank" class="rubber-product">
-          <div class="rubber-product-icon" style="background: linear-gradient(135deg, #1C1917, #44403C);"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/></svg></div>
+          <img class="rubber-product-img" src="https://images.squarespace-cdn.com/content/v1/63d9ae71d7f8871333a25dac/1675210359329-3Q8BQLGTK8RYLFQGERIB/Screen+Shot+2022-04-19+at+12.49.54+PM.png" alt="Pebble Rubber Mat">
           <h4>Pebble Rubber Mat</h4>
-          <span>Textured Mat</span>
-          <div class="download"><svg viewBox="0 0 24 24"><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>PDF Specs</div>
+        </a>
+        <a href="https://www.trinityrubberandmachine.com/s/Pebble-Rubber-Mat.pdf" target="_blank" class="rubber-product">
+          <img class="rubber-product-img" src="https://images.squarespace-cdn.com/content/v1/63d9ae71d7f8871333a25dac/1675210359337-5L12BM4HD7UF9P94IZ94/Screen+Shot+2022-04-19+at+12.52.05+PM.png" alt="Hammer Groove Mat">
+          <h4>Hammer Groove Mat</h4>
+        </a>
+        <a href="https://www.trinityrubberandmachine.com/s/Pebble-Rubber-Mat.pdf" target="_blank" class="rubber-product">
+          <img class="rubber-product-img" src="https://images.squarespace-cdn.com/content/v1/63d9ae71d7f8871333a25dac/1675210359394-WSB73VNXY6OF4I24Q0EU/Screen+Shot+2022-04-26+at+10.32.00+AM.png" alt="Hex Cow Stall Mat">
+          <h4>Hex Cow Stall Mat</h4>
         </a>
       </div>
+
+      <a href="https://www.trinityrubberandmachine.com/s/Sheet-Rubber-Tolerances.pdf" target="_blank" class="tolerances-link">Sheet Rubber Tolerances →</a>
 
       <div class="section-header">
         <span class="section-label">Material Guide</span>
