@@ -299,6 +299,10 @@
       gap: 24px;
     }
 
+    .categories__grid--3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
     .category-card {
       background: var(--color-white);
       border-radius: var(--radius-2xl);
@@ -575,6 +579,184 @@
       border-radius: 50%;
     }
 
+    .quick-release-features {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .qr-feature {
+      text-align: center;
+      padding: 32px 24px;
+      background: rgba(255,255,255,0.05);
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: all 0.3s;
+    }
+
+    .qr-feature:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.15);
+      transform: translateY(-4px);
+    }
+
+    .qr-feature__icon {
+      width: 52px;
+      height: 52px;
+      margin: 0 auto 16px;
+      background: rgba(212, 160, 23, 0.15);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .qr-feature__icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--color-accent);
+      fill: none;
+      stroke-width: 2;
+    }
+
+    .qr-feature h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .qr-feature p {
+      font-size: 0.85rem;
+      opacity: 0.75;
+      line-height: 1.5;
+    }
+
+    /* Hose Guard */
+    .hose-guard {
+      background: var(--color-white);
+      padding: 100px 0;
+    }
+
+    .hose-guard__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .hose-guard__content p {
+      font-size: 1.05rem;
+      color: #4B5563;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .hose-guard__versions {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .version-badge {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 20px 24px;
+      border-radius: var(--radius-lg);
+      background: var(--color-light);
+      border: 2px solid transparent;
+      transition: all 0.3s;
+    }
+
+    .version-badge:hover {
+      transform: translateX(8px);
+      border-color: var(--color-secondary);
+      background: var(--color-white);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .version-badge svg {
+      width: 32px;
+      height: 32px;
+      stroke-width: 2;
+      fill: none;
+      flex-shrink: 0;
+    }
+
+    .version-badge--standard svg { stroke: var(--color-secondary); }
+    .version-badge--msha svg { stroke: var(--color-orange); }
+    .version-badge--fras svg { stroke: var(--color-red); }
+
+    .version-badge strong {
+      display: block;
+      font-size: 1rem;
+      color: var(--color-primary);
+      margin-bottom: 2px;
+    }
+
+    .version-badge span {
+      font-size: 0.85rem;
+      color: var(--color-gray);
+    }
+
+    .hose-guard__visual {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .guard-feature {
+      background: var(--color-light);
+      border-radius: var(--radius-xl);
+      padding: 28px;
+      text-align: center;
+      transition: all 0.3s;
+      border: 2px solid transparent;
+    }
+
+    .guard-feature:hover {
+      background: var(--color-white);
+      border-color: var(--color-secondary);
+      box-shadow: var(--shadow-xl);
+      transform: translateY(-4px);
+    }
+
+    .guard-feature__icon {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 16px;
+      background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .guard-feature__icon svg {
+      width: 28px;
+      height: 28px;
+      stroke: var(--color-white);
+      fill: none;
+      stroke-width: 2;
+    }
+
+    .guard-feature h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 8px;
+    }
+
+    .guard-feature p {
+      font-size: 0.85rem;
+      color: var(--color-gray);
+      line-height: 1.5;
+    }
+
     /* Sheet Rubber */
     .sheet-rubber {
       background: var(--color-white);
@@ -621,6 +803,46 @@
     .rubber-card p {
       font-size: 0.8rem;
       color: var(--color-gray);
+    }
+
+    .rubber-grid--downloads {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .rubber-card--link {
+      display: block;
+      text-decoration: none;
+      position: relative;
+    }
+
+    .rubber-card__download {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 12px;
+      padding: 8px 14px;
+      background: var(--color-secondary);
+      color: var(--color-white);
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: all 0.3s;
+    }
+
+    .rubber-card__download svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+    }
+
+    .rubber-card--link:hover .rubber-card__download {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     /* Materials Detail */
@@ -950,10 +1172,13 @@
 
     /* Responsive */
     @media (max-width: 1024px) {
-      .categories__grid { grid-template-columns: 1fr; }
+      .categories__grid, .categories__grid--3 { grid-template-columns: 1fr; }
       .hydraulic__grid { grid-template-columns: 1fr; gap: 60px; }
       .fittings__grid { grid-template-columns: repeat(2, 1fr); }
+      .quick-release-features { grid-template-columns: repeat(2, 1fr); }
+      .hose-guard__grid { grid-template-columns: 1fr; gap: 60px; }
       .rubber-grid { grid-template-columns: repeat(2, 1fr); }
+      .rubber-grid--downloads { grid-template-columns: repeat(3, 1fr); }
       .materials__grid { grid-template-columns: 1fr; }
       .contact__card { grid-template-columns: 1fr; }
       .footer__grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
@@ -984,13 +1209,21 @@
       .category-card__icon { margin: 0 auto; }
       .hydraulic__visual { grid-template-columns: 1fr; }
       .fittings__grid { grid-template-columns: 1fr; }
+      .quick-release-features { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      .hose-guard__visual { grid-template-columns: 1fr; }
       .rubber-grid { grid-template-columns: 1fr; }
+      .rubber-grid--downloads { grid-template-columns: repeat(2, 1fr); }
+      .rubber-card--link .rubber-card__download { opacity: 1; transform: translateY(0); }
       .contact__info, .contact__form { padding: 40px; }
       .form-row--half { grid-template-columns: 1fr; }
       .footer__grid { grid-template-columns: 1fr; }
       .footer__bottom { flex-direction: column; gap: 20px; text-align: center; }
 
       section { padding: 80px 0; }
+    }
+
+    @media (max-width: 480px) {
+      .rubber-grid--downloads { grid-template-columns: 1fr; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1018,6 +1251,7 @@
           <ul>
             <li><a href="/">Home</a></li>
             <li><a href="#hydraulic">Hydraulic Hose</a></li>
+            <li><a href="#fittings">Fittings & Couplings</a></li>
             <li><a href="#sheet-rubber">Sheet Rubber</a></li>
             <li><a href="/custom-gasket-in-decatur">Custom Gaskets</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -1050,15 +1284,28 @@
 
     <section class="categories">
       <div class="container">
-        <div class="categories__grid">
+        <div class="categories__grid categories__grid--3">
           <div class="category-card">
             <div class="category-card__icon" style="background: linear-gradient(135deg, #2563EB, #1D4ED8);">
               <svg viewBox="0 0 24 24" stroke="#fff"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><path d="M12 6v6l4 2"/></svg>
             </div>
             <div class="category-card__content">
               <h3>Hydraulic Hose & Fittings</h3>
-              <p>Custom hydraulic hose assemblies made while you wait. Complete range of fittings, adapters, and hose guards for every application.</p>
+              <p>Custom hydraulic hose assemblies made while you wait. Quick release couplings, adapters, and fittings for every application.</p>
               <a href="#hydraulic" class="category-card__link">
+                Learn More
+                <svg viewBox="0 0 24 24"><path d="M5 12h14m-7-7l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="category-card">
+            <div class="category-card__icon" style="background: linear-gradient(135deg, #EA580C, #DC2626);">
+              <svg viewBox="0 0 24 24" stroke="#fff"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+            <div class="category-card__content">
+              <h3>Hose Guard Protection</h3>
+              <p>High-quality plastic spiral hose guards for hazardous environments. Standard, MSHA, and FRAS versions available.</p>
+              <a href="#hose-guard" class="category-card__link">
                 Learn More
                 <svg viewBox="0 0 24 24"><path d="M5 12h14m-7-7l7 7-7 7"/></svg>
               </a>
@@ -1070,7 +1317,7 @@
             </div>
             <div class="category-card__content">
               <h3>Sheet Rubber Products</h3>
-              <p>Comprehensive selection of industrial sheet rubber — Neoprene, Nitrile, EPDM, Viton, Silicone, and specialty compounds.</p>
+              <p>Comprehensive selection of industrial sheet rubber — Neoprene, Nitrile, EPDM, Viton, Silicone, Hypalon, and more.</p>
               <a href="#sheet-rubber" class="category-card__link">
                 Learn More
                 <svg viewBox="0 0 24 24"><path d="M5 12h14m-7-7l7 7-7 7"/></svg>
@@ -1128,11 +1375,11 @@
       </div>
     </section>
 
-    <section class="fittings">
+    <section class="fittings" id="fittings">
       <div class="container">
         <div class="section-header">
           <span class="section-label">Complete Range</span>
-          <h2 class="section-title">Fittings & Adapters</h2>
+          <h2 class="section-title">Fittings, Adapters & Quick Release</h2>
           <p class="section-desc">A complete range in carbon and stainless steel with operating pressures up to 40,000 PSI</p>
         </div>
         <div class="fittings__grid">
@@ -1162,16 +1409,113 @@
           </article>
           <article class="fitting-card">
             <div class="fitting-card__icon">
-              <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
             </div>
-            <h3>Hose Protection</h3>
-            <p>Spiral guards designed for hazardous environments</p>
+            <h3>Quick Release Couplings</h3>
+            <p>ARGUS innovative coupling design — poppet, flat face, and screw types</p>
             <ul class="fitting-card__specs">
-              <li>Abrasion & impact protection</li>
-              <li>Standard, MSHA, FRAS versions</li>
-              <li>Easy installation design</li>
+              <li>Pressurized connect/disconnect</li>
+              <li>Multi-coupling versions</li>
+              <li>Global OEM partnership</li>
             </ul>
           </article>
+        </div>
+
+        <div class="quick-release-features">
+          <div class="qr-feature">
+            <div class="qr-feature__icon">
+              <svg viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </div>
+            <h4>Advanced FEM & CFD Design</h4>
+            <p>Maximized mechanical and fluid dynamic performance</p>
+          </div>
+          <div class="qr-feature">
+            <div class="qr-feature__icon">
+              <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <h4>International Standards</h4>
+            <p>Fully interchangeable with global standards</p>
+          </div>
+          <div class="qr-feature">
+            <div class="qr-feature__icon">
+              <svg viewBox="0 0 24 24"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+            </div>
+            <h4>Pressurized Connect</h4>
+            <p>Connect and disconnect under pressure</p>
+          </div>
+          <div class="qr-feature">
+            <div class="qr-feature__icon">
+              <svg viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+            </div>
+            <h4>OEM Partnership</h4>
+            <p>Developed with global equipment manufacturers</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hose-guard" id="hose-guard">
+      <div class="container">
+        <div class="hose-guard__grid">
+          <div class="hose-guard__content">
+            <span class="section-label">Protection Solutions</span>
+            <h2 class="section-title">Hose Guard</h2>
+            <p>The high-quality plastic spiral hose guard is specifically designed to perform reliably in hazardous environments where external factors such as abrasion, impacts, and other potentially damaging conditions could otherwise jeopardize the hose's life expectancy.</p>
+            <p>This protective solution features rounded edges that are thoughtfully constructed to allow for easy installation, ensuring that users can quickly and efficiently apply the guard to their hoses without complications.</p>
+            <div class="hose-guard__versions">
+              <div class="version-badge version-badge--standard">
+                <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <div>
+                  <strong>Standard</strong>
+                  <span>General industrial use</span>
+                </div>
+              </div>
+              <div class="version-badge version-badge--msha">
+                <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <div>
+                  <strong>MSHA</strong>
+                  <span>Mining safety approved</span>
+                </div>
+              </div>
+              <div class="version-badge version-badge--fras">
+                <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <div>
+                  <strong>FRAS</strong>
+                  <span>Fire resistant anti-static</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hose-guard__visual">
+            <div class="guard-feature">
+              <div class="guard-feature__icon">
+                <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+              </div>
+              <h4>Abrasion Protection</h4>
+              <p>Guards against external wear and friction damage</p>
+            </div>
+            <div class="guard-feature">
+              <div class="guard-feature__icon">
+                <svg viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              </div>
+              <h4>Impact Resistance</h4>
+              <p>Shields hose from mechanical impacts and crushing</p>
+            </div>
+            <div class="guard-feature">
+              <div class="guard-feature__icon">
+                <svg viewBox="0 0 24 24"><path d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
+              </div>
+              <h4>Easy Installation</h4>
+              <p>Rounded edges for quick and efficient application</p>
+            </div>
+            <div class="guard-feature">
+              <div class="guard-feature__icon">
+                <svg viewBox="0 0 24 24"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+              </div>
+              <h4>Extended Life</h4>
+              <p>Prolongs hose service life in harsh conditions</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1181,49 +1525,90 @@
         <div class="section-header">
           <span class="section-label">Premium Materials</span>
           <h2 class="section-title">Sheet Rubber Products</h2>
-          <p class="section-desc">Comprehensive selection of industrial sheet rubber for gasketing, sealing, padding, and custom parts</p>
+          <p class="section-desc">Comprehensive selection of industrial sheet rubber for gasketing, sealing, padding, and custom parts. Click any product for detailed specifications.</p>
         </div>
-        <div class="rubber-grid">
-          <div class="rubber-card">
+        <div class="rubber-grid rubber-grid--downloads">
+          <a href="https://www.trinityrubberandmachine.com/s/Neoprene-Sheet.pdf" target="_blank" class="rubber-card rubber-card--link">
             <div class="rubber-card__swatch" style="background: linear-gradient(135deg, #1F2937, #374151);"></div>
-            <h4>Neoprene</h4>
+            <h4>Neoprene Sheet</h4>
             <p>Oil & Weather Resistant</p>
-          </div>
-          <div class="rubber-card">
+            <span class="rubber-card__download">
+              <svg viewBox="0 0 24 24"><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+              PDF Specs
+            </span>
+          </a>
+          <a href="https://www.trinityrubberandmachine.com/s/Nitrile.pdf" target="_blank" class="rubber-card rubber-card--link">
             <div class="rubber-card__swatch" style="background: linear-gradient(135deg, #1E3A8A, #3B82F6);"></div>
-            <h4>Nitrile</h4>
+            <h4>Nitrile Sheet</h4>
             <p>Petroleum Resistant</p>
-          </div>
-          <div class="rubber-card">
+            <span class="rubber-card__download">
+              <svg viewBox="0 0 24 24"><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+              PDF Specs
+            </span>
+          </a>
+          <a href="https://www.trinityrubberandmachine.com/s/SBR.pdf" target="_blank" class="rubber-card rubber-card--link">
             <div class="rubber-card__swatch" style="background: linear-gradient(135deg, #991B1B, #DC2626);"></div>
-            <h4>Red Rubber (SBR)</h4>
+            <h4>Black SBR Sheet</h4>
             <p>General Purpose</p>
-          </div>
-          <div class="rubber-card">
+            <span class="rubber-card__download">
+              <svg viewBox="0 0 24 24"><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+              PDF Specs
+            </span>
+          </a>
+          <a href="https://www.trinityrubberandmachine.com/s/EPDM.pdf" target="_blank" class="rubber-card rubber-card--link">
             <div class="rubber-card__swatch" style="background: linear-gradient(135deg, #065F46, #059669);"></div>
             <h4>EPDM</h4>
             <p>Weather & Ozone</p>
-          </div>
-          <div class="rubber-card">
+            <span class="rubber-card__download">
+              <svg viewBox="0 0 24 24"><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+              PDF Specs
+            </span>
+          </a>
+          <a href="https://www.trinityrubberandmachine.com/s/GUM-SHEET.pdf" target="_blank" class="rubber-card rubber-card--link">
             <div class="rubber-card__swatch" style="background: linear-gradient(135deg, #D97706, #F59E0B);"></div>
-            <h4>Tan Gum</h4>
+            <h4>Tan Gum Sheet</h4>
             <p>FDA Approved</p>
-          </div>
-          <div class="rubber-card">
+            <span class="rubber-card__download">
+              <svg viewBox="0 0 24 24"><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+              PDF Specs
+            </span>
+          </a>
+          <a href="https://www.trinityrubberandmachine.com/s/viton.pdf" target="_blank" class="rubber-card rubber-card--link">
             <div class="rubber-card__swatch" style="background: linear-gradient(135deg, #5B21B6, #7C3AED);"></div>
-            <h4>Viton® (FKM)</h4>
+            <h4>Viton®</h4>
             <p>Chemical Resistant</p>
-          </div>
-          <div class="rubber-card">
+            <span class="rubber-card__download">
+              <svg viewBox="0 0 24 24"><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+              PDF Specs
+            </span>
+          </a>
+          <a href="https://www.trinityrubberandmachine.com/s/Silicone.pdf" target="_blank" class="rubber-card rubber-card--link">
             <div class="rubber-card__swatch" style="background: linear-gradient(135deg, #BE185D, #EC4899);"></div>
-            <h4>Silicone</h4>
+            <h4>Silicone Sheet</h4>
             <p>Extreme Temps</p>
-          </div>
-          <div class="rubber-card">
-            <div class="rubber-card__swatch" style="background: linear-gradient(135deg, #78716C, #A8A29E);"></div>
-            <h4>Butyl</h4>
-            <p>Gas Permeation</p>
-          </div>
+            <span class="rubber-card__download">
+              <svg viewBox="0 0 24 24"><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+              PDF Specs
+            </span>
+          </a>
+          <a href="https://www.trinityrubberandmachine.com/s/Hypalon.pdf" target="_blank" class="rubber-card rubber-card--link">
+            <div class="rubber-card__swatch" style="background: linear-gradient(135deg, #0E7490, #06B6D4);"></div>
+            <h4>Hypalon®</h4>
+            <p>Chemical & UV</p>
+            <span class="rubber-card__download">
+              <svg viewBox="0 0 24 24"><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+              PDF Specs
+            </span>
+          </a>
+          <a href="https://www.trinityrubberandmachine.com/s/Skirtboard.pdf" target="_blank" class="rubber-card rubber-card--link">
+            <div class="rubber-card__swatch" style="background: linear-gradient(135deg, #374151, #4B5563);"></div>
+            <h4>Skirtboard</h4>
+            <p>Abrasion Resistant</p>
+            <span class="rubber-card__download">
+              <svg viewBox="0 0 24 24"><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+              PDF Specs
+            </span>
+          </a>
         </div>
       </div>
     </section>
@@ -1306,6 +1691,90 @@
               <span class="material-card__tag">FDA Approved</span>
               <span class="material-card__tag">Non-Marking</span>
               <span class="material-card__tag">Food Safe</span>
+            </div>
+          </article>
+          <article class="material-card">
+            <div class="material-card__header">
+              <div class="material-card__abbr" style="background: linear-gradient(135deg, #0E7490, #06B6D4);">HYP</div>
+              <h3>Hypalon® Rubber</h3>
+            </div>
+            <p>With resistance to most chemicals, temperature extremes, ultraviolet light, and oil, Hypalon® chlorosulfonated polyethylene is used in industrial and automotive applications where high performance is critical.</p>
+            <div class="material-card__tags">
+              <span class="material-card__tag">Chemical Resistant</span>
+              <span class="material-card__tag">UV Resistant</span>
+              <span class="material-card__tag">Automotive</span>
+            </div>
+          </article>
+          <article class="material-card">
+            <div class="material-card__header">
+              <div class="material-card__abbr" style="background: linear-gradient(135deg, #78716C, #A8A29E);">BTL</div>
+              <h3>Butyl Rubber</h3>
+            </div>
+            <p>Exceptionally low gas and moisture permeability with outstanding resistance to heat aging, weather, ozone, chemical attack, flexing, abrasion and tearing. Excellent electrical insulation. Not recommended for petroleum oils.</p>
+            <div class="material-card__tags">
+              <span class="material-card__tag">Gas Barrier</span>
+              <span class="material-card__tag">Heat Resistant</span>
+              <span class="material-card__tag">Electrical Insulation</span>
+            </div>
+          </article>
+          <article class="material-card">
+            <div class="material-card__header">
+              <div class="material-card__abbr" style="background: linear-gradient(135deg, #F97316, #FDBA74);">SPG</div>
+              <h3>Sponge Rubber</h3>
+            </div>
+            <p>Available plain or with PSA backing. Excellent compression for sealing against air, moisture, light and dust penetration. Blend of Neoprene and EPDM provides moderate oil and ozone resistance. Meets various industry specifications.</p>
+            <div class="material-card__tags">
+              <span class="material-card__tag">Compression Seal</span>
+              <span class="material-card__tag">PSA Available</span>
+              <span class="material-card__tag">Weather Strip</span>
+            </div>
+          </article>
+          <article class="material-card">
+            <div class="material-card__header">
+              <div class="material-card__abbr" style="background: linear-gradient(135deg, #A16207, #D4A017);">CRK</div>
+              <h3>Cork Rubber</h3>
+            </div>
+            <p>A mixture of first grade granulated cork and synthetic rubber polymer. Combines the high resilience of rubber with the compressibility of cork. Manufactured under heat and pressure with glycerin-glue binder.</p>
+            <div class="material-card__tags">
+              <span class="material-card__tag">Compressible</span>
+              <span class="material-card__tag">Resilient</span>
+              <span class="material-card__tag">Vibration Dampening</span>
+            </div>
+          </article>
+          <article class="material-card">
+            <div class="material-card__header">
+              <div class="material-card__abbr" style="background: linear-gradient(135deg, #4B5563, #6B7280);">CLT</div>
+              <h3>Cloth Inserted Rubber</h3>
+            </div>
+            <p>For maximum conformity and deformation resistance. Fabric reinforced rubber with good dimensional stability under high compression loads. Custom compounding available to match unique application requirements.</p>
+            <div class="material-card__tags">
+              <span class="material-card__tag">Reinforced</span>
+              <span class="material-card__tag">High Load</span>
+              <span class="material-card__tag">Custom Compounds</span>
+            </div>
+          </article>
+          <article class="material-card">
+            <div class="material-card__header">
+              <div class="material-card__abbr" style="background: linear-gradient(135deg, #0D9488, #14B8A6);">BRG</div>
+              <h3>AASHTO Bearing Pad</h3>
+            </div>
+            <p>Neoprene bearing pads provide uniform load transfer from beam to substructure. Permit beam rotation, absorb vibration, prevent sound transfer, and accommodate expansion/contraction in bridge and precast concrete structures.</p>
+            <div class="material-card__tags">
+              <span class="material-card__tag">Bridge Bearings</span>
+              <span class="material-card__tag">Load Transfer</span>
+              <span class="material-card__tag">Vibration Control</span>
+            </div>
+          </article>
+          <article class="material-card">
+            <div class="material-card__header">
+              <div class="material-card__abbr" style="background: linear-gradient(135deg, #374151, #4B5563);">SKT</div>
+              <h3>Skirtboard Rubber</h3>
+            </div>
+            <p>Abrasion resistant, flexible, and excellent for use as conveyor skirting, chute lining, snow plow blades, and more. High durability for demanding industrial environments.</p>
+            <div class="material-card__tags">
+              <span class="material-card__tag">Abrasion Resistant</span>
+              <span class="material-card__tag">Conveyor Skirting</span>
+              <span class="material-card__tag">Heavy Duty</span>
             </div>
           </article>
         </div>
