@@ -1,48 +1,94 @@
-# Idaho Pharmacy, LLC — Long-Term Care Pharmacy
+# Idaho Pharmacy — SpaceX-Inspired Website
 
-This repository contains the Idaho Pharmacy marketing homepage deliverables: a Figma-ready specification plus a production-ready responsive HTML/CSS/JS implementation with exportable assets.
+A modern, cinematic website for Idaho Pharmacy, LLC featuring a SpaceX-inspired design with full-screen sections, dark theme, and dramatic visuals.
 
-## Contents
-- `index.html` — semantic one-page layout with sticky header, hero, services, map, experts, onboarding CTA, footer, and onboarding modal.
-- `styles.css` — custom CSS using CSS variables, responsive grid rules, expert/service card styling, and interaction states.
-- `script.js` — minimal enhancements (mobile nav, sticky header, tooltip, modal, form validation).
-- `assets/` — SVG icon system, Idaho mountain background, Idaho map, logo, and optimized hero/team imagery (WebP + PNG).
-- `docs/figma-design-spec.md` — detailed layout + component directions for recreating the file in Figma (desktop + mobile frames, component library requirements).
-- `docs/style-guide.md` + `docs/style-guide.pdf` — developer handoff and accessibility checklist.
-- `figma/README.md` — step-by-step instructions for translating the spec into a .fig file with auto-layout components.
+## Design Features
 
-## Getting Started
-1. Open `index.html` in any modern browser.
-2. Update asset paths or text via `data-cms-key` attributes if integrating with a CMS.
-3. For production, minify `styles.css` / `script.js` or integrate into your pipeline.
+### SpaceX-Style Elements
+- **Full-screen sections** with scroll snap behavior
+- **Dark theme** with pure black background
+- **Minimalist navigation** with sticky header
+- **Bold typography** up to 120px hero text
+- **Dramatic gradients** and visual effects
+- **Smooth scroll animations** and parallax effects
 
-### Development Notes
-- No build tooling is required; however, the CSS is Tailwind-ready via utility-like naming and CSS variables if you prefer to port it.
-- `script.js` currently simulates network submission (`fakeSubmit`). Replace with a real `fetch` call inside `handleFormSubmit` and update the `data-endpoint` attribute on `.contact-form`.
-- eMAR integration CTAs are grouped under the Services section; wire up actual URLs or API docs as needed.
-- Hero illustration + map pins use lightweight CSS animations (`floatCard`, `pulsePin`). A `prefers-reduced-motion` query is in place so motion-sensitive users only see static states.
+### Sections
+1. **Hero** - Full-screen intro with mountain silhouette and gradient glow
+2. **Services** - Grid of 6 service cards with hover effects
+3. **Coverage** - Idaho map visualization with pulsing markers
+4. **eMAR Integration** - Technology partners showcase
+5. **Facilities** - Types of facilities served
+6. **Experts** - Team section with overlay image
+7. **CTA** - Call-to-action banner
+8. **Contact** - Full contact form with facility details
 
-### Assets & Export
-- Icons are exported as accessible SVG (24–64px artboards) in `assets/images/`.
-- Bitmap placeholders exist in both `.webp` and `.png` for browsers without WebP support.
-- Additional asset exports (map, logo, hero artwork) are organized for quick download.
+## Tech Stack
 
-### Figma Guidance
-- Recreate the provided spec in Figma using the measurements and components defined in `docs/figma-design-spec.md`.
-- Set up auto-layout for navigation, cards, buttons, hero grid, and footer stacks.
-- Include frames for Desktop 1440, Tablet 1024, and Mobile 375.
-- Build a shared component library (Buttons, Cards, Form Fields, Map, Icon Set) with color and text styles matching the provided tokens.
-- Mirror the prototype cues described under “Micro-Interactions & Prototype” inside the spec so engineering handoff can map to CSS animations already implemented.
+- HTML5 (semantic structure)
+- CSS3 (custom properties, grid, flexbox, animations)
+- Vanilla JavaScript (intersection observer, scroll effects)
+- Google Fonts (Inter)
 
-### Accessibility Checklist
-- Skip link jumps to `#main-content`.
-- Sticky header focus order preserved on mobile via nav toggle `aria-expanded`.
-- Map pins, modal, and form status messages use `aria-live` updates.
-- Color palette meets WCAG AA (see `docs/style-guide.md`).
+## Quick Start
 
-## Packaging
-- Run `zip -r code.zip index.html styles.css script.js assets docs README.md` to ship the code bundle.
-- Run `zip -r assets.zip assets` for a standalone asset archive.
+```bash
+# Open directly in browser
+open index.html
+
+# Or use a local server
+python -m http.server 8000
+npx serve
+```
+
+## File Structure
+
+```
+├── index.html          # Main HTML
+├── styles.css          # All styles
+├── script.js           # Interactions
+├── assets/
+│   └── images/         # SVG icons, photos
+├── docs/
+│   ├── style-guide.md
+│   └── figma-design-spec.md
+└── README.md
+```
+
+## Color Palette
+
+| Color | Hex | Usage |
+|-------|-----|-------|
+| Background | #000000 | Main background |
+| Surface | #111111 | Cards, forms |
+| Primary | #1E4637 | CTA section, accents |
+| Secondary | #224E7A | Secondary elements |
+| Accent | #C89F4A | Highlights, labels |
+| Text | #FFFFFF | Primary text |
+| Text Muted | rgba(255,255,255,0.7) | Secondary text |
+
+## Responsive Breakpoints
+
+- **Desktop**: 1024px+
+- **Tablet**: 768px - 1024px
+- **Mobile**: < 768px
+
+## Browser Support
+
+- Chrome 90+
+- Firefox 88+
+- Safari 14+
+- Edge 90+
+
+## Features
+
+- Scroll snap for section navigation
+- Parallax hero effect
+- Intersection Observer animations
+- Form validation and submission
+- Mobile navigation drawer
+- Reduced motion support
+- Keyboard navigation (ESC to close menu)
 
 ## License
-All branding copy is provided by Idaho Pharmacy, LLC. Artwork is bespoke to this mockup and free to modify for Idaho Pharmacy initiatives.
+
+© 2026 Idaho Pharmacy, LLC. All rights reserved.

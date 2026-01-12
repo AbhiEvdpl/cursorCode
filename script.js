@@ -1,149 +1,138 @@
-const vpLoader = document.getElementById('vp-loader');
-const hideLoader = () => {
-  if (vpLoader) {
-    vpLoader.classList.add('is-hidden');
-    vpLoader.addEventListener('animationend', () => vpLoader.remove(), { once: true });
-  }
-};
-if (document.readyState === 'complete') {
-  hideLoader();
-} else {
-  window.addEventListener('load', hideLoader);
-}
-
-const navToggle = document.querySelector('.nav-toggle');
-const primaryNav = document.querySelector('.primary-nav');
-const header = document.querySelector('.site-header');
-const tooltip = document.querySelector('.map-tooltip');
-const mapPins = document.querySelectorAll('.map-pin');
-const modal = document.getElementById('onboarding-modal');
-const modalForm = modal?.querySelector('form');
-const modalFormContainer = modal?.querySelector('.modal__form');
-const modalTemplate = document.getElementById('onboarding-form-template');
-const openModalButtons = document.querySelectorAll('[data-open-modal="onboarding"]');
-const modalCloseBtn = modal?.querySelector('.modal__close');
+const header = document.getElementById('header');
+const nav = document.getElementById('nav');
+const navToggle = document.getElementById('nav-toggle');
+const contactForm = document.getElementById('contact-form');
 const yearEl = document.getElementById('year');
-const contactForm = document.querySelector('.contact-form');
+const sections = document.querySelectorAll('.section');
 
-if (yearEl) {
-  yearEl.textContent = new Date().getFullYear();
-}
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-if (modalTemplate && modalFormContainer && modalFormContainer.children.length === 0) {
-  modalFormContainer.appendChild(modalTemplate.content.cloneNode(true));
-}
+window.addEventListener('scroll', () => {
+  header?.classList.toggle('scrolled', window.scrollY > 50);
+}, { passive: true });
 
 navToggle?.addEventListener('click', () => {
-  const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-  navToggle.setAttribute('aria-expanded', String(!expanded));
-  primaryNav?.classList.toggle('open');
-  document.body.classList.toggle('nav-open');
+  navToggle.classList.toggle('active');
+  nav?.classList.toggle('open');
+  document.body.style.overflow = nav?.classList.contains('open') ? 'hidden' : '';
 });
 
-primaryNav?.querySelectorAll('a').forEach((link) => {
+nav?.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
-    if (window.innerWidth <= 960 && primaryNav.classList.contains('open')) {
-      navToggle?.click();
+    navToggle?.classList.remove('active');
+    nav?.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+});
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
     }
   });
 });
 
-window.addEventListener('scroll', () => {
-  const offset = window.scrollY;
-  header?.classList.toggle('is-scrolled', offset > 10);
-});
-
-mapPins.forEach((pin) => {
-  const showTooltip = () => {
-    if (!tooltip) return;
-    tooltip.textContent = pin.dataset.region || '';
-    tooltip.style.opacity = '1';
-  };
-  const hideTooltip = () => {
-    if (!tooltip) return;
-    tooltip.style.opacity = '0';
-  };
-  pin.addEventListener('mouseenter', showTooltip);
-  pin.addEventListener('focus', showTooltip);
-  pin.addEventListener('mouseleave', hideTooltip);
-  pin.addEventListener('blur', hideTooltip);
-});
-
-const openModal = () => {
-  if (!modal) return;
-  if (typeof modal.showModal === 'function') {
-    modal.showModal();
-  } else {
-    modal.setAttribute('open', 'true');
-  }
+const observerOptions = {
+  threshold: 0.15,
+  rootMargin: '-5% 0px -5% 0px'
 };
 
-const closeModal = () => {
-  if (!modal) return;
-  if (typeof modal.close === 'function') {
-    modal.close();
-  }
-  modal.removeAttribute('open');
-};
+const fadeInObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in-view');
+    }
+  });
+}, observerOptions);
 
-openModalButtons.forEach((btn) => btn.addEventListener('click', openModal));
-modalCloseBtn?.addEventListener('click', (event) => {
-  event.preventDefault();
-  closeModal();
+document.querySelectorAll('.section-content, .service-card, .facility-card, .expert-feature, .region').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(30px)';
+  el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+  fadeInObserver.observe(el);
 });
 
-modal?.addEventListener('click', (event) => {
-  if (event.target === modal) {
-    closeModal();
+const style = document.createElement('style');
+style.textContent = `.in-view { opacity: 1 !important; transform: translateY(0) !important; }`;
+document.head.appendChild(style);
+
+document.querySelectorAll('.service-card, .facility-card').forEach((card, index) => {
+  card.style.transitionDelay = `${index * 0.1}s`;
+});
+
+contactForm?.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const btn = contactForm.querySelector('button[type="submit"]');
+  const originalText = btn.textContent;
+  
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  btn.style.opacity = '0.7';
+  
+  await new Promise(resolve => setTimeout(resolve, 1500));
+  
+  btn.textContent = 'Request Submitted!';
+  btn.style.background = '#1E4637';
+  btn.style.opacity = '1';
+  contactForm.reset();
+  
+  setTimeout(() => {
+    btn.textContent = originalText;
+    btn.style.background = '';
+    btn.disabled = false;
+  }, 3000);
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    navToggle?.classList.remove('active');
+    nav?.classList.remove('open');
+    document.body.style.overflow = '';
   }
 });
 
-const statusMessage = document.createElement('p');
-statusMessage.className = 'form-status';
-statusMessage.setAttribute('role', 'status');
-statusMessage.setAttribute('aria-live', 'polite');
-contactForm?.appendChild(statusMessage);
+const hero = document.querySelector('.hero');
+if (hero && window.innerWidth > 768) {
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY;
+    const heroContent = hero.querySelector('.hero-content');
+    const scrollIndicator = hero.querySelector('.scroll-indicator');
+    
+    if (heroContent && scrolled < window.innerHeight) {
+      heroContent.style.transform = `translateY(${scrolled * 0.4}px)`;
+      heroContent.style.opacity = 1 - (scrolled / (window.innerHeight * 0.8));
+    }
+    
+    if (scrollIndicator) {
+      scrollIndicator.style.opacity = 1 - (scrolled / 200);
+    }
+  }, { passive: true });
+}
 
-const modalStatus = document.createElement('p');
-modalStatus.className = 'form-status';
-modalStatus.setAttribute('role', 'status');
-modalStatus.setAttribute('aria-live', 'polite');
-modalForm?.appendChild(modalStatus);
+const statObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const stats = entry.target.querySelectorAll('.stat-value');
+      stats.forEach(stat => {
+        const text = stat.textContent;
+        stat.style.opacity = '0';
+        setTimeout(() => {
+          stat.style.transition = 'opacity 0.5s ease';
+          stat.style.opacity = '1';
+        }, 300);
+      });
+      statObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
 
-const fakeSubmit = () => new Promise((resolve) => setTimeout(resolve, 600));
+const coverageStats = document.querySelector('.coverage-stats');
+if (coverageStats) statObserver.observe(coverageStats);
 
-const handleFormSubmit = async (form, messageEl) => {
-  if (!form.reportValidity()) {
-    return false;
-  }
-  const formData = new FormData(form);
-  const payload = Object.fromEntries(formData.entries());
-  messageEl.textContent = 'Sending…';
-  form.classList.add('is-submitting');
-  try {
-    await fakeSubmit(payload);
-    messageEl.textContent = 'Thank you! Our onboarding team will reach out shortly.';
-    form.reset();
-    return true;
-  } catch (error) {
-    console.error(error);
-    messageEl.textContent = 'Something went wrong. Please try again.';
-    return false;
-  } finally {
-    form.classList.remove('is-submitting');
-  }
-};
-
-contactForm?.addEventListener('submit', (event) => {
-  event.preventDefault();
-  handleFormSubmit(contactForm, statusMessage);
+const pulses = document.querySelectorAll('.map-pulse');
+pulses.forEach((pulse, i) => {
+  pulse.style.animationDelay = `${i * 0.5}s`;
 });
-
-modalForm?.addEventListener('submit', async (event) => {
-  event.preventDefault();
-  const success = await handleFormSubmit(modalForm, modalStatus);
-  if (success) {
-    setTimeout(closeModal, 400);
-  }
-});
-*** End of File

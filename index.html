@@ -3,339 +3,304 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Idaho Pharmacy, LLC is Idaho's trusted long-term care pharmacy partner delivering dedicated LTC expertise, delivery routes, eMAR integrations, and onboarding support statewide.">
-  <title>Idaho Pharmacy, LLC — Long-Term Care Pharmacy Partner</title>
+  <meta name="description" content="Idaho Pharmacy, LLC — Idaho's trusted long-term care pharmacy partner. Dedicated LTC expertise, daily delivery routes, eMAR integrations, and onboarding support statewide.">
+  <title>Idaho Pharmacy — Long-Term Care Pharmacy Partner</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Lato:wght@400;600&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="vp-loader" id="vp-loader" aria-label="Loading page content" role="status">
-    <div class="vp-loader__spinner">
-      <svg viewBox="0 0 50 50" aria-hidden="true">
-        <circle cx="25" cy="25" r="20"></circle>
-      </svg>
-    </div>
-    <span class="vp-loader__text">Idaho Pharmacy</span>
-  </div>
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-  <header class="site-header" data-cms-key="header">
-    <div class="container header__layout">
-      <a class="brand" href="#home" aria-label="Idaho Pharmacy home">
-        <img src="assets/images/logo.svg" alt="Idaho Pharmacy logo">
-      </a>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <nav class="primary-nav" id="primary-navigation">
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#service-areas">Service Areas</a></li>
-          <li><a href="#emar">eMAR Integration</a></li>
-          <li><a href="#onboarding">Onboarding</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-      <div class="header__cta">
-        <button class="btn btn--primary" data-open-modal="onboarding" data-cms-key="cta-start">Start Service</button>
-      </div>
-    </div>
+  <header class="header" id="header">
+    <a href="#hero" class="logo">
+      <img src="assets/images/logo.svg" alt="Idaho Pharmacy">
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#services">Services</a>
+      <a href="#coverage">Coverage</a>
+      <a href="#emar">eMAR</a>
+      <a href="#experts">Our Team</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" class="header-cta">Start Service</a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+    </button>
   </header>
 
-  <main id="main-content">
-    <section class="hero" id="home">
-      <div class="ski-lift-container" aria-hidden="true">
-        <div class="ski-lift-cable"></div>
-        <div class="ski-lift">
-          <div class="ski-lift__gondola">
-            <svg width="65" height="53" viewBox="0 0 650 534" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="gondolaGrad1" x1="325" y1="90" x2="325" y2="443" gradientUnits="userSpaceOnUse">
-                  <stop stop-color="#FAFAFA"/>
-                  <stop offset="1" stop-color="#E8E8E8"/>
-                </linearGradient>
-              </defs>
-              <line x1="325" y1="0" x2="325" y2="100" stroke="#4A545E" stroke-width="4"/>
-              <rect x="-21" y="90" width="692" height="353" rx="27" fill="url(#gondolaGrad1)" transform="translate(0, 0)"/>
-              <rect x="50" y="140" width="180" height="200" rx="12" fill="#88C0E6" fill-opacity="0.6"/>
-              <rect x="420" y="140" width="180" height="200" rx="12" fill="#88C0E6" fill-opacity="0.6"/>
-              <rect x="250" y="140" width="150" height="200" rx="12" fill="#88C0E6" fill-opacity="0.6"/>
-              <rect x="0" y="400" width="650" height="50" rx="10" fill="#1E4637"/>
-            </svg>
-          </div>
-        </div>
-        <div class="ski-lift ski-lift--delayed">
-          <div class="ski-lift__gondola">
-            <svg width="65" height="53" viewBox="0 0 650 534" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="gondolaGrad2" x1="325" y1="90" x2="325" y2="443" gradientUnits="userSpaceOnUse">
-                  <stop stop-color="#FAFAFA"/>
-                  <stop offset="1" stop-color="#E8E8E8"/>
-                </linearGradient>
-              </defs>
-              <line x1="325" y1="0" x2="325" y2="100" stroke="#4A545E" stroke-width="4"/>
-              <rect x="-21" y="90" width="692" height="353" rx="27" fill="url(#gondolaGrad2)" transform="translate(0, 0)"/>
-              <rect x="50" y="140" width="180" height="200" rx="12" fill="#88C0E6" fill-opacity="0.6"/>
-              <rect x="420" y="140" width="180" height="200" rx="12" fill="#88C0E6" fill-opacity="0.6"/>
-              <rect x="250" y="140" width="150" height="200" rx="12" fill="#88C0E6" fill-opacity="0.6"/>
-              <rect x="0" y="400" width="650" height="50" rx="10" fill="#224E7A"/>
-            </svg>
-          </div>
-        </div>
-        <div class="ski-lift-cable" style="top: 60px;"></div>
-        <div class="ski-lift ski-lift--reverse">
-          <div class="ski-lift__gondola">
-            <svg width="65" height="53" viewBox="0 0 650 534" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="gondolaGrad3" x1="325" y1="90" x2="325" y2="443" gradientUnits="userSpaceOnUse">
-                  <stop stop-color="#FAFAFA"/>
-                  <stop offset="1" stop-color="#E8E8E8"/>
-                </linearGradient>
-              </defs>
-              <line x1="325" y1="0" x2="325" y2="100" stroke="#4A545E" stroke-width="4"/>
-              <rect x="-21" y="90" width="692" height="353" rx="27" fill="url(#gondolaGrad3)" transform="translate(0, 0)"/>
-              <rect x="50" y="140" width="180" height="200" rx="12" fill="#88C0E6" fill-opacity="0.6"/>
-              <rect x="420" y="140" width="180" height="200" rx="12" fill="#88C0E6" fill-opacity="0.6"/>
-              <rect x="250" y="140" width="150" height="200" rx="12" fill="#88C0E6" fill-opacity="0.6"/>
-              <rect x="0" y="400" width="650" height="50" rx="10" fill="#C89F4A"/>
-            </svg>
-          </div>
-        </div>
-        <div class="ski-lift ski-lift--reverse ski-lift--reverse-delayed">
-          <div class="ski-lift__gondola">
-            <svg width="65" height="53" viewBox="0 0 650 534" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="gondolaGrad4" x1="325" y1="90" x2="325" y2="443" gradientUnits="userSpaceOnUse">
-                  <stop stop-color="#FAFAFA"/>
-                  <stop offset="1" stop-color="#E8E8E8"/>
-                </linearGradient>
-              </defs>
-              <line x1="325" y1="0" x2="325" y2="100" stroke="#4A545E" stroke-width="4"/>
-              <rect x="-21" y="90" width="692" height="353" rx="27" fill="url(#gondolaGrad4)" transform="translate(0, 0)"/>
-              <rect x="50" y="140" width="180" height="200" rx="12" fill="#88C0E6" fill-opacity="0.6"/>
-              <rect x="420" y="140" width="180" height="200" rx="12" fill="#88C0E6" fill-opacity="0.6"/>
-              <rect x="250" y="140" width="150" height="200" rx="12" fill="#88C0E6" fill-opacity="0.6"/>
-              <rect x="0" y="400" width="650" height="50" rx="10" fill="#1E4637"/>
-            </svg>
-          </div>
+  <main class="main">
+    <!-- HERO -->
+    <section class="section hero" id="hero">
+      <div class="hero-bg">
+        <div class="hero-gradient"></div>
+        <div class="hero-mountains">
+          <img src="assets/images/hero-mountains.svg" alt="">
         </div>
       </div>
-      <div class="container hero__grid">
-        <div class="hero__content">
-          <p class="eyebrow" data-cms-key="hero-tag">Idaho's Trusted Long-Term Care Pharmacy Partner</p>
-          <h1 data-cms-key="hero-headline">Your Idaho Long-Term Care Pharmacy Partner</h1>
-          <p class="hero__subhead" data-cms-key="hero-subhead">Welcome to Idaho Pharmacy, LLC. — Idaho's Trusted Long-Term Care Pharmacy Partner.</p>
-          <p class="hero__body" data-cms-key="hero-body-one">Idaho Pharmacy is a dedicated, independent, locally owned and operated, Idaho long-term care (LTC) pharmacy, serving skilled nursing facilities, assisted living communities, memory care, group homes, behavioral health programs, home health, hospice, and other long-term care providers across the state.</p>
-          <p class="hero__body" data-cms-key="hero-body-two">We specialize exclusively in LTC pharmacy services—no retail distractions, no walk-ins—so your residents and staff receive fast, accurate, and dependable medication support backed by Idaho-based expertise.</p>
-          <div class="hero__actions">
-            <button class="btn btn--primary" data-open-modal="onboarding">Start Service</button>
-            <a class="btn btn--ghost" href="#onboarding" data-cms-key="cta-facility">Facility Onboarding</a>
-          </div>
-          <ul class="hero__list">
-            <li>Seamless eMAR/EHR integration (PointClickCare, QuickMAR, Yardi, etc.)</li>
-            <li>Dedicated onboarding specialists to support facilities</li>
-            <li>Daily delivery routes across Idaho</li>
-          </ul>
+      <div class="hero-content">
+        <p class="hero-eyebrow">Idaho's Trusted LTC Pharmacy</p>
+        <h1 class="hero-title">
+          <span>LONG-TERM</span>
+          <span>CARE</span>
+          <span class="accent">EXCELLENCE</span>
+        </h1>
+        <p class="hero-subtitle">Dedicated pharmacy services for skilled nursing facilities, assisted living, memory care, and hospice across Idaho.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Start Service</a>
+          <a href="#services" class="btn btn-ghost">Explore Services</a>
         </div>
-        <div class="hero__visual">
-          <picture>
-            <source srcset="assets/images/hero-courier.webp" type="image/webp">
-            <img src="assets/images/hero-courier.png" alt="Pharmacist delivering long-term care medications" loading="lazy">
-          </picture>
-          <div class="hero__quote" role="note">
-            <p>“Idaho Pharmacy keeps our Memory Care residents safe and on schedule.”</p>
-            <span>Director of Nursing, Boise</span>
+      </div>
+      <div class="scroll-indicator">
+        <span>Scroll to explore</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section services" id="services">
+      <div class="section-bg">
+        <div class="grid-pattern"></div>
+      </div>
+      <div class="section-content">
+        <p class="section-eyebrow">Our Services</p>
+        <h2 class="section-title">Why Facilities<br>Choose Us</h2>
+      </div>
+      <div class="services-grid">
+        <article class="service-card">
+          <div class="service-icon">
+            <img src="assets/images/icon-after-hours.svg" alt="">
+          </div>
+          <h3>24/7 Pharmacist Support</h3>
+          <p>After-hours access to Idaho-based pharmacists for urgent orders and clinical questions.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">
+            <img src="assets/images/icon-daily-delivery.svg" alt="">
+          </div>
+          <h3>Daily Delivery Routes</h3>
+          <p>Reliable daily and STAT courier coverage across Boise, Treasure Valley, and statewide.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">
+            <img src="assets/images/icon-packaging.svg" alt="">
+          </div>
+          <h3>Advanced Packaging</h3>
+          <p>Multi-dose strip and color-coded blister packs tailored to LTC workflows.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">
+            <img src="assets/images/icon-emar.svg" alt="">
+          </div>
+          <h3>eMAR Integration</h3>
+          <p>Seamless PointClickCare, QuickMAR, and Yardi-ready data feeds.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">
+            <img src="assets/images/icon-consultant.svg" alt="">
+          </div>
+          <h3>Consultant Services</h3>
+          <p>CMS-compliant medication reviews, survey prep, and quality audits.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">
+            <img src="assets/images/icon-stat.svg" alt="">
+          </div>
+          <h3>STAT Availability</h3>
+          <p>On-demand emergency fills with temperature-controlled packaging.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- COVERAGE -->
+    <section class="section coverage" id="coverage">
+      <div class="section-bg">
+        <div class="map-visual">
+          <img src="assets/images/idaho-map.svg" alt="Idaho coverage map">
+          <div class="map-pulse pulse-1"></div>
+          <div class="map-pulse pulse-2"></div>
+        </div>
+      </div>
+      <div class="section-content align-left">
+        <p class="section-eyebrow">Statewide Coverage</p>
+        <h2 class="section-title">Serving<br>All of Idaho</h2>
+        <p class="section-text">From the Treasure Valley to frontier communities, our logistics ensure every facility receives timely, reliable pharmacy services.</p>
+        <div class="coverage-stats">
+          <div class="stat">
+            <span class="stat-value">100%</span>
+            <span class="stat-label">Idaho Coverage</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">Daily</span>
+            <span class="stat-label">Delivery Routes</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">24/7</span>
+            <span class="stat-label">Support</span>
+          </div>
+        </div>
+        <div class="coverage-regions">
+          <div class="region">
+            <h4>Boise & Treasure Valley</h4>
+            <p>Daily delivery, consultant visits, and STAT coverage.</p>
+          </div>
+          <div class="region">
+            <h4>Rural & Frontier Idaho</h4>
+            <p>Frontier-friendly logistics with weather-ready contingencies.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="intro" id="about">
-      <div class="container intro__grid">
-        <div>
-          <p class="eyebrow">About Idaho Pharmacy</p>
-          <h2>Locally owned Idaho LTC pharmacy</h2>
-          <p data-cms-key="about-blurb">Idaho Pharmacy is a dedicated, independent, locally owned and operated, Idaho long-term care (LTC) pharmacy, serving skilled nursing facilities, assisted living communities, memory care, group homes, behavioral health programs, home health, hospice, and other long-term care providers across the state.</p>
-          <div class="facility-chips">
-            <span><img src="assets/images/icon-snf.svg" alt="SNF icon"> SNF</span>
-            <span><img src="assets/images/icon-alf.svg" alt="ALF icon"> ALF</span>
-            <span><img src="assets/images/icon-memory.svg" alt="Memory care icon"> Memory Care</span>
-            <span><img src="assets/images/icon-group-home.svg" alt="Group homes icon"> Group Homes</span>
-            <span><img src="assets/images/icon-hospice.svg" alt="Hospice icon"> Hospice</span>
+    <!-- eMAR INTEGRATION -->
+    <section class="section emar" id="emar">
+      <div class="section-bg">
+        <div class="circuit-pattern"></div>
+      </div>
+      <div class="section-content center">
+        <p class="section-eyebrow">Technology</p>
+        <h2 class="section-title">Seamless<br>Integration</h2>
+        <p class="section-text">Connect your facility's eMAR/EHR system with our pharmacy in minutes. We support all major platforms.</p>
+        <div class="integration-logos">
+          <div class="integration-item">
+            <span>PointClickCare</span>
+          </div>
+          <div class="integration-item">
+            <span>QuickMAR</span>
+          </div>
+          <div class="integration-item">
+            <span>Yardi</span>
           </div>
         </div>
-        <div class="intro__map" aria-label="Idaho map highlighting coverage">
-          <img src="assets/images/idaho-map.svg" alt="Stylized Idaho coverage map">
+        <a href="#contact" class="btn btn-primary">Request Integration</a>
+      </div>
+    </section>
+
+    <!-- FACILITIES -->
+    <section class="section facilities" id="facilities">
+      <div class="section-bg"></div>
+      <div class="section-content center">
+        <p class="section-eyebrow">Who We Serve</p>
+        <h2 class="section-title">Facilities<br>We Support</h2>
+      </div>
+      <div class="facilities-grid">
+        <div class="facility-card">
+          <img src="assets/images/icon-snf.svg" alt="">
+          <span>Skilled Nursing</span>
+        </div>
+        <div class="facility-card">
+          <img src="assets/images/icon-alf.svg" alt="">
+          <span>Assisted Living</span>
+        </div>
+        <div class="facility-card">
+          <img src="assets/images/icon-memory.svg" alt="">
+          <span>Memory Care</span>
+        </div>
+        <div class="facility-card">
+          <img src="assets/images/icon-group-home.svg" alt="">
+          <span>Group Homes</span>
+        </div>
+        <div class="facility-card">
+          <img src="assets/images/icon-hospice.svg" alt="">
+          <span>Hospice</span>
         </div>
       </div>
     </section>
 
-    <section class="why" id="services">
-      <div class="container">
-        <p class="eyebrow">Service-first pharmacy partnership</p>
-        <h2>Why Idaho LTC Facilities Choose Us</h2>
-        <div class="card-grid">
-          <article class="service-card">
-            <img src="assets/images/icon-after-hours.svg" alt="After-hours icon">
-            <h3>After hours pharmacist support for urgent orders &amp; clinical questions</h3>
-            <p>24/7 live access to Idaho-based pharmacists for emergent questions.</p>
-          </article>
-          <article class="service-card">
-            <img src="assets/images/icon-daily-delivery.svg" alt="Delivery icon">
-            <h3>Daily delivery routes across Idaho</h3>
-            <p>Reliable daily and STAT courier coverage across Boise, the Treasure Valley, and frontier partners.</p>
-          </article>
-          <article class="service-card">
-            <img src="assets/images/icon-packaging.svg" alt="Packaging icon">
-            <h3>Advanced medication packaging for safety and accuracy</h3>
-            <p>Multi-dose strip and color-coded blister packs tailored to LTC workflows.</p>
-          </article>
-          <article class="service-card" id="emar">
-            <img src="assets/images/icon-emar.svg" alt="eMAR icon">
-            <h3>Seamless eMAR/EHR integration (PointClickCare, QuickMAR, Yardi, etc.)</h3>
-            <p>PointClickCare, QuickMAR, and Yardi-ready data feeds with integration playbooks.</p>
-          </article>
-          <article class="service-card">
-            <img src="assets/images/icon-consultant.svg" alt="Consultant pharmacist icon">
-            <h3>Consultant pharmacist services to support compliance</h3>
-            <p>CMS-compliant medication reviews, survey prep, and quality audits.</p>
-          </article>
-          <article class="service-card">
-            <img src="assets/images/icon-stat.svg" alt="STAT icon">
-            <h3>STAT &amp; emergency medication availability</h3>
-            <p>On-demand STAT fills with temperature-controlled packaging.</p>
-          </article>
-          <article class="service-card">
-            <img src="assets/images/icon-onboarding.svg" alt="Onboarding icon">
-            <h3>Dedicated onboarding specialists to support facilities</h3>
-            <p>Guided facility onboarding with training, data migration, and go-live support.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="serving" id="service-areas">
-      <div class="container serving__grid">
-        <div class="serving__map" aria-describedby="service-labels">
-          <img src="assets/images/idaho-map.svg" alt="Idaho coverage illustration">
-          <button class="map-pin" data-region="Boise & Treasure Valley" style="top: 42%; left: 55%;" aria-label="Boise and Treasure Valley coverage">
-            <img src="assets/images/map-pin.svg" alt="Location pin">
-          </button>
-          <button class="map-pin" data-region="Rural & frontier Idaho communities" style="top: 62%; left: 30%;" aria-label="Rural and frontier Idaho coverage">
-            <img src="assets/images/map-pin.svg" alt="Location pin">
-          </button>
-          <div class="map-tooltip" role="status" aria-live="polite"></div>
-        </div>
-        <div class="serving__details" id="service-labels">
-          <p class="eyebrow">Serving Idaho</p>
-          <h2>Our LTC pharmacy supports facilities in:</h2>
-          <ul class="serving__list">
-            <li>Boise &amp; Treasure Valley</li>
-            <li>Rural &amp; frontier Idaho communities</li>
-          </ul>
-          <p>Transparent route planning, cold-chain handling, and winter-ready contingencies keep LTC residents safe statewide.</p>
-          <div class="serving__badges">
-            <article class="badge-card">
-              <h3>Boise &amp; Treasure Valley</h3>
-              <p>Daily delivery routes, consultant visits, and STAT coverage anchored in the Treasure Valley.</p>
-            </article>
-            <article class="badge-card">
-              <h3>Rural &amp; frontier Idaho communities</h3>
-              <p>Frontier-friendly logistics, refrigerated packaging, and weather-ready contingencies statewide.</p>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="experts" id="experts">
-      <div class="container experts__grid">
-        <div class="experts__photo">
+    <!-- EXPERTS -->
+    <section class="section experts" id="experts">
+      <div class="section-bg">
+        <div class="expert-image">
           <picture>
             <source srcset="assets/images/experts-team.webp" type="image/webp">
-            <img src="assets/images/experts-team.png" alt="Idaho Pharmacy LTC experts" loading="lazy">
+            <img src="assets/images/experts-team.png" alt="Idaho Pharmacy team">
           </picture>
         </div>
-        <div class="experts__content">
-          <p class="eyebrow">Your LTC Pharmacy Experts</p>
-          <h2>Your LTC Pharmacy Experts</h2>
-          <p>Every member of our pharmacy team is trained in Idaho long-term care regulations, medication management protocols, MAR documentation, and best practices for resident-focused care.</p>
-          <div class="experts__cards">
-            <article class="expert-card">
-              <img src="assets/images/icon-team.svg" alt="Team expertise icon">
-              <h3>Team expertise</h3>
-              <p>Dedicated Idaho pharmacists, technicians, and analysts focused 100% on LTC residents.</p>
-            </article>
-            <article class="expert-card">
-              <img src="assets/images/icon-certifications.svg" alt="Certifications icon">
-              <h3>Certifications</h3>
-              <p>BCGP, CPhT-Adv, and LTC accreditations that ensure compliant, survey-ready medication practices.</p>
-            </article>
-            <article class="expert-card">
-              <img src="assets/images/icon-regulatory.svg" alt="Regulatory training icon">
-              <h3>LTC regulatory training</h3>
-              <p>CMS, IDHW, and eMAR integration playbooks keep every facility ready for inspections.</p>
-            </article>
-            <article class="expert-card">
-              <img src="assets/images/icon-resident.svg" alt="Resident-focused care icon">
-              <h3>Resident-focused care</h3>
-              <p>Protocols centered on safety, adherence, and family communication for every resident.</p>
-            </article>
+      </div>
+      <div class="section-content align-right">
+        <p class="section-eyebrow">Our Team</p>
+        <h2 class="section-title">LTC<br>Experts</h2>
+        <p class="section-text">Every team member is trained in Idaho long-term care regulations, medication management, and resident-focused care.</p>
+        <div class="expert-features">
+          <div class="expert-feature">
+            <img src="assets/images/icon-team.svg" alt="">
+            <div>
+              <h4>Dedicated Team</h4>
+              <p>100% focused on LTC pharmacy</p>
+            </div>
           </div>
-          <div class="experts__actions">
-            <button class="btn btn--secondary" data-open-modal="onboarding">Start Service</button>
-            <a class="btn btn--ghost" href="#contact">Contact Us</a>
+          <div class="expert-feature">
+            <img src="assets/images/icon-certifications.svg" alt="">
+            <div>
+              <h4>Certified</h4>
+              <p>BCGP, CPhT-Adv accredited</p>
+            </div>
+          </div>
+          <div class="expert-feature">
+            <img src="assets/images/icon-regulatory.svg" alt="">
+            <div>
+              <h4>Compliance Ready</h4>
+              <p>CMS & IDHW trained</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="contact" id="contact">
-      <div class="container contact__grid">
-        <div>
-          <p class="eyebrow" id="contact-label">Facility onboarding</p>
-          <h2>Talk with an onboarding specialist</h2>
-          <p>Share a few details about your community and our LTC onboarding team will reach out within one business day.</p>
-          <dl class="contact-info">
-            <div>
-              <dt>Phone</dt>
-              <dd><a href="tel:+12085551234">(208) 555-1234</a></dd>
-            </div>
-            <div>
-              <dt>Email</dt>
-              <dd><a href="mailto:onboarding@idahopharmacy.com">onboarding@idahopharmacy.com</a></dd>
-            </div>
-            <div>
-              <dt>Address</dt>
-              <dd>1200 Evergreen Ln, Boise, ID 83702</dd>
-            </div>
-          </dl>
+    <!-- CTA -->
+    <section class="section cta" id="cta">
+      <div class="section-bg">
+        <div class="cta-glow"></div>
+      </div>
+      <div class="section-content center">
+        <h2 class="cta-title">Ready to Partner?</h2>
+        <p class="cta-text">Experience dedicated Idaho LTC pharmacy services. Simple onboarding, immediate support.</p>
+        <div class="cta-actions">
+          <a href="#contact" class="btn btn-light">Start Service</a>
+          <a href="tel:+12085551234" class="btn btn-ghost-light">Call (208) 555-1234</a>
         </div>
-        <form class="contact-form" aria-labelledby="contact-label" data-endpoint="https://example.com/api/onboarding">
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact" id="contact">
+      <div class="section-bg"></div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p class="section-eyebrow">Get Started</p>
+          <h2 class="section-title">Contact<br>Our Team</h2>
+          <p class="section-text">Share your facility details and our onboarding team will reach out within one business day.</p>
+          <div class="contact-details">
+            <div class="contact-item">
+              <span class="contact-label">Phone</span>
+              <a href="tel:+12085551234">(208) 555-1234</a>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">Email</span>
+              <a href="mailto:onboarding@idahopharmacy.com">onboarding@idahopharmacy.com</a>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">Address</span>
+              <span>1200 Evergreen Ln, Boise, ID 83702</span>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form" id="contact-form">
           <div class="form-row">
-            <label for="name">Contact name</label>
-            <input type="text" id="name" name="name" required data-cms-key="form-name">
+            <input type="text" name="name" placeholder="Contact Name" required>
           </div>
           <div class="form-row">
-            <label for="facility">Facility name</label>
-            <input type="text" id="facility" name="facility" required>
+            <input type="text" name="facility" placeholder="Facility Name" required>
           </div>
           <div class="form-row">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" name="email" placeholder="Email Address" required>
           </div>
           <div class="form-row">
-            <label for="phone">Phone</label>
-            <input type="tel" id="phone" name="phone" required pattern="[0-9\-\+\s()]{7,}">
+            <input type="tel" name="phone" placeholder="Phone Number" required>
           </div>
           <div class="form-row">
-            <label for="facility-type">Facility type</label>
-            <select id="facility-type" name="facilityType" required>
-              <option value="">Select facility type</option>
+            <select name="facilityType" required>
+              <option value="">Select Facility Type</option>
               <option>Skilled Nursing Facility</option>
               <option>Assisted Living</option>
               <option>Memory Care</option>
@@ -344,105 +309,48 @@
             </select>
           </div>
           <div class="form-row">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
+            <textarea name="message" placeholder="Tell us about your facility" rows="4"></textarea>
           </div>
-          <button class="btn btn--primary" type="submit">Submit</button>
-          <p class="form-note">By submitting, you agree to Idaho Pharmacy contacting you about LTC pharmacy services.</p>
+          <button type="submit" class="btn btn-primary btn-full">Submit Request</button>
+          <p class="form-note">We'll respond within 1 business day.</p>
         </form>
-      </div>
-    </section>
-
-    <section class="cta" id="onboarding">
-      <div class="container">
-        <h2>Ready to Partner with a Dedicated Idaho LTC Pharmacy?</h2>
-        <p>We make starting service simple. Visit our Facility Onboarding page or contact us for a consultation.</p>
-        <div class="cta__actions">
-          <button class="btn btn--light" data-open-modal="onboarding">Start Service</button>
-          <a class="btn btn--ghost btn--ghost-light" href="#contact">Contact Us</a>
-        </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer__grid">
-      <div>
-        <img src="assets/images/logo.svg" alt="Idaho Pharmacy logo">
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <img src="assets/images/logo.svg" alt="Idaho Pharmacy">
         <p>Idaho's trusted long-term care pharmacy partner.</p>
       </div>
-      <div>
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#service-areas">Service Areas</a></li>
-          <li><a href="#emar">eMAR Integration</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Facility Onboarding</h3>
-        <ul>
-          <li><button class="link" data-open-modal="onboarding">Start Service</button></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Visit Us</h3>
-        <address>
-          1200 Evergreen Ln<br>
-          Boise, ID 83702<br>
-          (208) 555-1234
-        </address>
-      </div>
+      <nav class="footer-nav">
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="#services">24/7 Support</a>
+          <a href="#services">Daily Delivery</a>
+          <a href="#emar">eMAR Integration</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="#experts">Our Team</a>
+          <a href="#coverage">Coverage Areas</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="tel:+12085551234">(208) 555-1234</a>
+          <a href="mailto:onboarding@idahopharmacy.com">onboarding@idahopharmacy.com</a>
+          <span>Boise, ID 83702</span>
+        </div>
+      </nav>
     </div>
-    <p class="footer__legal">© <span id="year"></span> Idaho Pharmacy, LLC. All rights reserved.</p>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> Idaho Pharmacy, LLC. All rights reserved.</p>
+      <a href="terms-and-conditions.html">Terms & Conditions</a>
+    </div>
   </footer>
 
-  <dialog class="modal" id="onboarding-modal" aria-labelledby="modal-title">
-    <form class="modal__content">
-      <button class="modal__close" aria-label="Close modal">×</button>
-      <p class="eyebrow">Start Service</p>
-      <h2 id="modal-title">Share onboarding details</h2>
-      <p class="modal__helper">Complete the quick form below and our onboarding team will provide next-steps plus eMAR integration instructions.</p>
-      <div class="modal__form" role="document"></div>
-      <button class="btn btn--primary" type="submit" data-submit-modal>Submit Request</button>
-    </form>
-  </dialog>
-
-  <template id="onboarding-form-template">
-    <div class="form-row">
-      <label for="modal-name">Contact name</label>
-      <input type="text" id="modal-name" name="name" required>
-    </div>
-    <div class="form-row">
-      <label for="modal-facility">Facility name</label>
-      <input type="text" id="modal-facility" name="facility" required>
-    </div>
-    <div class="form-row">
-      <label for="modal-email">Email</label>
-      <input type="email" id="modal-email" name="email" required>
-    </div>
-    <div class="form-row">
-      <label for="modal-phone">Phone</label>
-      <input type="tel" id="modal-phone" name="phone" required pattern="[0-9\\-\\+\\s()]{7,}">
-    </div>
-    <div class="form-row">
-      <label for="modal-type">Facility type</label>
-      <select id="modal-type" name="facilityType" required>
-        <option value="">Select facility type</option>
-        <option>Skilled Nursing Facility</option>
-        <option>Assisted Living</option>
-        <option>Memory Care</option>
-        <option>Group Home</option>
-        <option>Hospice</option>
-      </select>
-    </div>
-    <div class="form-row">
-      <label for="modal-message">Message</label>
-      <textarea id="modal-message" name="message" rows="4" required></textarea>
-    </div>
-  </template>
-
-  <script src="script.js" defer></script>
+  <script src="script.js"></script>
 </body>
 </html>
