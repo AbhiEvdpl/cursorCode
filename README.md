@@ -1,48 +1,65 @@
-# Idaho Pharmacy, LLC — Long-Term Care Pharmacy
+# DataAirflow Website
 
-This repository contains the Idaho Pharmacy marketing homepage deliverables: a Figma-ready specification plus a production-ready responsive HTML/CSS/JS implementation with exportable assets.
+A modern, SpaceX-inspired website for DataAirflow - a data pipeline infrastructure platform.
 
-## Contents
-- `index.html` — semantic one-page layout with sticky header, hero, services, map, experts, onboarding CTA, footer, and onboarding modal.
-- `styles.css` — custom CSS using CSS variables, responsive grid rules, expert/service card styling, and interaction states.
-- `script.js` — minimal enhancements (mobile nav, sticky header, tooltip, modal, form validation).
-- `assets/` — SVG icon system, Idaho mountain background, Idaho map, logo, and optimized hero/team imagery (WebP + PNG).
-- `docs/figma-design-spec.md` — detailed layout + component directions for recreating the file in Figma (desktop + mobile frames, component library requirements).
-- `docs/style-guide.md` + `docs/style-guide.pdf` — developer handoff and accessibility checklist.
-- `figma/README.md` — step-by-step instructions for translating the spec into a .fig file with auto-layout components.
+## Features
 
-## Getting Started
-1. Open `index.html` in any modern browser.
-2. Update asset paths or text via `data-cms-key` attributes if integrating with a CMS.
-3. For production, minify `styles.css` / `script.js` or integrate into your pipeline.
+- **Full-Screen Sections** - Each section takes up 100vh with smooth snap scrolling
+- **Dark Theme** - Pure black background with high-contrast accents
+- **Animated Visualizations** - SVG pipeline flows, particle effects, chart animations
+- **Responsive Design** - Optimized for desktop, tablet, and mobile
+- **Accessibility** - Reduced motion support, keyboard navigation, semantic HTML
 
-### Development Notes
-- No build tooling is required; however, the CSS is Tailwind-ready via utility-like naming and CSS variables if you prefer to port it.
-- `script.js` currently simulates network submission (`fakeSubmit`). Replace with a real `fetch` call inside `handleFormSubmit` and update the `data-endpoint` attribute on `.contact-form`.
-- eMAR integration CTAs are grouped under the Services section; wire up actual URLs or API docs as needed.
-- Hero illustration + map pins use lightweight CSS animations (`floatCard`, `pulsePin`). A `prefers-reduced-motion` query is in place so motion-sensitive users only see static states.
+## Sections
 
-### Assets & Export
-- Icons are exported as accessible SVG (24–64px artboards) in `assets/images/`.
-- Bitmap placeholders exist in both `.webp` and `.png` for browsers without WebP support.
-- Additional asset exports (map, logo, hero artwork) are organized for quick download.
+1. **Hero** - Animated particles, gradient text, scroll indicator
+2. **Pipelines** - Real-time data flow visualization with stats
+3. **Analytics** - Animated chart bars with feature list
+4. **Integrations** - Cloud provider cards (AWS, GCP, Azure, etc.)
+5. **Enterprise** - Security compliance badges
+6. **Contact** - Email signup form
 
-### Figma Guidance
-- Recreate the provided spec in Figma using the measurements and components defined in `docs/figma-design-spec.md`.
-- Set up auto-layout for navigation, cards, buttons, hero grid, and footer stacks.
-- Include frames for Desktop 1440, Tablet 1024, and Mobile 375.
-- Build a shared component library (Buttons, Cards, Form Fields, Map, Icon Set) with color and text styles matching the provided tokens.
-- Mirror the prototype cues described under “Micro-Interactions & Prototype” inside the spec so engineering handoff can map to CSS animations already implemented.
+## Tech Stack
 
-### Accessibility Checklist
-- Skip link jumps to `#main-content`.
-- Sticky header focus order preserved on mobile via nav toggle `aria-expanded`.
-- Map pins, modal, and form status messages use `aria-live` updates.
-- Color palette meets WCAG AA (see `docs/style-guide.md`).
+- HTML5
+- CSS3 (Custom properties, Grid, Flexbox, Animations)
+- Vanilla JavaScript (Intersection Observer, smooth scroll)
+- Google Fonts (Inter)
 
-## Packaging
-- Run `zip -r code.zip index.html styles.css script.js assets docs README.md` to ship the code bundle.
-- Run `zip -r assets.zip assets` for a standalone asset archive.
+## Quick Start
+
+Open `index.html` in a browser, or use a local server:
+
+```bash
+python -m http.server 8000
+```
+
+## File Structure
+
+```
+index.html      # Main HTML
+styles.css      # All styles
+script.js       # Interactions and animations
+assets/images/  # Image assets
+```
+
+## Customization
+
+Edit CSS variables in `styles.css`:
+
+```css
+:root {
+  --color-bg: #000000;
+  --color-accent: #00d4ff;
+  --color-accent-purple: #7c3aed;
+  --color-accent-green: #10b981;
+}
+```
+
+## Browser Support
+
+Chrome 90+, Firefox 88+, Safari 14+, Edge 90+
 
 ## License
-All branding copy is provided by Idaho Pharmacy, LLC. Artwork is bespoke to this mockup and free to modify for Idaho Pharmacy initiatives.
+
+Copyright 2026 DataAirflow, Inc. All rights reserved.
