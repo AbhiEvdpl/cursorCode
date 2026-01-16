@@ -3,27 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Idaho Pharmacy, LLC is Idaho's trusted long-term care pharmacy partner delivering dedicated LTC expertise, delivery routes, eMAR integrations, and onboarding support statewide.">
-  <title>Idaho Pharmacy, LLC — Long-Term Care Pharmacy Partner</title>
+  <meta name="description" content="GreenSpark provides Fractional CFO services and financial execution built exclusively for consumer (CPG) brands. Decision-ready financials, strategic guidance, and deep consumer goods expertise.">
+  <title>GreenSpark — Fractional Finance for Consumer Brands</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Lato:wght@400;600&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="vp-loader" id="vp-loader" aria-label="Loading page content" role="status">
-    <div class="vp-loader__spinner">
-      <svg viewBox="0 0 50 50" aria-hidden="true">
-        <circle cx="25" cy="25" r="20"></circle>
-      </svg>
-    </div>
-    <span class="vp-loader__text">Idaho Pharmacy</span>
-  </div>
   <a class="skip-link" href="#main-content">Skip to main content</a>
-  <header class="site-header" data-cms-key="header">
+  
+  <header class="site-header">
     <div class="container header__layout">
-      <a class="brand" href="#home" aria-label="Idaho Pharmacy home">
-        <img src="assets/images/logo.svg" alt="Idaho Pharmacy logo">
+      <a class="brand" href="#home" aria-label="GreenSpark home">
+        <span class="brand__logo">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="32" height="32" rx="8" fill="currentColor"/>
+            <path d="M8 16L14 22L24 10" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="brand__name">GreenSpark</span>
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation">
         <span></span>
@@ -32,334 +31,227 @@
       </button>
       <nav class="primary-nav" id="primary-navigation">
         <ul>
-          <li><a href="#home">Home</a></li>
           <li><a href="#services">Services</a></li>
-          <li><a href="#service-areas">Service Areas</a></li>
-          <li><a href="#emar">eMAR Integration</a></li>
-          <li><a href="#onboarding">Onboarding</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#difference">How We're Different</a></li>
+          <li><a href="#results">Results</a></li>
+          <li><a href="#about">About</a></li>
         </ul>
       </nav>
       <div class="header__cta">
-        <button class="btn btn--primary" data-open-modal="onboarding" data-cms-key="cta-start">Start Service</button>
+        <a class="btn btn--primary" href="#contact">Book a Strategic CFO Call</a>
       </div>
     </div>
   </header>
 
   <main id="main-content">
+    <!-- HERO SECTION -->
     <section class="hero" id="home">
-      <div class="ski-lift-container" aria-hidden="true">
-        <div class="ski-lift-cable"></div>
-        <div class="ski-lift">
-          <div class="ski-lift__gondola">
-            <svg width="65" height="53" viewBox="0 0 650 534" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="gondolaGrad1" x1="325" y1="90" x2="325" y2="443" gradientUnits="userSpaceOnUse">
-                  <stop stop-color="#FAFAFA"/>
-                  <stop offset="1" stop-color="#E8E8E8"/>
-                </linearGradient>
-              </defs>
-              <line x1="325" y1="0" x2="325" y2="100" stroke="#4A545E" stroke-width="4"/>
-              <rect x="-21" y="90" width="692" height="353" rx="27" fill="url(#gondolaGrad1)" transform="translate(0, 0)"/>
-              <rect x="50" y="140" width="180" height="200" rx="12" fill="#88C0E6" fill-opacity="0.6"/>
-              <rect x="420" y="140" width="180" height="200" rx="12" fill="#88C0E6" fill-opacity="0.6"/>
-              <rect x="250" y="140" width="150" height="200" rx="12" fill="#88C0E6" fill-opacity="0.6"/>
-              <rect x="0" y="400" width="650" height="50" rx="10" fill="#1E4637"/>
-            </svg>
-          </div>
-        </div>
-        <div class="ski-lift ski-lift--delayed">
-          <div class="ski-lift__gondola">
-            <svg width="65" height="53" viewBox="0 0 650 534" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="gondolaGrad2" x1="325" y1="90" x2="325" y2="443" gradientUnits="userSpaceOnUse">
-                  <stop stop-color="#FAFAFA"/>
-                  <stop offset="1" stop-color="#E8E8E8"/>
-                </linearGradient>
-              </defs>
-              <line x1="325" y1="0" x2="325" y2="100" stroke="#4A545E" stroke-width="4"/>
-              <rect x="-21" y="90" width="692" height="353" rx="27" fill="url(#gondolaGrad2)" transform="translate(0, 0)"/>
-              <rect x="50" y="140" width="180" height="200" rx="12" fill="#88C0E6" fill-opacity="0.6"/>
-              <rect x="420" y="140" width="180" height="200" rx="12" fill="#88C0E6" fill-opacity="0.6"/>
-              <rect x="250" y="140" width="150" height="200" rx="12" fill="#88C0E6" fill-opacity="0.6"/>
-              <rect x="0" y="400" width="650" height="50" rx="10" fill="#224E7A"/>
-            </svg>
-          </div>
-        </div>
-        <div class="ski-lift-cable" style="top: 60px;"></div>
-        <div class="ski-lift ski-lift--reverse">
-          <div class="ski-lift__gondola">
-            <svg width="65" height="53" viewBox="0 0 650 534" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="gondolaGrad3" x1="325" y1="90" x2="325" y2="443" gradientUnits="userSpaceOnUse">
-                  <stop stop-color="#FAFAFA"/>
-                  <stop offset="1" stop-color="#E8E8E8"/>
-                </linearGradient>
-              </defs>
-              <line x1="325" y1="0" x2="325" y2="100" stroke="#4A545E" stroke-width="4"/>
-              <rect x="-21" y="90" width="692" height="353" rx="27" fill="url(#gondolaGrad3)" transform="translate(0, 0)"/>
-              <rect x="50" y="140" width="180" height="200" rx="12" fill="#88C0E6" fill-opacity="0.6"/>
-              <rect x="420" y="140" width="180" height="200" rx="12" fill="#88C0E6" fill-opacity="0.6"/>
-              <rect x="250" y="140" width="150" height="200" rx="12" fill="#88C0E6" fill-opacity="0.6"/>
-              <rect x="0" y="400" width="650" height="50" rx="10" fill="#C89F4A"/>
-            </svg>
-          </div>
-        </div>
-        <div class="ski-lift ski-lift--reverse ski-lift--reverse-delayed">
-          <div class="ski-lift__gondola">
-            <svg width="65" height="53" viewBox="0 0 650 534" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="gondolaGrad4" x1="325" y1="90" x2="325" y2="443" gradientUnits="userSpaceOnUse">
-                  <stop stop-color="#FAFAFA"/>
-                  <stop offset="1" stop-color="#E8E8E8"/>
-                </linearGradient>
-              </defs>
-              <line x1="325" y1="0" x2="325" y2="100" stroke="#4A545E" stroke-width="4"/>
-              <rect x="-21" y="90" width="692" height="353" rx="27" fill="url(#gondolaGrad4)" transform="translate(0, 0)"/>
-              <rect x="50" y="140" width="180" height="200" rx="12" fill="#88C0E6" fill-opacity="0.6"/>
-              <rect x="420" y="140" width="180" height="200" rx="12" fill="#88C0E6" fill-opacity="0.6"/>
-              <rect x="250" y="140" width="150" height="200" rx="12" fill="#88C0E6" fill-opacity="0.6"/>
-              <rect x="0" y="400" width="650" height="50" rx="10" fill="#1E4637"/>
-            </svg>
-          </div>
-        </div>
-      </div>
-      <div class="container hero__grid">
+      <div class="container">
         <div class="hero__content">
-          <p class="eyebrow" data-cms-key="hero-tag">Idaho's Trusted Long-Term Care Pharmacy Partner</p>
-          <h1 data-cms-key="hero-headline">Your Idaho Long-Term Care Pharmacy Partner</h1>
-          <p class="hero__subhead" data-cms-key="hero-subhead">Welcome to Idaho Pharmacy, LLC. — Idaho's Trusted Long-Term Care Pharmacy Partner.</p>
-          <p class="hero__body" data-cms-key="hero-body-one">Idaho Pharmacy is a dedicated, independent, locally owned and operated, Idaho long-term care (LTC) pharmacy, serving skilled nursing facilities, assisted living communities, memory care, group homes, behavioral health programs, home health, hospice, and other long-term care providers across the state.</p>
-          <p class="hero__body" data-cms-key="hero-body-two">We specialize exclusively in LTC pharmacy services—no retail distractions, no walk-ins—so your residents and staff receive fast, accurate, and dependable medication support backed by Idaho-based expertise.</p>
+          <h1 class="hero__headline">Fractional Finance for Consumer Brands</h1>
+          <div class="hero__subtext">
+            <p>Decision-ready financials. Strategic guidance. Deep consumer goods expertise.</p>
+            <p>Cashflow expertise built from operating inside high-growth brands.</p>
+            <p>A turnkey finance department designed to execute faster and smarter.</p>
+          </div>
           <div class="hero__actions">
-            <button class="btn btn--primary" data-open-modal="onboarding">Start Service</button>
-            <a class="btn btn--ghost" href="#onboarding" data-cms-key="cta-facility">Facility Onboarding</a>
-          </div>
-          <ul class="hero__list">
-            <li>Seamless eMAR/EHR integration (PointClickCare, QuickMAR, Yardi, etc.)</li>
-            <li>Dedicated onboarding specialists to support facilities</li>
-            <li>Daily delivery routes across Idaho</li>
-          </ul>
-        </div>
-        <div class="hero__visual">
-          <picture>
-            <source srcset="assets/images/hero-courier.webp" type="image/webp">
-            <img src="assets/images/hero-courier.png" alt="Pharmacist delivering long-term care medications" loading="lazy">
-          </picture>
-          <div class="hero__quote" role="note">
-            <p>“Idaho Pharmacy keeps our Memory Care residents safe and on schedule.”</p>
-            <span>Director of Nursing, Boise</span>
+            <a class="btn btn--primary btn--large" href="#contact">Book a Strategic CFO Call</a>
+            <a class="btn btn--ghost btn--large" href="#services">Explore Services</a>
           </div>
         </div>
       </div>
-    </section>
-
-    <section class="intro" id="about">
-      <div class="container intro__grid">
-        <div>
-          <p class="eyebrow">About Idaho Pharmacy</p>
-          <h2>Locally owned Idaho LTC pharmacy</h2>
-          <p data-cms-key="about-blurb">Idaho Pharmacy is a dedicated, independent, locally owned and operated, Idaho long-term care (LTC) pharmacy, serving skilled nursing facilities, assisted living communities, memory care, group homes, behavioral health programs, home health, hospice, and other long-term care providers across the state.</p>
-          <div class="facility-chips">
-            <span><img src="assets/images/icon-snf.svg" alt="SNF icon"> SNF</span>
-            <span><img src="assets/images/icon-alf.svg" alt="ALF icon"> ALF</span>
-            <span><img src="assets/images/icon-memory.svg" alt="Memory care icon"> Memory Care</span>
-            <span><img src="assets/images/icon-group-home.svg" alt="Group homes icon"> Group Homes</span>
-            <span><img src="assets/images/icon-hospice.svg" alt="Hospice icon"> Hospice</span>
-          </div>
-        </div>
-        <div class="intro__map" aria-label="Idaho map highlighting coverage">
-          <img src="assets/images/idaho-map.svg" alt="Stylized Idaho coverage map">
-        </div>
+      <div class="hero__visual" aria-hidden="true">
+        <div class="hero__gradient"></div>
       </div>
     </section>
 
-    <section class="why" id="services">
+    <!-- LOGO CAROUSEL -->
+    <section class="logos">
       <div class="container">
-        <p class="eyebrow">Service-first pharmacy partnership</p>
-        <h2>Why Idaho LTC Facilities Choose Us</h2>
-        <div class="card-grid">
-          <article class="service-card">
-            <img src="assets/images/icon-after-hours.svg" alt="After-hours icon">
-            <h3>After hours pharmacist support for urgent orders &amp; clinical questions</h3>
-            <p>24/7 live access to Idaho-based pharmacists for emergent questions.</p>
-          </article>
-          <article class="service-card">
-            <img src="assets/images/icon-daily-delivery.svg" alt="Delivery icon">
-            <h3>Daily delivery routes across Idaho</h3>
-            <p>Reliable daily and STAT courier coverage across Boise, the Treasure Valley, and frontier partners.</p>
-          </article>
-          <article class="service-card">
-            <img src="assets/images/icon-packaging.svg" alt="Packaging icon">
-            <h3>Advanced medication packaging for safety and accuracy</h3>
-            <p>Multi-dose strip and color-coded blister packs tailored to LTC workflows.</p>
-          </article>
-          <article class="service-card" id="emar">
-            <img src="assets/images/icon-emar.svg" alt="eMAR icon">
-            <h3>Seamless eMAR/EHR integration (PointClickCare, QuickMAR, Yardi, etc.)</h3>
-            <p>PointClickCare, QuickMAR, and Yardi-ready data feeds with integration playbooks.</p>
-          </article>
-          <article class="service-card">
-            <img src="assets/images/icon-consultant.svg" alt="Consultant pharmacist icon">
-            <h3>Consultant pharmacist services to support compliance</h3>
-            <p>CMS-compliant medication reviews, survey prep, and quality audits.</p>
-          </article>
-          <article class="service-card">
-            <img src="assets/images/icon-stat.svg" alt="STAT icon">
-            <h3>STAT &amp; emergency medication availability</h3>
-            <p>On-demand STAT fills with temperature-controlled packaging.</p>
-          </article>
-          <article class="service-card">
-            <img src="assets/images/icon-onboarding.svg" alt="Onboarding icon">
-            <h3>Dedicated onboarding specialists to support facilities</h3>
-            <p>Guided facility onboarding with training, data migration, and go-live support.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="serving" id="service-areas">
-      <div class="container serving__grid">
-        <div class="serving__map" aria-describedby="service-labels">
-          <img src="assets/images/idaho-map.svg" alt="Idaho coverage illustration">
-          <button class="map-pin" data-region="Boise & Treasure Valley" style="top: 42%; left: 55%;" aria-label="Boise and Treasure Valley coverage">
-            <img src="assets/images/map-pin.svg" alt="Location pin">
-          </button>
-          <button class="map-pin" data-region="Rural & frontier Idaho communities" style="top: 62%; left: 30%;" aria-label="Rural and frontier Idaho coverage">
-            <img src="assets/images/map-pin.svg" alt="Location pin">
-          </button>
-          <div class="map-tooltip" role="status" aria-live="polite"></div>
-        </div>
-        <div class="serving__details" id="service-labels">
-          <p class="eyebrow">Serving Idaho</p>
-          <h2>Our LTC pharmacy supports facilities in:</h2>
-          <ul class="serving__list">
-            <li>Boise &amp; Treasure Valley</li>
-            <li>Rural &amp; frontier Idaho communities</li>
-          </ul>
-          <p>Transparent route planning, cold-chain handling, and winter-ready contingencies keep LTC residents safe statewide.</p>
-          <div class="serving__badges">
-            <article class="badge-card">
-              <h3>Boise &amp; Treasure Valley</h3>
-              <p>Daily delivery routes, consultant visits, and STAT coverage anchored in the Treasure Valley.</p>
-            </article>
-            <article class="badge-card">
-              <h3>Rural &amp; frontier Idaho communities</h3>
-              <p>Frontier-friendly logistics, refrigerated packaging, and weather-ready contingencies statewide.</p>
-            </article>
+        <p class="logos__label">Trusted by Top Brands</p>
+        <div class="logos__track">
+          <div class="logos__slide">
+            <span class="logo-placeholder">Brand Logo</span>
+            <span class="logo-placeholder">Brand Logo</span>
+            <span class="logo-placeholder">Brand Logo</span>
+            <span class="logo-placeholder">Brand Logo</span>
+            <span class="logo-placeholder">Brand Logo</span>
+            <span class="logo-placeholder">Brand Logo</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="experts" id="experts">
-      <div class="container experts__grid">
-        <div class="experts__photo">
-          <picture>
-            <source srcset="assets/images/experts-team.webp" type="image/webp">
-            <img src="assets/images/experts-team.png" alt="Idaho Pharmacy LTC experts" loading="lazy">
-          </picture>
-        </div>
-        <div class="experts__content">
-          <p class="eyebrow">Your LTC Pharmacy Experts</p>
-          <h2>Your LTC Pharmacy Experts</h2>
-          <p>Every member of our pharmacy team is trained in Idaho long-term care regulations, medication management protocols, MAR documentation, and best practices for resident-focused care.</p>
-          <div class="experts__cards">
-            <article class="expert-card">
-              <img src="assets/images/icon-team.svg" alt="Team expertise icon">
-              <h3>Team expertise</h3>
-              <p>Dedicated Idaho pharmacists, technicians, and analysts focused 100% on LTC residents.</p>
-            </article>
-            <article class="expert-card">
-              <img src="assets/images/icon-certifications.svg" alt="Certifications icon">
-              <h3>Certifications</h3>
-              <p>BCGP, CPhT-Adv, and LTC accreditations that ensure compliant, survey-ready medication practices.</p>
-            </article>
-            <article class="expert-card">
-              <img src="assets/images/icon-regulatory.svg" alt="Regulatory training icon">
-              <h3>LTC regulatory training</h3>
-              <p>CMS, IDHW, and eMAR integration playbooks keep every facility ready for inspections.</p>
-            </article>
-            <article class="expert-card">
-              <img src="assets/images/icon-resident.svg" alt="Resident-focused care icon">
-              <h3>Resident-focused care</h3>
-              <p>Protocols centered on safety, adherence, and family communication for every resident.</p>
-            </article>
-          </div>
-          <div class="experts__actions">
-            <button class="btn btn--secondary" data-open-modal="onboarding">Start Service</button>
-            <a class="btn btn--ghost" href="#contact">Contact Us</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact" id="contact">
-      <div class="container contact__grid">
-        <div>
-          <p class="eyebrow" id="contact-label">Facility onboarding</p>
-          <h2>Talk with an onboarding specialist</h2>
-          <p>Share a few details about your community and our LTC onboarding team will reach out within one business day.</p>
-          <dl class="contact-info">
-            <div>
-              <dt>Phone</dt>
-              <dd><a href="tel:+12085551234">(208) 555-1234</a></dd>
-            </div>
-            <div>
-              <dt>Email</dt>
-              <dd><a href="mailto:onboarding@idahopharmacy.com">onboarding@idahopharmacy.com</a></dd>
-            </div>
-            <div>
-              <dt>Address</dt>
-              <dd>1200 Evergreen Ln, Boise, ID 83702</dd>
-            </div>
-          </dl>
-        </div>
-        <form class="contact-form" aria-labelledby="contact-label" data-endpoint="https://example.com/api/onboarding">
-          <div class="form-row">
-            <label for="name">Contact name</label>
-            <input type="text" id="name" name="name" required data-cms-key="form-name">
-          </div>
-          <div class="form-row">
-            <label for="facility">Facility name</label>
-            <input type="text" id="facility" name="facility" required>
-          </div>
-          <div class="form-row">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-          <div class="form-row">
-            <label for="phone">Phone</label>
-            <input type="tel" id="phone" name="phone" required pattern="[0-9\-\+\s()]{7,}">
-          </div>
-          <div class="form-row">
-            <label for="facility-type">Facility type</label>
-            <select id="facility-type" name="facilityType" required>
-              <option value="">Select facility type</option>
-              <option>Skilled Nursing Facility</option>
-              <option>Assisted Living</option>
-              <option>Memory Care</option>
-              <option>Group Home</option>
-              <option>Hospice</option>
-            </select>
-          </div>
-          <div class="form-row">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-          </div>
-          <button class="btn btn--primary" type="submit">Submit</button>
-          <p class="form-note">By submitting, you agree to Idaho Pharmacy contacting you about LTC pharmacy services.</p>
-        </form>
-      </div>
-    </section>
-
-    <section class="cta" id="onboarding">
+    <!-- WHAT WE DO -->
+    <section class="services" id="services">
       <div class="container">
-        <h2>Ready to Partner with a Dedicated Idaho LTC Pharmacy?</h2>
-        <p>We make starting service simple. Visit our Facility Onboarding page or contact us for a consultation.</p>
-        <div class="cta__actions">
-          <button class="btn btn--light" data-open-modal="onboarding">Start Service</button>
-          <a class="btn btn--ghost btn--ghost-light" href="#contact">Contact Us</a>
+        <header class="section-header">
+          <h2>Financial services built entirely around CPG and cashflow</h2>
+          <p class="section-intro">GreenSpark can serve as a full, turnkey finance team or step in to support specific functions based on your needs. Some brands engage us for end-to-end financial leadership, while others work with us for CFO-only support, accounting-only, or targeted execution during critical growth phases.</p>
+        </header>
+
+        <div class="services__grid">
+          <!-- Fractional CFO -->
+          <article class="service-card">
+            <div class="service-card__icon">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="24" cy="24" r="23" stroke="currentColor" stroke-width="2"/>
+                <path d="M24 12V24L32 28" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="24" cy="24" r="4" fill="currentColor"/>
+              </svg>
+            </div>
+            <h3>Fractional CFO</h3>
+            <p class="service-card__tagline">True financial leadership — not advisory</p>
+            <p>GreenSpark acts as an embedded fractional CFO, taking ownership of financial leadership, decision-making, and execution. We operate as strategic leaders who happen to be finance experts — not outside advisors.</p>
+            <p class="service-card__emphasis">This is hands-on leadership designed to move the business forward.</p>
+          </article>
+
+          <!-- FP&A -->
+          <article class="service-card">
+            <div class="service-card__icon">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="4" y="8" width="40" height="32" rx="2" stroke="currentColor" stroke-width="2"/>
+                <path d="M12 28L20 20L28 24L36 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="12" cy="28" r="2" fill="currentColor"/>
+                <circle cx="20" cy="20" r="2" fill="currentColor"/>
+                <circle cx="28" cy="24" r="2" fill="currentColor"/>
+                <circle cx="36" cy="16" r="2" fill="currentColor"/>
+              </svg>
+            </div>
+            <h3>Financial Planning & Analysis</h3>
+            <p class="service-card__tagline">FP&A built for execution</p>
+            <p>We build and operate models, cashflow forecasts, and unit economics that are meant to drive decisions. Our FP&A work directly informs real tradeoffs around inventory, marketing spend, hiring, and capital strategy.</p>
+            <p>We can work within your existing internal models, leverage third-party forecasting systems, or build a bespoke model. The differentiator isn't the model itself – it's our ability to analyze, synthesize, and operate off the data in real time to guide strategic and tactical financial decisions.</p>
+            <p class="service-card__emphasis">The outcome is FP&A that actually gets used. The goal isn't perfect projections. It's better decisions, faster.</p>
+            <p class="service-card__note">Our FP&A models have been battle-tested and is the foundation logic driving billions of dollars of revenue of CPG brands.</p>
+          </article>
+
+          <!-- Accounting -->
+          <article class="service-card">
+            <div class="service-card__icon">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="8" y="4" width="32" height="40" rx="2" stroke="currentColor" stroke-width="2"/>
+                <line x1="14" y1="14" x2="34" y2="14" stroke="currentColor" stroke-width="2"/>
+                <line x1="14" y1="22" x2="34" y2="22" stroke="currentColor" stroke-width="2"/>
+                <line x1="14" y1="30" x2="26" y2="30" stroke="currentColor" stroke-width="2"/>
+                <circle cx="32" cy="34" r="6" stroke="currentColor" stroke-width="2"/>
+                <path d="M32 31V34H35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Accounting</h3>
+            <p class="service-card__tagline">Accounting built for CPG operators</p>
+            <p>Our accounting is structured to support execution, not just compliance. We focus on accurate categorization, inventory-aware COGS, and channel-level clarity so you understand what's actually driving performance such as your customer acquisition cost per channel.</p>
+          </article>
+
+          <!-- Cashflow & Liquidity -->
+          <article class="service-card">
+            <div class="service-card__icon">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24 4V44" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M16 12L24 4L32 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16 36L24 44L32 36" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="10" cy="24" r="6" stroke="currentColor" stroke-width="2"/>
+                <circle cx="38" cy="24" r="6" stroke="currentColor" stroke-width="2"/>
+                <path d="M10 22V26M8 24H12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M36 24H40" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Cashflow & Liquidity Execution</h3>
+            <p class="service-card__tagline">Where strategy meets real-world execution</p>
+            <p>Cashflow execution is the hardest problem for inventory-based consumer brands — and where most firms fall short.</p>
+            <p>We build cashflow forecasts and systems aligned to how your business actually operates, then guide payment-level decisions week by week as reality changes.</p>
+            <div class="service-card__highlight">
+              <p>Strategy without execution breaks.</p>
+              <p>Execution without strategy burns cash.</p>
+              <p><strong>We ensure both stay aligned.</strong></p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW WE'RE DIFFERENT -->
+    <section class="difference" id="difference">
+      <div class="container">
+        <header class="section-header section-header--center">
+          <h2>This is not advisory. This is execution.</h2>
+        </header>
+
+        <div class="difference__grid">
+          <div class="difference__column difference__column--others">
+            <h3>Most firms:</h3>
+            <ul>
+              <li>Give you reports and leave you to act</li>
+              <li>Sell software and expect you to figure it out</li>
+              <li>Charge for every question or deliverable</li>
+            </ul>
+          </div>
+
+          <div class="difference__column difference__column--us">
+            <h3>GreenSpark is different:</h3>
+            <ul>
+              <li><strong>Operator-led</strong></li>
+              <li><strong>CPG cashflow-minded</strong></li>
+              <li><strong>Results-oriented</strong></li>
+              <li><strong>Execution-driven, not deck-driven</strong></li>
+              <li><strong>Built exclusively for consumer brands</strong></li>
+              <li><strong>Transparent pricing</strong> — You shouldn't feel like you can't ask us important financial questions because it's going to cost you – that's counterintuitive!</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="difference__close">
+          <p>We don't just tell you what to do.</p>
+          <p class="difference__emphasis">We help you do it.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULTS -->
+    <section class="results" id="results">
+      <div class="container">
+        <header class="section-header section-header--center">
+          <h2>Real outcomes for real consumer brands</h2>
+        </header>
+
+        <div class="testimonials">
+          <article class="testimonial">
+            <blockquote>
+              <p>"GreenSpark transformed our financial operations. For the first time, we have visibility into our true unit economics and can make decisions with confidence."</p>
+            </blockquote>
+            <footer>
+              <span class="testimonial__author">CPG Brand Founder</span>
+            </footer>
+          </article>
+
+          <article class="testimonial">
+            <blockquote>
+              <p>"They don't just hand over reports — they sit with us weekly and help us execute on the insights. That's rare."</p>
+            </blockquote>
+            <footer>
+              <span class="testimonial__author">DTC Brand CEO</span>
+            </footer>
+          </article>
+
+          <article class="testimonial">
+            <blockquote>
+              <p>"Our cashflow used to feel like a black box. Now we can forecast with precision and plan inventory confidently."</p>
+            </blockquote>
+            <footer>
+              <span class="testimonial__author">Consumer Brand COO</span>
+            </footer>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="cta" id="contact">
+      <div class="container">
+        <div class="cta__content">
+          <h2>See if GreenSpark is a fit</h2>
+          <p>If you're running a growing consumer brand and cashflow feels tighter than it should, let's talk.</p>
+          <a class="btn btn--light btn--large" href="https://calendly.com" target="_blank" rel="noopener noreferrer">Book a Strategic CFO Call</a>
         </div>
       </div>
     </section>
@@ -367,81 +259,39 @@
 
   <footer class="site-footer">
     <div class="container footer__grid">
-      <div>
-        <img src="assets/images/logo.svg" alt="Idaho Pharmacy logo">
-        <p>Idaho's trusted long-term care pharmacy partner.</p>
+      <div class="footer__brand">
+        <span class="brand brand--footer">
+          <span class="brand__logo">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="32" height="32" rx="8" fill="currentColor"/>
+              <path d="M8 16L14 22L24 10" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="brand__name">GreenSpark</span>
+        </span>
+        <p>Fractional CFO & Financial Execution for Consumer Brands</p>
       </div>
-      <div>
-        <h3>Quick Links</h3>
+      <div class="footer__nav">
+        <h3>Navigation</h3>
         <ul>
           <li><a href="#services">Services</a></li>
-          <li><a href="#service-areas">Service Areas</a></li>
-          <li><a href="#emar">eMAR Integration</a></li>
+          <li><a href="#difference">How We're Different</a></li>
+          <li><a href="#results">Results</a></li>
+          <li><a href="#about">About</a></li>
         </ul>
       </div>
-      <div>
-        <h3>Facility Onboarding</h3>
+      <div class="footer__contact">
+        <h3>Get in Touch</h3>
         <ul>
-          <li><button class="link" data-open-modal="onboarding">Start Service</button></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#contact">Book a Call</a></li>
+          <li><a href="mailto:hello@greensparkfin.com">hello@greensparkfin.com</a></li>
         </ul>
       </div>
-      <div>
-        <h3>Visit Us</h3>
-        <address>
-          1200 Evergreen Ln<br>
-          Boise, ID 83702<br>
-          (208) 555-1234
-        </address>
-      </div>
     </div>
-    <p class="footer__legal">© <span id="year"></span> Idaho Pharmacy, LLC. All rights reserved.</p>
+    <div class="container">
+      <p class="footer__legal">© <span id="year"></span> GreenSpark. All rights reserved.</p>
+    </div>
   </footer>
-
-  <dialog class="modal" id="onboarding-modal" aria-labelledby="modal-title">
-    <form class="modal__content">
-      <button class="modal__close" aria-label="Close modal">×</button>
-      <p class="eyebrow">Start Service</p>
-      <h2 id="modal-title">Share onboarding details</h2>
-      <p class="modal__helper">Complete the quick form below and our onboarding team will provide next-steps plus eMAR integration instructions.</p>
-      <div class="modal__form" role="document"></div>
-      <button class="btn btn--primary" type="submit" data-submit-modal>Submit Request</button>
-    </form>
-  </dialog>
-
-  <template id="onboarding-form-template">
-    <div class="form-row">
-      <label for="modal-name">Contact name</label>
-      <input type="text" id="modal-name" name="name" required>
-    </div>
-    <div class="form-row">
-      <label for="modal-facility">Facility name</label>
-      <input type="text" id="modal-facility" name="facility" required>
-    </div>
-    <div class="form-row">
-      <label for="modal-email">Email</label>
-      <input type="email" id="modal-email" name="email" required>
-    </div>
-    <div class="form-row">
-      <label for="modal-phone">Phone</label>
-      <input type="tel" id="modal-phone" name="phone" required pattern="[0-9\\-\\+\\s()]{7,}">
-    </div>
-    <div class="form-row">
-      <label for="modal-type">Facility type</label>
-      <select id="modal-type" name="facilityType" required>
-        <option value="">Select facility type</option>
-        <option>Skilled Nursing Facility</option>
-        <option>Assisted Living</option>
-        <option>Memory Care</option>
-        <option>Group Home</option>
-        <option>Hospice</option>
-      </select>
-    </div>
-    <div class="form-row">
-      <label for="modal-message">Message</label>
-      <textarea id="modal-message" name="message" rows="4" required></textarea>
-    </div>
-  </template>
 
   <script src="script.js" defer></script>
 </body>
