@@ -1,0 +1,886 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Mobilplaneten — Mobilverkstad i Göteborg · Laga, köp &amp; sälj mobiler</title>
+<meta name="description" content="Mobilreparation i Göteborg på 45 minuter. Köp och sälj begagnade mobiler med 12 månaders garanti. Gratis lånetelefon, fri frakt och företagsavtal." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<link rel="stylesheet" href="mobilplaneten-styles.css" />
+</head>
+<body>
+
+<!-- ============== UTILITY BAR ============== -->
+<div class="utility-bar">
+  <div class="utility-bar-inner">
+    <div class="utility-left">
+      <span><i data-lucide="truck" class="icon-sm" style="color:var(--brand-300)"></i> Fri frakt 1–3 dagar</span>
+      <span class="hide-mobile"><i data-lucide="smartphone-charging" class="icon-sm" style="color:var(--brand-300)"></i> Gratis lånetelefon</span>
+      <span class="hide-tablet"><i data-lucide="shield-check" class="icon-sm" style="color:var(--brand-300)"></i> 12 månaders garanti</span>
+    </div>
+    <div class="utility-right">
+      <a href="#butik" class="hide-sm"><i data-lucide="map-pin" class="icon-sm"></i> Lindome, Göteborg</a>
+      <a href="tel:0312029390"><i data-lucide="phone" class="icon-sm"></i> 031–20 29 39</a>
+      <button class="lang-btn"><span>SV</span><i data-lucide="chevron-down" class="icon-xs"></i></button>
+    </div>
+  </div>
+</div>
+
+<!-- ============== HEADER ============== -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="#" class="logo-link">
+      <span class="logo-icon"><i data-lucide="smartphone"></i></span>
+      <span class="logo-text">Mobil<span class="logo-accent">planeten</span></span>
+    </a>
+
+    <nav class="primary-nav">
+      <a href="#repairs">Laga <i data-lucide="chevron-down"></i></a>
+      <a href="#shop">Köp <i data-lucide="chevron-down"></i></a>
+      <a href="#sell">Sälj</a>
+      <a href="#services">Mer <i data-lucide="chevron-down"></i></a>
+    </nav>
+
+    <div class="header-search">
+      <i data-lucide="search"></i>
+      <input placeholder="Sök modell eller reparation…" />
+      <kbd>⌘K</kbd>
+    </div>
+
+    <div class="header-actions">
+      <button class="icon-btn" aria-label="Konto"><i data-lucide="user"></i></button>
+      <button class="icon-btn cart-btn" aria-label="Varukorg">
+        <i data-lucide="shopping-bag"></i>
+        <span class="cart-badge">0</span>
+      </button>
+      <a href="#b2b" class="btn-foretag"><i data-lucide="building-2"></i> Företag</a>
+      <button class="menu-btn" aria-label="Meny"><i data-lucide="menu"></i></button>
+    </div>
+  </div>
+</header>
+
+<!-- ============== HERO ============== -->
+<section class="hero-section gradient-hero">
+  <div class="hero-inner container">
+    <div class="hero-left">
+      <span class="pill-green"><span style="width:6px;height:6px;border-radius:50%;background:var(--brand-500)"></span> Mobilverkstad i Göteborg · sedan 2011</span>
+
+      <h1 class="hero-title">
+        Lagad på <span class="highlight">45&nbsp;minuter</span>.<br class="hero-br" />
+        Köpt, sålt eller bytt — med garanti.
+      </h1>
+
+      <p class="hero-desc">Snabb reparation, begagnade mobiler med 12 månaders garanti och gratis lånetelefon medan vi lagar.</p>
+
+      <div class="hero-cta">
+        <a href="#repairs" class="btn-primary"><i data-lucide="wrench" style="width:1rem;height:1rem"></i> Laga mobilen</a>
+        <a href="#shop" class="btn-outline"><i data-lucide="shopping-bag" style="width:1rem;height:1rem"></i> Köp begagnad</a>
+      </div>
+
+      <div class="hero-trust">
+        <div class="stars">
+          <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+        </div>
+        <span><b>4.8</b> av 5</span>
+        <span class="dot-sep">·</span>
+        <span style="color:var(--ink-600)">1 200+ omdömen på Trustpilot</span>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-blob-1"></div>
+      <div class="hero-blob-2"></div>
+
+      <div class="hero-ticket">
+        <div class="ticket-header">
+          <span class="pill-green"><i data-lucide="wrench" style="width:0.75rem;height:0.75rem"></i> Snabbreparation</span>
+          <span class="ticket-ready"><i data-lucide="clock"></i> Klar idag</span>
+        </div>
+
+        <div class="ticket-device">
+          <div class="ticket-phone-mock">
+            <div class="notch"></div>
+            <i data-lucide="smartphone"></i>
+          </div>
+          <div class="ticket-device-info">
+            <div class="label">Din enhet</div>
+            <div class="name">iPhone 15 Pro</div>
+            <div class="repair">Skärmbyte · Originaldel</div>
+          </div>
+        </div>
+
+        <div class="ticket-sep dashed-sep"></div>
+
+        <div class="ticket-grid">
+          <div><div class="label">Tid</div><div class="value">45 min</div></div>
+          <div><div class="label">Garanti</div><div class="value">12 mån</div></div>
+          <div><div class="label">Lånetelefon</div><div class="value-brand">Ingår</div></div>
+        </div>
+
+        <div class="ticket-sep dashed-sep"></div>
+
+        <div class="ticket-footer">
+          <div>
+            <div class="ticket-price-label">Fast pris inkl. moms</div>
+            <div class="ticket-price">2 499 <span>kr</span></div>
+          </div>
+          <button class="btn-primary" style="padding:0.625rem 1rem">Boka tid <i data-lucide="arrow-right" style="width:1rem;height:1rem"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="trust-strip">
+    <div class="trust-strip-inner container">
+      <div class="trust-item">
+        <div class="num" style="font-family:'Plus Jakarta Sans',sans-serif">15+</div>
+        <div class="desc">år i Göteborg</div>
+      </div>
+      <div class="trust-item">
+        <div class="num num-brand" style="font-family:'Plus Jakarta Sans',sans-serif">280 000</div>
+        <div class="desc">träd planterade</div>
+      </div>
+      <div class="trust-item">
+        <div class="num" style="font-family:'Plus Jakarta Sans',sans-serif">100+</div>
+        <div class="desc">företagskunder</div>
+      </div>
+      <div class="trust-item">
+        <div class="num" style="font-family:'Plus Jakarta Sans',sans-serif">3 000+</div>
+        <div class="desc">begagnade i lager</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== TRUSTPILOT ============== -->
+<section class="tp-section band band-white container">
+  <div class="tp-card">
+    <div class="tp-summary">
+      <div class="tp-summary-left">
+        <div class="tp-wordmark">
+          <svg viewBox="0 0 24 24" fill="#00b67a"><polygon points="12,2 14.9,8.6 22,9.3 16.5,14 18.2,21 12,17.3 5.8,21 7.5,14 2,9.3 9.1,8.6" /></svg>
+          <span>Trustpilot</span>
+        </div>
+        <div class="tp-divider"></div>
+        <div class="tp-stars-row">
+          <div class="tp-stars">
+            <span class="tp-star"><svg viewBox="0 0 24 24" fill="#fff"><polygon points="12,3 14.6,9 21,9.6 16.1,14 17.6,20.3 12,16.9 6.4,20.3 7.9,14 3,9.6 9.4,9"/></svg></span>
+            <span class="tp-star"><svg viewBox="0 0 24 24" fill="#fff"><polygon points="12,3 14.6,9 21,9.6 16.1,14 17.6,20.3 12,16.9 6.4,20.3 7.9,14 3,9.6 9.4,9"/></svg></span>
+            <span class="tp-star"><svg viewBox="0 0 24 24" fill="#fff"><polygon points="12,3 14.6,9 21,9.6 16.1,14 17.6,20.3 12,16.9 6.4,20.3 7.9,14 3,9.6 9.4,9"/></svg></span>
+            <span class="tp-star"><svg viewBox="0 0 24 24" fill="#fff"><polygon points="12,3 14.6,9 21,9.6 16.1,14 17.6,20.3 12,16.9 6.4,20.3 7.9,14 3,9.6 9.4,9"/></svg></span>
+            <span class="tp-star"><svg viewBox="0 0 24 24" fill="#fff"><polygon points="12,3 14.6,9 21,9.6 16.1,14 17.6,20.3 12,16.9 6.4,20.3 7.9,14 3,9.6 9.4,9"/></svg></span>
+          </div>
+          <div class="tp-score">
+            <div class="score">Utmärkt · 4.8</div>
+            <div class="count">baserat på 1 200+ omdömen</div>
+          </div>
+        </div>
+      </div>
+      <a href="#" class="tp-all-link">Se alla omdömen <i data-lucide="arrow-up-right"></i></a>
+    </div>
+
+    <div class="tp-reviews">
+      <article class="tp-review">
+        <div class="tp-mini-stars">
+          <span class="tp-mini-star"><svg viewBox="0 0 24 24" fill="#fff"><polygon points="12,3 14.6,9 21,9.6 16.1,14 17.6,20.3 12,16.9 6.4,20.3 7.9,14 3,9.6 9.4,9"/></svg></span>
+          <span class="tp-mini-star"><svg viewBox="0 0 24 24" fill="#fff"><polygon points="12,3 14.6,9 21,9.6 16.1,14 17.6,20.3 12,16.9 6.4,20.3 7.9,14 3,9.6 9.4,9"/></svg></span>
+          <span class="tp-mini-star"><svg viewBox="0 0 24 24" fill="#fff"><polygon points="12,3 14.6,9 21,9.6 16.1,14 17.6,20.3 12,16.9 6.4,20.3 7.9,14 3,9.6 9.4,9"/></svg></span>
+          <span class="tp-mini-star"><svg viewBox="0 0 24 24" fill="#fff"><polygon points="12,3 14.6,9 21,9.6 16.1,14 17.6,20.3 12,16.9 6.4,20.3 7.9,14 3,9.6 9.4,9"/></svg></span>
+          <span class="tp-mini-star"><svg viewBox="0 0 24 24" fill="#fff"><polygon points="12,3 14.6,9 21,9.6 16.1,14 17.6,20.3 12,16.9 6.4,20.3 7.9,14 3,9.6 9.4,9"/></svg></span>
+        </div>
+        <div class="date">2 dagar sedan</div>
+        <h4>Snabbt och proffsigt</h4>
+        <p>Fick skärmen bytt på 40 minuter medan jag tog en fika. Mobilen känns som ny igen.</p>
+        <div class="author">Anna L. <span class="verified"><i data-lucide="badge-check"></i> Verifierad kund</span></div>
+      </article>
+
+      <article class="tp-review">
+        <div class="tp-mini-stars">
+          <span class="tp-mini-star"><svg viewBox="0 0 24 24" fill="#fff"><polygon points="12,3 14.6,9 21,9.6 16.1,14 17.6,20.3 12,16.9 6.4,20.3 7.9,14 3,9.6 9.4,9"/></svg></span>
+          <span class="tp-mini-star"><svg viewBox="0 0 24 24" fill="#fff"><polygon points="12,3 14.6,9 21,9.6 16.1,14 17.6,20.3 12,16.9 6.4,20.3 7.9,14 3,9.6 9.4,9"/></svg></span>
+          <span class="tp-mini-star"><svg viewBox="0 0 24 24" fill="#fff"><polygon points="12,3 14.6,9 21,9.6 16.1,14 17.6,20.3 12,16.9 6.4,20.3 7.9,14 3,9.6 9.4,9"/></svg></span>
+          <span class="tp-mini-star"><svg viewBox="0 0 24 24" fill="#fff"><polygon points="12,3 14.6,9 21,9.6 16.1,14 17.6,20.3 12,16.9 6.4,20.3 7.9,14 3,9.6 9.4,9"/></svg></span>
+          <span class="tp-mini-star"><svg viewBox="0 0 24 24" fill="#fff"><polygon points="12,3 14.6,9 21,9.6 16.1,14 17.6,20.3 12,16.9 6.4,20.3 7.9,14 3,9.6 9.4,9"/></svg></span>
+        </div>
+        <div class="date">1 vecka sedan</div>
+        <h4>Bästa företagsservice</h4>
+        <p>Vi köper alla företagets mobiler här. Snabb service, enkla samlingsfakturor och alltid trevligt bemötande.</p>
+        <div class="author">Markus J. <span class="verified"><i data-lucide="badge-check"></i> Företagskund</span></div>
+      </article>
+
+      <article class="tp-review">
+        <div class="tp-mini-stars">
+          <span class="tp-mini-star"><svg viewBox="0 0 24 24" fill="#fff"><polygon points="12,3 14.6,9 21,9.6 16.1,14 17.6,20.3 12,16.9 6.4,20.3 7.9,14 3,9.6 9.4,9"/></svg></span>
+          <span class="tp-mini-star"><svg viewBox="0 0 24 24" fill="#fff"><polygon points="12,3 14.6,9 21,9.6 16.1,14 17.6,20.3 12,16.9 6.4,20.3 7.9,14 3,9.6 9.4,9"/></svg></span>
+          <span class="tp-mini-star"><svg viewBox="0 0 24 24" fill="#fff"><polygon points="12,3 14.6,9 21,9.6 16.1,14 17.6,20.3 12,16.9 6.4,20.3 7.9,14 3,9.6 9.4,9"/></svg></span>
+          <span class="tp-mini-star"><svg viewBox="0 0 24 24" fill="#fff"><polygon points="12,3 14.6,9 21,9.6 16.1,14 17.6,20.3 12,16.9 6.4,20.3 7.9,14 3,9.6 9.4,9"/></svg></span>
+          <span class="tp-mini-star"><svg viewBox="0 0 24 24" fill="#fff"><polygon points="12,3 14.6,9 21,9.6 16.1,14 17.6,20.3 12,16.9 6.4,20.3 7.9,14 3,9.6 9.4,9"/></svg></span>
+        </div>
+        <div class="date">3 veckor sedan</div>
+        <h4>Värderingen stämde exakt</h4>
+        <p>Sålde min gamla iPhone 12. Snabb värdering online, skickade in och fick pengarna på Swish samma dag.</p>
+        <div class="author">Sara K. <span class="verified"><i data-lucide="badge-check"></i> Verifierad kund</span></div>
+      </article>
+
+      <article class="tp-review">
+        <div class="tp-mini-stars">
+          <span class="tp-mini-star"><svg viewBox="0 0 24 24" fill="#fff"><polygon points="12,3 14.6,9 21,9.6 16.1,14 17.6,20.3 12,16.9 6.4,20.3 7.9,14 3,9.6 9.4,9"/></svg></span>
+          <span class="tp-mini-star"><svg viewBox="0 0 24 24" fill="#fff"><polygon points="12,3 14.6,9 21,9.6 16.1,14 17.6,20.3 12,16.9 6.4,20.3 7.9,14 3,9.6 9.4,9"/></svg></span>
+          <span class="tp-mini-star"><svg viewBox="0 0 24 24" fill="#fff"><polygon points="12,3 14.6,9 21,9.6 16.1,14 17.6,20.3 12,16.9 6.4,20.3 7.9,14 3,9.6 9.4,9"/></svg></span>
+          <span class="tp-mini-star"><svg viewBox="0 0 24 24" fill="#fff"><polygon points="12,3 14.6,9 21,9.6 16.1,14 17.6,20.3 12,16.9 6.4,20.3 7.9,14 3,9.6 9.4,9"/></svg></span>
+          <span class="tp-mini-star"><svg viewBox="0 0 24 24" fill="#fff"><polygon points="12,3 14.6,9 21,9.6 16.1,14 17.6,20.3 12,16.9 6.4,20.3 7.9,14 3,9.6 9.4,9"/></svg></span>
+        </div>
+        <div class="date">1 månad sedan</div>
+        <h4>Försäkring utan krångel</h4>
+        <p>Mitt försäkringsbolag godkände reparationen direkt. Lätt att lämna in, snabbt klart och gratis lånetelefon ingick.</p>
+        <div class="author">Erik N. <span class="verified"><i data-lucide="badge-check"></i> Försäkringsärende</span></div>
+      </article>
+    </div>
+  </div>
+
+  <div class="marquee-wrap">
+    <div class="marquee-fade-l"></div>
+    <div class="marquee-fade-r"></div>
+    <div class="marquee">
+      <span class="marquee-chip">Snabbt · trevligt · kvalitet</span>
+      <span class="marquee-chip">Bäst pris i Göteborg</span>
+      <span class="marquee-chip">Professionellt bemötande</span>
+      <span class="marquee-chip">Originaldelar</span>
+      <span class="marquee-chip">Gratis lånetelefon var livräddare</span>
+      <span class="marquee-chip">Hjälpsamma tekniker</span>
+      <span class="marquee-chip">Miljövänligt alternativ</span>
+      <span class="marquee-chip">Rekommenderas varmt</span>
+      <span class="marquee-chip">Snabbt · trevligt · kvalitet</span>
+      <span class="marquee-chip">Bäst pris i Göteborg</span>
+      <span class="marquee-chip">Professionellt bemötande</span>
+      <span class="marquee-chip">Originaldelar</span>
+      <span class="marquee-chip">Gratis lånetelefon var livräddare</span>
+      <span class="marquee-chip">Hjälpsamma tekniker</span>
+      <span class="marquee-chip">Miljövänligt alternativ</span>
+      <span class="marquee-chip">Rekommenderas varmt</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============== QUICK SERVICES ============== -->
+<section class="quick-services container">
+  <div class="quick-grid">
+    <a href="#repairs" class="card quick-card">
+      <div class="quick-icon"><i data-lucide="wrench"></i></div>
+      <div class="title">Laga mobilen</div>
+      <div class="desc">iPhone, Samsung, iPad, MacBook &amp; spelkonsol</div>
+      <div class="link">Se priser <i data-lucide="arrow-right"></i></div>
+    </a>
+    <a href="#shop" class="card quick-card">
+      <div class="quick-icon"><i data-lucide="shopping-bag"></i></div>
+      <div class="title">Köp begagnad</div>
+      <div class="desc">3 000+ testade mobiler med 12 mån garanti</div>
+      <div class="link">Handla nu <i data-lucide="arrow-right"></i></div>
+    </a>
+    <a href="#sell" class="card quick-card">
+      <div class="quick-icon"><i data-lucide="tag"></i></div>
+      <div class="title">Sälj mobilen</div>
+      <div class="desc">Värdering på 60 sek · Swish inom 24h</div>
+      <div class="link">Få värdering <i data-lucide="arrow-right"></i></div>
+    </a>
+    <a href="#b2b" class="card quick-card quick-card-dark">
+      <div class="quick-icon"><i data-lucide="building-2"></i></div>
+      <div class="title">För företag</div>
+      <div class="desc">Fakturaköp, volymrabatt &amp; SLA-avtal</div>
+      <div class="link">Bli företagskund <i data-lucide="arrow-right"></i></div>
+    </a>
+  </div>
+</section>
+
+<!-- ============== REPAIR SECTION ============== -->
+<section id="repairs" class="repair-section band band-white container">
+  <div class="section-header">
+    <div class="section-header-text">
+      <div class="eyebrow">01 · Reparation</div>
+      <h2 class="section-title" style="margin-top:0.5rem">Välj enhet — få fast pris direkt</h2>
+      <p>Originaldelar, 12 månaders garanti och gratis lånetelefon medan vi lagar din enhet.</p>
+    </div>
+    <a href="#" class="linkish">Alla reparationer <i data-lucide="arrow-right"></i></a>
+  </div>
+
+  <div class="device-tabs no-scrollbar">
+    <button class="device-tab" aria-selected="true">
+      <div class="device-tab-icon"><i data-lucide="smartphone"></i></div>
+      <div class="tab-label"><div class="tab-name">iPhone</div><div class="tab-count">32 modeller</div></div>
+    </button>
+    <button class="device-tab">
+      <div class="device-tab-icon"><i data-lucide="smartphone"></i></div>
+      <div class="tab-label"><div class="tab-name">Samsung</div><div class="tab-count">60+ modeller</div></div>
+    </button>
+    <button class="device-tab">
+      <div class="device-tab-icon"><i data-lucide="tablet"></i></div>
+      <div class="tab-label"><div class="tab-name">iPad</div><div class="tab-count">28 modeller</div></div>
+    </button>
+    <button class="device-tab">
+      <div class="device-tab-icon"><i data-lucide="laptop"></i></div>
+      <div class="tab-label"><div class="tab-name">MacBook</div><div class="tab-count">22 modeller</div></div>
+    </button>
+    <button class="device-tab">
+      <div class="device-tab-icon"><i data-lucide="gamepad-2"></i></div>
+      <div class="tab-label"><div class="tab-name">Spelkonsol</div><div class="tab-count">5 modeller</div></div>
+    </button>
+    <button class="device-tab">
+      <div class="device-tab-icon"><i data-lucide="cpu"></i></div>
+      <div class="tab-label"><div class="tab-name">Andra</div><div class="tab-count">Huawei, Sony…</div></div>
+    </button>
+  </div>
+
+  <div class="repair-grid">
+    <aside class="repair-showcase">
+      <div class="grid-lines"></div>
+      <div class="blob"></div>
+
+      <div class="showcase-top">
+        <span class="pill-dark"><i data-lucide="flame" style="width:0.75rem;height:0.75rem;color:#fbbf24"></i> Mest efterfrågat</span>
+        <span class="showcase-year">Apple · 2023</span>
+      </div>
+
+      <div class="showcase-visual" style="margin:2rem 0">
+        <div class="showcase-ground-shadow"></div>
+        <div class="iphone-mock">
+          <div class="iphone-side-btn left-1"></div>
+          <div class="iphone-side-btn left-2"></div>
+          <div class="iphone-side-btn right-1"></div>
+          <div class="iphone-island"></div>
+          <div class="iphone-screen">
+            <div class="iphone-time"><div class="date">torsdag 23 oktober</div><div class="time">14:32</div></div>
+            <div class="iphone-widget">
+              <div class="iphone-widget-inner">
+                <div class="iphone-widget-icon"><i data-lucide="wrench"></i></div>
+                <div class="iphone-widget-text"><div class="wt-label">Mobilplaneten</div><div class="wt-value">Bokad · Imorgon 10:30</div></div>
+              </div>
+            </div>
+            <div class="iphone-indicator"></div>
+          </div>
+        </div>
+        <div class="showcase-float-badge top-left"><i data-lucide="shield-check"></i><span>Originaldelar</span></div>
+        <div class="showcase-float-badge bottom-right"><i data-lucide="clock"></i><span>Klar på 45 min</span></div>
+      </div>
+
+      <div class="showcase-info">
+        <h3 class="showcase-model-title">iPhone 15 Pro</h3>
+        <p class="showcase-price-from">Reparationer från <b>799 kr</b></p>
+        <div class="model-pills">
+          <button class="model-pill model-pill-active">15 Pro</button>
+          <button class="model-pill model-pill-default">15</button>
+          <button class="model-pill model-pill-default">14 Pro</button>
+          <button class="model-pill model-pill-default">14</button>
+          <button class="model-pill model-pill-default">13</button>
+          <button class="model-pill model-pill-default">12</button>
+          <button class="model-pill model-pill-more">+ 26 fler</button>
+        </div>
+        <div class="showcase-benefits">
+          <div>
+            <div class="showcase-benefit-label"><i data-lucide="smartphone-charging"></i><span>Lånetelefon</span></div>
+            <div class="showcase-benefit-value">Ingår</div>
+          </div>
+          <div>
+            <div class="showcase-benefit-label"><i data-lucide="shield-check"></i><span>Garanti</span></div>
+            <div class="showcase-benefit-value">12 mån</div>
+          </div>
+          <div>
+            <div class="showcase-benefit-label"><i data-lucide="clock"></i><span>Tid</span></div>
+            <div class="showcase-benefit-value">45 min</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <div>
+      <div class="fault-grid">
+        <article class="fault-card fault-card-featured">
+          <span class="fault-popular">Populärast</span>
+          <div class="fault-icon fault-icon-brand"><i data-lucide="square-dashed"></i></div>
+          <h4 class="fault-title">Skärmbyte</h4>
+          <p class="fault-desc">Spricka, LCD-fel eller svart skärm. Originaldel.</p>
+          <div class="fault-footer">
+            <div><div class="fault-time">Från · 45 min</div><div class="fault-price">2 499 kr</div></div>
+            <button class="fault-arrow fault-arrow-brand"><i data-lucide="arrow-right"></i></button>
+          </div>
+        </article>
+
+        <article class="fault-card">
+          <div class="fault-icon fault-icon-light"><i data-lucide="battery-charging"></i></div>
+          <h4 class="fault-title">Batteribyte</h4>
+          <p class="fault-desc">Dålig kapacitet eller snabb urladdning.</p>
+          <div class="fault-footer">
+            <div><div class="fault-time">Från · 30 min</div><div class="fault-price">799 kr</div></div>
+            <button class="fault-arrow fault-arrow-default"><i data-lucide="arrow-right"></i></button>
+          </div>
+        </article>
+
+        <article class="fault-card">
+          <div class="fault-icon fault-icon-light"><i data-lucide="camera"></i></div>
+          <h4 class="fault-title">Kamera</h4>
+          <p class="fault-desc">Suddigt, autofokus eller svart bild.</p>
+          <div class="fault-footer">
+            <div><div class="fault-time">Från · 45 min</div><div class="fault-price">1 299 kr</div></div>
+            <button class="fault-arrow fault-arrow-default"><i data-lucide="arrow-right"></i></button>
+          </div>
+        </article>
+
+        <article class="fault-card">
+          <div class="fault-icon fault-icon-light"><i data-lucide="plug-zap"></i></div>
+          <h4 class="fault-title">Laddport</h4>
+          <p class="fault-desc">Laddar ej eller glappkontakt.</p>
+          <div class="fault-footer">
+            <div><div class="fault-time">Från · 45 min</div><div class="fault-price">999 kr</div></div>
+            <button class="fault-arrow fault-arrow-default"><i data-lucide="arrow-right"></i></button>
+          </div>
+        </article>
+
+        <article class="fault-card">
+          <div class="fault-icon fault-icon-light"><i data-lucide="volume-2"></i></div>
+          <h4 class="fault-title">Högtalare / mikrofon</h4>
+          <p class="fault-desc">Inget ljud eller svag röst i samtal.</p>
+          <div class="fault-footer">
+            <div><div class="fault-time">Från · 45 min</div><div class="fault-price">899 kr</div></div>
+            <button class="fault-arrow fault-arrow-default"><i data-lucide="arrow-right"></i></button>
+          </div>
+        </article>
+
+        <article class="fault-card">
+          <div class="fault-icon fault-icon-light"><i data-lucide="layers"></i></div>
+          <h4 class="fault-title">Baksida / glas</h4>
+          <p class="fault-desc">Spricka eller trasigt glas på baksidan.</p>
+          <div class="fault-footer">
+            <div><div class="fault-time">Från · 60 min</div><div class="fault-price">1 499 kr</div></div>
+            <button class="fault-arrow fault-arrow-default"><i data-lucide="arrow-right"></i></button>
+          </div>
+        </article>
+      </div>
+
+      <div class="repair-footer">
+        <div class="info"><i data-lucide="info"></i> Priser inkl. moms, reservdel och arbete.</div>
+        <a href="#" class="linkish">Ingen match? Skicka in för diagnos <i data-lucide="arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 3 STEPS ============== -->
+<section class="steps-section container">
+  <div class="steps-grid">
+    <div class="steps-title-area">
+      <div class="eyebrow">Så funkar det</div>
+      <h3>Tre enkla steg — från trasig till klar</h3>
+    </div>
+    <div class="steps-list-wrapper">
+      <div class="steps-line"></div>
+      <ol class="steps-list">
+        <li class="step-item">
+          <div class="step-num step-num-dark">1</div>
+          <div class="step-title">Välj enhet &amp; fel</div>
+          <div class="step-desc">Hitta modell, se fast pris och tillgängliga tider direkt online.</div>
+        </li>
+        <li class="step-item">
+          <div class="step-num step-num-dark">2</div>
+          <div class="step-title">Besök oss eller skicka in</div>
+          <div class="step-desc">Drop-in i Lindome eller gratis fraktsedel och lånetelefon.</div>
+        </li>
+        <li class="step-item">
+          <div class="step-num step-num-brand">3</div>
+          <div class="step-title">Klar med garanti</div>
+          <div class="step-desc">45 min i butik eller 3–4 dagar per post. 12 mån garanti ingår.</div>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============== BRANDS ============== -->
+<section class="brands-section band band-white container">
+  <div class="section-header" style="margin-bottom:1.5rem">
+    <div class="section-header-text">
+      <div class="eyebrow" style="display:inline-flex;align-items:center;gap:0.5rem"><i data-lucide="badge-check" style="width:1rem;height:1rem;color:var(--brand-600)"></i> Märken vi stöder</div>
+      <h3 class="section-title" style="margin-top:0.5rem">Reparation, köp &amp; sälj — för alla populära tillverkare</h3>
+      <p style="color:var(--ink-600);font-size:0.875rem;margin-top:0.5rem;max-width:36rem">Originaldelar för Apple och Samsung. Kvalitetssäkrade reservdelar för övriga. 250+ modeller i databasen.</p>
+    </div>
+    <a href="#" class="linkish" style="font-size:0.875rem">Se alla modeller <i data-lucide="arrow-right"></i></a>
+  </div>
+
+  <div class="brand-grid">
+    <a href="#" class="brand-card"><div class="brand-logo"><svg viewBox="0 0 24 24" style="width:2.25rem;height:2.25rem" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.88-3.08.41-1.09-.47-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.41C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.08zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg></div><div class="brand-name">Apple</div><div class="brand-meta">32 modeller</div></a>
+    <a href="#" class="brand-card"><div class="brand-logo"><svg viewBox="0 0 120 24" style="height:1.25rem" fill="currentColor"><text x="0" y="18" font-family="Arial,sans-serif" font-weight="800" font-size="20" letter-spacing="-0.5">SAMSUNG</text></svg></div><div class="brand-name">Samsung</div><div class="brand-meta">64 modeller</div></a>
+    <a href="#" class="brand-card"><div class="brand-logo"><svg viewBox="0 0 24 24" style="width:2.25rem;height:2.25rem"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></div><div class="brand-name">Google</div><div class="brand-meta">12 modeller</div></a>
+    <a href="#" class="brand-card"><div class="brand-logo"><svg viewBox="0 0 40 40" style="width:2.25rem;height:2.25rem" fill="#F50514"><path d="M6 6h20v3H9v17H6V6zm11 11h17v17H17V17zm3 3v11h11V20H20z"/></svg></div><div class="brand-name">OnePlus</div><div class="brand-meta">18 modeller</div></a>
+    <a href="#" class="brand-card"><div class="brand-logo"><div style="width:2.5rem;height:2.5rem;border-radius:0.5rem;display:grid;place-items:center;background:#FF6900"><span style="color:#fff;font-weight:900;font-size:15px;letter-spacing:-0.02em">MI</span></div></div><div class="brand-name">Xiaomi</div><div class="brand-meta">28 modeller</div></a>
+    <a href="#" class="brand-card"><div class="brand-logo"><svg viewBox="0 0 40 40" style="width:2.25rem;height:2.25rem"><path fill="#CF0A2C" d="M20 3l3 11h11l-9 7 3 11-8-6-8 6 3-11-9-7h11z"/></svg></div><div class="brand-name">Huawei</div><div class="brand-meta">22 modeller</div></a>
+    <a href="#" class="brand-card"><div class="brand-logo"><svg viewBox="0 0 120 30" style="height:1.25rem" fill="currentColor"><text x="0" y="22" font-family="Arial,sans-serif" font-weight="900" font-style="italic" font-size="26" letter-spacing="1">SONY</text></svg></div><div class="brand-name">Sony</div><div class="brand-meta">9 modeller</div></a>
+    <a href="#" class="brand-card"><div class="brand-logo"><svg viewBox="0 0 120 24" style="height:1.25rem" fill="#124191"><text x="0" y="18" font-family="Arial,sans-serif" font-weight="800" font-size="20" letter-spacing="-0.5">NOKIA</text></svg></div><div class="brand-name">Nokia</div><div class="brand-meta">11 modeller</div></a>
+  </div>
+
+  <div class="brands-footer">
+    <div class="brands-footer-features">
+      <span><i data-lucide="shield-check"></i> Originaldelar för Apple &amp; Samsung</span>
+      <span><i data-lucide="truck"></i> Gratis fraktsedel</span>
+      <span><i data-lucide="badge-check"></i> 12 månaders garanti</span>
+    </div>
+    <a href="#" class="linkish">Saknar du din modell? <i data-lucide="arrow-right"></i></a>
+  </div>
+</section>
+
+<!-- ============== SHOP MARKETPLACE ============== -->
+<section id="shop" class="shop-section container">
+  <div class="section-header">
+    <div class="section-header-text">
+      <div class="eyebrow">02 · Begagnat i lager</div>
+      <h2 class="section-title" style="margin-top:0.5rem">Renoverade enheter — med garanti</h2>
+      <p>Allt vi säljer är testat, återställt och levereras med 12 månaders garanti, laddkabel och 14 dagars returrätt.</p>
+    </div>
+    <div class="shop-filters">
+      <button class="tab-chip" aria-selected="true">Alla</button>
+      <button class="tab-chip">iPhone</button>
+      <button class="tab-chip">Samsung</button>
+      <button class="tab-chip">iPad</button>
+      <button class="tab-chip">Tillbehör</button>
+    </div>
+  </div>
+
+  <div class="shop-grid">
+    <article class="featured-deal">
+      <div class="grid-lines" style="position:absolute;inset:0;opacity:.25"></div>
+      <div style="position:absolute;top:-6rem;right:-6rem;width:20rem;height:20rem;background:rgba(12,152,92,.3);border-radius:50%;filter:blur(3rem)"></div>
+      <div style="position:absolute;bottom:0;left:0;width:16rem;height:16rem;background:rgba(47,179,116,.1);border-radius:50%;filter:blur(3rem)"></div>
+
+      <div style="position:relative;display:flex;align-items:center;gap:0.75rem">
+        <span class="pill-dark"><i data-lucide="flame" style="width:0.75rem;height:0.75rem;color:#fbbf24"></i> Veckans deal</span>
+        <span style="display:inline-flex;align-items:center;gap:0.375rem;font-size:11px;font-weight:600;color:#a7f3d0">
+          <span style="width:6px;height:6px;border-radius:50%;background:#6ee7b7" class="animate-pulse"></span> Endast 4 kvar
+        </span>
+      </div>
+
+      <div style="position:relative;margin-top:1rem;flex:1;display:grid;place-items:center">
+        <div style="position:absolute;top:1.5rem;left:0;background:#fff;color:var(--ink-900);border-radius:1rem;padding:0.5rem 0.75rem;box-shadow:0 8px 24px rgba(0,0,0,.15)">
+          <div style="font-size:10px;color:var(--ink-500);text-transform:uppercase;letter-spacing:0.15em;font-weight:700">Skick A</div>
+          <div style="font-size:0.875rem;font-weight:800">256 GB</div>
+        </div>
+        <div style="position:absolute;bottom:1rem;right:0;background:#fff;color:var(--ink-900);border-radius:1rem;padding:0.5rem 0.75rem;box-shadow:0 8px 24px rgba(0,0,0,.15)">
+          <div style="font-size:10px;color:var(--ink-500);text-transform:uppercase;letter-spacing:0.15em;font-weight:700">Spara</div>
+          <div style="font-size:0.875rem;font-weight:800;color:var(--brand-700)">3 500 kr</div>
+        </div>
+        <div style="position:absolute;bottom:1rem;width:13rem;height:0.75rem;background:rgba(0,0,0,.5);border-radius:50%;filter:blur(8px)"></div>
+        <div class="iphone-mock" style="transform:rotate(-6deg)">
+          <div class="iphone-side-btn left-1"></div>
+          <div class="iphone-side-btn left-2"></div>
+          <div class="iphone-side-btn right-1"></div>
+          <div class="iphone-island"></div>
+          <div class="iphone-screen" style="background:radial-gradient(circle at 30% 20%,rgba(255,255,255,.25),transparent 45%),linear-gradient(160deg,#1a1a1c 0%,#2d2d30 50%,#0a0a0a 100%)">
+            <div class="iphone-time"><div class="date">torsdag 23 oktober</div><div class="time">14:32</div></div>
+            <div class="iphone-widget">
+              <div class="iphone-widget-inner" style="background:rgba(255,255,255,.1)">
+                <div class="iphone-widget-icon" style="background:rgba(12,152,92,.3)"><i data-lucide="tag" style="width:0.875rem;height:0.875rem;color:#6ee7b7"></i></div>
+                <div class="iphone-widget-text"><div class="wt-label">Veckans deal</div><div class="wt-value">7 999 kr · Titan Black</div></div>
+              </div>
+            </div>
+            <div class="iphone-indicator"></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="position:relative;margin-top:1.5rem">
+        <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.75rem;color:var(--ink-300)">
+          <span style="display:inline-flex;align-items:center;gap:0.25rem"><span style="width:8px;height:8px;border-radius:50%;background:#1d1d1f;box-shadow:0 0 0 1px rgba(255,255,255,.3)"></span> Titan Black</span>
+          <span style="opacity:.6;display:inline-flex;align-items:center;gap:0.25rem"><span style="width:8px;height:8px;border-radius:50%;background:#5a6e8a;box-shadow:0 0 0 1px rgba(255,255,255,.3)"></span> Blue</span>
+          <span style="opacity:.6;display:inline-flex;align-items:center;gap:0.25rem"><span style="width:8px;height:8px;border-radius:50%;background:#a6916a;box-shadow:0 0 0 1px rgba(255,255,255,.3)"></span> Gold</span>
+        </div>
+        <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.875rem;font-weight:800;margin-top:0.5rem">iPhone 14 Pro</h3>
+        <div style="margin-top:0.75rem;display:flex;align-items:flex-end;justify-content:space-between;gap:1rem">
+          <div>
+            <div style="font-size:0.75rem;color:var(--ink-300)">Vårt pris</div>
+            <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:2.5rem;font-weight:800">7 999 kr</div>
+            <div style="font-size:0.875rem;color:var(--ink-300);text-decoration:line-through">11 499 kr nypris</div>
+          </div>
+          <a href="#" class="btn-white" style="padding:0.75rem 1.25rem">Köp nu <i data-lucide="arrow-right" style="width:1rem;height:1rem"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <div class="product-grid">
+      <article class="product-card">
+        <div class="product-visual" style="background:linear-gradient(135deg,#fce7f3 0%,#fbcfe8 100%)">
+          <span class="pcard-badge" style="background:var(--brand-600);color:#fff">REA</span>
+          <span class="pcard-heart"><i data-lucide="heart"></i></span>
+          <div class="mini-phone mini-phone-pink"><div class="mini-notch"></div><div class="mini-screen" style="background:linear-gradient(160deg,#fdf2f8,#f9a8d4)"></div></div>
+        </div>
+        <div class="product-body">
+          <div class="pcard-meta">Skick A · 128 GB · Pink</div>
+          <div class="pcard-title">iPhone 13</div>
+          <div class="pcard-price-row"><span class="pcard-price">4 499 kr</span><span class="pcard-strike">5 299 kr</span></div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-visual" style="background:linear-gradient(135deg,#f5f5f4 0%,#e7e5e4 100%)">
+          <span class="pcard-badge" style="background:#10b981;color:#fff">NY</span>
+          <span class="pcard-heart"><i data-lucide="heart"></i></span>
+          <div class="mini-phone mini-phone-titan"><div class="mini-island"></div><div class="mini-screen" style="background:linear-gradient(160deg,#18181b,#3f3f46)"></div></div>
+        </div>
+        <div class="product-body">
+          <div class="pcard-meta">Skick A · 256 GB · Natural</div>
+          <div class="pcard-title">iPhone 15 Pro</div>
+          <div class="pcard-price-row"><span class="pcard-price">8 799 kr</span></div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-visual" style="background:linear-gradient(135deg,#ede9fe 0%,#ddd6fe 100%)">
+          <span class="pcard-badge" style="background:var(--ink-900);color:#fff">FYND</span>
+          <span class="pcard-heart"><i data-lucide="heart"></i></span>
+          <div class="mini-phone mini-phone-purple"><div class="mini-notch"></div><div class="mini-screen" style="background:linear-gradient(160deg,#f5f3ff,#8b5cf6)"></div></div>
+        </div>
+        <div class="product-body">
+          <div class="pcard-meta">Skick B · 64 GB · Purple</div>
+          <div class="pcard-title">iPhone 12</div>
+          <div class="pcard-price-row"><span class="pcard-price">3 299 kr</span></div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-visual" style="background:linear-gradient(135deg,#e5e7eb 0%,#d1d5db 100%)">
+          <span class="pcard-badge" style="background:var(--brand-600);color:#fff">TOPP</span>
+          <span class="pcard-heart"><i data-lucide="heart"></i></span>
+          <div class="mini-samsung"><div class="mini-samsung-camera"><span></span><span></span><span></span></div><div class="mini-screen" style="background:linear-gradient(160deg,#1f2937,#374151)"></div></div>
+        </div>
+        <div class="product-body">
+          <div class="pcard-meta">Skick A · 256 GB · Titanium</div>
+          <div class="pcard-title">Galaxy S24 Ultra</div>
+          <div class="pcard-price-row"><span class="pcard-price">9 499 kr</span></div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-visual" style="background:linear-gradient(135deg,#dbeafe 0%,#bfdbfe 100%)">
+          <span class="pcard-heart"><i data-lucide="heart"></i></span>
+          <div class="mini-tablet"><div class="mini-tablet-cam"></div><div class="mini-screen" style="background:linear-gradient(160deg,#dbeafe,#60a5fa)"></div></div>
+        </div>
+        <div class="product-body">
+          <div class="pcard-meta">Skick A · Wi-Fi · Sky Blue</div>
+          <div class="pcard-title">iPad Air (2022)</div>
+          <div class="pcard-price-row"><span class="pcard-price">5 999 kr</span></div>
+        </div>
+      </article>
+
+      <a href="#" class="shop-cta-card">
+        <div class="grid-lines"></div>
+        <div class="blob"></div>
+        <div style="position:relative"><div class="shop-cta-icon"><i data-lucide="shopping-bag"></i></div></div>
+        <div class="shop-cta-content">
+          <div class="big-num">3 000+</div>
+          <div class="sub">enheter i lager</div>
+          <div class="meta">iPhone · Samsung · iPad · surfplattor</div>
+          <div class="link">Öppna butiken <i data-lucide="arrow-right"></i></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============== SUSTAINABILITY BANNER ============== -->
+<section class="container" style="padding:5rem 1rem">
+  <div class="gradient-deep" style="position:relative;overflow:hidden;border-radius:1.5rem;color:#fff;padding:2rem 3rem">
+    <div class="grid-lines" style="position:absolute;inset:0;opacity:.4"></div>
+    <div style="position:absolute;top:-5rem;right:-5rem;width:20rem;height:20rem;background:rgba(255,255,255,.1);border-radius:50%;filter:blur(3rem)"></div>
+
+    <div style="position:relative;display:grid;gap:2.5rem;align-items:center" class="sustain-grid">
+      <div>
+        <span class="pill-dark"><i data-lucide="leaf" style="width:0.75rem;height:0.75rem;color:#6ee7b7"></i> Cirkulär elektronik</span>
+        <h2 style="margin-top:1rem;font-family:'Plus Jakarta Sans',sans-serif;font-size:1.875rem;font-weight:800;line-height:1.15">Varje lagad mobil planterar <span style="color:#6ee7b7">ett träd</span>.</h2>
+        <p style="margin-top:1rem;color:rgba(236,248,242,.9);max-width:32rem">Sedan 2011 har vi räddat tusentals enheter från skroten och planterat träd tillsammans med våra kunder. Att laga din mobil är inte bara billigare — det är planetens bästa val.</p>
+        <div style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:0.75rem">
+          <a href="#" class="btn-white" style="padding:0.75rem 1.25rem;color:var(--brand-700)">Vår miljöresa</a>
+          <a href="#b2b" class="btn-border-white" style="padding:0.75rem 1.25rem">Företagsavtal</a>
+        </div>
+      </div>
+
+      <div style="display:grid;gap:1rem" class="sustain-grid">
+        <div style="border-radius:1rem;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);padding:1.25rem">
+          <div style="display:flex;align-items:center;gap:0.5rem;color:rgba(255,255,255,.7);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em"><i data-lucide="trees" style="width:1rem;height:1rem"></i> Planterade träd</div>
+          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:2.5rem;font-weight:800;margin-top:0.5rem">280 000</div>
+          <div style="height:6px;background:rgba(255,255,255,.1);border-radius:9999px;margin-top:0.75rem;overflow:hidden"><div style="height:100%;width:80%;background:#6ee7b7;border-radius:9999px"></div></div>
+        </div>
+        <div style="border-radius:1rem;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);padding:1.25rem">
+          <div style="display:flex;align-items:center;gap:0.5rem;color:rgba(255,255,255,.7);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em"><i data-lucide="recycle" style="width:1rem;height:1rem"></i> Räddade enheter</div>
+          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:2.5rem;font-weight:800;margin-top:0.5rem">7 172</div>
+          <div style="height:6px;background:rgba(255,255,255,.1);border-radius:9999px;margin-top:0.75rem;overflow:hidden"><div style="height:100%;width:60%;background:#6ee7b7;border-radius:9999px"></div></div>
+        </div>
+        <div style="grid-column:span 2;border-radius:1rem;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);padding:1.25rem;display:flex;align-items:center;gap:1rem">
+          <div style="width:3rem;height:3rem;border-radius:0.75rem;background:rgba(255,255,255,.15);display:grid;place-items:center"><i data-lucide="repeat" style="width:1.5rem;height:1.5rem"></i></div>
+          <div style="flex:1">
+            <div style="font-weight:700">Byt in gammal — köp renoverad</div>
+            <div style="font-size:0.875rem;color:rgba(236,248,242,.9)">Få upp till 2 500 kr i värde när du uppgraderar hos oss.</div>
+          </div>
+          <i data-lucide="arrow-up-right" style="width:1.25rem;height:1.25rem"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== LOCATION ============== -->
+<section id="butik" class="location-section band band-white container">
+  <div class="card location-card">
+    <div class="location-info">
+      <div class="eyebrow">Vår verkstad</div>
+      <h2 class="section-title">Besök oss i Lindome</h2>
+      <p>Drop-in eller boka tid — vi lagar det mesta medan du tar en kaffe i butiken.</p>
+      <dl class="location-dl">
+        <div class="location-item">
+          <span class="location-icon"><i data-lucide="map-pin"></i></span>
+          <div><dt>Adress</dt><dd>Heljesvägen 1, 437 31 Lindome</dd></div>
+        </div>
+        <div class="location-item">
+          <span class="location-icon"><i data-lucide="clock"></i></span>
+          <div><dt>Öppettider</dt><dd>Mån–Fre 08:00–17:00 · Lör–Sön stängt</dd></div>
+        </div>
+        <div class="location-item">
+          <span class="location-icon"><i data-lucide="phone"></i></span>
+          <div><dt>Kontakt</dt><dd>031–20 29 39 · info@mobilplaneten.se</dd></div>
+        </div>
+      </dl>
+      <div class="location-cta">
+        <a href="#" class="btn-primary"><i data-lucide="calendar" style="width:1rem;height:1rem"></i> Boka tid</a>
+        <a href="#" class="btn-outline"><i data-lucide="navigation" style="width:1rem;height:1rem"></i> Vägbeskrivning</a>
+      </div>
+    </div>
+    <div class="location-map">
+      <div style="position:absolute;inset:0;background-image:linear-gradient(45deg,rgba(1,120,72,.06) 25%,transparent 25%,transparent 75%,rgba(1,120,72,.06) 75%),linear-gradient(45deg,rgba(1,120,72,.06) 25%,transparent 25%,transparent 75%,rgba(1,120,72,.06) 75%);background-size:40px 40px;background-position:0 0,20px 20px"></div>
+      <div style="position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,rgba(1,120,72,.08) 0,rgba(1,120,72,.08) 1px,transparent 1px,transparent 80px),repeating-linear-gradient(90deg,rgba(1,120,72,.08) 0,rgba(1,120,72,.08) 1px,transparent 1px,transparent 80px)"></div>
+      <div style="position:absolute;top:33%;left:0;right:0;height:8px;background:rgba(255,255,255,.8)"></div>
+      <div style="position:absolute;top:0;bottom:0;left:50%;width:8px;background:rgba(255,255,255,.8)"></div>
+      <div class="map-pin-container">
+        <div class="map-pin"><i data-lucide="map-pin"></i><div class="map-pin-ping"></div></div>
+        <div class="map-label">Mobilplaneten</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== USP STRIP ============== -->
+<section class="usp-section container">
+  <div class="card usp-grid">
+    <div class="usp-item">
+      <span class="usp-icon"><i data-lucide="shield-check"></i></span>
+      <div><div class="usp-title">12 månaders garanti</div><div class="usp-desc">På reparationer och begagnade enheter.</div></div>
+    </div>
+    <div class="usp-item">
+      <span class="usp-icon"><i data-lucide="truck"></i></span>
+      <div><div class="usp-title">Fri frakt 1–3 dagar</div><div class="usp-desc">DHL och PostNord.</div></div>
+    </div>
+    <div class="usp-item">
+      <span class="usp-icon"><i data-lucide="credit-card"></i></span>
+      <div><div class="usp-title">Trygga betalningar</div><div class="usp-desc">Klarna, Swish, kort, faktura.</div></div>
+    </div>
+    <div class="usp-item">
+      <span class="usp-icon"><i data-lucide="rotate-ccw"></i></span>
+      <div><div class="usp-title">14 dagars returrätt</div><div class="usp-desc">Ångrar du dig? Vi löser det.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== NEWSLETTER ============== -->
+<section class="newsletter-section">
+  <div class="container">
+    <div class="newsletter-card">
+      <div class="bg-glow"></div>
+      <div class="newsletter-inner">
+        <div>
+          <div class="eyebrow" style="color:var(--brand-300)">Håll dig uppdaterad</div>
+          <h2>Få erbjudanden och guider direkt i inkorgen</h2>
+          <p>Max två mejl i månaden. Rabatter, nya modeller och praktiska tips för att hålla enheterna i toppskick.</p>
+        </div>
+        <form class="newsletter-form">
+          <input type="email" placeholder="din@epost.se" />
+          <button type="submit" class="btn-white" style="padding:0.75rem 1.5rem;font-weight:700">Prenumerera <i data-lucide="arrow-right" style="width:1rem;height:1rem"></i></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FOOTER ============== -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand footer-brand-wide">
+      <a href="#" class="logo-link">
+        <span class="logo-icon"><i data-lucide="smartphone"></i></span>
+        <span class="logo-text" style="display:inline;color:#fff">Mobil<span style="color:var(--brand-300)">planeten</span></span>
+      </a>
+      <p>Mobilverkstad som reparerar, köper och säljer mobiltelefoner i Göteborg — med miljön i åtanke sedan 2011.</p>
+      <div class="footer-contact">
+        <div><i data-lucide="map-pin"></i> Heljesvägen 1, 437 31 Lindome</div>
+        <div><i data-lucide="phone"></i> 031–20 29 39</div>
+        <div><i data-lucide="mail"></i> info@mobilplaneten.se</div>
+        <div><i data-lucide="clock"></i> Mån–Fre 08:00–17:00</div>
+      </div>
+    </div>
+    <div>
+      <div class="footer-nav-title">Reparation</div>
+      <ul class="footer-nav">
+        <li><a href="#">Laga iPhone</a></li>
+        <li><a href="#">Laga Samsung</a></li>
+        <li><a href="#">Laga iPad</a></li>
+        <li><a href="#">Laga MacBook</a></li>
+        <li><a href="#">Laga spelkonsol</a></li>
+        <li><a href="#">Andra tillverkare</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-nav-title">Köp &amp; sälj</div>
+      <ul class="footer-nav">
+        <li><a href="#">Begagnade mobiler</a></li>
+        <li><a href="#">Begagnade surfplattor</a></li>
+        <li><a href="#">Tillbehör</a></li>
+        <li><a href="#">Reservdelar</a></li>
+        <li><a href="#">Sälj mobilen</a></li>
+        <li><a href="#">Byt in</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-nav-title">Support &amp; företag</div>
+      <ul class="footer-nav">
+        <li><a href="#">Om oss</a></li>
+        <li><a href="#">Kontakt</a></li>
+        <li><a href="#">Försäkringsärenden</a></li>
+        <li><a href="#">IT-support</a></li>
+        <li><a href="#b2b">Företagskund</a></li>
+        <li><a href="#">Blogg</a></li>
+        <li><a href="#">Köpvillkor</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <div>© 2011 – 2026 Mobilplaneten AB · Org.nr 559000-0000</div>
+      <div class="payment-methods">
+        <span class="payment-badge">Klarna</span>
+        <span class="payment-badge">Swish</span>
+        <span class="payment-badge">Visa</span>
+        <span class="payment-badge">Mastercard</span>
+        <span class="payment-badge">Faktura</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  lucide.createIcons();
+  document.querySelectorAll('.tab-chip').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var parent = btn.closest('ul, div, .shop-filters');
+      if (!parent) return;
+      parent.querySelectorAll('.tab-chip').forEach(function(b) { b.setAttribute('aria-selected', 'false'); });
+      btn.setAttribute('aria-selected', 'true');
+    });
+  });
+</script>
+</body>
+</html>
