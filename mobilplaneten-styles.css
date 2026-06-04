@@ -2019,3 +2019,322 @@ button { border: none; background: none; cursor: pointer; }
 @media (min-width: 1024px) {
   .footer-brand-wide { grid-column: span 2; }
 }
+
+.repair-page { background: #f6f8f7; }
+.repair-page .site-header { border-bottom: 1px solid rgba(230,232,236,.9); }
+.repair-page .header-inner { gap: 1rem; }
+.repair-nav { flex: 1; justify-content: center; }
+.repair-nav a { font-weight: 700; }
+.status-dot {
+  width: 6px; height: 6px; border-radius: 9999px;
+  background: var(--brand-500); box-shadow: 0 0 0 5px rgba(12,152,92,.12);
+}
+.repair-hero {
+  position: relative; overflow: hidden; padding: 5rem 0 4rem;
+}
+.repair-hero::before {
+  content: ''; position: absolute; inset: 0;
+  background:
+    linear-gradient(rgba(1,120,72,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(1,120,72,.04) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: linear-gradient(to bottom, #000 0%, transparent 78%);
+  pointer-events: none;
+}
+.repair-hero-grid {
+  position: relative; display: grid; gap: 3rem; align-items: center;
+}
+@media (min-width: 1024px) {
+  .repair-hero-grid { grid-template-columns: minmax(0, 1fr) minmax(420px, 520px); }
+}
+.repair-hero-copy { max-width: 680px; }
+.repair-kicker {
+  margin-top: 1.5rem; font-size: 0.875rem; font-weight: 800;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--brand-700);
+}
+.repair-hero h1 {
+  margin-top: 0.5rem; font-size: clamp(3rem, 8vw, 6rem);
+  line-height: .92; font-weight: 800; color: var(--ink-900);
+}
+.repair-hero-text {
+  margin-top: 1.25rem; max-width: 37rem;
+  color: var(--ink-600); font-size: 1.125rem;
+}
+.repair-hero-actions {
+  margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 0.875rem;
+}
+.repair-hero-actions .btn-primary,
+.repair-hero-actions .btn-outline { padding: 0.95rem 1.35rem; }
+.repair-trust-row {
+  margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 0.75rem;
+}
+.repair-trust-row span {
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  border: 1px solid var(--ink-200); border-radius: 9999px;
+  background: rgba(255,255,255,.78); padding: 0.55rem 0.85rem;
+  color: var(--ink-700); font-size: 0.875rem; font-weight: 700;
+  box-shadow: var(--shadow-card);
+}
+.repair-trust-row i { width: 1rem; height: 1rem; color: var(--brand-600); }
+.repair-hero-panel { position: relative; }
+.repair-panel-glow {
+  position: absolute; inset: 2rem -1rem -1rem 3rem;
+  border-radius: 3rem; background: rgba(12,152,92,.18); filter: blur(44px);
+}
+.repair-panel-card {
+  position: relative; overflow: hidden; border-radius: 2rem;
+  background: linear-gradient(145deg, #0b1320 0%, #034a2e 54%, #017848 100%);
+  color: #fff; padding: 1.5rem; box-shadow: 0 28px 80px rgba(3,74,46,.28);
+}
+.repair-panel-card::before {
+  content: ''; position: absolute; inset: 0;
+  background:
+    radial-gradient(circle at 80% 12%, rgba(110,231,183,.24), transparent 32%),
+    linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px);
+  background-size: auto, 36px 36px, 36px 36px;
+  pointer-events: none;
+}
+.panel-topline {
+  position: relative; display: flex; justify-content: space-between;
+  align-items: center; gap: 1rem;
+}
+.panel-topline .pill-dark i { width: .75rem; height: .75rem; color: #6ee7b7; }
+.panel-open {
+  display: inline-flex; align-items: center; gap: .45rem;
+  color: rgba(255,255,255,.82); font-size: .75rem; font-weight: 800;
+  text-transform: uppercase; letter-spacing: .12em;
+}
+.panel-open span {
+  width: .55rem; height: .55rem; border-radius: 9999px;
+  background: #6ee7b7; box-shadow: 0 0 0 5px rgba(110,231,183,.16);
+}
+.repair-phone-stage {
+  position: relative; min-height: 440px; display: grid; place-items: center;
+}
+.repair-phone { width: 196px; height: 392px; transform: rotate(-4deg); }
+.repair-phone .iphone-time .time { font-size: 5.25rem; }
+.repair-phone-shadow {
+  position: absolute; bottom: 2.25rem; width: 15rem; height: 1rem;
+  border-radius: 9999px; background: rgba(0,0,0,.42); filter: blur(10px);
+}
+.repair-mini-steps { position: relative; display: grid; gap: .75rem; }
+@media (min-width: 640px) {
+  .repair-mini-steps { grid-template-columns: repeat(3, 1fr); }
+}
+.repair-mini-steps div {
+  border: 1px solid rgba(255,255,255,.14); border-radius: 1rem;
+  background: rgba(255,255,255,.08); padding: .9rem; backdrop-filter: blur(8px);
+}
+.repair-mini-steps span {
+  display: grid; place-items: center; width: 1.75rem; height: 1.75rem;
+  border-radius: 9999px; background: #fff; color: var(--brand-700); font-weight: 800;
+}
+.repair-mini-steps strong,
+.repair-mini-steps small { display: block; }
+.repair-mini-steps strong { margin-top: .65rem; font-size: .875rem; }
+.repair-mini-steps small {
+  margin-top: .15rem; color: rgba(255,255,255,.65); font-size: .72rem;
+}
+.repair-picker-section { padding: 5rem 0; }
+.repair-centered-header { justify-content: center; text-align: center; }
+.repair-centered-header .section-header-text p { margin-left: auto; margin-right: auto; }
+.repair-device-tabs { justify-content: center; margin-top: 2.25rem; }
+.repair-device-grid { margin-top: 1.5rem; display: grid; gap: 1.25rem; }
+@media (min-width: 980px) {
+  .repair-device-grid { grid-template-columns: repeat(2, 1fr); }
+}
+.repair-device-card {
+  position: relative; overflow: hidden; border: 1px solid var(--ink-200);
+  border-radius: 1.5rem; background: #fff; padding: 1.5rem;
+  box-shadow: var(--shadow-card);
+  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+.repair-device-card::before {
+  content: ''; position: absolute; inset: 0 0 auto; height: 6px;
+  background: linear-gradient(90deg, var(--brand-600), var(--brand-300)); opacity: .2;
+}
+.repair-device-card.is-active,
+.repair-device-card:hover {
+  border-color: var(--brand-200); box-shadow: var(--shadow-pop); transform: translateY(-2px);
+}
+.device-card-header {
+  position: relative; display: flex; justify-content: space-between; gap: 1rem; padding-right: 7rem;
+}
+.device-card-header .fault-popular { top: 0; right: 0; }
+.device-type {
+  display: inline-flex; align-items: center; border-radius: 9999px;
+  background: var(--brand-50); color: var(--brand-700);
+  padding: .25rem .65rem; font-size: .7rem; font-weight: 900; letter-spacing: .14em;
+}
+.device-card-header h3 { margin-top: .8rem; font-size: 1.65rem; color: var(--ink-900); }
+.device-card-header p { margin-top: .45rem; color: var(--ink-600); }
+.repair-models { margin-top: 1.4rem; }
+.repair-models .model-pill-default,
+.repair-models .model-pill-more {
+  background: #fff; color: var(--ink-700); border-color: var(--ink-200);
+}
+.repair-card-benefits {
+  margin-top: 1.5rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: .75rem;
+}
+.repair-card-benefits div {
+  border: 1px solid var(--ink-200); border-radius: 1rem;
+  background: var(--ink-50); padding: .85rem;
+}
+.repair-card-benefits span,
+.repair-card-benefits strong { display: block; }
+.repair-card-benefits span {
+  color: var(--ink-500); font-size: .7rem; text-transform: uppercase;
+  letter-spacing: .1em; font-weight: 800;
+}
+.repair-card-benefits strong { margin-top: .2rem; font-size: 1.05rem; color: var(--ink-900); }
+.fault-list { margin-top: 1.25rem; display: grid; gap: .65rem; }
+@media (min-width: 520px) {
+  .fault-list { grid-template-columns: repeat(2, 1fr); }
+}
+.fault-list span {
+  display: inline-flex; align-items: center; gap: .45rem;
+  color: var(--ink-700); font-weight: 700; font-size: .9rem;
+}
+.fault-list i { width: 1rem; height: 1rem; color: var(--brand-600); }
+.repair-card-footer {
+  margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px dashed var(--ink-300);
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem;
+}
+.repair-card-footer p { color: var(--ink-600); font-size: .875rem; }
+.repair-device-card > .linkish { margin-top: 1rem; }
+.workshop-section,
+.seo-section,
+.repair-blog-section { padding: 5rem 0; }
+.repair-service-layout { margin-top: 2rem; display: grid; gap: 1.25rem; }
+@media (min-width: 980px) {
+  .repair-service-layout { grid-template-columns: 310px 1fr; align-items: start; }
+}
+.service-tabs { display: grid; gap: .75rem; }
+.service-tab {
+  display: flex; align-items: center; gap: .75rem; width: 100%;
+  border: 1px solid var(--ink-200); border-radius: 1rem; background: #fff;
+  color: var(--ink-800); padding: .95rem 1rem; font-weight: 800; text-align: left;
+  transition: border-color .2s ease, background .2s ease, color .2s ease, transform .2s ease;
+}
+.service-tab i { width: 1.15rem; height: 1.15rem; color: var(--brand-600); }
+.service-tab.is-active,
+.service-tab:hover {
+  border-color: var(--ink-900); background: var(--ink-900); color: #fff; transform: translateY(-1px);
+}
+.service-tab.is-active i,
+.service-tab:hover i { color: var(--brand-300); }
+.service-panels { min-width: 0; }
+.service-panel {
+  display: none; border: 1px solid var(--ink-200); border-radius: 1.5rem;
+  background: #fff; padding: 1.5rem; box-shadow: var(--shadow-card);
+}
+.service-panel.is-active { display: block; }
+.service-list { display: flex; flex-wrap: wrap; gap: .6rem; }
+.service-list li {
+  border-radius: 9999px; background: var(--brand-50); color: var(--brand-700);
+  padding: .45rem .8rem; font-size: .8rem; font-weight: 800;
+}
+.service-detail-grid { margin-top: 1.5rem; display: grid; gap: 1rem; }
+@media (min-width: 720px) {
+  .service-detail-grid { grid-template-columns: repeat(2, 1fr); }
+}
+.service-detail-grid div {
+  border: 1px solid var(--ink-200); border-radius: 1rem;
+  background: var(--ink-50); padding: 1.2rem;
+}
+.service-detail-grid h3 { font-size: 1rem; color: var(--ink-900); }
+.service-detail-grid p { margin-top: .45rem; color: var(--ink-600); font-size: .9rem; }
+.seo-intro { max-width: 780px; }
+.seo-intro p { margin-top: .85rem; color: var(--ink-600); font-size: 1.05rem; }
+.seo-grid { margin-top: 2rem; columns: 1; column-gap: 1.25rem; }
+@media (min-width: 920px) {
+  .seo-grid { columns: 2; }
+}
+.seo-grid article {
+  break-inside: avoid; display: inline-block; width: 100%; margin: 0 0 1.25rem;
+  border: 1px solid var(--ink-200); border-radius: 1.25rem;
+  background: #fff; padding: 1.35rem; box-shadow: var(--shadow-card);
+}
+.seo-grid h3 { font-size: 1.15rem; line-height: 1.3; color: var(--ink-900); }
+.seo-grid p { margin-top: .7rem; color: var(--ink-600); }
+.benefit-card {
+  margin-top: 1rem; display: grid; gap: 1.5rem; border-radius: 1.5rem;
+  background: linear-gradient(135deg, var(--ink-900), var(--brand-800));
+  color: #fff; padding: 1.5rem; overflow: hidden;
+}
+@media (min-width: 840px) {
+  .benefit-card { grid-template-columns: 1fr 1.1fr; align-items: center; padding: 2rem; }
+}
+.benefit-card h3 { font-size: 1.5rem; }
+.benefit-card p { margin-top: .6rem; color: rgba(255,255,255,.72); }
+.benefit-card ul { display: grid; gap: .65rem; }
+.benefit-card li {
+  display: flex; align-items: center; gap: .55rem;
+  border: 1px solid rgba(255,255,255,.12); border-radius: .9rem;
+  background: rgba(255,255,255,.08); padding: .75rem; font-weight: 700;
+}
+.benefit-card i { width: 1rem; height: 1rem; color: #6ee7b7; }
+.repair-blog-grid { margin-top: 2rem; display: grid; gap: 1.25rem; }
+@media (min-width: 860px) {
+  .repair-blog-grid { grid-template-columns: repeat(3, 1fr); }
+}
+.repair-blog-card { display: grid; grid-template-rows: 180px 1fr; }
+.repair-blog-card .blog-visual { display: grid; place-items: center; }
+.repair-blog-card .blog-visual i { width: 3rem; height: 3rem; color: #fff; }
+.blog-visual-green { background: linear-gradient(155deg, #0c985c 0%, #017848 55%, #034a2e 100%); }
+.blog-visual-dark { background: linear-gradient(155deg, #0f172a 0%, #1e293b 55%, #0f172a 100%); }
+.blog-visual-amber { background: linear-gradient(155deg, #f59e0b 0%, #ea580c 58%, #7c2d12 100%); }
+.booking-dialog {
+  width: min(760px, calc(100vw - 2rem)); border: 0; border-radius: 1.5rem;
+  padding: 0; background: transparent; color: var(--ink-900);
+}
+.booking-dialog::backdrop { background: rgba(11,19,32,.62); backdrop-filter: blur(4px); }
+.booking-modal {
+  background: #fff; border-radius: 1.5rem; border: 1px solid var(--ink-200);
+  box-shadow: 0 30px 100px rgba(11,19,32,.35); padding: 1.5rem;
+}
+.booking-modal-header {
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem;
+  padding-bottom: 1rem; border-bottom: 1px solid var(--ink-200);
+}
+.booking-modal-header h2 { margin-top: .35rem; font-size: 1.7rem; }
+.booking-form-grid { margin-top: 1.25rem; display: grid; gap: .95rem; }
+@media (min-width: 680px) {
+  .booking-form-grid { grid-template-columns: repeat(2, 1fr); }
+}
+.booking-form-grid label {
+  display: grid; gap: .35rem; color: var(--ink-700);
+  font-size: .8rem; font-weight: 800;
+}
+.booking-form-grid input,
+.booking-form-grid select,
+.booking-form-grid textarea {
+  width: 100%; border: 1px solid var(--ink-200); border-radius: .85rem;
+  background: var(--ink-50); color: var(--ink-900); padding: .75rem .85rem;
+  outline: none; transition: border-color .15s ease, box-shadow .15s ease;
+}
+.booking-form-grid textarea { resize: vertical; }
+.booking-form-grid input:focus,
+.booking-form-grid select:focus,
+.booking-form-grid textarea:focus {
+  border-color: var(--brand-500); box-shadow: var(--shadow-ring);
+}
+.booking-full { grid-column: 1 / -1; }
+.booking-submit { width: 100%; margin-top: 1.2rem; padding: .95rem 1.25rem; }
+@media (max-width: 767px) {
+  .repair-hero { padding-top: 3.5rem; }
+  .repair-hero h1 { font-size: clamp(2.8rem, 15vw, 4.5rem); }
+  .panel-topline,
+  .device-card-header,
+  .repair-card-footer {
+    align-items: flex-start; flex-direction: column;
+  }
+  .device-card-header { padding-right: 0; }
+  .device-card-header .fault-popular { position: static; align-self: flex-start; }
+  .repair-card-benefits,
+  .usp-grid { grid-template-columns: 1fr; }
+  .repair-phone-stage { min-height: 390px; }
+  .repair-phone { width: 170px; height: 340px; }
+  .repair-device-tabs { justify-content: flex-start; }
+}
